@@ -14,7 +14,30 @@
 	<div class="con">
 		<div class="tarjeta">		    
       <div class="row">
+
+            <div class="col s12 m8 offset-m2 l4 offset-l4 z-depth-4 formulario center">
+
+              <a href="#" id="btn-crear-cuenta" class="waves-effect waves-light btn right deep-purple lighten-2 ">Crea una cuenta</a>
+              <div class="card-content white-text" >                  		
+                  <form class="col s12">
+                    	<div class="card-image">
+              				  <img src="img/SOFTMAR.png" class="imgi">                                              
+            	  		  </div>
+                          <div class="row">
+                            <div class="input-field col s12">
+                                <input id="Correo" type="number" class="validate">
+                                <label for="Correo">Correo electrónico</label>
+                            </div>
+                            <div class="input-field col s12">
+                              <input id="Contraseña" type="password" class="validate">
+                              <label for="Contraseña">Contraseña</label>
+                            </div>
+                              <div class="center">                         
+                                <button  class="waves-effect waves-light  cyan darken-3 btn btn-large" style="width: 100%">Iniciar sesión</button>   
                               </div>
+                              <div class="card-action  right-align">
+                                <a href="#" class="lostpass ">¿Olvidaste la contraseña?</a>                                
+                              </div>                              
                           </div>                          
         		      </form>     
         		  </div>

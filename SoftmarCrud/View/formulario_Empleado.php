@@ -13,7 +13,7 @@
     <body background="C:\xampp\htdocs\Gestionar_Empleado\view\img\login.jpg">
           <img src="img\SOFTMAR.png" class="imge">
             <div class="container form">
-              <h4 class="teal-text text-teal lighten-3">Registrar Empleado</h4>
+              <h4 class="teal-text text-teal lighten-3">Gestionar Empleado</h4>
             <div class="row formulario">
               <form class="col s12">
                   <div class="row">
@@ -66,10 +66,9 @@
         </div>
       </div>
     </div>
-    <div class="container bot">
       <div>
-        <button class="waves-effect waves-light btn center" name="accion" value="c">pedir cita</button>
-        <button class="waves-effect waves-light btn center" name="accion" value="c">cancelar</button>
+        <button class="waves-effect waves-light btn center" name="accion" value="c">Gestionar</button>
+      </div>     
       </div>     
     </div>
     <script type="text/javascript" src="jquery-1.12.1.min.js"></script>

@@ -3,9 +3,14 @@
     margin: 0px;
     list-style: none;
 }
-body{
-    font-size: 20px;
-    background-image: url("img/login.jpg");
+body{    
+  background: url("img/login.jpg") no-repeat fixed center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+   
 }
 .container{
 	width: 800px;

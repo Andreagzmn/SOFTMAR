@@ -1,0 +1,152 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+body{
+    font-size: 20px;
+    background-image: url("img/login.jpg");
+}
+.container{
+	width: 800px;
+	margin-left: 500px;
+	margin-top: -342px;
+	background-color: rgba(207,206,208,0.5) !important;
+	float: right;
+}
+.formulario{
+	background-color: rgba(244, 238, 247, 0.5) !important;
+}
+
+.img{
+	margin-top: 150px;
+	margin-left: 50px;
+}
+.bot{
+	float: right;
+	margin: 10px;
+	width: 45.5%;
+}
+/* formulario usuario*/
+#form{
+	margin-left: 420px;
+	margin-top: 25px;
+}
+.muj{
+	margin-left: 200px;
+	margin-top: -35px;
+}
+.terminos{
+	margin-left: 220px;
+}
+.boton{
+ 	margin-left: 550px;
+}
+/*form_Em*/
+.imge{
+	width: 40%;
+}
+
+.form {
+	float: right;
+	width: 50%;
+	margin: 20px;
+}
+
+.regi{
+	margin-left: 250px;
+}
+/*index*/
+.conte{
+    margin-top: 80px;
+}
+.imgn{
+    width: 100%;
+}
+.inf{
+    width: 50.5%;
+   position: relative;
+   right: 23px;
+   float: left;
+}
+.inf2{
+    width: 48.5%;
+    position: relative;
+    right: 23px;
+    float: left;
+    top: -11px;
+}
+.bar{
+    width: 48.58%;
+    position: relative;
+    right: 41.9px;
+    float: right;
+}
+.bar2{
+    width: 48.58%;
+    position: relative;
+    right:41.9px;
+    float: right;
+    top: -23px;
+}
+/*nosotros*/
+.conte{
+	margin: 20px;
+}
+/*informacion*/
+.login{
+	width: 20%;
+}
+/* peluquerias*/
+.img-slides{
+	width: 100%;
+}
+
+.main{
+  width: 80%;
+  max-width: 1000px;
+  margin: 200px auto auto auto;
+}
+.slides{
+  width: 100%;
+}
+.slides img{
+  width: 100%;
+}
+.slidesjs-pagination{
+  background:#000000 ;
+  overflow: hidden;
+}
+.slidesjs-pagination li{
+  float: left;
+}
+.slidesjs-pagination li a{
+  padding: 20px 20px;
+  color:#fff;
+  text-decoration: none;
+}
+.slidesjs-pagination li a:hover{
+  background: #9e9e9e ;
+}
+.slides .active{
+  background: #9e9e9e  ;
+}
+.slidesjs-navigation{
+  background: #000000 ;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  padding: 11.5px;
+  float: right;
+}
+.botones-pelu{
+	margin: 20px;
+}
+/*login*/
+.imgi{
+	width: 60%;
+}
+.tarjeta{
+    margin-top: 10px; 
+    
+}

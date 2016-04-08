@@ -16,15 +16,15 @@
   </section>
   <div class="container">
     <div class="row">
-  <form action="../Controller/Usuariocontroller.php" method="POST" class="col s12 m8 offset-m2 l6 offset-13 z-depth-4 formulario" >
+  <form action="../Controller/Empleados.controller.php" method="POST" class="col s12 m8 offset-m2 l6 offset-13 z-depth-4 formulario" >
     <section id="formulario">
       
       <h3 style="color:#8B8B8B; font-family:fantasy; box-shadow:0 10px 4px -6px #999; text-align:center;
 ">Registrarse</h3>
-      <label>Codigo Empleado</label>
+      <!--<label>Codigo Empleado</label>
       <input type="text" name="Cod_Empleado">
       <br>
-      <br>
+      <br>-->
       <label>Codigo Empresa</label>
       <input type="text" name="Cod_Empresa">
       <br>
@@ -50,11 +50,11 @@
       <br>
       <br>-->
       <label>Telefono</label>
-      <input type="num" name="correo">
+      <input type="number" name="correo">
       <br>
       <br>
       <label>Edad</label>
-      <input type="num" name="Edad">
+      <input type="number" name="Edad">
       <br>
       <br> 
       <label>Correo Empleado</label>
@@ -65,7 +65,7 @@
       <br>
       <br>
       <label>Cedula Empleado</label>
-      <input type="text" name="Cargo">
+      <input type="number " name="Cargo">
       <br>
 
 

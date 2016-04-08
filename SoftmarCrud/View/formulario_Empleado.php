@@ -71,7 +71,7 @@
       </div>     
       </div>     
     </div>
-    <script type="text/javascript" src="jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
     </body>
   </html>

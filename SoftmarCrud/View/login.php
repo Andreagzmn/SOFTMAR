@@ -25,11 +25,11 @@
             	  		  </div>
                           <div class="row">
                             <div class="input-field col s12">
-                                <input id="Correo" type="number" class="validate">
+                                <input id="Correo" type="text" class="validate" required>
                                 <label for="Correo">Correo electrónico</label>
                             </div>
                             <div class="input-field col s12">
-                              <input id="Contraseña" type="password" class="validate">
+                              <input id="Contraseña" type="password" class="validate" required>
                               <label for="Contraseña">Contraseña</label>
                             </div>
                               <div class="center">                         

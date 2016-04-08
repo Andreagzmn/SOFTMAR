@@ -55,7 +55,7 @@
                 </div>  
                 <div class="row">
                   <div class="input-field col s12">
-                    <input id="contra" type="email" class="validate" name="clave">
+                    <input id="contra" required type="email" class="validate" name="clave">
                     <label for="contra">Contraseña</label>
                   </div>
                 </div> 

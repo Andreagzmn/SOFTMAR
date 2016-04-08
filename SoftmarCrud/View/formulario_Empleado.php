@@ -1,79 +1,86 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-      <meta charset="utf-8"/>
-      <!--Import Google Icon Font-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <link rel="stylesheet" type="text/css" href="estilos.css">
-    </head>
-    <body background="C:\xampp\htdocs\Gestionar_Empleado\view\img\login.jpg">
-          <img src="img\SOFTMAR.png" class="imge">
-            <div class="container form">
-              <h4 class="teal-text text-teal lighten-3">Gestionar Empleado</h4>
-            <div class="row formulario">
-              <form class="col s12">
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <input id="codigo_Empleado" type="text" class="validate">
-                        <label for="Cod_Empleado" data-error="wrong" data-success="right">Codigo Empleado</label>
-                      </div>
-                      <div class="input-field col s12">
-                        <input id="cod_empresa" type="text" class="validate">
-                        <label for="cod_Empresa" data-error="wrong" data-success="right">Codigo Empresa</label>
-                      </div>
-                      <div class="input-field col s12">
-                        <input id="Nombre" type="text" class="validate">
-                        <label for="Nombre" data-error="wrong" data-success="right">Nombre</label>
-                      </div>
-                      <div class="input-field col s12">
-                        <input id="Apellido" type="text" class="validate">
-                        <label for="Apellido" data-error="wrong" data-success="right">Apellido</label>
-                      </div>
-                      <div class="input-field col s12">
-                        <input id="Telefono" type="Tel" class="validate">
-                        <label for="Telefono" data-error="wrong" data-success="right">Telefono</label>
-                      </div>
-                       <div class="input-field col s12">
-                        <input id="Direccion" type="text" class="validate">
-                        <label for="Direccion" data-error="wrong" data-success="right">Direccion</label>
-                      </div>
-                      <div class="input-field col s12">
-                        <input id="Edad" type="Tel" class="validate">
-                        <label for="Edad" data-error="wrong" data-success="right">Edad</label>
-                      </div>
-                       <div class="input-field col s12">
-                        <input id="email" type="text" class="validate">
-                        <label for="email" data-error="wrong" data-success="right">Correo Empleado</label>
-                      </div>
-                       <div class="input-field col s12">
-                        <input id="Cargo" type="text" class="validate">
-                        <label for="Cargo" data-error="wrong" data-success="right">Cargo Empleado</label>
-                      </div>
-                       <div class="input-field col s12">
-                        <input id="Cedula" type="text" class="validate">
-                        <label for="Cedula" data-error="wrong" data-success="right">Cedula Empleado</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-      <div>
-        <button class="waves-effect waves-light btn center" name="accion" value="c">Gestionar</button>
-      </div>     
-      </div>     
-    </div>
-    <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
-    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
-    </body>
-  </html>
+<html>
+<head>
+  <title>Formulario</title>
+  <meta charset="utf-8"/>
+   <link type="text/css" rel="stylesheet" href="estilos.css">
+  <title>Gestionar Empleado</title>
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+</head>
+<body  background="imagenes\fondo.jpg">
+  <section class="contenedor">
+  <img class="logoregis" class="bg-principal contenido col-6-s" src="imagenes\SOFTMAR.png">
+  <H5 id="crea">CREA UNA CUENTA</H5>
+  </section>
+  <div class="container">
+    <div class="row">
+  <form action="../Controller/Usuariocontroller.php" method="POST" class="col s12 m8 offset-m2 l6 offset-13 z-depth-4 formulario" >
+    <section id="formulario">
+      
+      <h3 style="color:#8B8B8B; font-family:fantasy; box-shadow:0 10px 4px -6px #999; text-align:center;
+">Registrarse</h3>
+      <label>Codigo Empleado</label>
+      <input type="text" name="Cod_Empleado">
+      <br>
+      <br>
+      <label>Codigo Empresa</label>
+      <input type="text" name="Cod_Empresa">
+      <br>
+      <br>            
+      <label>Apellido:</label>
+      <input type="text" name="apellido">
+      <br>
+      <br>      
+      <label>Nombre:</label>
+      <input type="text" name="Nombre">
+      <br>
+      <br>
+      <label>Apellido</label>
+      <input type="text" name="Apellido">
+      <br>
+      <br>     
+      <label>Direccion</label>
+      <input type="text" name="Direccion">
+      <br>
+      <br>
+      <!--<label>Foto:</label>
+      <input type="text" name="foto">
+      <br>
+      <br>-->
+      <label>Telefono</label>
+      <input type="num" name="correo">
+      <br>
+      <br>
+      <label>Edad</label>
+      <input type="num" name="Edad">
+      <br>
+      <br> 
+      <label>Correo Empleado</label>
+      <input type="text" name="Email">
+      <br>
+      <label>Cargo Empleado</label>
+      <input type="text" name="Cargo">
+      <br>
+      <br>
+      <label>Cedula Empleado</label>
+      <input type="text" name="Cargo">
+      <br>
 
-                         
+
+      <button id="boton" class="btn waves-effect #212121 grey darken-4" type="submit" type="submit" name="accion" value="c">Gestionar</button>
+      <?php echo @$_REQUEST["msn"]; ?>
+    </section>
+    
+  </form>
+  <script type="text/javascript" src="jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="materialize/js/materialize.js"></script>
+</body>
+</html>
+
+
+
+                       
+                       
+      

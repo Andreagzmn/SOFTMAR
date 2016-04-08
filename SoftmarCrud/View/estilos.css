@@ -51,19 +51,22 @@ body{
  	margin-left: 550px;
 }
 /*form_Em*/
+.empref {
+  position: relative;
+	float: right;
+  margin: 10px;
+	width: 60%;
+}
 .imge{
-	width: 40%;
+  width: 30%;
+  margin left:50px
 }
-
-.form {
-	/*float: right;
-	width: 50%;
-	margin: 20px;*/
-  padding: 20px;
-}
-
 .regi{
-	margin-left: 250px;
+  margin-left: 120px;
+}
+.test{
+  position: relative;
+  margin-left: 220px;
 }
 /*index*/
 .conte{

@@ -12,46 +12,63 @@
     </head>
     <body>
     <img src="img\SOFTMAR.png" class="imge">
-    <div class="container form">
-      <h4 class="teal-text text-teal lighten-3">Registra tu empresa</h4>
+    <div class=" empref">
+      <h4 class="teal-text text-teal lighten-3 test">Registra tu empresa</h4>
       <div class="row formulario">
         <form class="col s12">
-            <div class="row">
+          <div class="row">
+            <div class="input-field col s12">
+                <select>
+                  <option value=""  disabled selected name="Cod_TipEmp">Tipo de empresa</option>
+                </select>
+                <label>Tipo empresa</label>
+              </div>
+              <div>
               <div class="input-field col s12">
                 <input id="Nombre" type="text" class="validate">
-                <label for="Nombre" data-error="wrong" data-success="right">Nombre Empresa</label>
+                <label for="Nombre" data-error="wrong" data-success="right" name="Nombre">Nombre Empresa</label>
               </div>
               <div class="input-field col s12">
                 <input id="telefono" type="number" class="validate">
-                <label for="Telefono" data-error="wrong" data-success="right">Telefono</label>
+                <label for="Telefono" data-error="wrong" data-success="right" name="Telefono">Telefono</label>
               </div>
               <div class="input-field col s12">
                 <input id="Direccion" type="text" class="validate">
-                <label for="Direccion" data-error="wrong" data-success="right">Domicilio Comercial</label>
-              </div>
-              <div class="input-field col s12">
-                <input id="email" type="email" class="validate">
-                <label for="email" data-error="wrong" data-success="right">Correo electronico</label>
-              </div>
-              <div class="input-field col s12">
-                <input id="email" type="email" class="validate">
-                <label for="email" data-error="wrong" data-success="right">Correo electronico</label>
+                <label for="Direccion" data-error="wrong" data-success="right" name="Direccion">Direccion</label>
               </div>
               <div class="input-field col s12">
                 <select>
-                  <option value="" disabled selected>elige tu ciudad</option>
-                  <option value="1">Opcion 1</option>
-                  <option value="2">Opcion 2</option>
-                  <option value="3">Opcion 3</option>
+                  <option value="" disabled selected name="Ciudad">elige tu ciudad</option>
                 </select>
                 <label>Ciudad</label>
               </div>
+              <div class="input-field col s12">
+                <input id="email" type="number" class="validate">
+                <label for="email" data-error="wrong" data-success="right" name="NIT" >NIT</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="email" type="email" class="validate">
+                <label for="email" data-error="wrong" data-success="right" name="Correo">Correo electronico</label>
+              </div>
+              <div class="input-field col s12">
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1" name="Informacion">Informacion</label>
+              </div>
               <div>
-                <div class="input-fiel col s12 ">
-                  <p>Ubicacion en el mapa <button class="waves-effect teal lighten-5 waves-light btn black-text">Ubicame</button></p>
+                  <p>Dias de atencion</p>
+                 <input type="date" class="datepicker" name="Dias_aten">
+              </div>
+              <div class="file-field input-field">
+                <div class="btn">
+                  <span>Fotos</span>
+                  <input type="file" multiple>
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text" placeholder="Upload one or more files">
                 </div>
               </div>
             </div>
+          </div>
         </form>
       </div>
        <button class="waves-effect waves-light btn regi">Registrar</button>
@@ -62,6 +79,13 @@
         $(document).ready(function() {
           $('select').material_select();
         });
+    </script>
+    <script>
+      $('.datepicker').pickadate({
+          selectMonths: true, // Creates a dropdown to control month
+          selectYears: 15 // Creates a dropdown of 15 years to control year
+      });
+      
     </script>
     </body>
   </html>

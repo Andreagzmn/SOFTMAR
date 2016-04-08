@@ -20,6 +20,24 @@
             <div class="input-field col s12">
                 <select>
                   <option value=""  disabled selected name="Cod_TipEmp">Tipo de empresa</option>
+                  <?php
+                    // Cargo la bd
+                    require_once("../Model/db_conn.php");
+                    // Cargo la clase tipo empresa
+                    require_once("../Model/tipo_empresa.class.php");
+
+                    $tipoempresa = Gestion_TipoEmpresa::ReadAll();
+
+                    foreach ($tipoempresa as $row){
+                        echo "<option value='".$row["Cod_TipEmp"]."'>".$row["Nombre"]."</option>";
+                    }
+
+
+                    foreach ($imagenes as $row){
+                        echo "<img src='".$row["Nombre"]."'/>";
+                    }
+
+                  ?>
                 </select>
                 <label>Tipo empresa</label>
               </div>
@@ -58,13 +76,15 @@
                   <p>Dias de atencion</p>
                  <input type="date" class="datepicker" name="Dias_aten">
               </div>
+              <input type="hidden" value="" name="geoX">
+              <input type="hidden" value="" name="geoY">
               <div class="file-field input-field">
                 <div class="btn">
                   <span>Fotos</span>
                   <input type="file" multiple>
                 </div>
                 <div class="file-path-wrapper">
-                  <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                  <input name="fotos" class="file-path validate" type="text" placeholder="Upload one or more files">
                 </div>
               </div>
             </div>
@@ -75,7 +95,7 @@
     </div>
     <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
-    <script> 
+    <script>
         $(document).ready(function() {
           $('select').material_select();
         });
@@ -85,8 +105,7 @@
           selectMonths: true, // Creates a dropdown to control month
           selectYears: 15 // Creates a dropdown of 15 years to control year
       });
-      
+
     </script>
     </body>
   </html>
-        

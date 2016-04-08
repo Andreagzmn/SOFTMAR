@@ -69,6 +69,16 @@ body{
   margin-left: 220px;
 }
 /*index*/
+.hover img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+.hover div div:hover img {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
 .conte{
     margin-top: 80px;
 }

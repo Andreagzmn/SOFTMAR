@@ -21,6 +21,9 @@ body{
 }
 .formulario{
 	background-color: rgba(244, 238, 247, 0.5) !important;
+  border-radius:10px;
+  margin-top:5%;
+  width: 50%;
 }
 
 .img{
@@ -53,9 +56,10 @@ body{
 }
 
 .form {
-	float: right;
+	/*float: right;
 	width: 50%;
-	margin: 20px;
+	margin: 20px;*/
+  padding: 20px;
 }
 
 .regi{

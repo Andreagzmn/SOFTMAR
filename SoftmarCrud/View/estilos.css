@@ -226,6 +226,15 @@ h5 span{
 	margin: 20px;
 }
 /*login AndreaGuzman*/
+.tarjeta{
+    margin-top: 10px;
+    width: 80%;
+    height: 45px;
+    margin-left: 200px;
+}
+.imgi{
+  width: 60%;
+}
 
 #formulario{
   padding-left: 20px;

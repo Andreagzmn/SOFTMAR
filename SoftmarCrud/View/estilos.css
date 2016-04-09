@@ -24,7 +24,7 @@ body{
   border-radius:10px;
   margin-top:5%;
   width: 50%;
-}
+  }
 
 .img{
 	margin-top: 150px;
@@ -225,13 +225,16 @@ h5 span{
 .botones-pelu{
 	margin: 20px;
 }
-/*login*/
-.imgi{
-	width: 60%;
+/*login AndreaGuzman*/
+
+#formulario{
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 342px;
 }
-.tarjeta{
-    margin-top: 10px; 
-    
+#boton{
+  margin-bottom: 20px;
+
 }
 
 #btn-crear-cuenta{
@@ -239,7 +242,7 @@ h5 span{
   font-size: 15px;
   font-weight: lighter;
   position: relative;
-  right: -10px;
+  
 }
 
 .lostpass{

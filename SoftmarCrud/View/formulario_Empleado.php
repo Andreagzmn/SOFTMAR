@@ -63,10 +63,8 @@
       <label>Cargo Empleado</label>
       <input type="text" name="Cargo">
       <br>
-      <br>
-      <label>Cedula Empleado</label>
-      <input type="number " name="Cargo">
-      <br>
+      
+      
 
 
       <button id="boton" class="btn waves-effect #212121 grey darken-4" type="submit" type="submit" name="accion" value="c">Gestionar</button>

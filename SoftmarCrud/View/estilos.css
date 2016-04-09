@@ -69,6 +69,7 @@ body{
   margin-left: 220px;
 }
 /*index*/
+
 .hover img {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
@@ -80,16 +81,19 @@ body{
   filter: grayscale(0);
 }
 .conte{
-    margin-top: 80px;
+    margin-top: 100px;
 }
 .imgn{
     width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 .inf{
     width: 50.5%;
    position: relative;
    right: 23px;
    float: left;
+   overflow: hidden;
 }
 .inf2{
     width: 48.5%;
@@ -97,12 +101,14 @@ body{
     right: 23px;
     float: left;
     top: -11px;
+    overflow: hidden;
 }
 .bar{
     width: 48.58%;
     position: relative;
     right: 41.9px;
     float: right;
+    overflow: hidden;
 }
 .bar2{
     width: 48.58%;
@@ -110,7 +116,62 @@ body{
     right:41.9px;
     float: right;
     top: -23px;
+    overflow: hidden;
 }
+.imgn :hover .info{
+display: block;
+}
+ div div :hover #info2{
+display: block;
+}
+ div div :hover #info3{
+display: block;
+}
+ div div :hover #info4{
+display: block;
+}
+ div div :hover #info5{
+display: block;
+}
+.info{
+  position: absolute;
+  top: 300px;
+  left: 290px;
+  width: 100%; 
+  display: none;
+  bottom: 0;
+  z-index: 10px; 
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#50000000,endColorstr=#50000000);
+}
+
+h5{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 50%; 
+  display: none;
+  bottom: 0;
+  z-index: 10px; 
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#50000000,endColorstr=#50000000);
+}
+.info span {
+  color: white;
+  font: bold 25px/25px Helvetica, Sans-Serif;
+  background: transparent;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 10px;
+  width: 100%;
+}
+h5 span{
+  color: white;
+  font: bold 25px/25px Helvetica, Sans-Serif;
+  background: transparent;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 5px;
+  width: 80%;
+}
+
+
 /*nosotros*/
 .conte{
 	margin: 20px;

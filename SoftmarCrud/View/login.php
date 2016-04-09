@@ -43,24 +43,14 @@
                                     <h4>Recupera tu cuenta</h4>
                                     <p>Ingresa tu correo electrónico </p> 
                                     <div class="input-field col s12">                                                                       
-                                      <input id="Correo" type="text" class="validate" required>
-                                      <label for="Correo">Correo electrónico</label>
+                                      <input id="Correo2" type="text" class="validate" required>
+                                      <label for="Correo2">Correo electrónico</label>
                                     </div>
+                                    <p>En breves instantes te enviaremos un enlace al correo ingresado</p>
                                   </div>
                                   <div class="modal-footer">
-                                    <a href="fin" class="waves-effect waves-green btn-flat">Continuar</a>
-                                  </div>                                  
-                                </div> 
-                                <div id="fin" class="modal">
-                                  <div class="modal-content">                                    
-                                    <h4>Recupera tu cuenta</h4>
-                                    <p>Ingresa tu correo electrónico </p> 
-                                    <div class="input-field col s12">                                                                       
-                                      <input id="Correo" type="text" class="validate" required>
-                                      <label for="Correo">Correo electrónico</label>
-                                    </div>
-                                  </div>                     
-                                  
+                                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+                                  </div>
                                 </div>                                
                                                             
                           </div>                          

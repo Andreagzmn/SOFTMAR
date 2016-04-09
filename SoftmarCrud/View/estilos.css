@@ -239,6 +239,9 @@ h5 span{
   color: #00838f;
   width: 50%;
 }
+.modal p {
+  color: black;
+}
 
 /*Registrar_usuario AndreaGuzman*/
 #formulario{

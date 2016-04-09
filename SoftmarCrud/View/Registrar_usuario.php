@@ -15,13 +15,12 @@
   <H5 id="crea">CREA UNA CUENTA</H5>
   </section>-->
   <div class="container">
-    <!--<div ="row">-->
+    <div ="row">
           <div class="col s12 l8  ">
           	<form action="../Controller/Usuariocontroller.php" method="POST" class="col s12 m8 offset-l8 z-depth-4 formulario " id="formulario" >
               <section class="col s12" >
                 
-                <h3 style="text-align:center; margin-top:20px;
-                  ">Registrarse</h3>
+                <h3  style="text-align:center; margin-top:20px; ">Registrarse</h3>
                 <div class="col l6 s12 input-field form center" >
                   <div class="row">
                       <div class="input-field col s12">
@@ -77,7 +76,7 @@
               </section>       
           	</form>
         </div>
-      <!--</div>-->
+      </div>
    </div>
 
   <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>

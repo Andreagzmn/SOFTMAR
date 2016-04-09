@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<head>
+	
 	<meta charset="utf-8">
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">      
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>      
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <link rel="stylesheet" type="text/css" href="estilos.css">
-</head>
+
 </head>
 <body>
 	<div class="con">
@@ -35,9 +35,34 @@
                               <div class="center">                         
                                 <button  class="waves-effect waves-light  cyan darken-3 btn btn-large" style="width: 100%">Iniciar sesión</button>   
                               </div>
-                              <div class="card-action  right-align">
-                                <a href="#" class="lostpass ">¿Olvidaste la contraseña?</a>                                
-                              </div>                              
+                              <div>
+                                <a href="#modal1" class="lostpass waves-effect waves-light modal-trigger">¿Olvidaste la contraseña?</a>
+                              </div>
+                                <div id="modal1" class="modal">
+                                  <div class="modal-content">                                    
+                                    <h4>Recupera tu cuenta</h4>
+                                    <p>Ingresa tu correo electrónico </p> 
+                                    <div class="input-field col s12">                                                                       
+                                      <input id="Correo" type="text" class="validate" required>
+                                      <label for="Correo">Correo electrónico</label>
+                                    </div>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <a href="fin" class="waves-effect waves-green btn-flat">Continuar</a>
+                                  </div>                                  
+                                </div> 
+                                <div id="fin" class="modal">
+                                  <div class="modal-content">                                    
+                                    <h4>Recupera tu cuenta</h4>
+                                    <p>Ingresa tu correo electrónico </p> 
+                                    <div class="input-field col s12">                                                                       
+                                      <input id="Correo" type="text" class="validate" required>
+                                      <label for="Correo">Correo electrónico</label>
+                                    </div>
+                                  </div>                     
+                                  
+                                </div>                                
+                                                            
                           </div>                          
         		      </form>     
         		  </div>
@@ -47,5 +72,13 @@
 	</div>
 	  <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){    
+        $('.modal-trigger').leanModal();
+
+      });
+
+    </script>
+
 </body>
 </html>

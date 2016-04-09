@@ -25,54 +25,54 @@
                 <div class="col l6 s12 input-field form center" >
                   <div class="row">
                       <div class="input-field col s12">
-                        <input id="Numero" type="text" class="validate" name="cod_rol">
+                        <input id="Numero" type="text" class="validate" name="cod_rol" required>
                         <label for="Numero">Número de rol</label>
                       </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <input id="Nombre" type="text" class="validate" name="nombre">
+                      <input id="Nombre" type="text" class="validate" name="nombre" required>
                       <label for="Nombre">Nombre</label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <input id="Apellido" type="email" class="validate" name="apellido">
+                      <input id="Apellido" type="text" class="validate" name="apellido" required>
                       <label for="Apellido">Apellido</label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <input id="Dir" type="email" class="validate" name="direccion">
+                      <input id="Dir" type="text" class="validate" name="direccion" required>
                       <label for="Dir">Direccion</label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <input id="edad" type="email" class="validate" name="edad">
+                      <input id="edad" type="text" class="validate" name="edad" required>
                       <label for="edad">Edad</label>
                     </div>
                   </div>  
                   <div class="row">
                     <div class="input-field col s12">
-                      <input id="contra" required type="email" class="validate" name="clave">
+                      <input id="contra" required type="password" class="validate" name="clave">
                       <label for="contra">Contraseña</label>
                     </div>
                   </div> 
                   <div class="row">
                     <div class="input-field col s12">
-                      <input id="Correo" type="email" class="validate" name="correo">
+                      <input id="Correo" type="text" class="validate" name="correo" required>
                       <label for="Correo">Correo</label>
                     </div>
                   </div> 
                   <div class="row">
                     <div class="input-field col s12">
-                      <input id="Cc" type="email" class="validate" name="cedula">
+                      <input id="Cc" type="text" class="validate" name="cedula" required>
                       <label for="Cc">Cedula</label>
                     </div>
                   </div>         
                     		
-            		<button id="boton" class="btn waves-effect blue darken-3" type="submit" type="submit" name="accion" value="c"><i class=" material-icons right">done</i>Registrarse</button>
+            		  <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect blue darken-3" ><i class=" material-icons right">done</i>Registrarse</button>
                 <?php echo @$_REQUEST["msn"]; ?>
               </section>       
           	</form>

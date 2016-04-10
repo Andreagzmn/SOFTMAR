@@ -3,14 +3,14 @@
     margin: 0px;
     list-style: none;
 }
-body{    
+body{
   background: url("img/login.jpg") no-repeat fixed center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
-   
+
 }
 .container{
 	width: 800px;
@@ -24,7 +24,7 @@ body{
   border-radius:10px;
   margin-top:5%;
   width: 50%;
-}
+  }
 
 .img{
 	margin-top: 150px;
@@ -76,12 +76,13 @@ body{
   -webkit-transition: .2s ease-in-out;
   transition: .2s ease-in-out;
 }
+
 .hover div div:hover img {
   -webkit-filter: grayscale(0);
   filter: grayscale(0);
 }
 .conte{
-    margin-top: 100px;
+    margin-top: 20px;
 }
 .imgn{
     width: 100%;
@@ -121,57 +122,58 @@ body{
 .imgn :hover .info{
 display: block;
 }
- div div :hover #info2{
-display: block;
-}
- div div :hover #info3{
-display: block;
-}
- div div :hover #info4{
-display: block;
-}
- div div :hover #info5{
-display: block;
-}
+
 .info{
   position: absolute;
   top: 300px;
-  left: 290px;
-  width: 100%; 
+  left: 450px;
+  width: 100%;
   display: none;
   bottom: 0;
-  z-index: 10px; 
+  z-index: 10px;
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#50000000,endColorstr=#50000000);
 }
+
 
 h5{
   position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 50%; 
+  top: 150px;
+  left: 185px;
+  width: 50%;
   display: none;
   bottom: 0;
-  z-index: 10px; 
+  z-index: 10px;
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#50000000,endColorstr=#50000000);
 }
+
 .info span {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
   color: white;
-  font: bold 25px/25px Helvetica, Sans-Serif;
-  background: transparent;
-  background: rgba(0, 0, 0, 0.9);
-  padding: 10px;
-  width: 100%;
+  font:32px bolder italic SouciSansRegular;
 }
 h5 span{
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
   color: white;
-  font: bold 25px/25px Helvetica, Sans-Serif;
-  background: transparent;
-  background: rgba(0, 0, 0, 0.9);
-  padding: 5px;
-  width: 80%;
+  font:32px bolder italic SouciSansRegular;
 }
 
+#infantil:hover   h5{
+  display: block;
+}
 
+#barberia:hover   h5{
+  display: block;
+}
+
+#spa:hover   h5{
+  display: block;
+}
+
+#estilo:hover   h5{
+  display: block;
+}
 /*nosotros*/
 .conte{
 	margin: 20px;
@@ -225,13 +227,33 @@ h5 span{
 .botones-pelu{
 	margin: 20px;
 }
-/*login*/
-.imgi{
-	width: 60%;
-}
+/*login AndreaGuzman*/
 .tarjeta{
-    margin-top: 10px; 
-    
+    margin-top: 10px;
+    width: 80%;
+    height: 45px;
+    margin-left: 200px;
+}
+.imgi{
+  width: 60%;
+}
+.modal{
+  color: #00838f;
+  width: 50%;
+}
+.modal p {
+  color: black;
+}
+
+/*Registrar_usuario AndreaGuzman*/
+#formulario{
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 342px;
+}
+#boton{
+  margin-bottom: 20px;
+
 }
 
 #btn-crear-cuenta{
@@ -239,7 +261,7 @@ h5 span{
   font-size: 15px;
   font-weight: lighter;
   position: relative;
-  right: -10px;
+
 }
 
 .lostpass{

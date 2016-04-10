@@ -39,7 +39,23 @@
 		break;
 
 		case 'r':
-			#leer...
+
+			$cod_rol 		= $_POST["cod_rol"];			
+			$Nombre			= $_POST["nombre"];
+			$Apellido		= $_POST["apellido"];
+			$Direccion      = $_POST["direccion"];			
+			$Edad	    	= $_POST["edad"];
+			$Clave          = $_POST["clave"];
+			$Correo         = $_POST["correo"];			
+			$Cedula			= $_POST["cedula"];
+
+			try{
+				Gestion_Contacto::ReadAll($cod_rol,$Nombre,$Apellido,$Direccion,$Edad,$Clave,$Correo,$Cedula);
+				$mensaje = "Su registro se creo correctamente";
+			}catch(Exception $e){
+				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 
+			}
+			header("Location: ../View/Buscar_usuario.php?m= ".$mensaje);	
 		break;
 
 		case 'u':

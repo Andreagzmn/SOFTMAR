@@ -39,7 +39,7 @@ class Gestion_Contacto{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "SELECT * FROM usuario ORDER BY nombre_usuario";
+		$consulta = "SELECT * FROM usuario ORDER BY Nombre";
 
 		$query = $Conexion->prepare($consulta);
 		$query->execute();
@@ -56,7 +56,7 @@ class Gestion_Contacto{
 	//Metodo ReadAll()
 	//Busca todos los registros de la tabla
 
-	function ReadbyID($codigo_usuario){
+	function ReadbyID($Cedula){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = Softmar_BD::Connect();
@@ -65,7 +65,7 @@ class Gestion_Contacto{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "SELECT * FROM usuario WHERE codigo_usuario=?";
+		$consulta = "SELECT * FROM usuario WHERE Cedula=?";
 
 		$query = $Conexion->prepare($consulta);
 		$query->execute(array($codigo_usuario));
@@ -80,7 +80,7 @@ class Gestion_Contacto{
 		Softmar_BD::Disconnect();
 	} 
  
-	function Update($codigo_usuario, $nombre_usuario, $apellido_usuario,$direccion_usuario,$email_usuario){
+	function Update($Cedula, $Nombre, $Apellido,$Direccion,$Correo){
 	//Instanciamos y nos conectamos a la bd
 		$Conexion = Softmar_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -88,15 +88,15 @@ class Gestion_Contacto{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "UPDATE usuario SET nombre_usuario = ?, apellido_usuario = ?, direccion_usuario = ?, email_usuario = ?, WHERE codigo_usuario = ?" ;
+		$consulta = "UPDATE usuario SET Nombre = ?, Apellido = ?, Direccion = ?, Correo = ?, WHERE Cedula = ?" ;
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($nombre_usuario, $apellido_usuario,$direccion_usuario,$email_usuario));		
+		$query->execute(array( $Nombre, $Apellido,$Direccion,$Correo));		
 
 		Softmar_BD::Disconnect();
 	
 	}
-	function Delete($codigo_usuario){
+	function Delete($Cedula){
 	//Instanciamos y nos conectamos a la bd
 		$Conexion = Softmar_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -104,10 +104,10 @@ class Gestion_Contacto{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "DELETE FROM usuario WHERE codigo_usuario = ?" ;
+		$consulta = "DELETE FROM usuario WHERE Cedula = ?" ;
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($codigo_usuario));		
+		$query->execute(array($Cedula));		
 
 		Softmar_BD::Disconnect();
 	}

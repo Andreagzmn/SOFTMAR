@@ -108,6 +108,8 @@
                   </div>
             </div>
           </div>
+           <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect blue darken-3" ><i class=" material-icons right">done</i>Registrar Empresa</button>
+                <?php echo @$_REQUEST["msn"]; ?>
         </form>
       </div>  
     </div></center>

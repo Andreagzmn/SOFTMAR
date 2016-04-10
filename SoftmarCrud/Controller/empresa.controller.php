@@ -18,15 +18,19 @@
 		case 'c':
 			#crear...
 			#Inicializar las variables que se envian desde el formulario y las que necesito para almancenar en la tabla.
-			$cod_rol 		= $_POST["cod_rol"];			
-			$Nombre			= $_POST["nombre"];
-			$Apellido		= $_POST["apellido"];
-			$Direccion      = $_POST["direccion"];			
-			$Edad	    	= $_POST["edad"];
-			$Clave          = $_POST["clave"];
-			$Correo         = $_POST["correo"];			
-			$Cedula			= $_POST["cedula"];
-
+			$cod_rol 		= $_POST["Cod_TipEmp"];			
+			$Nombre			= $_POST["Nombre"];
+			$Telefono		= $_POST["Telefono"];
+			$Direccion      = $_POST["Direccion"];
+			$Ciudad			= $_POST["Ciudad"];
+			$NIT 			= $_POST["NIT"];
+			$Correo         = $_POST["Correo"];			
+			$Geo_x			= $_POST["Geo_x"];
+			$Geo_y			= $_POST["Geo_y"];
+			$Informacion	= $_POST["Informacion"];
+			$Dias_aten		= $_POST["Dias_aten"];
+			$Foto			= $_POST["Fotos"];
+			$Logo			= $_POST["Logo"];
 			try{
 				Gestion_Contacto::Create($cod_rol,$Nombre,$Apellido,$Direccion,$Edad,$Clave,$Correo,$Cedula);
 				$mensaje = "Su registro se creo correctamente";

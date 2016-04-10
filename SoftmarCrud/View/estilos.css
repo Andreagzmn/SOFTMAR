@@ -51,22 +51,17 @@ body{
  	margin-left: 550px;
 }
 /*form_Em*/
+.formem{
+  background-color: rgba(244, 238, 247, 0.5) !important;
+  border-radius:5px;
+  width: 80%;
+}
 .empref {
-  position: relative;
-	float: right;
-  margin: 10px;
-	width: 60%;
-}
-.imge{
-  width: 30%;
-  margin left:50px
-}
-.regi{
-  margin-left: 120px;
+	width: 80%;
 }
 .test{
-  position: relative;
-  margin-left: 220px;
+  margin-right: 20px;
+  width: 70%;
 }
 /*index*/
 

@@ -11,31 +11,30 @@
       <link rel="stylesheet" type="text/css" href="estilos.css">
     </head>
     <body>
-    <img src="img\SOFTMAR.png" class="imge">
-    <div class=" empref">
+     <center><div class="empref">
       <h4 class="teal-text text-teal lighten-3 test">Registra tu empresa</h4>
-      <div class="row formulario">
-        <form class="col s12">
+      <div class="row formem">
+        <form class="col s12"  action="controller/empresa.controller.php" method="POST">
           <div class="row">
             <div class="input-field col s12">
                 <select>
                   <option value=""  disabled selected name="Cod_TipEmp">Tipo de empresa</option>
                   <?php
                     // Cargo la bd
-                    require_once("../Model/db_conn.php");
+                    // require_once("../Model/db_conn.php");
                     // Cargo la clase tipo empresa
-                    require_once("../Model/tipo_empresa.class.php");
+                    // require_once("../Model/tipo_empresa.class.php");
 
-                    $tipoempresa = Gestion_TipoEmpresa::ReadAll();
+                    //$tipoempresa = Gestion_TipoEmpresa::ReadAll();
 
-                    foreach ($tipoempresa as $row){
-                        echo "<option value='".$row["Cod_TipEmp"]."'>".$row["Nombre"]."</option>";
-                    }
+                    //foreach ($tipoempresa as $row){
+                    //    echo "<option value='".$row["Cod_TipEmp"]."'>".$row["Nombre"]."</option>";
+                    //}
 
 
-                    foreach ($imagenes as $row){
-                        echo "<img src='".$row["Nombre"]."'/>";
-                    }
+                    //foreach ($imagenes as $row){
+                    //    echo "<img src='".$row["Nombre"]."'/>";
+                    //}
 
                   ?>
                 </select>
@@ -46,21 +45,21 @@
                 <input id="Nombre" type="text" class="validate">
                 <label for="Nombre" data-error="wrong" data-success="right" name="Nombre">Nombre Empresa</label>
               </div>
-              <div class="input-field col s12">
+              <div class="input-field col s6">
                 <input id="telefono" type="number" class="validate">
                 <label for="Telefono" data-error="wrong" data-success="right" name="Telefono">Telefono</label>
               </div>
-              <div class="input-field col s12">
+              <div class="input-field col s6">
                 <input id="Direccion" type="text" class="validate">
                 <label for="Direccion" data-error="wrong" data-success="right" name="Direccion">Direccion</label>
               </div>
-              <div class="input-field col s12">
+              <div class="input-field col s6">
                 <select>
                   <option value="" disabled selected name="Ciudad">elige tu ciudad</option>
                 </select>
                 <label>Ciudad</label>
               </div>
-              <div class="input-field col s12">
+              <div class="input-field col s6">
                 <input id="email" type="number" class="validate">
                 <label for="email" data-error="wrong" data-success="right" name="NIT" >NIT</label>
               </div>
@@ -72,27 +71,46 @@
                 <textarea id="textarea1" class="materialize-textarea"></textarea>
                 <label for="textarea1" name="Informacion">Informacion</label>
               </div>
-              <div>
+              <div class="col s12">
                   <p>Dias de atencion</p>
                  <input type="date" class="datepicker" name="Dias_aten">
               </div>
-              <input type="hidden" value="" name="geoX">
-              <input type="hidden" value="" name="geoY">
-              <div class="file-field input-field">
+              <div class="col s12">
+              <p class="center">Horario</p>
+                <div class="col s6">
+                  <label>desde</label>
+                  <input type="time" name="Hor_desde">
+                </div>
+                <div class="col s6">
+                <label>Hasta</label>
+                  <input type="time" name="Hor_hasta">
+                </div>
+              </div>
+              <input type="hidden" value="" name="Geo_x">
+              <input type="hidden" value="" name="Geo_y">
+              <div class="file-field input-field col s6">
                 <div class="btn">
                   <span>Fotos</span>
                   <input type="file" multiple>
                 </div>
                 <div class="file-path-wrapper">
-                  <input name="fotos" class="file-path validate" type="text" placeholder="Upload one or more files">
+                  <input name="Fotos" class="file-path validate" type="text" placeholder="Upload one or more files">
                 </div>
               </div>
+                  <div class="file-field input-field col s6">
+                      <div class="btn">
+                        <span>Logo</span>
+                        <input type="file">
+                      </div>
+                      <div class="file-path-wrapper">
+                          <input name="Logo" class="file-path validate" type="text">
+                      </div>
+                  </div>
             </div>
           </div>
         </form>
-      </div>
-       <button class="waves-effect waves-light btn regi">Registrar</button>
-    </div>
+      </div>  
+    </div></center>
     <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
     <script>

@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-03-2016 a las 19:07:40
--- Versión del servidor: 10.1.9-MariaDB
--- Versión de PHP: 5.5.30
+-- Tiempo de generación: 10-04-2016 a las 08:25:27
+-- Versión del servidor: 10.1.10-MariaDB
+-- Versión de PHP: 5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -28,6 +28,7 @@ USE `softmar`;
 -- Estructura de tabla para la tabla `buscar_estilo`
 --
 
+DROP TABLE IF EXISTS `buscar_estilo`;
 CREATE TABLE `buscar_estilo` (
   `Cod_buscar` int(11) NOT NULL,
   `Cod_usu` int(11) NOT NULL,
@@ -41,6 +42,7 @@ CREATE TABLE `buscar_estilo` (
 -- Estructura de tabla para la tabla `citas`
 --
 
+DROP TABLE IF EXISTS `citas`;
 CREATE TABLE `citas` (
   `Cod_cita` int(11) NOT NULL,
   `Cod_Emp` int(11) NOT NULL,
@@ -60,6 +62,7 @@ CREATE TABLE `citas` (
 -- Estructura de tabla para la tabla `empleado`
 --
 
+DROP TABLE IF EXISTS `empleado`;
 CREATE TABLE `empleado` (
   `Cod_empl` int(11) NOT NULL,
   `Cod_Emp` int(11) NOT NULL,
@@ -79,6 +82,7 @@ CREATE TABLE `empleado` (
 -- Estructura de tabla para la tabla `empresa`
 --
 
+DROP TABLE IF EXISTS `empresa`;
 CREATE TABLE `empresa` (
   `Cod_Emp` int(11) NOT NULL,
   `Cod_TipEmp` int(11) NOT NULL,
@@ -92,8 +96,8 @@ CREATE TABLE `empresa` (
   `Geo_y` longtext NOT NULL,
   `Informacion` blob NOT NULL,
   `Dias_aten` varchar(100) NOT NULL,
-  `Hor_desde` date NOT NULL,
-  `Hor_hasta` date NOT NULL,
+  `Hor_desde` time NOT NULL,
+  `Hor_hasta` time NOT NULL,
   `Foto1` longtext NOT NULL,
   `Foto2` longtext NOT NULL,
   `Foto3` longtext NOT NULL,
@@ -107,6 +111,7 @@ CREATE TABLE `empresa` (
 -- Estructura de tabla para la tabla `oferta_emp`
 --
 
+DROP TABLE IF EXISTS `oferta_emp`;
 CREATE TABLE `oferta_emp` (
   `Cod_ofer` int(11) NOT NULL,
   `Cod_Emp` int(11) NOT NULL,
@@ -124,6 +129,7 @@ CREATE TABLE `oferta_emp` (
 -- Estructura de tabla para la tabla `permiso`
 --
 
+DROP TABLE IF EXISTS `permiso`;
 CREATE TABLE `permiso` (
   `codigo_permiso` int(11) NOT NULL,
   `nombre_permiso` char(100) DEFAULT NULL
@@ -135,6 +141,7 @@ CREATE TABLE `permiso` (
 -- Estructura de tabla para la tabla `permiso_rol`
 --
 
+DROP TABLE IF EXISTS `permiso_rol`;
 CREATE TABLE `permiso_rol` (
   `cod_rol` int(11) NOT NULL,
   `codigo_permiso` int(11) NOT NULL,
@@ -147,6 +154,7 @@ CREATE TABLE `permiso_rol` (
 -- Estructura de tabla para la tabla `productos_emp`
 --
 
+DROP TABLE IF EXISTS `productos_emp`;
 CREATE TABLE `productos_emp` (
   `Cod_prod` int(11) NOT NULL,
   `Cod_Emp` int(11) NOT NULL,
@@ -162,6 +170,7 @@ CREATE TABLE `productos_emp` (
 -- Estructura de tabla para la tabla `puntuacion`
 --
 
+DROP TABLE IF EXISTS `puntuacion`;
 CREATE TABLE `puntuacion` (
   `Cod_punt` int(11) NOT NULL,
   `Cod_usu` int(11) NOT NULL,
@@ -174,6 +183,7 @@ CREATE TABLE `puntuacion` (
 -- Estructura de tabla para la tabla `rol`
 --
 
+DROP TABLE IF EXISTS `rol`;
 CREATE TABLE `rol` (
   `cod_rol` int(11) NOT NULL,
   `cod_nombre` char(100) NOT NULL
@@ -185,6 +195,7 @@ CREATE TABLE `rol` (
 -- Estructura de tabla para la tabla `servicio_emp`
 --
 
+DROP TABLE IF EXISTS `servicio_emp`;
 CREATE TABLE `servicio_emp` (
   `Cod_serv` int(11) NOT NULL,
   `Cod_Emp` int(11) NOT NULL,
@@ -200,6 +211,7 @@ CREATE TABLE `servicio_emp` (
 -- Estructura de tabla para la tabla `servicio_emple`
 --
 
+DROP TABLE IF EXISTS `servicio_emple`;
 CREATE TABLE `servicio_emple` (
   `Cod_serv` int(11) NOT NULL,
   `Cod_empl` int(11) NOT NULL
@@ -211,6 +223,7 @@ CREATE TABLE `servicio_emple` (
 -- Estructura de tabla para la tabla `tipo_emp`
 --
 
+DROP TABLE IF EXISTS `tipo_emp`;
 CREATE TABLE `tipo_emp` (
   `Cod_TipEmp` int(11) NOT NULL,
   `Nombre` varchar(100) NOT NULL
@@ -222,6 +235,7 @@ CREATE TABLE `tipo_emp` (
 -- Estructura de tabla para la tabla `tips_emp`
 --
 
+DROP TABLE IF EXISTS `tips_emp`;
 CREATE TABLE `tips_emp` (
   `Cod_tips` int(11) NOT NULL,
   `Cod_Emp` int(11) NOT NULL,
@@ -237,6 +251,7 @@ CREATE TABLE `tips_emp` (
 -- Estructura de tabla para la tabla `usuario`
 --
 
+DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `Cod_usu` int(11) NOT NULL,
   `cod_rol` int(11) NOT NULL,

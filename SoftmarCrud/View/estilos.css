@@ -280,5 +280,24 @@ h5 span{
   width: 20px;
 }
 
+/* Gestionar servicios empresa */
+
+.contenedor{
+  width: 450px;
+  height: 600px;
+  margin-top: 40px;
+  margin-left: 400px;
+  margin-right: 50px; 
+  box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+  background-color: rgba(255, 255, 255, 0.42);
+}
+#botn{
+  margin-top: 50px;
+  margin-left: 100px;
+}
+.tit{
+  margin-left: 450px;
+  color:#8B8B8B; 
+}
 
 

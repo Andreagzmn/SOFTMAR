@@ -3,17 +3,17 @@
 class Gestionar_servicios_empresa
     {
 
-	function create($Cod_serv, $Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor){
+	function create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor){
 
-	$conexion = softmar_bd::connect();
+	$conexion = softmar_BD::connect();
 	$conexion->setAttribute(POD::ATTR_ERRMODE_EXCEPTION);
 
-	$consulta = "INSERT INTO servicio_emp VALUES('?,?')";
+	$consulta = "INSERT INTO servicio_emp(Cod_Emp, Nombre, Descripcion, Estado, Valor) VALUES('?,?,?,?,?')";
 
 	$query = $conexion->prepare($consulta);
-	$query->excute(array($Cod_serv, $Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor));
+	$query->excute(array($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor));
 
-	laboratorio_BD::disconnect(conn_identifier);
+	softmar_BD::disconnect();
 
     }
 
@@ -29,7 +29,7 @@ function ReadAll(){
     $resultado=$query->fetcAll(PDO::FETCH_BOTH);
     return $resultado;
 
-    laboratorio_BD::Disconnect();
+    softmar_BD::Disconnect();
     
     } 
 
@@ -45,7 +45,7 @@ function ReadbyID($Cod_Emp){
     $resultado=$query->fetch(PDO::FETCH_BOTH);
     return $resultado;
 
-    laboratorio_BD::Disconnect();
+    softmar_BD::Disconnect();
     }
 
 function update($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor){
@@ -57,7 +57,7 @@ function update($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor){
 	$query=$conexion->prepare($consulta);
 	$query=execute(array($Cod_Emp));
 
-	laboratorio_BD::Disconnect();
+	softmar_BD::Disconnect();
 }
 
 function delete($Cod_Emp){
@@ -69,7 +69,7 @@ function delete($Cod_Emp){
     $query=$conexion->prepare($consulta);
     $query=execute(array($Cod_Emp));
 
-    laboratorio_BD::Disconnect();
+    softmar_BD::Disconnect();
     }
 }
 

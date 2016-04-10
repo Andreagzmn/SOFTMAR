@@ -7,7 +7,7 @@
 	//Ambos(Include y Require) tienen una propiedad llamada once donde nos permite hacer la carga solo una vez
 	require_once("../Model/db_conn.php");
 
-	require_once("../Model/Gestionar_servicio_emp.class");
+	require_once("../Model/Gestionar_servicio_emp.class.php");
 
 	//3. Instanciamos las variables globales y una llamada $accion.
 	//La variable accion nos va a indicar que parte del crud vamos hacer.
@@ -30,7 +30,7 @@
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 
 			}
-			header("Location: ../View/Registrar_Rol.php?m= ".$mensaje); o
+			header("Location: ../View/Registar_servicios.php?m= ".$mensaje); 
 		break;
 
 	}

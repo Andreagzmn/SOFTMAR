@@ -3,14 +3,14 @@
     margin: 0px;
     list-style: none;
 }
-body{    
+body{
   background: url("img/login.jpg") no-repeat fixed center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
-   
+
 }
 .container{
 	width: 800px;
@@ -76,6 +76,7 @@ body{
   -webkit-transition: .2s ease-in-out;
   transition: .2s ease-in-out;
 }
+
 .hover div div:hover img {
   -webkit-filter: grayscale(0);
   filter: grayscale(0);
@@ -121,26 +122,15 @@ body{
 .imgn :hover .info{
 display: block;
 }
- div div :hover #info2{
-display: block;
-}
- div div :hover #info3{
-display: block;
-}
- div div :hover #info4{
-display: block;
-}
- div div :hover #info5{
-display: block;
-}
+
 .info{
   position: absolute;
   top: 300px;
   left: 290px;
-  width: 100%; 
+  width: 100%;
   display: none;
   bottom: 0;
-  z-index: 10px; 
+  z-index: 10px;
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#50000000,endColorstr=#50000000);
 }
 
@@ -148,12 +138,13 @@ h5{
   position: absolute;
   top: 20px;
   left: 20px;
-  width: 50%; 
+  width: 50%;
   display: none;
   bottom: 0;
-  z-index: 10px; 
+  z-index: 10px;
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#50000000,endColorstr=#50000000);
 }
+
 .info span {
   color: white;
   font: bold 25px/25px Helvetica, Sans-Serif;
@@ -171,7 +162,21 @@ h5 span{
   width: 80%;
 }
 
+#infantil:hover   h5{
+  display: block;
+}
 
+#barberia:hover   h5{
+  display: block;
+}
+
+#spa:hover   h5{
+  display: block;
+}
+
+#estilo:hover   h5{
+  display: block;
+}
 /*nosotros*/
 .conte{
 	margin: 20px;
@@ -259,7 +264,7 @@ h5 span{
   font-size: 15px;
   font-weight: lighter;
   position: relative;
-  
+
 }
 
 .lostpass{

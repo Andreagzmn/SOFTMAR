@@ -12,34 +12,10 @@
     </head>
     <body>
      <center><div class="empref">
-      <h4 class="teal-text text-teal lighten-3 test">Registra tu empresa</h4>
+      <h4 class="teal-text text-teal lighten-3 test">Actualiza</h4>
       <div class="row formem">
         <form class="col s12"  action="controller/empresa.controller.php" method="POST">
           <div class="row">
-            <div class="input-field col s12">
-                <select>
-                  <option value=""  disabled selected name="Cod_TipEmp">Tipo de empresa</option>
-                  <?php
-                    // Cargo la bd
-                    // require_once("../Model/db_conn.php");
-                    // Cargo la clase tipo empresa
-                    // require_once("../Model/tipo_empresa.class.php");
-
-                    //$tipoempresa = Gestion_TipoEmpresa::ReadAll();
-
-                    //foreach ($tipoempresa as $row){
-                    //    echo "<option value='".$row["Cod_TipEmp"]."'>".$row["Nombre"]."</option>";
-                    //}
-
-
-                    //foreach ($imagenes as $row){
-                    //    echo "<img src='".$row["Nombre"]."'/>";
-                    //}
-
-                  ?>
-                </select>
-                <label>Tipo empresa</label>
-              </div>
               <div>
               <div class="input-field col s12">
                 <input id="Nombre" type="text" class="validate">
@@ -110,7 +86,7 @@
                   </div>
             </div>
           </div>
-           <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect  teal lighten-1" ><i class=" material-icons">done</i>Registrar Empresa</button>
+           <button type="submit" name="accion" value="r" id="boton" class="btn waves-effect  teal lighten-1" ><i class=" material-icons">done</i>Actualizar</button>
           <?php echo @$_REQUEST["msn"]; ?>
         </form>
       </div>  

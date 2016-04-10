@@ -18,7 +18,7 @@
 		case 'c':
 			#crear...
 			#Inicializar las variables que se envian desde el formulario y las que necesito para almancenar en la tabla.
-			$cod_rol 		= $_POST["Cod_TipEmp"];			
+			$Cod_TipEmp 	= $_POST["Cod_TipEmp"];			
 			$Nombre			= $_POST["Nombre"];
 			$Telefono		= $_POST["Telefono"];
 			$Direccion      = $_POST["Direccion"];
@@ -32,7 +32,7 @@
 			$Foto			= $_POST["Fotos"];
 			$Logo			= $_POST["Logo"];
 			try{
-				Gestion_Contacto::Create($cod_rol,$Nombre,$Apellido,$Direccion,$Edad,$Clave,$Correo,$Cedula);
+				Gestion_Empresa::Create($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$Ciudad,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Foto1,$Foto2,$Foto3,$Foto4,$Logo);
 				$mensaje = "Su registro se creo correctamente";
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 
@@ -48,6 +48,25 @@
 
 		case 'u':
 			# actualizar...
+			$Nombre			= $_POST["Nombre"];
+			$Telefono		= $_POST["Telefono"];
+			$Direccion      = $_POST["Direccion"];
+			$Ciudad			= $_POST["Ciudad"];
+			$NIT 			= $_POST["NIT"];
+			$Correo         = $_POST["Correo"];			
+			$Geo_x			= $_POST["Geo_x"];
+			$Geo_y			= $_POST["Geo_y"];
+			$Informacion	= $_POST["Informacion"];
+			$Dias_aten		= $_POST["Dias_aten"];
+			$Foto			= $_POST["Fotos"];
+			$Logo			= $_POST["Logo"];
+			try{
+				Gestion_Empresa::Update($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$Ciudad,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Foto1,$Foto2,$Foto3,$Foto4,$Logo);
+				$mensaje = "Su registro se creo correctamente";
+			}catch(Exception $e){
+				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 
+			}
+			header("Location: ../View/actualizar_empresa.php?m= ".$mensaje);
 			break;
 			
 		case 'd':

@@ -18,7 +18,7 @@
   <ul id="dropdown2" class="dropdown-content">
     <li><a href="#!">Buscar</a></li>
     <li><a href="formem.php">Agregar</a></li>    
-    <li><a href="#!">Editar</a></li>
+    <li><a href="actualizar_empresa.php">Editar</a></li>
     <li><a href="#!">Eliminar</a></li>
   </ul> 
   <nav class="black">

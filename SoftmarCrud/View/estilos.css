@@ -268,3 +268,21 @@ h5 span{
   font-size: 15px;
   color: #00838f;
 }
+/*Gestionar empleado valentinachica*/
+#form.Gestionar_Empleado{
+  margin-left: 420px;
+  margin-top: 25px;
+  background-right:-600px;
+}
+.muj{
+  margin-left: 200px;
+  margin-top: -35px;
+}
+.terminos{
+  margin-left: 220px;
+}
+.boton{
+  margin-left: 550px;
+}
+
+

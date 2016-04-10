@@ -17,10 +17,9 @@
   <div class="container">
     <div class="row">
   <form action="../Controller/Empleados.controller.php" method="POST" class="col s12 m8 offset-m2 l6 offset-13 z-depth-4 formulario" >
-    <section id="formulario">
+    <section id="Gestionar">
       
-      <h3 style="color:#8B8B8B; font-family:fantasy; box-shadow:0 10px 4px -6px #999; text-align:center;
-">Registrarse</h3>
+      <h3 style="color:#8B8B8B; font-family:fantasy; box-shadow:0 10px 4px -6px #999; text-align:center;">Gestionar Empleado</h3>
       <!--<label>Codigo Empleado</label>
       <input type="text" name="Cod_Empleado">
       <br>
@@ -64,9 +63,6 @@
       <input type="text" name="Cargo">
       <br>
       
-      
-
-
       <button id="boton" class="btn waves-effect #212121 grey darken-4" type="submit" type="submit" name="accion" value="c">Gestionar</button>
       <?php echo @$_REQUEST["msn"]; ?>
     </section>

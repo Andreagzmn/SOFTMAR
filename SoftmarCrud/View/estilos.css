@@ -82,7 +82,7 @@ body{
   filter: grayscale(0);
 }
 .conte{
-    margin-top: 100px;
+    margin-top: 20px;
 }
 .imgn{
     width: 100%;
@@ -126,7 +126,7 @@ display: block;
 .info{
   position: absolute;
   top: 300px;
-  left: 290px;
+  left: 450px;
   width: 100%;
   display: none;
   bottom: 0;
@@ -134,10 +134,11 @@ display: block;
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#50000000,endColorstr=#50000000);
 }
 
+
 h5{
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 150px;
+  left: 185px;
   width: 50%;
   display: none;
   bottom: 0;
@@ -146,20 +147,16 @@ h5{
 }
 
 .info span {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
   color: white;
-  font: bold 25px/25px Helvetica, Sans-Serif;
-  background: transparent;
-  background: rgba(0, 0, 0, 0.9);
-  padding: 10px;
-  width: 100%;
+  font:32px bolder italic SouciSansRegular;
 }
 h5 span{
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
   color: white;
-  font: bold 25px/25px Helvetica, Sans-Serif;
-  background: transparent;
-  background: rgba(0, 0, 0, 0.9);
-  padding: 5px;
-  width: 80%;
+  font:32px bolder italic SouciSansRegular;
 }
 
 #infantil:hover   h5{

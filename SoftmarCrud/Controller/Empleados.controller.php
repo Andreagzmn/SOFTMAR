@@ -8,7 +8,7 @@
 	//Ambos(Include y Require) tienen una propiedad llamada once donde nos permite hacer la carga solo una vez
 	require_once("../Model/db_conn.php");
 
-	require_once("../Model/contactos.class.php");
+	require_once("../Model/Empleados.class.php");
 
 	//3. Instanciamos las variables globales y una llamada $accion.
 	//La variable accion nos va a indicar que parte del crud vamos hacer.
@@ -19,24 +19,24 @@
 		case 'c':
 			#crear...
 			#Inicializar las variables que se envian desde el formulario y las que necesito para almancenar en la tabla.
-				$Cod_empl     	=$_POST["Cod_empleado"];         
+				         
 				$Cod_Emp     	=$_POST["Cod_empresa"];
 				$Nombre      	=$_POST["Nombre"];
 				$Apellido    	=$_POST["Apellido"];
 				$Telefono    	=$_POST["Telefono"];
 				$Direccion   	=$_POST["Direccion"];
 				$Edad        	=$_POST["Edad"];
-				$Correo      	=$_POST["email"];
+				$Correo      	=$_POST["Email"];
 				$cargo    		=$_POST["Cargo"];
 				$Cedula     	=$_POST["Cedula"];
 
 			try{
-				Gestionar_::Create($Cod_empl ,$Cod_Emp ,$Nombre,$Apellido,$Telefono,$Direccion,$Edad ,$Correo ,$cargo,$Cedula);
+				Gestion_Empleados::Create($Cod_Emp ,$Nombre,$Apellido,$Telefono,$Direccion,$Edad ,$Correo ,$cargo,$Cedula);
 				$mensaje = "Su registro se creo correctamente";
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 
 			}
-			header("Location: ../View/Gestionar_Empleado.php?m= ".$mensaje);
+			header("Location: ../View/formulario_Empleado.php?m= ".$mensaje);
 	break;
 
 		break;

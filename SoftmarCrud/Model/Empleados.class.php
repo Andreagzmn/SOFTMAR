@@ -1,4 +1,4 @@
-<?php 
+<<?php 
 #-> Class: Gestion_Empleados
 #->Method(s), Create (), ReadAll(),ReadbyID(),ReadbyName(),Update(),Delete()
 #->Author: @valentina_chica
@@ -10,7 +10,7 @@ class Gestion_Empleados{
 	//Metodo create()
 	//El metodo create guarda los datos en la tabla contactos, captura todos los parametros desde el  formulario
 
-	function Create($Cod_empl ,$Cod_Emp ,$Nombre,$Apellido,$Telefono,$Direccion,$Edad ,$Correo ,$cargo,$Cedula){
+	function Create($Cod_Emp ,$Nombre,$Apellido,$Telefono,$Direccion,$Edad ,$Correo ,$cargo,$Cedula){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = Softmar_BD::Connect();
@@ -23,7 +23,7 @@ class Gestion_Empleados{
 		$consulta = "INSERT INTO Empleado (Cod_Emp ,Nombre,Apellido,Telefono,Direccion,Edad ,Correo ,cargo,Cedula) VALUES (?,?,?,?,?,?,?,?,?)";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($Cod_empl ,$Cod_Emp ,$Nombre,$Apellido,$Telefono,$Direccion,$Edad ,$Correo ,$cargo,$Cedula));
+		$query->execute(array($Cod_Emp ,$Nombre,$Apellido,$Telefono,$Direccion,$Edad ,$Correo ,$cargo,$Cedula));
 
 		Softmar_BD::Disconnect();
 	}

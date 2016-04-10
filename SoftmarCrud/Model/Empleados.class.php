@@ -1,12 +1,12 @@
 <?php 
-#-> Class: Gestion_contactos
+#-> Class: Gestion_Empleados
 #->Method(s), Create (), ReadAll(),ReadbyID(),ReadbyName(),Update(),Delete()
 #->Author: @valentina_chica
 #->Date Create
 #->Last Update
 #->Date Update
 
-class Gestion_Contactos{
+class Gestion_Empleados{
 	//Metodo create()
 	//El metodo create guarda los datos en la tabla contactos, captura todos los parametros desde el  formulario
 
@@ -20,7 +20,7 @@ class Gestion_Contactos{
 		//$fechacreacion = data("Y-m-d");
 
 		//Crear el query que vamos a realizar
-		$consulta = "INSERT INTO Empleado (Cod_empl ,Cod_Emp ,Nombre,Apellido,Telefono,Direccion,Edad ,Correo ,cargo,Cedula) VALUES (?,?,?,?,?,?,?,?,?,?)";
+		$consulta = "INSERT INTO Empleado (Cod_Emp ,Nombre,Apellido,Telefono,Direccion,Edad ,Correo ,cargo,Cedula) VALUES (?,?,?,?,?,?,?,?,?)";
 
 		$query = $Conexion->prepare($consulta);
 		$query->execute(array($Cod_empl ,$Cod_Emp ,$Nombre,$Apellido,$Telefono,$Direccion,$Edad ,$Correo ,$cargo,$Cedula));

@@ -14,7 +14,7 @@
 		<form class="contenedor"class="col s12">
 			<div class="row">
 				<div class="input-field col s12">
-					<input id="first_name" type="text" class="validate" required>
+					<input id="first_name" type="number" class="validate" required>
 					<label for="first_name">Código empresa</label>
                 </div>
                 <div class="input-field col s12">

@@ -25,7 +25,7 @@
 			$Valor	= $_POST["Valor"];
 
 			try{
-				Gestionar_seguridad::Create($Cod_serv, $Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor;
+				Gestionar_servicio_emp::Create($Cod_serv, $Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor);
 				$mensaje = "Su registro se creo correctamente";
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 

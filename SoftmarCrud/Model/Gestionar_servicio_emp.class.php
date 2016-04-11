@@ -13,7 +13,7 @@ class Gestionar_servicios_empresa
 	$query = $conexion->prepare($consulta);
 	$query->excute(array($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor));
 
-	softmar_BD::disconnect();
+	softmar_BD::Disconnect();
 
     }
 

@@ -72,7 +72,7 @@ class Gestion_Contacto{
 		$consulta = "SELECT * FROM usuario WHERE Cedula=?";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($codigo_usuario));
+		$query->execute(array($Cedula));
 
 		//Devolvemos el resultado en un arreglo
 		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso

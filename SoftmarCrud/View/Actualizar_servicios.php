@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="row">
-		<h4 class="tit">Registrar Servicios</h4>
+		<h4 class="tit">Actualizar Servicios</h4>
 		<form class="contenedor"class="col s12">
 			<div class="row">
 				<div class="input-field col s12">
@@ -40,7 +40,7 @@
                 </div>
             </div>  
             <div class="row">
-                <button id="botn" id="boton" class="btn waves-effect #1565c0 blue darken-3" type="submit" name="accion">Registrar servicio
+                <button id="botn" id="boton" class="btn waves-effect #1565c0 blue darken-3" type="submit" name="action">Actualizar servicio
                 <i class="material-icons right"></i>
                 </button> 
             </div>          

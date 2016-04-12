@@ -11,7 +11,7 @@
 <body>
 	<div class="row">
 		<h4 class="tit">Registrar Servicios</h4>
-		<form class="contenedor"class="col s12">
+		<form action="../Controller/Gestionar_servicio.controller.php" class="contenedor"class="col s12">
 			<div class="row">
 				<div class="input-field col s12">
 					<input id="first_name" type="number" class="validate" required>
@@ -40,7 +40,7 @@
                 </div>
             </div>  
             <div class="row">
-                <button id="botn" id="boton" class="btn waves-effect #1565c0 blue darken-3" type="submit" name="accion">Registrar servicio
+                <button id="botn" id="boton" class="btn waves-effect #1565c0 blue darken-3" type="submit" name="accion" value="c">Registrar servicio
                 <i class="material-icons right"></i>
                 </button> 
             </div>          

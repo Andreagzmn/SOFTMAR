@@ -19,7 +19,7 @@
                 </div>
                 <div class="input-field col s12">
                     <input id="last_name" type="text" class="validate" required>
-                    <label for="last_name">Nombre</label>
+                    <label for="last_name">Nombre del servicio</label>
                 </div>
 				<div class="input-field col s12">
 					<input id="first_name" type="text" class="validate" required>
@@ -40,7 +40,7 @@
                 </div>
             </div>  
             <div class="row">
-                <button id="botn" id="boton" class="btn waves-effect #1565c0 blue darken-3" type="submit" name="action" value="aA">Registrar servicio
+                <button id="botn" id="boton" class="btn waves-effect #1565c0 blue darken-3" type="submit" name="action" value="a">Registrar servicio
                 <i class="material-icons right"></i>
                 </button> 
             </div>          

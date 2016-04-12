@@ -5,22 +5,22 @@ class Gestionar_servicios_empresa
 
 	function create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor){
 
-	$conexion = softmar_BD::connect();
-	$conexion->setAttribute(POD::ATTR_ERRMODE_EXCEPTION);
+    $Conexion = Softmar_BD::Connect();
+    $Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-	$consulta = "INSERT INTO servicio_emp(Cod_Emp, Nombre, Descripcion, Estado, Valor) VALUES('?,?,?,?,?')";
+	$consulta = "INSERT INTO servicio_emp(Cod_Emp,Nombre,Descripcion,Estado,Valor) VALUES(?,?,?,?,?)";
 
-	$query = $conexion->prepare($consulta);
-	$query->excute(array($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor));
+    $query = $Conexion->prepare($consulta);
+    $query->execute(array($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor));
 
-	softmar_BD::Disconnect();
+    Softmar_BD::Disconnect();
 
     }
 
 function ReadAll(){
     	
     $conexion=softmar_BD::Connect();
-    $conexion->SetAttribute(PDO::ATTRERRMODE,POO::ERRMODE_EXCEPTION);
+    $conexion->SetAttribute(PDO::ATTR_ERRMODE,POO::ERRMODE_EXCEPTION);
 
     $consulta="SELECT * FROM servicio_emp ORDER BY Cod_Emp";
     $query=$conexion->prepare($consulta);

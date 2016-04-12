@@ -48,6 +48,8 @@
 
 		case 'u':
 			# actualizar...
+
+			$Cod_TipEmp 	= $_POST["Cod_TipEmp"];	
 			$Nombre			= $_POST["Nombre"];
 			$Telefono		= $_POST["Telefono"];
 			$Direccion      = $_POST["Direccion"];
@@ -61,7 +63,7 @@
 			$Foto			= $_POST["Fotos"];
 			$Logo			= $_POST["Logo"];
 			try{
-				Gestion_Empresa::Update($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$Ciudad,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Foto1,$Foto2,$Foto3,$Foto4,$Logo);
+				Gestion_Empresa::Update($Cod_Emp,$Cod_TipEmp,$Nombre,$Telefono,$Direccion,$Ciudad,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Foto1,$Foto2,$Foto3,$Foto4,$Logo,$Hor_desde,$Hor_hasta);
 				$mensaje = "Su registro se creo correctamente";
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 

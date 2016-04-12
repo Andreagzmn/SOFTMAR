@@ -39,7 +39,15 @@ class Gestion_Contacto{
 		
 
 		//Crear el query que vamos a realizar
+<<<<<<< HEAD
 		$consulta = "SELECT * FROM usuario ORDER BY nombre_usuario=?";
+=======
+
+		$consulta = "SELECT * FROM usuario ORDER BY Nombre";
+
+		
+
+>>>>>>> origin/master
 
 		$query = $Conexion->prepare($consulta);
 		$query->execute();
@@ -68,7 +76,7 @@ class Gestion_Contacto{
 		$consulta = "SELECT * FROM usuario WHERE codigo_usuario=?";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($codigo_usuario));
+		$query->execute(array($Cedula));
 
 		//Devolvemos el resultado en un arreglo
 		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso

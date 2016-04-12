@@ -12,17 +12,20 @@
 	//3. Instanciamos las variables globales y una llamada $accion.
 	//La variable accion nos va a indicar que parte del crud vamos hacer.
 
-	$accion = $_REQUEST["accion"];
+	//$action = $_REQUEST['action'];
+	$action = isset($_REQUEST['action']) ? $_POST['action']: NULL;
 
-	switch($accion){
-		case 'c':
+
+	switch($action){
+		case 'a':
 			#crear...
 			#Inicializar las variables que se envian desde el formulario y las que necesito para almancenar en la tabla.
+
 			$Cod_Emp 		= $_POST["Cod_Emp"];			
-			$Nombre		= $_POST["nombre"];
-			$Descripcion		= $_POST["Descripcion"];
-			$Estado	= $_POST["Estado"];
-			$Valor	= $_POST["Valor"];
+			$Nombre		    = $_POST["Nombre"];
+			$Descripcion    = $_POST["Descripcion"];
+			$Estado	        = $_POST["Estado"];
+			$Valor	        = $_POST["Valor"];
 
 			try{
 				Gestionar_servicio_emp::Create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor);
@@ -31,6 +34,18 @@
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 
 			}
 			header("Location: ../View/Registar_servicios.php?m= ".$mensaje); 
+		break;
+
+		case 'u':
+			# actualizar...
+			break;
+			
+		case 'd':
+			# eliminar...
+			break;
+
+		default:
+			#hacer cualquier cosa...
 		break;
 
 	}

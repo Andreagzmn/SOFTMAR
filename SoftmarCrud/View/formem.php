@@ -14,7 +14,7 @@
      <center><div class="empref">
       <h4 class="teal-text text-teal lighten-3 test">Registra tu empresa</h4>
       <div class="row formem">
-        <form class="col s12"  action="controller/empresa.controller.php" method="POST">
+        <form class="col s12"  action="../controller/empresa.controller.php" method="POST">
           <div class="row">
             <div class="input-field col s12">
                 <select>
@@ -90,13 +90,40 @@
               </div>
               <input type="hidden" value="" name="Geo_x">
               <input type="hidden" value="" name="Geo_y">
-              <div class="file-field input-field col s6">
+              <div class="file-field input-field col s3">
                 <div class="btn">
-                  <span>Fotos</span>
-                  <input type="file" multiple>
+                  <span>Foto 1:</span>
+                  <input type="file">
                 </div>
                 <div class="file-path-wrapper">
-                  <input name="Fotos" class="file-path validate" type="text" placeholder="Upload one or more files">
+                  <input name="Foto1" class="file-path validate" type="text" placeholder="Upload one or more files">
+                </div>
+              </div>
+              <div class="file-field input-field col s3">
+                <div class="btn">
+                  <span>Foto 2:</span>
+                  <input type="file">
+                </div>
+                <div class="file-path-wrapper">
+                  <input name="Foto2" class="file-path validate" type="text" placeholder="Upload one or more files">
+                </div>
+              </div>
+              <div class="file-field input-field col s3">
+                <div class="btn">
+                  <span>Foto 3:</span>
+                  <input type="file">
+                </div>
+                <div class="file-path-wrapper">
+                  <input name="Foto3" class="file-path validate" type="text" placeholder="Upload one or more files">
+                </div>
+              </div>
+              <div class="file-field input-field col s3">
+                <div class="btn">
+                  <span>Foto 4:</span>
+                  <input type="file">
+                </div>
+                <div class="file-path-wrapper">
+                  <input name="Foto4" class="file-path validate" type="text" placeholder="Upload one or more files">
                 </div>
               </div>
                   <div class="file-field input-field col s6">
@@ -111,7 +138,6 @@
             </div>
           </div>
            <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect  teal lighten-1" ><i class=" material-icons">done</i>Registrar Empresa</button>
-          <?php echo @$_REQUEST["msn"]; ?>
         </form>
       </div>  
     </div></center>

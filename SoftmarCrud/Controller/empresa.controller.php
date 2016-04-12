@@ -29,7 +29,12 @@
 			$Geo_y			= $_POST["Geo_y"];
 			$Informacion	= $_POST["Informacion"];
 			$Dias_aten		= $_POST["Dias_aten"];
-			$Foto			= $_POST["Fotos"];
+			$Hor_desde		= $_POST["Hor_desde"];
+			$Hor_hasta      = $_POST["Hor_hasta"];
+			$Foto1			= $_POST["Foto1"];
+			$Foto2			= $_POST["Foto2"];
+			$Foto3			= $_POST["Foto3"];
+			$Foto4			= $_POST["Foto4"];
 			$Logo			= $_POST["Logo"];
 			try{
 				Gestion_Empresa::Create($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$Ciudad,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Foto1,$Foto2,$Foto3,$Foto4,$Logo);
@@ -48,8 +53,7 @@
 
 		case 'u':
 			# actualizar...
-
-			$Cod_TipEmp 	= $_POST["Cod_TipEmp"];	
+			$Cod_TipEmp 	= $_POST["Cod_TipEmp"];			
 			$Nombre			= $_POST["Nombre"];
 			$Telefono		= $_POST["Telefono"];
 			$Direccion      = $_POST["Direccion"];
@@ -60,6 +64,8 @@
 			$Geo_y			= $_POST["Geo_y"];
 			$Informacion	= $_POST["Informacion"];
 			$Dias_aten		= $_POST["Dias_aten"];
+			$Hor_desde		= $_POST["Hor_desde"];
+			$Hor_hasta      = $_POST["Hor_hasta"];
 			$Foto			= $_POST["Fotos"];
 			$Logo			= $_POST["Logo"];
 			try{

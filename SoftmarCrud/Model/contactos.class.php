@@ -39,7 +39,7 @@ class Gestion_Contacto{
 		
 
 		//Crear el query que vamos a realizar
-<<<<<<< HEAD
+<<<<<< HEAD
 		$consulta = "SELECT * FROM usuario ORDER BY nombre_usuario=?";
 =======
 

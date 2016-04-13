@@ -39,15 +39,14 @@ class Gestion_Contacto{
 		
 
 		//Crear el query que vamos a realizar
-<<<<<<< HEAD
+
 		$consulta = "SELECT * FROM usuario ORDER BY nombre_usuario=?";
-=======
+
 
 		$consulta = "SELECT * FROM usuario ORDER BY Nombre";
 
 		
 
->>>>>>> origin/master
 
 		$query = $Conexion->prepare($consulta);
 		$query->execute();

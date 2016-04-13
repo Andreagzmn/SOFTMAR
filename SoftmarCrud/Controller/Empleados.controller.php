@@ -20,18 +20,18 @@
 			#crear...
 			#Inicializar las variables que se envian desde el formulario y las que necesito para almancenar en la tabla.
 				         
-				$Cod_Emp     	=$_POST["Cod_empresa"];
+				$Cod_Emp     	=$_POST["Cod_Emp"];
 				$Nombre      	=$_POST["Nombre"];
 				$Apellido    	=$_POST["Apellido"];
 				$Telefono    	=$_POST["Telefono"];
 				$Direccion   	=$_POST["Direccion"];
 				$Edad        	=$_POST["Edad"];
 				$Correo      	=$_POST["Email"];
-				$cargo    		=$_POST["Cargo"];
+				$Cargo    		=$_POST["Cargo"];
 				$Cedula     	=$_POST["Cedula"];
 
 			try{
-				Gestion_Empleados::Create($Cod_Emp ,$Nombre,$Apellido,$Telefono,$Direccion,$Edad ,$Correo ,$cargo,$Cedula);
+				Gestion_Empleados::Create($Cod_Emp ,$Nombre,$Apellido,$Telefono,$Direccion,$Edad ,$Correo ,$Cargo,$Cedula);
 				$mensaje = "Su registro se creo correctamente";
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 

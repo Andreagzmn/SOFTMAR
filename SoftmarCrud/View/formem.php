@@ -137,7 +137,7 @@
                   </div>
             </div>
           </div>
-           <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect  teal lighten-1" ><i class=" material-icons">done</i>Registrar Empresa</button>
+           <button type="submit" name="accion" value="crear" id="boton" class="btn waves-effect  teal lighten-1" ><i class=" material-icons">done</i>Registrar Empresa</button>
         </form>
       </div>  
     </div></center>

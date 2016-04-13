@@ -22,7 +22,7 @@
       <br>-->
       <br>
       <label>Codigo Empresa</label>
-      <input type="text" name="Cod_Empresa">
+      <input type="text" name="Cod_Emp">
       <br>
       <br>      
       <label>Nombre:</label>
@@ -56,7 +56,7 @@
       <input type="text" name="Cargo">
       <br>
       
-      <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect blue darken-3" ><i class=" material-icons right"></i>Gestionar</button>
+      <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect blue darken-3" ><i class=" material-icons right"></i>Registrar Empleado</button>
                 <?php echo @$_REQUEST["msn"]; ?>
     </section>
     

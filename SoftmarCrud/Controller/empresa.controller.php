@@ -15,7 +15,7 @@
 	$accion = $_REQUEST["accion"];
 
 	switch($accion){
-		case 'c':
+		case 'crear':
 			#crear...
 			#Inicializar las variables que se envian desde el formulario y las que necesito para almancenar en la tabla.
 			$Cod_TipEmp 	= $_POST["Cod_TipEmp"];			

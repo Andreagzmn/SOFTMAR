@@ -17,7 +17,7 @@
 
 
 	switch($action){
-		case 'a':
+		case 'c':
 			#crear...
 			#Inicializar las variables que se envian desde el formulario y las que necesito para almancenar en la tabla.
 

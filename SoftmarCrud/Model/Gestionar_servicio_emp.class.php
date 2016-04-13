@@ -2,8 +2,7 @@
 
 class Gestionar_servicios_empresa
     {
-
-	function create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor){
+    function create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor){
 
     $Conexion = Softmar_BD::Connect();
     $Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

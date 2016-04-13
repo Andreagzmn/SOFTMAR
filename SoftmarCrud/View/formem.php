@@ -17,18 +17,18 @@
         <form class="col s12"  action="../controller/empresa.controller.php" method="POST">
           <div class="row">
             <div class="input-field col s12">
-                <select>
+                <!--<select>
                   <option value=""  disabled selected name="Cod_TipEmp">Tipo de empresa</option>
                   <?php
                     // Cargo la bd
-                    // require_once("../Model/db_conn.php");
+                     //require_once("../Model/db_conn.php");
                     // Cargo la clase tipo empresa
-                    // require_once("../Model/tipo_empresa.class.php");
+                     //require_once("../Model/tipo_empresa.class.php");
 
                     //$tipoempresa = Gestion_TipoEmpresa::ReadAll();
 
                     //foreach ($tipoempresa as $row){
-                    //    echo "<option value='".$row["Cod_TipEmp"]."'>".$row["Nombre"]."</option>";
+                        //echo "<option value='".$row["Cod_TipEmp"]."'>".$row["Nombre"]."</option>";
                     //}
 
 
@@ -37,12 +37,12 @@
                     //}
 
                   ?>
-                </select>
+                </select>-->
                 <label>Tipo empresa</label>
               </div>
               <div>
               <div class="input-field col s12">
-                <input id="Nombre" type="text" class="validate">
+                <input id="Nombre" type="number" class="validate">
                 <label for="Nombre" data-error="wrong" name="Nombre" >Nombre Empresa</label>
               </div>
               <div class="input-field col s6">

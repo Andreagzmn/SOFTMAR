@@ -35,7 +35,7 @@ function ReadAll(){
 
 function ReadbyID($Cod_Emp){
 
-	$conexion=softmar_BD::conect();
+	$conexion=softmar_BD::connect();
 	$conexion->SetAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXEPTION);
 
 	$consulta="SELECT * FROM servicio_emp WHERE Cod_Emp=?";
@@ -50,7 +50,7 @@ function ReadbyID($Cod_Emp){
 
 function update($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor){
 
-	$conexion=softmar_BD::conect();
+	$conexion=softmar_BD::connect();
 	$conexion->SetAttribute(PDO::ATTR_ERMODE,PDO::ERMODE_EXCEPTION);
 
 	$consulta="UPDATE servicio_emp SET Cod_Emp=?, Nombre=?, Descripcion=?, Estado=?, Valor_=?";
@@ -62,7 +62,7 @@ function update($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor){
 
 function delete($Cod_Emp){
 
-    $conexion=softmar_BD::conect();
+    $conexion=softmar_BD::connect();
 	$conexion->SetAttribute(PDO::ATTR_ERMODE,PDO::ERMODE_EXCEPTION);
 
     $consulta= "DELETE FROM servicio_emp WHERE Cod_Emp=?";

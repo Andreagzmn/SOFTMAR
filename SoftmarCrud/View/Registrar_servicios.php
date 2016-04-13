@@ -40,9 +40,8 @@
                 </div>
             </div>  
             <div class="row">
-                <button id="botn" id="boton" class="btn waves-effect #1565c0 blue darken-3" type="submit" name="action" value="a">Registrar servicio
-                <i class="material-icons right"></i>
-                </button> 
+                <button id="botn" id="boton" class="btn waves-effect #1565c0 blue darken-3" name="action" value="a"><i class="material-icons right">done</i>Registrar servicio</button> 
+                <?php echo @$_REQUEST["msn"]; ?>
             </div>          
         </form>
     </div>    

@@ -12,7 +12,7 @@
 	//3. Instanciamos las variables globales y una llamada $accion.
 	//La variable accion nos va a indicar que parte del crud vamos hacer.
 
-	$action =@$_REQUEST['action'];
+	$action =@$_REQUEST["action"];
 	//$action = isset($_REQUEST['action']) ? $_POST['action']: NULL;
 
 

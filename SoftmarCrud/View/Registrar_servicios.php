@@ -40,7 +40,7 @@
                 </div>
             </div>  
             <div class="row">
-                <button id="botn" id="boton" class="btn waves-effect #1565c0 blue darken-3" name="action" value="c"><i class="material-icons right">done</i>Registrar servicio</button> 
+                <button id="botn" id="boton" type="submit" class="btn waves-effect #1565c0 blue darken-3" name="action" value="c"><i class="material-icons right"></i>Registrar servicio</button> 
             </div>          
         </form>
     </div>    

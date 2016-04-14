@@ -7,10 +7,10 @@ class Gestionar_servicios_empresa{
         $Conexion = Softmar_BD::Connect();
         $Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $consulta = "INSERT INTO servicio_emp(Cod_Emp,Nombre,Descripcion,Estado,Valor) VALUES('$Cod_Emp','$Nombre','$Descripcion','$Estado','$Valor')";
+        $consulta = "INSERT INTO servicio_emp (Cod_Emp, Nombre, Descripcion, Estado, Valor) VALUES (?,?,?,?,?)";
 
         $query = $Conexion->prepare($consulta);
-        $query->execute(array($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor));
+        $query->execute(array($cod_Emp, $Nombre, $Descripcion, $Estado, $Valor));
 
         Softmar_BD::Disconnect();
     }

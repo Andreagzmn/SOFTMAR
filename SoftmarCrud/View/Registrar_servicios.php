@@ -14,20 +14,20 @@
 		<form action="../Controller/Gestionar_servicio_emp.controller.php" method="POST" class="contenedor"class="col s12">
 			<div class="row">
 				<div class="input-field col s12">
-					<input id="first_name" type="number" class="validate" required>
+					<input id="first_name" type="number" class="validate" required name="Cod_Emp">
 					<label for="first_name">Código empresa</label>
                 </div>
                 <div class="input-field col s12">
-                    <input id="last_name" type="text" class="validate" required>
+                    <input id="last_name" type="text" class="validate" required name="Nombre">
                     <label for="last_name">Nombre del servicio</label>
                 </div>
 				<div class="input-field col s12">
-					<input id="first_name" type="text" class="validate" required>
+					<input id="first_name" type="text" class="validate" required name="Descripcion">
 					<label for="first_name">Descripción</label>
                 </div>
             </div>
             <div class="input-field col s10">
-          	    <select required>
+          	    <select required name="Estado">
                     <option value="" disabled selected>---Seleccione estado---</option>
                     <option value="1">Activo</option>
                     <option value="2">Inactivo</option>
@@ -35,12 +35,13 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="first_name" type="text" class="validate" required>
+                    <input id="first_name" type="number" class="validate" required name="Valor">
                     <label for="first_name">Valor</label>
                 </div>
             </div>  
             <div class="row">
-                <button id="botn" id="boton" type="submit" class="btn waves-effect #1565c0 blue darken-3" name="action" value="c"><i class="material-icons right"></i>Registrar servicio</button> 
+                <button id="botn" id="boton" type="submit" class="btn waves-effect #1565c0 blue darken-3" name="acc" value="c"><i class="material-icons right"></i>Registrar servicio</button> 
+                 <?php echo @$_REQUEST["mensaje"]; ?>
             </div>          
         </form>
     </div>    

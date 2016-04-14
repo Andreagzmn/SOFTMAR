@@ -1,5 +1,7 @@
 <?php
   session_start();
+  require_once("../Model/db_conn.php");
+  require_once("../Model/contactos.class.php");
 
   if(!isset($_SESSION["Cod_usu"])){
     $msn = base64_encode("Debe iniciar sesion primero!");
@@ -44,7 +46,7 @@
       <tbody>
 
       <?php
-      $usuarios = Gestion_Contactos::ReadAll();
+      $usuarios = Gestion_Contacto::ReadAll();
 
       foreach ($usuarios as $row) {
 
@@ -67,7 +69,7 @@
                 <td>".$row["Cedula"]."</td>
                 <td>
 
-                  <a href='edita.usuario.php?ui=".base64_encode($row["Cod_usu"])."'><i class='fa fa-pencil'></i></a>
+                  <a href='editar.usuario.php?ui=".base64_encode($row["Cod_usu"])."'><i class='fa fa-pencil'></i></a>
                   <a href='Usuariocontroller.php?ui=".base64_encode($row["Cod_usu"])."&acc=d'><i class='fa fa-trash'></i></a>
 
 

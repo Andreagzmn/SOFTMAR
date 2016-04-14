@@ -8,7 +8,7 @@ if($_SESSION["cod_rol"]==103){
     <li><a href="#">Inicio</a></li>
     <li><a href="#">Información</a></li>
     <li><a href="#">Visualizar pagina web</a></li>
-    <li><a href="#">Gestionar usuario</a></li>
+    <li><a href="Gestion_Usuario_admin.php">Gestionar usuario</a></li>
     <li><a href="#">Gestionar empresa</a></li>
     <li><a href="cerrarsesion.php">cerrar sesion</a></li>
   </ul>

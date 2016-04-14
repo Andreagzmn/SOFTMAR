@@ -58,7 +58,7 @@ class Gestion_Contacto{
 	//Metodo ReadAll()
 	//Busca todos los registros de la tabla
 
-	function ReadbyID($codigo_usuario){
+	function ReadbyID($Cod_usu){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = Softmar_BD::Connect();
@@ -67,10 +67,10 @@ class Gestion_Contacto{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "SELECT * FROM usuario WHERE codigo_usuario=?";
+		$consulta = "SELECT * FROM usuario WHERE Cod_usu=?";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($Cedula));
+		$query->execute(array($Cod_usu));
 
 		//Devolvemos el resultado en un arreglo
 		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso

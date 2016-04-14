@@ -15,7 +15,7 @@
     <title></title>
   </head>
   <body>
-    <h1>Bienvenido Amado <?php echo $_SESSION["Nombre"];  ?></h1>
+    <h1>Bienvenido Amad@ <?php echo $_SESSION["Nombre"];  ?></h1>
     <a href="cerrarsesion.php">cerrar sesion</a>
     <nav>
       <!--<?php //include_once("comp.menu.php"); ?>-->

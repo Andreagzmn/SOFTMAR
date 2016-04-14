@@ -12,11 +12,11 @@
 	//3. Instanciamos las variables globales y una llamada $accion.
 	//La variable accion nos va a indicar que parte del crud vamos hacer.
 
-	$action =@$_REQUEST["action"];
+	$accion =@$_REQUEST["acc"];
 	//$action = isset($_REQUEST['action']) ? $_POST['action']: NULL;
 
 
-	switch($action){
+	switch($accion){
 		case 'c':
 			#crear...
 			#Inicializar las variables que se envian desde el formulario y las que necesito para almancenar en la tabla.

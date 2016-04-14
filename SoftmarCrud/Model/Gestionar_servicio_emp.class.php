@@ -10,7 +10,7 @@ class Gestionar_servicios_empresa{
         $consulta = "INSERT INTO servicio_emp (Cod_Emp, Nombre, Descripcion, Estado, Valor) VALUES (?,?,?,?,?)";
 
         $query = $Conexion->prepare($consulta);
-        $query->execute(array($cod_Emp, $Nombre, $Descripcion, $Estado, $Valor));
+        $query->execute(array($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor));
 
         Softmar_BD::Disconnect();
     }

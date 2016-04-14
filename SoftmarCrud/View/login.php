@@ -19,21 +19,21 @@
 
               <a href="Registrar_Usuario.php" id="btn-crear-cuenta" class="waves-effect waves-light btn right blue-grey lighten-1 ">Crea una cuenta</a>
               <div class="card-content white-text" >                  		
-                  <form class="col s12">
+                  <form class="col s12" action="Usuariocontroller.php" method="post">
                     	<div class="card-image">
               				  <img src="img/SOFTMAR.png" class="imgi">                                              
             	  		  </div>
                           <div class="row">
                             <div class="input-field col s12">
-                                <input id="Correo" type="text" class="validate" required>
+                                <input id="Correo" type="text" class="validate" required name="correo">
                                 <label for="Correo">Correo electrónico</label>
                             </div>
                             <div class="input-field col s12">
-                              <input id="Contraseña" type="password" class="validate" required>
+                              <input id="Contraseña" type="password" class="validate" required name="clave">
                               <label for="Contraseña">Contraseña</label>
                             </div>
                               <div class="center">                         
-                                <button  class="waves-effect waves-light  cyan darken-3 btn btn-large" style="width: 100%">Iniciar sesión</button>   
+                                <button  class="waves-effect waves-light  cyan darken-3 btn btn-large" style="width: 100%" type="submit" name="accion" value="r">Iniciar sesión</button>   
                               </div>
                               <div>
                                 <a href="#modal1" class="lostpass waves-effect waves-light modal-trigger">¿Olvidaste la contraseña?</a>
@@ -54,7 +54,15 @@
                                 </div>                                
                                                             
                           </div>                          
-        		      </form>     
+        		      </form>
+                  <?php
+                    if( base64_decode(@$_GET["tm"]) == "advertencia"){
+                      $estilos = "orange";
+                    }else{
+                      $estilos = "red";
+                    }
+
+                  echo "<div style='background-color:".$estilos."'>".base64_decode(@$_GET["m"])."</div>";?>     
         		  </div>
         	 </div>
       </div>

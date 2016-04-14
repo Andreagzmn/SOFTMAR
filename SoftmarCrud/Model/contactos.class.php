@@ -113,6 +113,24 @@ class Gestion_Contacto{
 
 		Softmar_BD::Disconnect();
 	}
+
+  	function ValidaUsuario($Correo, $Clave){
+      $Conexion = Softmar_BD::Connect();
+      $Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+      $consulta = "SELECT * FROM usuario WHERE Correo = ? AND Clave = ?";
+
+      $query = $Conexion->prepare($consulta);
+
+      $query->execute(array($Correo, $Clave));
+      // fetch cuando voy a mostrar un solo registro
+      // fetchALL cuando voy a mostrar mas de un registro
+
+      $results = $query->fetch(PDO::FETCH_BOTH);
+      Softmar_BD::Disconnect();
+
+      return $results;
+    }
 }
 
 ?>

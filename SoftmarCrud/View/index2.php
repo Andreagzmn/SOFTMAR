@@ -1,3 +1,13 @@
+<?php
+  session_start();
+
+  if(!isset($_SESSION["Cod_usu"])){
+    $msn = base64_encode("Debe iniciar sesion primero!");
+    $tipo_msn = base64_encode("advertencia");
+
+    header("Location: ../View/login.php?m=".$msn."&tm=".$tipo_msn);
+  }
+?>
 <!DOCTYPE html>
   <html>
     <head>
@@ -11,6 +21,13 @@
       <link rel="stylesheet" type="text/css" href="estilos.css">
       </head>
     <body>
+    <nav class="black">
+      <div class="nav-wrapper " style="margin-left: 5px; margin-right: 5px;">
+        <a href="#!" class="brand-logo"><img src="img/SOFTMAR.png" style="width: 650%;"></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <?php include_once("../View/comp.menu.php"); ?>
+     </div>
+    </nav>
     <div class="conte">
       <div class="row imgn hover">
         <div>

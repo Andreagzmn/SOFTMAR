@@ -69,7 +69,7 @@ main{
   margin-right: 20px;
   width: 70%;
 }
-/*index*/
+/*dash*/
 
 .hover img {
   -webkit-filter: grayscale(100%);
@@ -83,7 +83,7 @@ main{
   filter: grayscale(0);
 }
 .conte{
-    margin-top: 20px;
+    margin-top: 50px !important;
 }
 .imgn{
     width: 100%;

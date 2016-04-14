@@ -69,8 +69,8 @@
                 <td>".$row["Cedula"]."</td>
                 <td>
 
-                  <a href='editar.usuario.php?ui=".base64_encode($row["Cod_usu"])."'><i class='fa fa-pencil'></i></a>
-                  <a href='Usuariocontroller.php?ui=".base64_encode($row["Cod_usu"])."&acc=d'><i class='fa fa-trash'></i></a>
+                  <a href='../View/editar.usuario.php?ui=".base64_encode($row["Cod_usu"])."'><i class='fa fa-pencil'></i></a>
+                  <a href='../Controller/Usuariocontroller.php?ui=".base64_encode($row["Cod_usu"])."&accion=d'><i class='fa fa-trash'></i></a>
 
 
                 </td>

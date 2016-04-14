@@ -82,7 +82,7 @@ class Gestion_Contacto{
 		Softmar_BD::Disconnect();
 	} 
  
-	function Update($codigo_usuario, $nombre_usuario, $apellido_usuario,$direccion_usuario,$email_usuario){
+	function Update($Cod_usu,$cod_rol,$Nombre, $Apellido, $Direccion, $Edad, $Clave, $Correo, $Cedula){
 	//Instanciamos y nos conectamos a la bd
 		$Conexion = Softmar_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -90,15 +90,15 @@ class Gestion_Contacto{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "UPDATE usuario SET nombre_usuario = ?, apellido_usuario = ?, direccion_usuario = ?, email_usuario = ?, WHERE codigo_usuario = ?" ;
+		$consulta = "UPDATE usuario SET cod_rol=?, Nombre=?, Apellido=?, Direccion=?, Edad=?, Clave=?, Correo=?, Cedula=? WHERE Cod_usu = ?" ;
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($nombre_usuario, $apellido_usuario,$direccion_usuario,$email_usuario));		
+		$query->execute(array($cod_rol,$Nombre, $Apellido, $Direccion, $Edad, $Clave, $Correo, $Cedula, $Cod_usu));		
 
 		Softmar_BD::Disconnect();
 	
 	}
-	function Delete($codigo_usuario){
+	function Delete($Cod_usu){
 	//Instanciamos y nos conectamos a la bd
 		$Conexion = Softmar_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -106,10 +106,10 @@ class Gestion_Contacto{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "DELETE FROM usuario WHERE codigo_usuario = ?" ;
+		$consulta = "DELETE FROM usuario WHERE Cod_usu = ?" ;
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($codigo_usuario));		
+		$query->execute(array($Cod_usu));		
 
 		Softmar_BD::Disconnect();
 	}

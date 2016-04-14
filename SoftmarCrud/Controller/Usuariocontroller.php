@@ -89,8 +89,14 @@
 			break;
 			
 		case 'd':
-			# eliminar...
-			break;
+        try {
+          $usuario = Gestion_Contacto::Delete(base64_decode($_REQUEST["ui"]));
+          $msn = "se elimino correctamente";
+        } catch (Exception $e) {
+          $msn = "error";
+        }
+        header("Location: ../View/Gestion_Usuario_admin.php?msn=".$msn);
+      break;
 
 		default:
 			#hacer cualquier cosa...

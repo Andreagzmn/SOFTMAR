@@ -22,6 +22,7 @@
               <div class="card-content white-text" >                  		
                   
                     	<div class="card-image">
+                      
               				  <img src="img/SOFTMAR.png" class="imgi">                                              
             	  		  </div>
                           <div class="row">

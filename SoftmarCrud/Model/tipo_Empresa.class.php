@@ -6,22 +6,24 @@
 #->Last Update
 #->Date Update
 
-class Gestion_Empresa{
+class Gestion_Tipo_Empresa{
 	//Metodo create()
 	//El metodo create guarda los datos en la tabla contactos, captura todos los parametros desde el  formulario
 
-	function Create($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$Ciudad,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Foto1,$Foto2,$Foto3,$Foto4,$Logo){
+	function Create($Nombre){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = Softmar_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$Hor_desde=time("h:i:sa");
-		$Hor_hasta=time("h:i:sa");
+
+		//Capturar fecha del sistema
+		//$fechacreacion = data("Y-m-d");
+
 		//Crear el query que vamos a realizar
-		$consulta = "INSERT INTO empresa (Cod_TipEmp,Nombre,Telefono,Direccion,Ciudad,NIT,Correo,Geo_x,Geo_y,Informacion,Dias_aten,Foto1,Foto2,Foto3,Foto4,Logo,Hor_desde,Hor_hasta) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		$consulta = "INSERT INTO tipo_emp ( Nombre) VALUES (?)";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$Ciudad,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Foto1,$Foto2,$Foto3,$Foto4,$Logo,$Hor_desde,$Hor_hasta));
+		$query->execute(array($Nombre));
 
 		Softmar_BD::Disconnect();
 	}
@@ -36,8 +38,10 @@ class Gestion_Empresa{
 
 		
 
-		//Crear el query que vamos a realizar
-		$consulta = "SELECT * FROM empresa ORDER BY Nombre";
+		//Crear el query que vamos a realizar		
+
+		$consulta = "SELECT * FROM tipo_emp ORDER BY Nombre";	
+
 
 		$query = $Conexion->prepare($consulta);
 		$query->execute();
@@ -51,7 +55,10 @@ class Gestion_Empresa{
 
 		Softmar_BD::Disconnect();
 	}
-	function ReadbyID($Cod_Emp){
+	//Metodo ReadAll()
+	//Busca todos los registros de la tabla
+
+	function ReadbyID($Cod_TipEmp){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = Softmar_BD::Connect();
@@ -60,10 +67,10 @@ class Gestion_Empresa{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "SELECT * FROM empresa WHERE Cod_Emp=?";
+		$consulta = "SELECT * FROM tipo_emp WHERE Cod_TipEmp=?";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($Cod_Emp));
+		$query->execute(array($Cod_TipEmp));
 
 		//Devolvemos el resultado en un arreglo
 		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
@@ -73,9 +80,9 @@ class Gestion_Empresa{
 		return $resultado;
 
 		Softmar_BD::Disconnect();
-	}
+	} 
  
-	function Update($Cod_Emp,$Cod_TipEmp,$Nombre,$Telefono,$Direccion,$Ciudad,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Foto1,$Foto2,$Foto3,$Foto4,$Logo,$Hor_desde,$Hor_hasta){
+	function Update ($Cod_TipEmp,$Nombre) {
 	//Instanciamos y nos conectamos a la bd
 		$Conexion = Softmar_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -83,14 +90,28 @@ class Gestion_Empresa{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "UPDATE empresa SET Cod_TipEmp = ?, Nombre = ?,Telefono = ?,Direccion = ?,Ciudad = ?,NIT = ?,Correo= ?,Geo_x = ?,Geo_y= ?,Informacion =?,Dias_aten =?,Foto1 =?,Foto2=?,Foto3=?,Foto4=?,Logo=?,Hor_desde = ?,Hor_hasta = ? WHERE Cod_Emp =? " ;
+		$consulta = "UPDATE tipo_emp SET Nombre = ? WHERE Cod_TipEmp = ?" ;
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$Ciudad,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Foto1,$Foto2,$Foto3,$Foto4,$Logo,$Hor_desde,$Hor_hasta,$Cod_Emp));		
+		$query->execute(array($Nombre,$Cod_TipEmp));		
 
 		Softmar_BD::Disconnect();
 	
 	}
-}
+	function Delete($Cod_TipEmp){
+	//Instanciamos y nos conectamos a la bd
+		$Conexion = Softmar_BD::Connect();
+		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+		
+
+		//Crear el query que vamos a realizar
+		$consulta = "DELETE FROM tipo_emp WHERE Cod_TipEmp = ?" ;
+
+		$query = $Conexion->prepare($consulta);
+		$query->execute(array($Cod_TipEmp));		
+
+		Softmar_BD::Disconnect();
+	}
+}
 ?>

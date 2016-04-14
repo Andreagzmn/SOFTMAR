@@ -17,41 +17,38 @@
         <form class="col s12"  action="../controller/empresa.controller.php" method="POST">
           <div class="row">
             <div class="input-field col s12">
-                <!--<select>
+              <select>
                   <option value=""  disabled selected name="Cod_TipEmp">Tipo de empresa</option>
                   <?php
                     // Cargo la bd
-                     //require_once("../Model/db_conn.php");
+                     require_once("../Model/db_conn.php");
                     // Cargo la clase tipo empresa
-                     //require_once("../Model/tipo_empresa.class.php");
+                     require_once("../Model/tipo_Empresa.class.php");
 
-                    //$tipoempresa = Gestion_TipoEmpresa::ReadAll();
+                    $tipoempresa = Gestion_Tipo_Empresa::ReadAll();
 
-                    //foreach ($tipoempresa as $row){
-                        //echo "<option value='".$row["Cod_TipEmp"]."'>".$row["Nombre"]."</option>";
-                    //}
-
-
+                    foreach ($tipoempresa as $row){
+                        echo "<option value='".$row["Cod_TipEmp"]."'>".$row["Nombre"]."</option>";
+                    }
                     //foreach ($imagenes as $row){
                     //    echo "<img src='".$row["Nombre"]."'/>";
                     //}
-
                   ?>
                 </select>-->
                 <label>Tipo empresa</label>
               </div>
               <div>
               <div class="input-field col s12">
-                <input id="Nombre" type="number" class="validate">
-                <label for="Nombre" data-error="wrong" name="Nombre" >Nombre Empresa</label>
+                <input id="Nombre" type="number" class="validate" name="Nombre" required>
+                <label for="Nombre" data-error="wrong"  >Nombre Empresa</label>
               </div>
               <div class="input-field col s6">
-                <input id="telefono" type="number" class="validate">
-                <label for="Telefono" data-error="wrong" name="Telefono">Telefono</label>
+                <input id="telefono" type="number" class="validate" name="Telefono" required>
+                <label for="Telefono" data-error="wrong" >Telefono</label>
               </div>
               <div class="input-field col s6">
-                <input id="Direccion" type="text" class="validate">
-                <label for="Direccion" data-error="wrong" name="Direccion">Direccion</label>
+                <input id="Direccion" type="text" class="validate" name="Direccion" required>
+                <label for="Direccion" data-error="wrong" >Direccion</label>
               </div>
               <div class="input-field col s6">
                 <select>
@@ -60,37 +57,37 @@
                 <label>Ciudad</label>
               </div>
               <div class="input-field col s6">
-                <input id="NIT" type="number" class="validate">
-                <label for="NIT" data-error="wrong" name="NIT" >NIT</label>
+                <input id="NIT" type="number" class="validate" name="NIT" required>
+                <label for="NIT" data-error="wrong"  >NIT</label>
               </div>
               <div class="input-field col s12">
-                <input id="email" type="email" class="validate">
-                <label for="email" data-error="wrong" name="Correo">Correo electronico</label>
+                <input id="email" type="email" class="validate" name="Correo" required>
+                <label for="email" data-error="wrong" >Correo electronico</label>
               </div>
               <div class="input-field col s12">
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                <label for="textarea1" name="Informacion">Informacion</label>
+                <textarea id="textarea1" class="materialize-textarea" name="Informacion" required></textarea>
+                <label for="textarea1" >Informacion</label>
               </div>
               <div class="col s12">
                 <p class="center">Dias de atencion</p>
                 <div class="col s6">
-                  <input type="date" name="Dias_aten">
+                  <input type="date" name="Dias_aten" required>
                 </div>
               </div>
               <div class="col s12">
               <p class="center">Horario</p>
                 <div class="col s6">
                   <label>desde</label>
-                  <input type="time" name="Hor_desde">
+                  <input type="time" name="Hor_desde" required>
                 </div>
                 <div class="col s6">
                 <label>Hasta</label>
-                  <input type="time" name="Hor_hasta">
+                  <input type="time" name="Hor_hasta" required>
                 </div>
               </div>
               <input type="hidden" value="" name="Geo_x">
               <input type="hidden" value="" name="Geo_y">
-              <div class="file-field input-field col s3">
+              <!--<div class="file-field input-field col s3">
                 <div class="btn">
                   <span>Foto 1:</span>
                   <input type="file">
@@ -134,10 +131,11 @@
                       <div class="file-path-wrapper">
                           <input name="Logo" class="file-path validate" type="text">
                       </div>
-                  </div>
+                  </div>-->
             </div>
           </div>
-           <button type="submit" name="accion" value="crear" id="boton" class="btn waves-effect  teal lighten-1" ><i class=" material-icons">done</i>Registrar Empresa</button>
+           <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect blue darken-3" ><i class=" material-icons right">done</i>Registrarse</button>
+                <?php echo @$_REQUEST["msn"]; ?>
         </form>
       </div>  
     </div></center>

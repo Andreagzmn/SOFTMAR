@@ -59,7 +59,7 @@
 			
 		case 'd':
         try {
-          $empresa = Gestion_Contacto::Delete(base64_decode($_REQUEST["ui"]));
+          $empresa = Gestion_Empresa::Delete(base64_decode($_REQUEST["ei"]));
           $msn = "se elimino correctamente";
         } catch (Exception $e) {
           $msn = "error";

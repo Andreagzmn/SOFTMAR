@@ -29,15 +29,6 @@
 			}
 			header("Location: ../View/Tipo_Empresa.php?m= ".$mensaje);
 	break;
-	case 'd':
-        try {
-          $Tipo_empresa = Gestion_Tipo_Empresa::Delete(base64_decode($_REQUEST["tp"]));
-          $msn = "se elimino correctamente";
-        } catch (Exception $e) {
-          $msn = "error";
-        }
-        header("Location: ../View/Gestion_Tipo_Empresa_admin.php?msn=".$msn);
-      break;
 
 		default:
 			#hacer cualquier cosa...

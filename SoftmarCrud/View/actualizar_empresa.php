@@ -10,7 +10,7 @@
     header("Location: ../View/login.php?m=".$msn."&tm=".$tipo_msn);
   }
 
-  $empresa =  Gestion_Empresa::ReadbyId(base64_decode($_REQUEST["ui"]));
+  $empresa =  Gestion_Empresa::ReadbyId(base64_decode($_REQUEST["ei"]));
 ?>
 <!DOCTYPE html>
   <html>

@@ -33,44 +33,46 @@
     <table id="datatable" class="display">
       <thead>
         <tr>
-          <th>Cod_usu</th>
-          <th>cod_rol</th>
+          <th>Cod_Emp</th>
+          <th>Cod_TipEmp</th>
           <th>Nombre</th>
-          <th>Apellido</th>
+          <th>Telefono</th>
           <th>Direccion</th>
-          <th>Edad</th>
+          <th>Ciudad</th>
+          <th>NIT</th>
           <th>Correo</th>
-          <th>Cedula</th>
+          <th>Informacion</th>
         </tr>
       </thead>
       <tbody>
 
       <?php
-      $usuarios = Gestion_Contacto::ReadAll();
+      $empresa = Gestion_Empresa::ReadAll();
 
-      foreach ($usuarios as $row) {
+      foreach ($empresa as $row) {
 
-        if($row["cod_rol"] == 103){
-          $cod_rol = "Administrador";
-        }elseif($row["cod_rol"] == 102){
-          $cod_rol = "Usuario";
-        }elseif($row["cod_rol"] == 101){
-          $cod_rol = "Cliente";
+        if($row["Cod_TipEmp"] == 3){
+          $Cod_TipEmp = "Peluqueria";
+        }elseif($row["Cod_TipEmp"] == 4){
+          $Cod_TipEmp = "Barberia";
+        }elseif($row["Cod_TipEmp"] == 5){
+          $Cod_TipEmp = "Spa";
+        }elseif($row["Cod_TipEmp"] == 6){
+          $Cod_TipEmp = "Peluqueria Infantil";
         }
 
         echo "<tr>
-                <td>".$row["Cod_usu"]."</td>
-                <td>".$cod_rol."</td>
+                <td>".$row["Cod_Emp"]."</td>
+                <td>".$Cod_TipEmp."</td>
                 <td>".$row["Nombre"]."</td>
                 <td>".$row["Apellido"]."</td>
                 <td>".$row["Direccion"]."</td>
                 <td>".$row["Edad"]."</td>
                 <td>".$row["Correo"]."</td>
-                <td>".$row["Cedula"]."</td>
                 <td>
 
-                  <a href='../View/editar.usuario.php?ui=".base64_encode($row["Cod_usu"])."'><i class='fa fa-pencil'></i></a>
-                  <a href='../Controller/Usuariocontroller.php?ui=".base64_encode($row["Cod_usu"])."&accion=d'><i class='fa fa-trash'></i></a>
+                  <a href='../View/actualizar_empresa.php?ei=".base64_encode($row["Cod_Emp"])."'><i class='fa fa-pencil'></i></a>
+                  <a href='../Controller/empresa.controller.php?ei=".base64_encode($row["Cod_Emp"])."&accion=d'><i class='fa fa-trash'></i></a>
 
 
                 </td>

@@ -18,12 +18,11 @@
 	switch($accion){
 		case 'c':
 			#crear...
-			#Inicializar las variables que se envian desde el formulario y las que necesito para almancenar en la tabla.
-			$Cod_TipEmp 	= $_POST["Cod_TipEmp"];			
+			#Inicializar las variables que se envian desde el formulario y las que necesito para almancenar en la tabla.		
 			$Nombre			= $_POST["Nombre"];
 
 			try{
-				Gestion_Tipo_Empresa::Create($Cod_TipEmp,$Nombre);
+				Gestion_Tipo_Empresa::Create($Nombre);
 				$mensaje = "Su registro se creo correctamente";
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 
@@ -32,7 +31,7 @@
 	break;
 	case 'd':
         try {
-          $Tipo_empresa = Gestion_Tipo_Empresa::Delete(base64_decode($_REQUEST["ui"]));
+          $Tipo_empresa = Gestion_Tipo_Empresa::Delete(base64_decode($_REQUEST["tp"]));
           $msn = "se elimino correctamente";
         } catch (Exception $e) {
           $msn = "error";

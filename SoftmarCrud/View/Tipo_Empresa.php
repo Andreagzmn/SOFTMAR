@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
    <link type="text/css" rel="stylesheet" href="estilos.css">
-  <title>Añadir tipo empresa</title>
+  <title>tipo empresa</title>
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  

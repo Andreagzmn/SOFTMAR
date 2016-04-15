@@ -20,7 +20,7 @@ class Gestion_Tipo_Empresa{
 		//$fechacreacion = data("Y-m-d");
 
 		//Crear el query que vamos a realizar
-		$consulta = "INSERT INTO tipo_emp ( Nombre) VALUES (?)";
+		$consulta = "INSERT INTO tipo_emp (Nombre) VALUES (?)";
 
 		$query = $Conexion->prepare($consulta);
 		$query->execute(array($Nombre));

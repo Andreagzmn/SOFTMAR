@@ -10,6 +10,7 @@ if($_SESSION["cod_rol"]==103){
     <li><a href="#">Visualizar pagina web</a></li>
     <li><a href="Gestion_Usuario_admin.php">Gestionar usuario</a></li>
     <li><a href="#">Gestionar empresa</a></li>
+    <li><a href="Gestion_Tipo_Empresa_admin.php">Gestionar tipo empresa</a></li>
     <li><a href="cerrarsesion.php">cerrar sesion</a></li>
   </ul>
 

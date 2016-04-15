@@ -28,49 +28,39 @@
     </script>
    </head>
   <body>
-    <h1>GESTIONAR USUARIOS</h1>
+    <h1>GESTIONAR TIPO EMPRESA</h1>
 
     <table id="datatable" class="display">
       <thead>
         <tr>
-          <th>Cod_usu</th>
-          <th>cod_rol</th>
+          <th>Cod_TipEmp</th>
           <th>Nombre</th>
-          <th>Apellido</th>
-          <th>Direccion</th>
-          <th>Edad</th>
-          <th>Correo</th>
-          <th>Cedula</th>
         </tr>
       </thead>
       <tbody>
 
       <?php
-      $usuarios = Gestion_Contacto::ReadAll();
+      $Tipo_empresa = Gestion_Tipo_Empresa::ReadAll();
 
-      foreach ($usuarios as $row) {
+      foreach ($Tipo_empresa as $row) {
 
-        if($row["cod_rol"] == 103){
-          $cod_rol = "Administrador";
-        }elseif($row["cod_rol"] == 102){
-          $cod_rol = "Usuario";
-        }elseif($row["cod_rol"] == 101){
-          $cod_rol = "Cliente";
+        if($row["Tipo_empresa"] == 3){
+          $Tipo_empresa = "Peluqueria";
+        }elseif($row["Tipo_empresa"] == 4){
+          $Tipo_empresa = "Barberia";
+        }elseif($row["Tipo_empresa"] == 5){
+          $Tipo_empresa = "Spa";
+        }elseif($row["Tipo_empresa"] == 6){
+          $Tipo_empresa = "Peluqueria Infantil";
         }
 
         echo "<tr>
-                <td>".$row["Cod_usu"]."</td>
-                <td>".$cod_rol."</td>
+                <td>".$Tipo_empresa."</td>
                 <td>".$row["Nombre"]."</td>
-                <td>".$row["Apellido"]."</td>
-                <td>".$row["Direccion"]."</td>
-                <td>".$row["Edad"]."</td>
-                <td>".$row["Correo"]."</td>
-                <td>".$row["Cedula"]."</td>
                 <td>
 
-                  <a href='../View/editar.usuario.php?ui=".base64_encode($row["Cod_usu"])."'><i class='fa fa-pencil'></i></a>
-                  <a href='../Controller/Usuariocontroller.php?ui=".base64_encode($row["Cod_usu"])."&accion=d'><i class='fa fa-trash'></i></a>
+                  <a href='../View/editar.Tipo_empresa.php?tp=".base64_encode($row["Cod_TipEmp"])."'><i class='fa fa-pencil'></i></a>
+                  <a href='../Controller/Tipo_empresa.controller.php?tp=".base64_encode($row["Cod_TipEmp"])."&accion=d'><i class='fa fa-trash'></i></a>
 
 
                 </td>

@@ -28,11 +28,11 @@
 			$Valor	        = $_POST["Valor"];
 
 			try{
-				Gestionar_servicios_empresa::Create($cod_Emp,$Nombre,$Descripcion,$Estado,$Valor);
+				Gestionar_servicio_emp::Create($Cod_Emp,$Nombre,$Descripcion,$Estado,$Valor);
 				$mensaje = "Su registro se creo correctamente";
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	
-			header("Location: ../View/Registrar_servicios.php?m= ".$mensaje); 
+			header("Location: ../View/Registrar_servicio.php?m= ".$mensaje); 
 		}
 		break;
 

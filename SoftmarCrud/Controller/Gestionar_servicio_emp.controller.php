@@ -29,7 +29,7 @@
 
 			try{
 				Gestionar_servicio_emp::Create($Cod_Emp,$Nombre,$Descripcion,$Estado,$Valor);
-				$mensaje = "Su registro se creo correctamente";
+				$mensaje = "El servicio se registro correctamente";
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	
 			header("Location: ../View/Registrar_servicio.php?m= ".$mensaje); 

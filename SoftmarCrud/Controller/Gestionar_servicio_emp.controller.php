@@ -20,7 +20,7 @@
 		case 'c':
 			#crear...
 			#Inicializar las variables que se envian desde el formulario y las que necesito para almancenar en la tabla.
-
+            
 			$Cod_Emp 		= $_POST["Cod_Emp"];			
 			$Nombre		    = $_POST["Nombre"];
 			$Descripcion    = $_POST["Descripcion"];
@@ -28,7 +28,7 @@
 			$Valor	        = $_POST["Valor"];
 
 			try{
-				Gestionar_servicios_empresa::Create($cod_Emp,$Nombre,$Descripcion,$Estado,$Valor);
+				Gestionar_servicios_empresa::Create($Cod_Emp,$Nombre,$Descripcion,$Estado,$Valor);
 				$mensaje = "Su registro se creo correctamente";
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	

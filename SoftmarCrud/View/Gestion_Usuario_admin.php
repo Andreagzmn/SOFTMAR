@@ -17,7 +17,7 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-
+    <link type="text/css" rel="stylesheet" href="estilos.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
 
@@ -27,10 +27,11 @@
     });
     </script>
    </head>
-  <body>
+  <body class="center">
     <h1>GESTIONAR USUARIOS</h1>
+    <a href="Registrar_usuario.php">Nuevo Usuario</a>
 
-    <table id="datatable" class="display">
+    <table id="datatable" class="display highlight" >
       <thead>
         <tr>
           <th>Cod_usu</th>

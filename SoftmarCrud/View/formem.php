@@ -17,8 +17,8 @@
         <form class="col s12"  action="../controller/empresa.controller.php" method="POST">
           <div class="row">
             <div class="input-field col s12">
-              <select>
-                  <option value=""  disabled selected name="Cod_TipEmp">Tipo de empresa</option>
+              <select  name="Cod_TipEmp">
+                  <option value="" disabled selected>Tipo de empresa</option>
                   <?php
                     // Cargo la bd
                      require_once("../Model/db_conn.php");
@@ -34,13 +34,13 @@
                     //    echo "<img src='".$row["Nombre"]."'/>";
                     //}
                   ?>
-                </select>-->
+                </select>
                 <label>Tipo empresa</label>
               </div>
               <div>
               <div class="input-field col s12">
-                <input id="Nombre" type="number" class="validate" name="Nombre" required>
-                <label for="Nombre" data-error="wrong"  >Nombre Empresa</label>
+                <input id="Nombre" type="text" class="validate" name="Nombre" required>
+                <label for="Nombre" data-error="wrong" >Nombre Empresa</label>
               </div>
               <div class="input-field col s6">
                 <input id="telefono" type="number" class="validate" name="Telefono" required>
@@ -50,12 +50,12 @@
                 <input id="Direccion" type="text" class="validate" name="Direccion" required>
                 <label for="Direccion" data-error="wrong" >Direccion</label>
               </div>
-              <div class="input-field col s6">
+            <!--   <div class="input-field col s6">
                 <select>
                   <option value="" disabled selected name="Ciudad">elige tu ciudad</option>
                 </select>
                 <label>Ciudad</label>
-              </div>
+              </div> -->
               <div class="input-field col s6">
                 <input id="NIT" type="number" class="validate" name="NIT" required>
                 <label for="NIT" data-error="wrong"  >NIT</label>
@@ -71,7 +71,7 @@
               <div class="col s12">
                 <p class="center">Dias de atencion</p>
                 <div class="col s6">
-                  <input type="date" name="Dias_aten" required>
+                  <input type="text" name="Dias_aten" required>
                 </div>
               </div>
               <div class="col s12">

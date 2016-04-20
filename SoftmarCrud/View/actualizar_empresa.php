@@ -30,56 +30,64 @@
       <div class="row formem">
         <form class="col s12"  action="controller/empresa.controller.php" method="POST">
           <div class="row">
+          <input type="text" readonly name="Cod_Emp" required value="<?php echo $empresa[0] ?>">
+            <div class="col s12"></div>
+              <select name="Cod_TipEmp" required  value="<?php echo $usuario[1] ?>">
+                <option value="3" <?php if($empresa["Cod_TipEmp"] == 3){ echo "selected"; } ?>>Peluqueria</option>
+                <option value="4" <?php if($empresa["Cod_TipEmp"] == 4){ echo "selected"; } ?>>Barberia</option>
+                <option value="5" <?php if($empresa["Cod_TipEmp"] == 5){ echo "selected"; } ?>>Spa</option>
+                <option value="6" <?php if($empresa["Cod_TipEmp"] == 6){ echo "selected"; } ?>>Peluqueria infantil</option>
+              </select>
               <div>
               <div class="input-field col s12">
-                <input id="Nombre" type="text" class="validate">
+                <input id="Nombre" type="text" class="validate" required  value="<?php echo $usuario[2] ?>">
                 <label for="Nombre" data-error="wrong" name="Nombre" >Nombre Empresa</label>
               </div>
               <div class="input-field col s6">
-                <input id="telefono" type="number" class="validate">
+                <input id="telefono" type="number" class="validate" required  value="<?php echo $usuario[3] ?>">
                 <label for="Telefono" data-error="wrong" name="Telefono">Telefono</label>
               </div>
               <div class="input-field col s6">
-                <input id="Direccion" type="text" class="validate">
+                <input id="Direccion" type="text" class="validate" required  value="<?php echo $usuario[4] ?>">
                 <label for="Direccion" data-error="wrong" name="Direccion">Direccion</label>
               </div>
-              <div class="input-field col s6">
+              <div class="input-field col s6" required  value="<?php echo $usuario[5] ?>">
                 <select>
                   <option value="" disabled selected name="Ciudad">elige tu ciudad</option>
                 </select>
                 <label>Ciudad</label>
               </div>
               <div class="input-field col s6">
-                <input id="NIT" type="number" class="validate">
+                <input id="NIT" type="number" class="validate" required  value="<?php echo $usuario[6] ?>">
                 <label for="NIT" data-error="wrong" name="NIT" >NIT</label>
               </div>
               <div class="input-field col s12">
-                <input id="email" type="email" class="validate">
+                <input id="email" type="email" class="validate" required  value="<?php echo $usuario[7] ?>">
                 <label for="email" data-error="wrong" name="Correo">Correo electronico</label>
               </div>
               <div class="input-field col s12">
                 <textarea id="textarea1" class="materialize-textarea"></textarea>
-                <label for="textarea1" name="Informacion">Informacion</label>
+                <label for="textarea1" name="Informacion" required  value="<?php echo $usuario[10] ?>">Informacion</label>
               </div>
               <div class="col s12">
                 <p class="center">Dias de atencion</p>
                 <div class="col s6">
-                  <input type="date" name="Dias_aten">
+                  <input type="text" name="Dias_aten" required  value="<?php echo $usuario[11] ?>">
                 </div>
               </div>
               <div class="col s12">
               <p class="center">Horario</p>
                 <div class="col s6">
                   <label>desde</label>
-                  <input type="time" name="Hor_desde">
+                  <input type="time" name="Hor_desde" required  value="<?php echo $usuario[12] ?>">
                 </div>
                 <div class="col s6">
                 <label>Hasta</label>
-                  <input type="time" name="Hor_hasta">
+                  <input type="time" name="Hor_hasta" required  value="<?php echo $usuario[13] ?>">
                 </div>
               </div>
-              <input type="hidden" value="" name="Geo_x">
-              <input type="hidden" value="" name="Geo_y">
+              <input type="hidden" value="" name="Geo_x" required  value="<?php echo $usuario[8] ?>">
+              <input type="hidden" value="" name="Geo_y" required  value="<?php echo $usuario[9] ?>">
               <div class="file-field input-field col s6">
                 <div class="btn">
                   <span>Fotos</span>

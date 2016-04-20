@@ -10,7 +10,7 @@ if($_SESSION["cod_rol"]==103){
     <li><a href="#">Visualizar pagina web</a></li>
     <li><a href="Gestion_Usuario_admin.php">Gestionar usuario</a></li>
     <li><a href="#">Gestionar empresa</a></li>
-    <li><a href="cerrarsesion.php">cerrar sesion</a></li>
+    <li><a href="../Controller/cerrarusuario.php">cerrar sesion</a></li>
   </ul>
 
 
@@ -26,7 +26,7 @@ if($_SESSION["cod_rol"]==103){
   </ul>
   <ul id="dropdown1" class="dropdown-content">
     <li><a href="#!">Editar Perfil</a></li>
-    <li><a href="cerrarsesion.php">cerrar sesion</a></li>
+    <li><a href="../Controller/cerrarusuario.php">cerrar sesion</a></li>
   </ul> 
 <?php
 }elseif ($_SESSION["cod_rol"]==101) {
@@ -41,7 +41,7 @@ if($_SESSION["cod_rol"]==103){
 	  </ul>
 	  <ul id="dropdown1" class="dropdown-content">
 	    <li><a href="#!">Editar Perfil</a></li>
-	    <li><a href="cerrarsesion.php">cerrar sesion</a></li>
+	    <li><a href="../Controller/cerrarusuario.php">cerrar sesion</a></li>
 	  </ul>
 <?php  	   
 }

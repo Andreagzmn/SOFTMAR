@@ -12,14 +12,14 @@
 </head>
 </head>
 <body>
-	<div class="container">
+	<div class="con">
 		<div class="tarjeta2">		    
       <div class="row">
 
             <div class="col s12 center">
 
               <a href="#" id="btn-crear-cuenta" class="waves-effect waves-light btn right blue-grey lighten-1 ">Crea una cuenta</a>
-              <div class="card-content white-text" >                  		
+              <div class="card-content black-text" >                  		
                   <form class="col s12">
                     	<div class="card-image">
               				  <img src="img/SOFTMAR.png" class="imgi">                                              

@@ -19,7 +19,7 @@
             <div class="col s12 m7  offset-m2 l4 offset-l4 z-depth-4 formulario center">
 
               <a href="Registrar_Usuario.php" id="btn-crear-cuenta" class="waves-effect waves-light btn right blue-grey lighten-1 ">Crea una cuenta</a>
-              <div class="card-content white-text" >                  		
+              <div class="card-content black-text" >                  		
                   
                     	<div class="card-image">
                       

@@ -51,7 +51,7 @@ class Gestionar_servicio_emp{
 	   $conexion=softmar_BD::connect();
 	   $conexion->SetAttribute(PDO::ATTR_ERMODE,PDO::ERMODE_EXCEPTION);
 
-	   $consulta="UPDATE servicio_emp SET Cod_Emp=?, Nombre=?, Descripcion=?, Estado=?, Valor_=?";
+	   $consulta="UPDATE servicio_emp SET Cod_Emp=?, Nombre=?, Descripcion=?, Estado=?, Valor_=? WHERE Cod_serv=?";
 	   $query=$conexion->prepare($consulta);
 	   $query=execute(array($Cod_Emp));
 

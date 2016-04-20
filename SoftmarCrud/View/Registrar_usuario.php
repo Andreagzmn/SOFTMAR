@@ -21,7 +21,7 @@
               <section class="col s12" >
 
                 <h3  style="text-align:center; margin-top:20px; ">Registrarse</h3>
-                <div class="col l6 s12 input-field form center" >
+                <div class="col l6 s12 input-field form center">
                   <div class="row">
                       <div class="input-field col s12"> 
 												<select name="cod_rol">

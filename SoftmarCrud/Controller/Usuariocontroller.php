@@ -85,7 +85,22 @@
 		break;
 
 		case 'u':
-			# actualizar...
+			$cod_rol 		= $_POST["cod_rol"];			
+			$Nombre			= $_POST["nombre"];
+			$Apellido		= $_POST["apellido"];
+			$Direccion      = $_POST["direccion"];			
+			$Edad	    	= $_POST["edad"];
+			$Clave          = $_POST["clave"];
+			$Correo         = $_POST["correo"];			
+			$Cedula			= $_POST["cedula"];
+
+			try{
+				Gestion_Contacto::Update($cod_rol,$Nombre,$Apellido,$Direccion,$Edad,$Clave,$Correo,$Cedula);
+				$mensaje = "Se actualizo correctamente";
+			}catch(Exception $e){
+				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 
+			}
+			header("Location: ../View/editar.usuario.php?m= ".$mensaje);
 			break;
 			
 		case 'd':

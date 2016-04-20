@@ -89,7 +89,7 @@
                     </div>
                   </div>         
                     		
-            		  <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect blue darken-3" ><i class=" material-icons right">done</i>Actualizar</button>
+            		  <button type="submit" name="accion" value="u" id="boton" class="btn waves-effect blue darken-3" ><i class=" material-icons right">done</i>Actualizar</button>
             		  <button type="submit" name="accion" id="boton" class="btn waves-effect blue darken-3" href="Gestionar_Usuario_admin.php" ><i class=" material-icons right">done</i>Cancelar</button>
                 <?php echo @$_REQUEST["msn"]; ?>
               </section>       

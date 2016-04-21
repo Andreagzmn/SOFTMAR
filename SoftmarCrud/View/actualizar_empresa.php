@@ -28,11 +28,11 @@
      <center><div class="empref">
       <h4 class="teal-text text-teal lighten-3 test">Actualiza</h4>
       <div class="row formem">
-        <form class="col s12"  action="controller/empresa.controller.php" method="POST">
+        <form class="col s12" action="controller/empresa.controller.php" method="POST">
           <div class="row">
           <input type="text" readonly name="Cod_Emp" required value="<?php echo $empresa[0] ?>">
             <div class="col s12"></div>
-              <select name="Cod_TipEmp" required  value="<?php echo $usuario[1] ?>">
+              <select name="Cod_TipEmp" required  value="<?php echo $empresa[1] ?>">
                 <option value="3" <?php if($empresa["Cod_TipEmp"] == 3){ echo "selected"; } ?>>Peluqueria</option>
                 <option value="4" <?php if($empresa["Cod_TipEmp"] == 4){ echo "selected"; } ?>>Barberia</option>
                 <option value="5" <?php if($empresa["Cod_TipEmp"] == 5){ echo "selected"; } ?>>Spa</option>
@@ -40,67 +40,94 @@
               </select>
               <div>
               <div class="input-field col s12">
-                <input id="Nombre" type="text" class="validate" required  value="<?php echo $usuario[2] ?>">
+                <input id="Nombre" type="text" class="validate" required  value="<?php echo $empresa[2] ?>">
                 <label for="Nombre" data-error="wrong" name="Nombre" >Nombre Empresa</label>
               </div>
               <div class="input-field col s6">
-                <input id="telefono" type="number" class="validate" required  value="<?php echo $usuario[3] ?>">
+                <input id="telefono" type="number" class="validate" required  value="<?php echo $empresa[3] ?>">
                 <label for="Telefono" data-error="wrong" name="Telefono">Telefono</label>
               </div>
               <div class="input-field col s6">
-                <input id="Direccion" type="text" class="validate" required  value="<?php echo $usuario[4] ?>">
+                <input id="Direccion" type="text" class="validate" required  value="<?php echo $empresa[4] ?>">
                 <label for="Direccion" data-error="wrong" name="Direccion">Direccion</label>
               </div>
-              <div class="input-field col s6" required  value="<?php echo $usuario[5] ?>">
+              <!-- <div class="input-field col s6" required  value="<?php //echo $empresa[5] ?>">
                 <select>
                   <option value="" disabled selected name="Ciudad">elige tu ciudad</option>
                 </select>
                 <label>Ciudad</label>
-              </div>
+              </div> -->
               <div class="input-field col s6">
-                <input id="NIT" type="number" class="validate" required  value="<?php echo $usuario[6] ?>">
+                <input id="NIT" type="number" class="validate" required  value="<?php echo $empresa[6] ?>">
                 <label for="NIT" data-error="wrong" name="NIT" >NIT</label>
               </div>
               <div class="input-field col s12">
-                <input id="email" type="email" class="validate" required  value="<?php echo $usuario[7] ?>">
+                <input id="email" type="email" class="validate" required  value="<?php echo $empresa[7] ?>">
                 <label for="email" data-error="wrong" name="Correo">Correo electronico</label>
               </div>
               <div class="input-field col s12">
                 <textarea id="textarea1" class="materialize-textarea"></textarea>
-                <label for="textarea1" name="Informacion" required  value="<?php echo $usuario[10] ?>">Informacion</label>
+                <label for="textarea1" name="Informacion" required  value="<?php echo $empresa[10] ?>">Informacion</label>
               </div>
               <div class="col s12">
                 <p class="center">Dias de atencion</p>
                 <div class="col s6">
-                  <input type="text" name="Dias_aten" required  value="<?php echo $usuario[11] ?>">
+                  <input type="text" name="Dias_aten" required  value="<?php echo $empresa[11] ?>">
                 </div>
               </div>
               <div class="col s12">
               <p class="center">Horario</p>
                 <div class="col s6">
                   <label>desde</label>
-                  <input type="time" name="Hor_desde" required  value="<?php echo $usuario[12] ?>">
+                  <input type="time" name="Hor_desde" required  value="<?php echo $empresa[12] ?>">
                 </div>
                 <div class="col s6">
                 <label>Hasta</label>
-                  <input type="time" name="Hor_hasta" required  value="<?php echo $usuario[13] ?>">
+                  <input type="time" name="Hor_hasta" required  value="<?php echo $empresa[13] ?>">
                 </div>
               </div>
-              <input type="hidden" value="" name="Geo_x" required  value="<?php echo $usuario[8] ?>">
-              <input type="hidden" value="" name="Geo_y" required  value="<?php echo $usuario[9] ?>">
+              <input type="hidden" value="" name="Geo_x" required  value="<?php echo $empresa[8] ?>">
+              <input type="hidden" value="" name="Geo_y" required  value="<?php echo $empresa[9] ?>">
               <div class="file-field input-field col s6">
                 <div class="btn">
-                  <span>Fotos</span>
-                  <input type="file" multiple>
+                  <span>Foto 1:</span>
+                  <input type="file" value="<?php echo $empresa[14] ?>">
                 </div>
                 <div class="file-path-wrapper">
-                  <input name="Fotos" class="file-path validate" type="text" placeholder="Upload one or more files">
+                  <input name="Foto1" class="file-path validate" type="text" placeholder="Upload one or more files">
+                </div>
+              </div>
+              <div class="file-field input-field col s6">
+                <div class="btn">
+                  <span>Foto 2:</span>
+                  <input type="file" value="<?php echo $empresa[15] ?>">
+                </div>
+                <div class="file-path-wrapper">
+                  <input name="Foto2" class="file-path validate" type="text" placeholder="Upload one or more files">
+                </div>
+              </div>
+              <div class="file-field input-field col s6">
+                <div class="btn">
+                  <span>Foto 3:</span>
+                  <input type="file" value="<?php echo $empresa[16] ?>">
+                </div>
+                <div class="file-path-wrapper">
+                  <input name="Foto3" class="file-path validate" type="text" placeholder="Upload one or more files">
+                </div>
+              </div>
+              <div class="file-field input-field col s6">
+                <div class="btn">
+                  <span>Foto 4:</span>
+                  <input type="file" value="<?php echo $empresa[17] ?>">
+                </div>
+                <div class="file-path-wrapper">
+                  <input name="Foto4" class="file-path validate" type="text" placeholder="Upload one or more files">
                 </div>
               </div>
                   <div class="file-field input-field col s6">
                       <div class="btn">
                         <span>Logo</span>
-                        <input type="file">
+                        <input type="file" value="<?php echo $empresa[18] ?>">
                       </div>
                       <div class="file-path-wrapper">
                           <input name="Logo" class="file-path validate" type="text">
@@ -108,8 +135,9 @@
                   </div>
             </div>
           </div>
-           <button type="submit" name="accion" value="r" id="boton" class="btn waves-effect  teal lighten-1" ><i class=" material-icons">done</i>Actualizar</button>
-          <?php echo @$_REQUEST["msn"]; ?>
+           <button  name="accion" value="u" id="boton" class="btn waves-effect blue darken-3" ><i class=" material-icons right">done</i>Actualizar</button>
+                  <a href="Gestion_Empresa_admin.php" id="boton" class="btn waves-effect blue darken-3" ><i class=" material-icons right">done</i>Cancelar</a>
+                <?php echo @$_REQUEST["$mensaje"]; ?>
         </form>
       </div>  
     </div></center>

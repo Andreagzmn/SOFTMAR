@@ -35,7 +35,7 @@ class Gestion_Empresa{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "SELECT * FROM empresa ORDER BY Nombre";
+		$consulta = "SELECT * FROM empresa";
 
 		$query = $Conexion->prepare($consulta);
 		$query->execute();

@@ -134,7 +134,7 @@
                   </div>
             </div>
           </div>
-           <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect blue darken-3" ><i class=" material-icons right">done</i>Registrarse</button>
+           <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect" ><i class=" material-icons right">done</i>Registrarse</button>
                 <?php echo @$_REQUEST["msn"]; ?>
         </form>
       </div>  

@@ -26,8 +26,8 @@
                       <div class="input-field col s12"> 
 												<select name="cod_rol">
 													<option value="" selected>Seleccione un tipo de usuario</option>
-													<option value="101">Cliente</option>
-													<option value="102">Dueño de Local</option>
+													<option value="102">Cliente</option>
+													<option value="101">Dueño de Local</option>
 												</select>
 
                       </div>
@@ -77,7 +77,7 @@
 
             		  <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect  cyan darken-3" id="btn-crear-cuenta">Registrarse</button>
                   <a href="login.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
-                <?php echo @$_REQUEST["msn"]; ?>
+                <?php echo @$_REQUEST["$mensaje"]; ?>
               </section>
           	</form>
         </div>

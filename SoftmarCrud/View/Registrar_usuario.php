@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+<!DOCTYPE html >
 <html>
 <head>
-	<title>Formulario</title>
+  
   <meta charset="utf-8"/>
    <link type="text/css" rel="stylesheet" href="estilos.css">
   <title>Registrar usuario</title>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster" />
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -17,10 +18,11 @@
   <div class="container">
     <div ="row">
           <div class="col s12 l8  ">
+          <h3  style="text-align:center; margin-bottom: -47px; ">Softmar</h3>
           	<form action="../Controller/Usuariocontroller.php" method="POST" class="col s12 m8 offset-l8 z-depth-4 formulario " id="formulario" >
               <section class="col s12" >
 
-                <h3  style="text-align:center; margin-top:20px; ">Registrarse</h3>
+                
                 <div class="col l6 s12 input-field form center">
                   <div class="row">
                       <div class="input-field col s12"> 
@@ -75,8 +77,8 @@
                     </div>
                   </div>
 
-            		  <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect blue darken-3" ><i class=" material-icons right">done</i>Registrarse</button>
-                  <a href="login.php" id="boton" class="btn waves-effect blue darken-3"><i class=" material-icons right">done</i>Cancelar</a>
+            		  <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect  cyan darken-3" id="btn-crear-cuenta">Registrarse</button>
+                  <a href="login.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
                 <?php echo @$_REQUEST["msn"]; ?>
               </section>
           	</form>

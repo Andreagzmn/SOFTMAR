@@ -43,7 +43,8 @@
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 
 			}
-			header("Location: ../View/formem.php?m= ".$mensaje);
+			header("Location: ../View/Gestion_Empresa_admin.php?m= ".$mensaje);
+
 	break;
 
 		break;

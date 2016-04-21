@@ -9,8 +9,8 @@
 
     header("Location: ../View/login.php?m=".$msn."&tm=".$tipo_msn);
   }
-
-  $empresa =  Gestion_Empresa::ReadbyId(base64_decode($_REQUEST["ei"]));
+   require_once("../Model/empresa.class.php");
+   $empresa =  Gestion_Empresa::ReadbyId(base64_decode($_REQUEST["ei"]));
 ?>
 <!DOCTYPE html>
   <html>
@@ -26,7 +26,7 @@
     </head>
     <body>
      <center><div class="empref">
-      <h4 class="teal-text text-teal lighten-3 test">Actualiza</h4>
+      <h4 class="teal-text text-teal lighten-3 test">Actualizar</h4>
       <div class="row formem">
         <form class="col s12" action="controller/empresa.controller.php" method="POST">
           <div class="row">
@@ -61,7 +61,7 @@
                 <input id="NIT" type="number" class="validate" required  value="<?php echo $empresa[6] ?>">
                 <label for="NIT" data-error="wrong" name="NIT" >NIT</label>
               </div>
-              <div class="input-field col s12">
+              <div class="input-field col s6">
                 <input id="email" type="email" class="validate" required  value="<?php echo $empresa[7] ?>">
                 <label for="email" data-error="wrong" name="Correo">Correo electronico</label>
               </div>
@@ -135,8 +135,8 @@
                   </div>
             </div>
           </div>
-           <button  name="accion" value="u" id="boton" class="btn waves-effect blue darken-3" ><i class=" material-icons right">done</i>Actualizar</button>
-                  <a href="Gestion_Empresa_admin.php" id="boton" class="btn waves-effect blue darken-3" ><i class=" material-icons right">done</i>Cancelar</a>
+           <button  onclick="Aceptar()" name="accion" value="u" id="boton" class="btn waves-effect" style="margin: 20px;">Actualizar</button>
+                  <a href="Gestion_Empresa_admin.php" id="boton" class="btn waves-effect" style="margin: 20px;" >Cancelar</a>
                 <?php echo @$_REQUEST["$mensaje"]; ?>
         </form>
       </div>  
@@ -147,6 +147,12 @@
         $(document).ready(function() {
           $('select').material_select();
         });
+    </script>
+    <script>
+      function Aceptar() {
+        confirm("Se actualizo correctamente");
+        window.location="Gestion_Empresa_admin.php";
+      }
     </script>
     <script>
       $('.datepicker').pickadate({

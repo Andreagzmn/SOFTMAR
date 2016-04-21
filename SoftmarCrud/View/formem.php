@@ -17,7 +17,7 @@
         <form class="col s12"  action="../controller/empresa.controller.php" method="POST">
           <div class="row">
             <div class="input-field col s12">
-              <select  name="Cod_TipEmp">
+              <select  name="Cod_TipEmp" id="demo">
                   <option value="" disabled selected>Tipo de empresa</option>
                   <?php
                     // Cargo la bd
@@ -39,15 +39,15 @@
               </div>
               <div>
               <div class="input-field col s12">
-                <input id="Nombre" type="text" class="validate" name="Nombre" required>
+                <input id="demo" type="text" class="validate" name="Nombre" required>
                 <label for="Nombre" data-error="wrong" >Nombre Empresa</label>
               </div>
               <div class="input-field col s6">
-                <input id="telefono" type="number" class="validate" name="Telefono" required>
+                <input id="demo" type="number" class="validate" name="Telefono" required>
                 <label for="Telefono" data-error="wrong" >Telefono</label>
               </div>
               <div class="input-field col s6">
-                <input id="Direccion" type="text" class="validate" name="Direccion" required>
+                <input id="demo" type="text" class="validate" name="Direccion" required>
                 <label for="Direccion" data-error="wrong" >Direccion</label>
               </div>
             <!--   <div class="input-field col s6">
@@ -57,32 +57,32 @@
                 <label>Ciudad</label>
               </div> -->
               <div class="input-field col s6">
-                <input id="NIT" type="number" class="validate" name="NIT" required>
+                <input id="demo" type="number" class="validate" name="NIT" required>
                 <label for="NIT" data-error="wrong"  >NIT</label>
               </div>
-              <div class="input-field col s12">
-                <input id="email" type="email" class="validate" name="Correo" required>
+              <div class="input-field col s6">
+                <input id="demo" type="email" class="validate" name="Correo" required>
                 <label for="email" data-error="wrong" >Correo electronico</label>
               </div>
               <div class="input-field col s12">
-                <textarea id="textarea1" class="materialize-textarea" name="Informacion" required></textarea>
+                <textarea id="demo" class="materialize-textarea" name="Informacion" required></textarea>
                 <label for="textarea1" >Informacion</label>
               </div>
               <div class="col s12">
                 <p class="center">Dias de atencion</p>
                 <div class="col s6">
-                  <input type="text" name="Dias_aten" required>
+                  <input type="text" id="demo" name="Dias_aten" required>
                 </div>
               </div>
               <div class="col s12">
               <p class="center">Horario</p>
                 <div class="col s6">
                   <label>desde</label>
-                  <input type="time" name="Hor_desde" required>
+                  <input type="time" id="demo" name="Hor_desde" required>
                 </div>
                 <div class="col s6">
                 <label>Hasta</label>
-                  <input type="time" name="Hor_hasta" required>
+                  <input type="time" id="demo" name="Hor_hasta" required>
                 </div>
               </div>
               <input type="hidden" value="" name="Geo_x">
@@ -93,7 +93,7 @@
                   <input type="file">
                 </div>
                 <div class="file-path-wrapper">
-                  <input name="Foto1" class="file-path validate" type="text" placeholder="Upload one or more files">
+                  <input name="Foto1" id="demo" class="file-path validate" type="text" placeholder="Upload one or more files">
                 </div>
               </div>
               <div class="file-field input-field col s6">
@@ -102,7 +102,7 @@
                   <input type="file">
                 </div>
                 <div class="file-path-wrapper">
-                  <input name="Foto2" class="file-path validate" type="text" placeholder="Upload one or more files">
+                  <input name="Foto2" id="demo" class="file-path validate" type="text" placeholder="Upload one or more files">
                 </div>
               </div>
               <div class="file-field input-field col s6">
@@ -111,7 +111,7 @@
                   <input type="file">
                 </div>
                 <div class="file-path-wrapper">
-                  <input name="Foto3" class="file-path validate" type="text" placeholder="Upload one or more files">
+                  <input name="Foto3" id="demo" class="file-path validate" type="text" placeholder="Upload one or more files">
                 </div>
               </div>
               <div class="file-field input-field col s6">
@@ -120,7 +120,7 @@
                   <input type="file">
                 </div>
                 <div class="file-path-wrapper">
-                  <input name="Foto4" class="file-path validate" type="text" placeholder="Upload one or more files">
+                  <input name="Foto4" id="demo" class="file-path validate" type="text" placeholder="Upload one or more files">
                 </div>
               </div>
                   <div class="file-field input-field col s6">
@@ -129,18 +129,29 @@
                         <input type="file">
                       </div>
                       <div class="file-path-wrapper">
-                          <input name="Logo" class="file-path validate" type="text">
+                          <input name="Logo" id="demo" class="file-path validate" type="text">
                       </div>
                   </div>
             </div>
           </div>
-           <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect" ><i class=" material-icons right">done</i>Registrarse</button>
+           <button onclick="Aceptar()"type="submit" name="accion" value="c" id="boton" class="btn waves-effect">Registrarse</button>
                 <?php echo @$_REQUEST["msn"]; ?>
         </form>
       </div>  
     </div></center>
     <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+    <script>
+      function Aceptar() {
+        var x;
+        x=document.getElementById("demo").value;
+        if(x==""){
+            alert("Llene primero los datos");
+        }else{
+          alert("se ah registrado correctamente");
+        }
+      }
+    </script>
     <script>
         $(document).ready(function() {
           $('select').material_select();

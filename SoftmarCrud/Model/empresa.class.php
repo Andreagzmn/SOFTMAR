@@ -89,6 +89,21 @@ class Gestion_Empresa{
 		Softmar_BD::Disconnect();
 	
 	}
+		function Delete($Cod_Emp){
+	//Instanciamos y nos conectamos a la bd
+		$Conexion = Softmar_BD::Connect();
+		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		
+
+		//Crear el query que vamos a realizar
+		$consulta = "DELETE FROM empresa WHERE Cod_Emp = ?" ;
+
+		$query = $Conexion->prepare($consulta);
+		$query->execute(array($Cod_Emp));		
+
+		Softmar_BD::Disconnect();
+	}
 }
 
 ?>

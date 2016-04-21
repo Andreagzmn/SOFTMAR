@@ -28,6 +28,7 @@
 													<option value="" selected>Seleccione un tipo de usuario</option>
 													<option value="101">Cliente</option>
 													<option value="102">Dueño de Local</option>
+                          <option value="103">Administrador</option>
 												</select>
 
                       </div>
@@ -76,7 +77,7 @@
                   </div>
 
             		  <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect  cyan darken-3" id="btn-crear-cuenta">Registrarse</button>
-                  <a href="login.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
+                  <a href="Gestion_Usuario_admin.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
                 <?php echo @$_REQUEST["msn"]; ?>
               </section>
           	</form>
@@ -94,7 +95,3 @@
 	</script>
 </body>
 </html>
-<!--<label>Foto:</label>
-<input type="text" name="foto">
- <br>
- <br>-->

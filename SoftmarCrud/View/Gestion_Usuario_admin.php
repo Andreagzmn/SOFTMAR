@@ -29,7 +29,7 @@
    </head>
   <body class="center">
     <h1>GESTIONAR USUARIOS</h1>
-    <a href="Registrar_usuario.php">Nuevo Usuario</a>
+    <a href="RegistrarUsuarioAdmn.php">Nuevo Usuario</a>
 
     <table id="datatable" class="display highlight" >
       <thead>

@@ -13,7 +13,7 @@
 	//3. Instanciamos las variables globales y una llamada $accion.
 	//La variable accion nos va a indicar que parte del crud vamos hacer.
 
-	$accion =@$_REQUEST["accion"];
+	$accion = $_REQUEST["accion"];
 	//$action = isset($_REQUEST['action']) ? $_POST['action']: NULL;
 
 
@@ -29,7 +29,7 @@
 			$Valor	        = $_POST["Valor"];
 
 			try{
-				Gestionar_servicio_emp::Create($Cod_Emp,$Nombre,$Descripcion,$Estado,$Valor);
+				Gestion_servicio_emp::create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor);
 				$mensaje = "El servicio se registro correctamente";
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	

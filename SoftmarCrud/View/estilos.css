@@ -18,18 +18,20 @@ main{
   flex: 1 0 auto;
 
 }
-.container{
+/*.container{
 	width: 800px;
 	margin-left: 500px;
 	margin-top: -342px;
 	background-color: rgba(207,206,208,0.5) !important;
 	float: right;
-}
+}*/
 .formulario{
 	background-color: rgba(244, 238, 247, 0.5) !important;
   border-radius:10px;
   margin-top:5%;
   width: 50%;
+
+
   }
 .img{
 	margin-top: 150px;
@@ -68,6 +70,10 @@ main{
   margin-right: 20px;
   width: 70%;
 }
+#formi{
+margin-left: 120px;
+} 
+
 /*dash*/
 
 .hover img {
@@ -254,8 +260,8 @@ h5 span{
 /*Registrar_usuario AndreaGuzman*/
 #formulario{
   padding-left: 20px;
-  padding-right: 20px;
-  margin-left: 342px;
+  padding-right: 35px;
+  margin-left: 250px;
 }
 #boton{
   margin-bottom: 20px;
@@ -295,12 +301,21 @@ h5 span{
   margin-left: 100px;
 }
 .tit{
-  margin-left: 450px;
+  margin-left: 200px;
   color:#8B8B8B; 
 }
 /*Data Grid*/
 #datatable{
  
 }
+<<<<<<< HEAD
 /*Gestion Empresa*/
 
+=======
+/*Prueba*/
+h3 {
+  font-family: "Lobster", "Times", serif;
+  font-size: 1.8em;
+  text-shadow: #aaa 4px 4px 4px;
+}
+>>>>>>> origin/master

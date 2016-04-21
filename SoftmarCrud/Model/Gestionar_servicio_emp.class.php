@@ -1,6 +1,6 @@
 <?php
 
-class Gestionar_servicio_emp{
+class Gestion_servicio_emp{
 
     function create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor){
 

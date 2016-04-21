@@ -63,14 +63,14 @@
     </div>                        
 	</div>     
 </form>
-  <?php
-   if( base64_decode(@$_GET["tm"]) == "advertencia"){
-                      $estilos = "orange";
-  }else{
-    $estilos = "red";
-  }
+  <!-- <?php
+   // if( base64_decode(@$_GET["tm"]) == "advertencia"){
+   //                    $estilos = "orange";
+  // }else{
+  //   $estilos = "red";
+  // }
 
-echo "<div style='background-color:".$estilos."'>".base64_decode(@$_GET["m"])."</div>";?>
+// echo "<div style='background-color:".$estilos."'>".base64_decode(@$_GET["m"])."</div>";?> -->
 	  <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.js"></script>
     <script type="text/javascript">

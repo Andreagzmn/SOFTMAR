@@ -1,3 +1,4 @@
+
 <?php
 
 	//incrustar un elemento 1. include: Si no encuentra el elemento nos tira una advertencia 

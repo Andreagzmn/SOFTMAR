@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<form   action="../Controller/Usuariocontroller.php" method="POST" name="myform" novalidate>
+<form   action="../Controller/Usuariocontroller.php" method="POST" >
 	<div class="con">
 		<div class="tarjeta">		    
       <div class="row">
@@ -45,7 +45,7 @@
                                     <h4>Recupera tu cuenta</h4>
                                     <p>Ingresa tu correo electrónico </p> 
                                     <div class="input-field col s12">                                                                       
-                                      <input id="Correo2" type="text" class="validate" required>
+                                      <input id="Correo2" type="text" class="validate">
                                       <label for="Correo2">Correo electrónico</label>
                                     </div>
                                     <p>En breves instantes te enviaremos un enlace al correo ingresado</p>
@@ -64,14 +64,14 @@
     </div>                        
 	</div>     
 </form>
-  <!-- <?php
-   // if( base64_decode(@$_GET["tm"]) == "advertencia"){
-   //                    $estilos = "orange";
-  // }else{
-  //   $estilos = "red";
-  // }
+  <?php
+   if( base64_decode(@$_GET["tm"]) == "advertencia"){
+                       $estilos = "orange";
+  }else{
+    $estilos = "red";
+   }
 
-// echo "<div style='background-color:".$estilos."'>".base64_decode(@$_GET["m"])."</div>";?> -->
+echo "<div style='background-color:".$estilos."'>".base64_decode(@$_GET["m"])."</div>";?>
 	  <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.js"></script>
     <script type="text/javascript">

@@ -76,6 +76,7 @@
                   </div>
 
             		  <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect blue darken-3" ><i class=" material-icons right">done</i>Registrarse</button>
+                  <a href="login.php" id="boton" class="btn waves-effect blue darken-3"><i class=" material-icons right">done</i>Cancelar</a>
                 <?php echo @$_REQUEST["msn"]; ?>
               </section>
           	</form>

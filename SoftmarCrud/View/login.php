@@ -11,6 +11,7 @@
 
 </head>
 <body>
+
 <form   action="../Controller/Usuariocontroller.php" method="POST" name="myform" novalidate>
 	<div class="con">
 		<div class="tarjeta">		    

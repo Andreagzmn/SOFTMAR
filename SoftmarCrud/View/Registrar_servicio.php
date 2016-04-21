@@ -24,13 +24,30 @@
 </head>
 <body>
 	<div class="row">
-		<h4 class="tit">Registrar Servicios</h4>
-		<form action="../Controller/Gestionar_servicio_emp.controller.php" method="POST" class="contenedor"class="col s12">
+		<h4  class="tit">Registrar Servicios</h4>
+		<form id="formi" action="../Controller/Gestionar_servicio_emp.controller.php" method="POST" class="contenedor"class="col s12">
 			<div class="row">
-				<div class="input-field col s12">
-					<input id="first_name" type="number" class="validate" required name="Cod_Emp">
-					<label for="first_name">Código empresa</label>
-                </div>
+    			<div class="input-field col s12">
+                  <select  name="Cod_Emp">
+                      <option value="" disabled selected>Empresa</option>
+                      <?php
+                        // Cargo la bd
+                         require_once("../Model/db_conn.php");
+                        // Cargo la clase tipo empresa
+                         require_once("../Model/empresa.class.php");
+
+                        $empresa = Gestion_Empresa::ReadAll();
+
+                        foreach ($empresa as $row){
+                            echo "<option value='".$row["Cod_Emp"]."'>".$row["Nombre"]."</option>";
+                        }
+                        //foreach ($imagenes as $row){
+                        //    echo "<img src='".$row["Nombre"]."'/>";
+                        //}
+                      ?>
+                    </select>
+                    <label>Empresa</label>
+                  </div>
                 <div class="input-field col s12">
                     <input id="last_name" type="text" class="validate" required name="Nombre">
                     <label for="last_name">Nombre del servicio</label>
@@ -54,7 +71,7 @@
                 </div>
             </div>  
             <div class="row">
-                <button name="accion" value="c"  id="botn" id="buton" class="btn waves-effect blue darken-3" ><i class=" material-icons right">done</i>Registrarse</button>
+                <button name="accion" value="c"  id="botn" id="buton" class="btn waves-effect" ><i class=" material-icons right">done</i>Registrarse</button>
                 <?php echo @$_REQUEST["msn"]; ?>
             </div>          
         </form>

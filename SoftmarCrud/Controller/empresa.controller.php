@@ -31,9 +31,14 @@
 			$Dias_aten		= $_POST["Dias_aten"];
 			$Hor_desde		= $_POST["Hor_desde"];
 			$Hor_hasta      = $_POST["Hor_hasta"];
+			$Foto1			= $_POST["Foto1"];
+			$Foto2			= $_POST["Foto2"];
+			$Foto3			= $_POST["Foto3"];
+			$Foto4			= $_POST["Foto4"];
+			$Logo			= $_POST["Logo"];
 
 			try{
-				Gestion_Empresa::Create($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta);
+				Gestion_Empresa::Create($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta,$Foto1,$Foto2,$Foto3,$Foto4,$Logo);
 				$mensaje = "Su registro se creo correctamente";
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 
@@ -61,8 +66,13 @@
 			$Dias_aten		= $_POST["Dias_aten"];
 			$Hor_desde		= $_POST["Hor_desde"];
 			$Hor_hasta      = $_POST["Hor_hasta"];
+			$Foto1			= $_POST["Foto1"];
+			$Foto2			= $_POST["Foto2"];
+			$Foto3			= $_POST["Foto3"];
+			$Foto4			= $_POST["Foto4"];
+			$Logo			= $_POST["Logo"];
 			try{
-				Gestion_Empresa::Update($Cod_Emp,$Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta);
+				Gestion_Empresa::Update($Cod_Emp,$Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta,$Foto1,$Foto2,$Foto3,$Foto4,$Logo);
 				$mensaje = "Se actualizo correctamente";
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 

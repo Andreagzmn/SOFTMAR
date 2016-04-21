@@ -87,7 +87,7 @@
               </div>
               <input type="hidden" value="" name="Geo_x">
               <input type="hidden" value="" name="Geo_y">
-              <!--<div class="file-field input-field col s3">
+              <div class="file-field input-field col s6">
                 <div class="btn">
                   <span>Foto 1:</span>
                   <input type="file">
@@ -96,7 +96,7 @@
                   <input name="Foto1" class="file-path validate" type="text" placeholder="Upload one or more files">
                 </div>
               </div>
-              <div class="file-field input-field col s3">
+              <div class="file-field input-field col s6">
                 <div class="btn">
                   <span>Foto 2:</span>
                   <input type="file">
@@ -105,7 +105,7 @@
                   <input name="Foto2" class="file-path validate" type="text" placeholder="Upload one or more files">
                 </div>
               </div>
-              <div class="file-field input-field col s3">
+              <div class="file-field input-field col s6">
                 <div class="btn">
                   <span>Foto 3:</span>
                   <input type="file">
@@ -114,7 +114,7 @@
                   <input name="Foto3" class="file-path validate" type="text" placeholder="Upload one or more files">
                 </div>
               </div>
-              <div class="file-field input-field col s3">
+              <div class="file-field input-field col s6">
                 <div class="btn">
                   <span>Foto 4:</span>
                   <input type="file">
@@ -131,7 +131,7 @@
                       <div class="file-path-wrapper">
                           <input name="Logo" class="file-path validate" type="text">
                       </div>
-                  </div>-->
+                  </div>
             </div>
           </div>
            <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect blue darken-3" ><i class=" material-icons right">done</i>Registrarse</button>

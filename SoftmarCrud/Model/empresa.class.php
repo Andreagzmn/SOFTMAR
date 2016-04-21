@@ -10,16 +10,16 @@ class Gestion_Empresa{
 	//Metodo create()
 	//El metodo create guarda los datos en la tabla contactos, captura todos los parametros desde el  formulario
 
-	function Create($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta){
+	function Create($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta,$Foto1,$Foto2,$Foto3,$Foto4,$Logo){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = Softmar_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//Crear el query que vamos a realizar
-		$consulta = "INSERT INTO empresa (Cod_TipEmp,Nombre,Telefono,Direccion,NIT,Correo,Geo_x,Geo_y,Informacion,Dias_aten,Hor_desde,Hor_hasta) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+		$consulta = "INSERT INTO empresa (Cod_TipEmp,Nombre,Telefono,Direccion,NIT,Correo,Geo_x,Geo_y,Informacion,Dias_aten,Hor_desde,Hor_hasta,Foto1,Foto2,Foto3,Foto4,Logo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta));
+		$query->execute(array($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta,$Foto1,$Foto2,$Foto3,$Foto4,$Logo));
 
 		Softmar_BD::Disconnect();
 	}
@@ -73,7 +73,7 @@ class Gestion_Empresa{
 		Softmar_BD::Disconnect();
 	}
  
-	function Update($Cod_Emp,$Cod_TipEmp,$Nombre,$Telefono,$Direccion,$Ciudad,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta){
+	function Update($Cod_Emp,$Cod_TipEmp,$Nombre,$Telefono,$Direccion,$Ciudad,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta,$Foto1,$Foto2,$Foto3,$Foto4,$Logo){
 	//Instanciamos y nos conectamos a la bd
 		$Conexion = Softmar_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -81,10 +81,10 @@ class Gestion_Empresa{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "UPDATE empresa SET Cod_TipEmp = ?, Nombre = ?,Telefono = ?,Direccion = ?,Ciudad = ?,NIT = ?,Correo= ?,Geo_x = ?,Geo_y= ?,Informacion =?,Dias_aten =?,Hor_desde = ?,Hor_hasta = ? WHERE Cod_Emp =? " ;
+		$consulta = "UPDATE empresa SET Cod_TipEmp = ?, Nombre = ?,Telefono = ?,Direccion = ?,Ciudad = ?,NIT = ?,Correo= ?,Geo_x = ?,Geo_y= ?,Informacion =?,Dias_aten =?,Hor_desde = ?,Hor_hasta = ?,Foto1 =?,Foto2=?,Foto3=?,Foto4=?,Logo=? WHERE Cod_Emp =? " ;
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$Ciudad,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta,$Cod_Emp));		
+		$query->execute(array($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$Ciudad,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta,$Foto1,$Foto2,$Foto3,$Foto4,$Logo,$Cod_Emp));		
 
 		Softmar_BD::Disconnect();
 	

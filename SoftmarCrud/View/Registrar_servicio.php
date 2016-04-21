@@ -10,7 +10,7 @@
     header("Location: ../View/login.php?m=".$msn."&tm=".$tipo_msn);
   }
 
-  $usuario =  Gestion_Contacto::ReadbyId(base64_decode($_REQUEST["ui"]));
+
 ?>
 <!doctype html>
 <html>
@@ -54,7 +54,7 @@
                 </div>
             </div>  
             <div class="row">
-                <button type="submit" name="accion" value="c"  id="botn" id="buton" class="btn waves-effect blue darken-3" ><i class=" material-icons right">done</i>Registrarse</button>
+                <button name="accion" value="c"  id="botn" id="buton" class="btn waves-effect blue darken-3" ><i class=" material-icons right">done</i>Registrarse</button>
                 <?php echo @$_REQUEST["msn"]; ?>
             </div>          
         </form>

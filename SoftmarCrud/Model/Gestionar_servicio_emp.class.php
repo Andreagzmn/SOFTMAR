@@ -19,13 +19,14 @@ class Gestion_servicio_emp{
     function ReadAll(){
     	
         $conexion=softmar_BD::Connect();
-        $conexion->SetAttribute(PDO::ATTR_ERRMODE,POO::ERRMODE_EXCEPTION);
+        $conexion->SetAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
         $consulta="SELECT * FROM servicio_emp ORDER BY Cod_Emp";
         $query=$conexion->prepare($consulta);
         $query->execute();
 
-        $resultado=$query->fetcAll(PDO::FETCH_BOTH);
+
+        $resultado = $query->fetchALL(PDO::FETCH_BOTH);
         return $resultado;
 
         softmar_BD::Disconnect();

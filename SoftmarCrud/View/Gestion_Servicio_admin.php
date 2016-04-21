@@ -9,6 +9,7 @@
 
     header("Location: ../View/login.php?m=".$msn."&tm=".$tipo_msn);
   }
+  require_once("../Model/Gestionar_servicio_emp.class.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,7 +44,7 @@
       <tbody>
 
       <?php
-      $servicios = Gestionar_servicio_emp::ReadAll();
+      $servicios = Gestion_servicio_emp::ReadAll();
 
       foreach ($servicios as $row) {
 

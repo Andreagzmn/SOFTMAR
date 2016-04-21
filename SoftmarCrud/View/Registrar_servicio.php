@@ -23,13 +23,14 @@
 	<title>Gestionar servicios empresa</title>
 </head>
 <body>
+    <div class="container">
 	<div class="row">
 		<h4  class="tit">Registrar Servicios</h4>
-		<form id="formi" action="../Controller/Gestionar_servicio_emp.controller.php" method="POST" class="contenedor"class="col s12">
+		<form id="formi" action="../Controller/Gestion_servicio_emp.controller.php" method="POST" class="contenedor"class="col s12">
 			<div class="row">
     			<div class="input-field col s12">
                   <select  name="Cod_Emp">
-                      <option value="" disabled selected>Empresa</option>
+                      <option value="" disabled selected>---Seleccione---</option>
                       <?php
                         // Cargo la bd
                          require_once("../Model/db_conn.php");
@@ -46,8 +47,8 @@
                         //}
                       ?>
                     </select>
-                    <label>Empresa</label>
-                  </div>
+                    <label>-Seleccione-</label>
+                </div>
                 <div class="input-field col s12">
                     <input id="last_name" type="text" class="validate" required name="Nombre">
                     <label for="last_name">Nombre del servicio</label>
@@ -70,12 +71,12 @@
                     <label for="first_name">Valor</label>
                 </div>
             </div>  
-            <div class="row">
-                <button name="accion" value="c"  id="botn" id="buton" class="btn waves-effect" ><i class=" material-icons right">done</i>Registrarse</button>
-                <?php echo @$_REQUEST["msn"]; ?>
-            </div>          
+            
+                <button type="submit" name="accion" value="C"  id="botn" id="buton" class="btn waves-effect" >Registrarse</button>
+                <?php echo @$_REQUEST["msn"]; ?>            
         </form>
-    </div>    
+    </div> 
+    <div>   
     <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.js"></script>
     <script type="text/javascript">

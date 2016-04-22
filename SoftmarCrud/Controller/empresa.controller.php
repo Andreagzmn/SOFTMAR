@@ -39,11 +39,9 @@
 				Gestion_Empresa::Create($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta,$Foto1,$Foto2,$Foto3,$Foto4,$Logo);
 				$mensaje = "Su registro se creo correctamente";
 				header("Location: ../View/login.php");
-				echo '<script language="javascript">alert("Se registro correctamente");</script>';
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	
 				header("Location: ../View/formem.php");
-				echo '<script language="javascript">alert("Su registro no fue existoso");</script>';
 			}
 			
 	break;

@@ -141,17 +141,19 @@
     </div></center>
     <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
-    <script>
+<!--     <script>
       function Aceptar() {
         var x;
         x=document.getElementById("demo").value;
         if(x==""){
             alert("Llene primero los datos");
+            window.locationf="../formem.php"
         }else{
           alert("se ah registrado correctamente");
+          window.locationf="../login.php";
         }
       }
-    </script>
+    </script> -->
     <script>
         $(document).ready(function() {
           $('select').material_select();

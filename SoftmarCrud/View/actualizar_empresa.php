@@ -10,7 +10,7 @@
     header("Location: ../View/login.php?m=".$msn."&tm=".$tipo_msn);
   }
    require_once("../Model/empresa.class.php");
-   $empresa =  Gestion_Empresa::ReadbyId(base64_decode($_REQUEST["ei"]));
+   $empresa =  Gestion_Empresa::ReadbyID(base64_decode($_REQUEST["ei"]));
 ?>
 <!DOCTYPE html>
   <html>
@@ -86,8 +86,6 @@
                   <input type="time" name="Hor_hasta" required  value="<?php echo $empresa[13] ?>">
                 </div>
               </div>
-              <input type="hidden" value="" name="Geo_x" required  value="<?php echo $empresa[8] ?>">
-              <input type="hidden" value="" name="Geo_y" required  value="<?php echo $empresa[9] ?>">
               <div class="file-field input-field col s6">
                 <div class="btn">
                   <span>Foto 1:</span>
@@ -148,12 +146,11 @@
           $('select').material_select();
         });
     </script>
-    <script>
+   <!--  <script>
       function Aceptar() {
         confirm("Se actualizo correctamente");
-        window.location="Gestion_Empresa_admin.php";
       }
-    </script>
+    </script> -->
     <script>
       $('.datepicker').pickadate({
           selectMonths: true, // Creates a dropdown to control month

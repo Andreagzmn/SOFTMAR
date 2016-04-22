@@ -86,16 +86,19 @@
 		break;
 
 		case 'u':
+			$Cod_usu		= $_POST["Cod_usu"];
 			$cod_rol 		= $_POST["cod_rol"];			
 			$Nombre			= $_POST["nombre"];
 			$Apellido		= $_POST["apellido"];
 			$Direccion      = $_POST["direccion"];			
-			$Edad	    	= $_POST["edad"];			
+			$Edad	    	= $_POST["edad"];
+			$clave  		= $_POST["clave"];			
 			$Correo         = $_POST["correo"];			
 			$Cedula			= $_POST["cedula"];
 
+
 			try{
-				Gestion_Contacto::Update($cod_rol,$Nombre,$Apellido,$Direccion,$Edad,$Correo,$Cedula);
+				Gestion_Contacto::Update($Cod_usu,$cod_rol,$Nombre, $Apellido, $Direccion, $Edad, $Clave, $Correo, $Cedula);
 				$mensaje = "Se actualizo correctamente";
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 

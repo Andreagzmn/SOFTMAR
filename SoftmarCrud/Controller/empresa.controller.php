@@ -7,7 +7,6 @@
 	//Ambos(Include y Require) tienen una propiedad llamada once donde nos permite hacer la carga solo una vez
 	session_start();
 	require_once("../Model/db_conn.php");
-
 	require_once("../Model/empresa.class.php");
 
 	//3. Instanciamos las variables globales y una llamada $accion.
@@ -38,12 +37,11 @@
 			try{
 				Gestion_Empresa::Create($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta,$Foto1,$Foto2,$Foto3,$Foto4,$Logo);
 				$mensaje = "Su registro se creo correctamente";
-				header("Location: ../View/login.php");
+				header("Location: ../View/Gestionar_Empresa_admin.php?m=".$mensaje);
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
-				header("Location: ../View/formem.php");
+				header("Location: ../View/Registrar_Empresa.php?m=".$mensaje);
 			}
-
 	break;
 
 

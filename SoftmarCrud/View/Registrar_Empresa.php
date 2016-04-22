@@ -9,6 +9,16 @@
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <link rel="stylesheet" type="text/css" href="estilos.css">
+
+      <?php
+
+          if(!isset($_GET["m"])){
+            if($_GET["m"] != ""){
+              echo "<script>alert('".$_GET["m"]."')</script>";
+            }
+          }
+
+      ?>
     </head>
     <body>
      <center><div class="empref">
@@ -137,15 +147,15 @@
            <button onclick="Aceptar()"type="submit" name="accion" value="c" id="boton" class="btn waves-effect">Registrarse</button>
                 <?php echo @$_REQUEST["msn"]; ?>
         </form>
-      </div>  
+      </div>
     </div></center>
     <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
     <script>
       function Aceptar() {
-        
+
       }
-    </script> 
+    </script>
     <script>
         $(document).ready(function() {
           $('select').material_select();

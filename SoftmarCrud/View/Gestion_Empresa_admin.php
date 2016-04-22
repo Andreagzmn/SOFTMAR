@@ -22,19 +22,45 @@
     <link rel="stylesheet" type="text/css" href="estilos.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" type="text/css" href="sweetalert-master/sweetalert.css">
+    <script type="text/javascript" src="sweetalert-master/sweetalert.min.js"></script>
 
     <script>
     $(document).ready( function () {
       $('#datatable').DataTable();
     });
     </script>
+
+<?php
+
+      if(isset($_GET["m"]) and isset($_GET["tm"])){
+        if($_GET["m"] != ""){
+          echo "<script>
+                  $(document).ready(function(){
+                      sweetAlert({
+                          title: 'Mensaje de SOFTMAR',   
+                          text: '".$_GET["m"]."',   
+                          type: '".$_GET["tm"]."',   
+                          showCancelButton: false,
+                          confirmButtonColor: '#4db6ac',   
+                          confirmButtonText: 'Aceptar',   
+                          cancelButtonText: 'No, cancel plx!',   
+                          closeOnConfirm: false,   
+                          closeOnCancel: false
+                      });
+                    });
+                </script>";
+          }
+        }
+?>
+      
    </head>
   <body>
     <h1>GESTIONAR EMPRESA</h1>
-    <a href="formem.php">Nueva Empresa</a>
+    <a href="Registrar_Empresa.php">Nueva Empresa</a>
 
     <table id="datatable" class="display" >
-      <thead style="width: 50%">
+      <thead>
         <tr>
           <th>Cod_Emp</th>
           <th>Cod_TipEmp</th>
@@ -47,11 +73,6 @@
           <th>Dias de atencion</th>
           <th>Hora desde</th>
           <th>Hora hasta</th>
-          <th>Foto 1</th>
-          <th>Foto 2</th>
-          <th>Foto 3</th>
-          <th>Foto 4</th>
-          <th>Logo</th>
         </tr>
       </thead>
       <tbody>
@@ -77,22 +98,15 @@
                 <td>".$row["Nombre"]."</td>
                 <td>".$row["Telefono"]."</td>
                 <td>".$row["Direccion"]."</td>
+                <td>".$row["NIT"]."</td>
                 <td>".$row["Correo"]."</td>
                 <td>".$row["Informacion"]."</td>
                 <td>".$row["Dias_aten"]."</td>
                 <td>".$row["Hor_desde"]."</td>
                 <td>".$row["Hor_hasta"]."</td>
-                <td>".$row["Foto1"]."</td>
-                <td>".$row["Foto2"]."</td>
-                <td>".$row["Foto3"]."</td>
-                <td>".$row["Foto4"]."</td>
-                <td>".$row["Logo"]."</td>
                 <td>
-
                   <a href='../View/actualizar_empresa.php?ei=".base64_encode($row["Cod_Emp"])."'><i class='fa fa-pencil'></i></a>
                   <a href='../Controller/empresa.controller.php?ei=".base64_encode($row["Cod_Emp"])."&accion=d'><i class='fa fa-trash'></i></a>
-
-
                 </td>
               </tr>";
       }

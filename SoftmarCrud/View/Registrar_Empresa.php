@@ -12,7 +12,7 @@
 
       <?php
 
-          if(!isset($_GET["m"])){
+          if(isset($_GET["m"])){
             if($_GET["m"] != ""){
               echo "<script>alert('".$_GET["m"]."')</script>";
             }

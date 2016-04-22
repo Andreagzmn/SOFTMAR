@@ -23,14 +23,15 @@
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <link rel="stylesheet" type="text/css" href="estilos.css">
+
     </head>
     <body>
      <center><div class="empref">
       <h4 class="teal-text text-teal lighten-3 test">Actualizar</h4>
       <div class="row formem">
-        <form class="col s12" action="controller/empresa.controller.php" method="POST">
+        <form class="col s12" action="../controller/empresa.controller.php" method="POST">
           <div class="row">
-          <input type="text" readonly name="Cod_Emp" required value="<?php echo $empresa[0] ?>">
+          <input type="hidden" readonly name="Cod_Emp" required value="<?php echo $empresa[0] ?>">
             <div class="col s12"></div>
               <select name="Cod_TipEmp" required  value="<?php echo $empresa[1] ?>">
                 <option value="3" <?php if($empresa["Cod_TipEmp"] == 3){ echo "selected"; } ?>>Peluqueria</option>
@@ -40,16 +41,17 @@
               </select>
               <div>
               <div class="input-field col s12">
-                <input id="Nombre" type="text" class="validate" required  value="<?php echo $empresa[2] ?>">
-                <label for="Nombre" data-error="wrong" name="Nombre" >Nombre Empresa</label>
+                <input id="Nombre" type="text" class="validate" required name="Nombre" value="<?php echo $empresa[2] ?>">
+                <label for="Nombre" data-error="wrong"  >Nombre Empresa</label>
               </div>
               <div class="input-field col s6">
-                <input id="telefono" type="number" class="validate" required  value="<?php echo $empresa[3] ?>">
-                <label for="Telefono" data-error="wrong" name="Telefono">Telefono</label>
+                <input id="telefono" type="number" class="validate" required name="Telefono" value="<?php echo $empresa[3] ?>">
+                <label for="Telefono" data-error="wrong" >Telefono</label>
               </div>
               <div class="input-field col s6">
-                <input id="Direccion" type="text" class="validate" required  value="<?php echo $empresa[4] ?>">
-                <label for="Direccion" data-error="wrong" name="Direccion">Direccion</label>
+              <label for="Direccion" data-error="wrong">Direccion</label>
+                <input id="Direccion" type="text" class="validate" required   name="Direccion" value="<?php echo $empresa[4] ?>">
+                
               </div>
               <!-- <div class="input-field col s6" required  value="<?php //echo $empresa[5] ?>">
                 <select>
@@ -58,16 +60,16 @@
                 <label>Ciudad</label>
               </div> -->
               <div class="input-field col s6">
-                <input id="NIT" type="number" class="validate" required  value="<?php echo $empresa[6] ?>">
-                <label for="NIT" data-error="wrong" name="NIT" >NIT</label>
+                <input id="NIT" type="number" class="validate" required name="NIT" value="<?php echo $empresa[6] ?>">
+                <label for="NIT" data-error="wrong"  >NIT</label>
               </div>
               <div class="input-field col s6">
-                <input id="email" type="email" class="validate" required  value="<?php echo $empresa[7] ?>">
-                <label for="email" data-error="wrong" name="Correo">Correo electronico</label>
+                <input id="email" type="email" class="validate" required  name="Correo" value="<?php echo $empresa[7] ?>">
+                <label for="email" data-error="wrong">Correo electronico</label>
               </div>
               <div class="input-field col s12">
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                <label for="textarea1" name="Informacion" required  value="<?php echo $empresa[10] ?>">Informacion</label>
+                <textarea id="textarea1" class="materialize-textarea" name="Informacion" required  value="<?php echo $empresa[10] ?>"></textarea>
+                <label for="textarea1" >Informacion</label>
               </div>
               <div class="col s12">
                 <p class="center">Dias de atencion</p>
@@ -133,7 +135,7 @@
                   </div>
             </div>
           </div>
-           <button  onclick="Aceptar()" name="accion" value="u" id="boton" class="btn waves-effect" style="margin: 20px;">Actualizar</button>
+           <button name="accion" value="u" id="boton" class="btn waves-effect" style="margin: 20px;">Actualizar</button>
                   <a href="Gestion_Empresa_admin.php" id="boton" class="btn waves-effect" style="margin: 20px;" >Cancelar</a>
                 <?php echo @$_REQUEST["$mensaje"]; ?>
         </form>

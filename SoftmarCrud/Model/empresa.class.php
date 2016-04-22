@@ -81,7 +81,7 @@ class Gestion_Empresa{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "UPDATE empresa SET Cod_TipEmp = ?, Nombre = ?,Telefono = ?,Direccion = ?,Ciudad = ?,NIT = ?,Correo= ?,Informacion =?,Dias_aten =?,Hor_desde = ?,Hor_hasta = ?,Foto1 =?,Foto2=?,Foto3=?,Foto4=?,Logo=? WHERE Cod_Emp =? " ;
+		$consulta = "UPDATE empresa SET Cod_TipEmp = ?, Nombre = ?,Telefono = ?,Direccion = ?,Ciudad = ?,NIT = ?,Correo= ?,Informacion =?,Dias_aten =?,Hor_desde = ?,Hor_hasta = ?,Foto1 =?,Foto2=?,Foto3=?,Foto4=?,Logo=? WHERE Cod_Emp = ?" ;
 
 		$query = $Conexion->prepare($consulta);
 		$query->execute(array($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$Ciudad,$NIT,$Correo,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta,$Foto1,$Foto2,$Foto3,$Foto4,$Logo,$Cod_Emp));		

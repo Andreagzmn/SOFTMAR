@@ -23,7 +23,7 @@ class Gestion_Empleados{
 		$consulta = "INSERT INTO empleado (Cod_Emp,Nombre,Apellido,Telefono,Direccion,Edad ,Correo ,Cargo,Cedula) VALUES (?,?,?,?,?,?,?,?,?)";
 
 		$query = $Conexion->prepare($consulta);
-		$query -> execute(array($Cod_Emp,$Nombre,$Apellido,$Telefono,$Direccion,$Edad,$Correo,$Cargo,$Cedula));
+		$query -> execute(array($Cod_Emp,$Nombre,$Apellido,$Telefono,$Direccion,$Edad ,$Correo,$Cargo,$Cedula));
 
 		Softmar_BD::Disconnect();
 	}
@@ -39,7 +39,7 @@ class Gestion_Empleados{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "SELECT * FROM empleado ORDER BY Cod_empl";
+		$consulta = "SELECT * FROM empleado";
 
 		$query = $Conexion->prepare($consulta);
 		$query->execute();
@@ -57,7 +57,7 @@ class Gestion_Empleados{
 	//Metodo ReadAll()
 	//Busca todos los registros de la tabla
 
-	function ReadbyID($cod_Empl){
+	function ReadbyID($Cod_empl){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = Softmar_BD::Connect();
@@ -81,7 +81,7 @@ class Gestion_Empleados{
 		Softmar_BD::Disconnect();
 	} 
  
-	function Update($Cod_empl ,$Cod_Emp ,$Nombre,$Apellido,$Telefono,$Direccion,$Edad ,$Correo ,$Cargo,$Cedula){
+	function Update($Cod_empl,$Cod_Emp ,$Nombre,$Apellido,$Telefono,$Direccion,$Edad ,$Correo ,$Cargo,$Cedula){
 	//Instanciamos y nos conectamos a la bd
 		$Conexion = Softmar_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -89,10 +89,10 @@ class Gestion_Empleados{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "UPDATE Empleado SET Cod_empl=?,Cod_Emp=?, Nombre=?, Apellido=?,Telefono=?,Direccion=?,Edad=?,Correo=?,Cargo=?,Cedula=?  WHERE Cod_Emp=?" ;
+		$consulta = "UPDATE empleado SET Cod_Emp=?, Nombre=?, Apellido=?,Telefono=?,Direccion=?,Edad=?,Correo=?,Cargo=?,Cedula=?  WHERE Cod_empl= ?";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($Cod_empl ,$Cod_Emp ,$Nombre,$Apellido,$Telefono,$Direccion,$Edad ,$Correo ,$Cargo,$Cedula));		
+		$query->execute(array($Cod_Emp ,$Nombre,$Apellido,$Telefono,$Direccion,$Edad ,$Correo ,$Cargo,$Cedula, $Cod_empl));		
 
 		Softmar_BD::Disconnect();
 	
@@ -105,10 +105,10 @@ class Gestion_Empleados{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "DELETE FROM Empleado WHERE cod_Empl = ?" ;
+		$consulta = "DELETE FROM empleado WHERE Cod_empl = ?" ;
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($Cod_Empl));		
+		$query->execute(array($Cod_empl));		
 
 		Softmar_BD::Disconnect();
 	}

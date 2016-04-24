@@ -261,7 +261,7 @@ h5 span{
 #formulario{
   padding-left: 20px;
   padding-right: 35px;
-  margin-left: 250px;
+  margin-left: 60px;
 }
 #boton{
   margin-bottom: 20px;
@@ -306,7 +306,7 @@ h5 span{
 }
 /*Data Grid*/
 #datatable{
- 
+ width: 80%;
 }
 
 /*Gestion Empresa*/

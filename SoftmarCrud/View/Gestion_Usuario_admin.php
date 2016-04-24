@@ -21,16 +21,16 @@
     <link type="text/css" rel="stylesheet" href="estilos.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster" />
     <script>
     $(document).ready( function () {
       $('#datatable').DataTable();
     });
     </script>
    </head>
-  <body class="center">
-    <h1>GESTIONAR USUARIOS</h1>
-    <a href="RegistrarUsuarioAdmn.php">Nuevo Usuario</a>
+  <body class="center"> 
+    <h3>Gestionar usuarios</h3>
+    <a href="RegistrarUsuarioAdmn.php" class="btn">Nuevo Usuario</a>
 
     <table id="datatable" class="display highlight" >
       <thead>

@@ -41,7 +41,7 @@ class Gestion_Contacto{
 
 		//Crear el query que vamos a realizar		
 
-		$consulta = "SELECT * FROM usuario ORDER BY Nombre";	
+		$consulta = "SELECT * FROM usuario";	
 
 
 		$query = $Conexion->prepare($consulta);

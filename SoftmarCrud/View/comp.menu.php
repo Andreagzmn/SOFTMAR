@@ -5,7 +5,7 @@ if($_SESSION["cod_rol"]==103){
  
 
  <ul class="right hide-on-med-and-down">
-    <li><a href="#">Inicio</a></li>
+    <li><a href="dashboard.php">Inicio</a></li>
     <li><a href="#">Información</a></li>
     <li><a href="#">Visualizar pagina web</a></li>
     <li><a href="Gestion_Usuario_admin.php">Gestionar usuario</a></li>

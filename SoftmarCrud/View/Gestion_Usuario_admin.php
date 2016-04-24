@@ -31,9 +31,16 @@
     });
     </script>
    </head>
+   <nav class="black">
+      <div class="nav-wrapper " style="margin-left: 5px; margin-right: 5px;">
+        <a href="#!" class="brand-logo"><img src="img/SOFTMAR.png" style="width: 500%; margin-top: -15px; position: relative;"></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <?php include_once("../View/comp.menu.php"); ?>
+     </div>
+    </nav>   
   <body class="center"> 
     <center><h3>Gestionar usuarios</h3></center>
-    <center><a href="RegistrarUsuarioAdmn.php" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a></center>
+    <center><a href="RegistrarUsuarioAdmn.php" class="btn-floating waves-effect waves-light cyan darken-3"><i class="material-icons">add</i></a>Agregar usuario</center>
 
     <center><table id="datatable" class="display highlight" >
       <thead>
@@ -87,5 +94,12 @@
     </table></center>
       <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){    
+         $(".button-collapse").sideNav();
+         $(".dropdown-button").dropdown();
+      });
+
+    </script>
   </body>
 </html>

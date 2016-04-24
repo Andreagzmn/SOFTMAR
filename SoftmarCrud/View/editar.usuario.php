@@ -31,7 +31,7 @@
   <img class="logoregis" class="bg-principal contenido col-6-s" src="img\SOFTMAR.png">
   <H5 id="crea">CREA UNA CUENTA</H5>
   </section>-->
-  <div class="container">
+  <center><div class="container">
     <div ="row">
           <div class="col s12 l8  ">
           <h3  style="text-align:center; margin-bottom: -47px; ">Softmar</h3>
@@ -89,8 +89,9 @@
                     </div>
                   </div>         
                     		
-            		  <button  name="accion" value="u" id="boton" class="btn waves-effect blue darken-3" ><i class=" material-icons right">done</i>Actualizar</button>
-            		  <a href="Gestion_Usuario_admin.php" id="boton" class="btn waves-effect blue darken-3" ><i class=" material-icons right">done</i>Cancelar</a>
+            		  <button  name="accion" value="u" id="boton" class="btn waves-effect cyan darken-3" id="btn-crear-cuenta" >Actualizar</button>
+            		  <a href="Gestion_Usuario_admin.php" id="boton" class="btn waves-effect blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
+                  
                 <?php echo @$_REQUEST["$mensaje"]; ?>
                 </div>
               </section>       
@@ -98,7 +99,7 @@
 
         </div>
       </div>
-   </div>
+   </div></center>
 
   <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
   <script type="text/javascript" src="materialize/js/materialize.js"></script>

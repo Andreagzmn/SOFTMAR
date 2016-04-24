@@ -37,8 +37,8 @@
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <?php include_once("../View/comp.menu.php"); ?>
      </div>
-    </nav>   
-  <body class="center"> 
+  </nav>   
+  <body> 
     <center><h3>Gestionar usuarios</h3></center>
     <center><a href="RegistrarUsuarioAdmn.php" class="btn-floating waves-effect waves-light cyan darken-3"><i class="material-icons">add</i></a>Agregar usuario</center>
 

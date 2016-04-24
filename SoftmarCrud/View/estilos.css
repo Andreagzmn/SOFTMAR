@@ -238,7 +238,7 @@ h5 span{
     margin-top: 10px;
     width: 80%;
     height: 45px;
-    margin-left: 150px;
+    margin-left: 60px;
 }
 .tarjeta2{
     margin-top: 10px;
@@ -307,8 +307,12 @@ h5 span{
 /*Data Grid*/
 #datatable{
  width: 80%;
+
 }
 
+tbody{
+  background-color: transparent;
+}
 /*Gestion Empresa*/
 
 

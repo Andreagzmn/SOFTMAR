@@ -15,6 +15,9 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>      
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title></title>
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
@@ -29,10 +32,10 @@
     </script>
    </head>
   <body class="center"> 
-    <h3>Gestionar usuarios</h3>
-    <a href="RegistrarUsuarioAdmn.php" class="btn">Nuevo Usuario</a>
+    <center><h3>Gestionar usuarios</h3></center>
+    <center><a href="RegistrarUsuarioAdmn.php" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a></center>
 
-    <table id="datatable" class="display highlight" >
+    <center><table id="datatable" class="display highlight" >
       <thead>
         <tr>
           <th>Cod_usu</th>
@@ -81,6 +84,8 @@
 
       ?>
       </tbody>
-    </table>
+    </table></center>
+      <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="materialize/js/materialize.js"></script>
   </body>
 </html>

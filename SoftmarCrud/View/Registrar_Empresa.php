@@ -144,18 +144,13 @@
                   </div>
             </div>
           </div>
-           <button onclick="Aceptar()"type="submit" name="accion" value="c" id="boton" class="btn waves-effect">Registrarse</button>
+           <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect">Registrarse</button>
                 <?php echo @$_REQUEST["msn"]; ?>
         </form>
       </div>
     </div></center>
     <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
-    <script>
-      function Aceptar() {
-
-      }
-    </script>
     <script>
         $(document).ready(function() {
           $('select').material_select();

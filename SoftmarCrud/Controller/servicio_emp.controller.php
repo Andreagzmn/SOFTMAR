@@ -8,7 +8,7 @@
 	session_start();
 	require_once("../Model/db_conn.php");
 
-	require_once("../Model/Gestionar_servicio_emp.class.php");
+	require_once("../Model/servicio.class.php");
 
 	//3. Instanciamos las variables globales y una llamada $accion.
 	//La variable accion nos va a indicar que parte del crud vamos hacer.
@@ -29,7 +29,7 @@
 			$Valor	        = $_POST["Valor"];
 
 			try{
-				Gestion_servicio_emp::create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor);
+				Gestion_servicio::create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor);
 				$mensaje = "El servicio se registro correctamente";
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	

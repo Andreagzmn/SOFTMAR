@@ -1,6 +1,6 @@
 <?php
 
-class Gestion_servicio_emp{
+class Gestion_servicio{
 
     function create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor){
 
@@ -21,7 +21,8 @@ class Gestion_servicio_emp{
         $conexion=softmar_BD::Connect();
         $conexion->SetAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-        $consulta="SELECT * FROM servicio_emp ORDER BY Cod_Emp";
+        $consulta="SELECT * FROM servicio_emp";
+        
         $query=$conexion->prepare($consulta);
         $query->execute();
 

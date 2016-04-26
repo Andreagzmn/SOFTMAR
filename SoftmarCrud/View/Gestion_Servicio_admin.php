@@ -34,6 +34,7 @@
     <table id="datatable" class="display">
       <thead>
         <tr>
+          <th>Cod_serv</th>
           <th>Cod_Emp</th>
           <th>Nombre</th>
           <th>Descripcion</th>
@@ -55,6 +56,7 @@
         }
 
         echo "<tr>
+                <td>".$row["Cod_serv"]."</td>
                 <td>".$row["Cod_Emp"]."</td>
                 <td>".$row["Nombre"]."</td>
                 <td>".$row["Descripcion"]."</td>

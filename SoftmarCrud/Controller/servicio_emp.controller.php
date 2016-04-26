@@ -29,13 +29,13 @@
 			$Valor	        = $_POST["Valor"];
 
 			try{
-				Gestion_servicio::create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor);
-				$mensaje = "El servicio se registro correctamente";
-			}catch(Exception $e){
-				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	
-			header("Location: ../View/Registrar_servicio.php?m= ".$mensaje); 
-		}
-		break;
+				Gestion_servicio::Create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor);
+				$msn = "El servicio se registro correctamente";
+			}catch (Exception $e){
+				$msn = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	
+			}
+			header("Location: ../View/Registrar_servicio.php?m=".$msn);
+			break;
 
 		case 'r':
 		    # leer
@@ -45,12 +45,14 @@
 			break;
 			
 		case 'd':
-			# eliminar...
-			break;
-
-		default:
-			#hacer cualquier cosa...
-		break;
+        try {
+          $servicio= Gestion_servicio::Delete(base64_decode($_REQUEST["ui"]));
+          $msn = "se elimino correctamente";
+        } catch (Exception $e) {
+          $msn = "error";
+        }
+        header("Location: ../View/Gestion_Servicio_admin.php?msn=".$msn);
+      break;
 
 	}
 

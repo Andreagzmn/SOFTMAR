@@ -51,7 +51,7 @@ class Gestion_servicio{
     function update($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor){
 
 	   $conexion=softmar_BD::connect();
-	   $conexion->SetAttribute(PDO::ATTR_ERMODE,PDO::ERMODE_EXCEPTION);
+	   $conexion->SetAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 	   $consulta="UPDATE servicio_emp SET Cod_Emp=?, Nombre=?, Descripcion=?, Estado=?, Valor_=? WHERE Cod_serv=?";
 	   $query=$conexion->prepare($consulta);
@@ -60,17 +60,16 @@ class Gestion_servicio{
 	   softmar_BD::Disconnect();
     }
 
-    function delete($Cod_Emp){
+    function delete($Cod_serv){
 
-        $conexion=softmar_BD::connect();
-	    $conexion->SetAttribute(PDO::ATTR_ERMODE,PDO::ERMODE_EXCEPTION);
+      $Conexion = Softmar_BD::Connect();
+      $Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $consulta= "DELETE FROM servicio_emp WHERE Cod_Emp=?";
-        $query=$conexion->prepare($consulta);
-        $query=execute(array($Cod_Emp));
+      $consulta= "DELETE FROM servicio_emp WHERE Cod_serv=?";
+      $query = $Conexion->prepare($consulta);
+      $query->execute(array($Cod_Emp));
 
-        softmar_BD::Disconnect();
+      softmar_BD::Disconnect();
     }
 }
-
 ?>

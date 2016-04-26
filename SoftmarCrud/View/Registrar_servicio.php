@@ -20,11 +20,11 @@
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>Gestionar servicios empresa</title>
+	<title>Servicios empresa</title>
 </head>
 <body>
     <div class="container">
-		    <h3  class="tit">Registrar Servicios</h3>
+		    <h3 style="text-align:center; margin-bottom: -47px; ">Registrar Servicios</h3>
 	   	    <form  action="../Controller/servicio_emp.controller.php" method="POST" id="formi" class="contenedor"class="col s12">
                 <section class="col s12" >
 			        <div class="row">
@@ -47,7 +47,7 @@
                                     //}
                                 ?>
                             </select>
-                            <label>-Seleccione-</label>
+                            <label></label>
                         </div>
                     </div>
                     <div class="row">    
@@ -77,16 +77,15 @@
                             <label for="first_name">Valor</label>
                         </div>
                     </div>  
-                    <button type="submit" name="accion" value="c" id="botn" id="buton" class="btn waves-effect  cyan darken-3">Registrarse</button>
+                    <button type="submit" name="accion" value="c" id="botn" id="buton" class="btn waves-effect  cyan darken-3">Registrar</button>
                     <a href="dashboard.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
-                    <!--<button type="submit" name="accion" value="C"  id="botn" id="buton" class="btn waves-effect" >Registrarse</button>-->
-                    <?php echo @$_REQUEST["msn"]; ?>   
+                    <?php echo @$_REQUEST["$msn"]; ?>   
                 </section>            
             </form>
         </div>  
         <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
         <script type="text/javascript" src="materialize/js/materialize.js"></script>
-        <script type="text/javascript">
+        <script>
             $(document).ready(function() {
              $('select').material_select();
             });

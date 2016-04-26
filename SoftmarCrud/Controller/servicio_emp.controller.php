@@ -49,7 +49,7 @@
           $servicio= Gestion_servicio::Delete(base64_decode($_REQUEST["ui"]));
           $msn = "se elimino correctamente";
         } catch (Exception $e) {
-          $msn = "error";
+          $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
         }
         header("Location: ../View/Gestion_Servicio_admin.php?msn=".$msn);
       break;

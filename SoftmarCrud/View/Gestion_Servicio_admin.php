@@ -64,10 +64,8 @@
                 <td>".$row["Valor"]."</td>
                 <td>
 
-                  <a href='#?ui=".base64_encode($row["Cod_Emp"])."'><i class='fa fa-pencil'></i></a>
+                  <a href='#?ui=".base64_encode($row["Estado"])."'><i class='fa fa-pencil'></i></a>
                   <a href='../Controller/servicio_emp.controller.php?ui=".base64_encode($row["Estado"])."&accion=d'><i class='fa fa-trash'></i></a>
-
-
                 </td>
               </tr>";
       }

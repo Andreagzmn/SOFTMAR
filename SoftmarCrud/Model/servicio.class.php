@@ -60,7 +60,7 @@ class Gestion_servicio{
 	   softmar_BD::Disconnect();
     }
 
-    function delete($Cod_serv){
+    function delete($Cod_Emp){
 
       $Conexion = Softmar_BD::Connect();
       $Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

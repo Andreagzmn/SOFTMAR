@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<form   action="../Controller/Usuariocontroller.php" method="POST" >
+<center><form   action="../Controller/Usuariocontroller.php" method="POST" >
 	<div class="con">
 		<div class="tarjeta">		    
       <div class="row">
@@ -63,7 +63,7 @@
       </div>
     </div>                        
 	</div>     
-</form>
+</form></center>
   <?php
    if( base64_decode(@$_GET["tm"]) == "advertencia"){
                        $estilos = "orange";

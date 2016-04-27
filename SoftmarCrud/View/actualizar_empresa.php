@@ -10,7 +10,7 @@
     header("Location: ../View/login.php?m=".$msn."&tm=".$tipo_msn);
   }
    require_once("../Model/empresa.class.php");
-   $empresa =  Gestion_Empresa::ReadbyID(base64_decode($_REQUEST["ei"]));
+   $empresa =  Gestion_Empresa::ReadbyID(base64_decode($_REQUEST["ui"]));
 ?>
 <!DOCTYPE html>
   <html>
@@ -23,7 +23,17 @@
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <link rel="stylesheet" type="text/css" href="estilos.css">
+      <script>
+      <?php
 
+          if(isset($_GET["m"])){
+            if($_GET["m"] != ""){
+              echo "<script>alert('".$_GET["m"]."')</script>";
+            }
+          }
+
+      ?>
+      </script>
     </head>
     <body>
      <center><div class="empref">
@@ -68,7 +78,7 @@
                 <label for="email" data-error="wrong">Correo electronico</label>
               </div>
               <div class="input-field col s12">
-                <textarea id="textarea1" class="materialize-textarea" name="Informacion" required  value="<?php echo $empresa[10] ?>"></textarea>
+                <textarea id="textarea1" type="text" class="materialize-textarea" name="Informacion" required  value="<?php echo $empresa[10] ?>"></textarea>
                 <label for="textarea1" >Informacion</label>
               </div>
               <div class="col s12">
@@ -91,46 +101,46 @@
               <div class="file-field input-field col s6">
                 <div class="btn">
                   <span>Foto 1:</span>
-                  <input type="file" value="<?php echo $empresa[14] ?>">
+                  <input type="file">
                 </div>
                 <div class="file-path-wrapper">
-                  <input name="Foto1" class="file-path validate" type="text" placeholder="Upload one or more files">
+                  <input name="Foto1" class="file-path validate" type="text" value="<?php echo $empresa[14] ?>" placeholder="Upload one or more files">
                 </div>
               </div>
               <div class="file-field input-field col s6">
                 <div class="btn">
                   <span>Foto 2:</span>
-                  <input type="file" value="<?php echo $empresa[15] ?>">
+                  <input type="file" >
                 </div>
                 <div class="file-path-wrapper">
-                  <input name="Foto2" class="file-path validate" type="text" placeholder="Upload one or more files">
+                  <input name="Foto2" class="file-path validate" type="text" value="<?php echo $empresa[15] ?>" placeholder="Upload one or more files">
                 </div>
               </div>
               <div class="file-field input-field col s6">
                 <div class="btn">
                   <span>Foto 3:</span>
-                  <input type="file" value="<?php echo $empresa[16] ?>">
+                  <input type="file">
                 </div>
                 <div class="file-path-wrapper">
-                  <input name="Foto3" class="file-path validate" type="text" placeholder="Upload one or more files">
+                  <input name="Foto3"  value="<?php echo $empresa[16] ?>" class="file-path validate" type="text" placeholder="Upload one or more files">
                 </div>
               </div>
               <div class="file-field input-field col s6">
                 <div class="btn">
                   <span>Foto 4:</span>
-                  <input type="file" value="<?php echo $empresa[17] ?>">
+                  <input type="file" >
                 </div>
                 <div class="file-path-wrapper">
-                  <input name="Foto4" class="file-path validate" type="text" placeholder="Upload one or more files">
+                  <input name="Foto4" value="<?php echo $empresa[17] ?>" class="file-path validate" type="text" placeholder="Upload one or more files">
                 </div>
               </div>
                   <div class="file-field input-field col s6">
                       <div class="btn">
                         <span>Logo</span>
-                        <input type="file" value="<?php echo $empresa[18] ?>">
+                        <input type="file" >
                       </div>
                       <div class="file-path-wrapper">
-                          <input name="Logo" class="file-path validate" type="text">
+                          <input name="Logo" class="file-path validate" type="text" value="<?php echo $empresa[18] ?>">
                       </div>
                   </div>
             </div>
@@ -148,11 +158,6 @@
           $('select').material_select();
         });
     </script>
-   <!--  <script>
-      function Aceptar() {
-        confirm("Se actualizo correctamente");
-      }
-    </script> -->
     <script>
       $('.datepicker').pickadate({
           selectMonths: true, // Creates a dropdown to control month

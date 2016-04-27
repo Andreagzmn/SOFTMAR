@@ -9,7 +9,7 @@
 
     header("Location: ../View/login.php?m=".$msn."&tm=".$tipo_msn);
   }
-  require_once("../Model/Gestionar_servicio_emp.class.php");
+  require_once("../Model/servicio.class.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,6 +34,7 @@
     <table id="datatable" class="display">
       <thead>
         <tr>
+          <th>Cod_serv</th>
           <th>Cod_Emp</th>
           <th>Nombre</th>
           <th>Descripcion</th>
@@ -44,29 +45,26 @@
       <tbody>
 
       <?php
-      $servicios = Gestion_servicio_emp::ReadAll();
+      $servicios = Gestion_servicio::ReadAll();
 
       foreach ($servicios as $row) {
 
         if($row["Estado"] == 1){
           $Estado = "Activo";
         }elseif($row["Estado"] == 2){
-          $cod_rol = "Inactivo";
+          $Estado = "Inactivo";
         }
-
         echo "<tr>
+                <td>".$row["Cod_serv"]."</td>
                 <td>".$row["Cod_Emp"]."</td>
-                <td>".$Estado."</td>
                 <td>".$row["Nombre"]."</td>
                 <td>".$row["Descripcion"]."</td>
-                <td>".$row["Estado"]."</td>
+                <td>".$Estado."</td>
                 <td>".$row["Valor"]."</td>
                 <td>
 
-                  <a href='../View/editar.usuario.php?ui=".base64_encode($row["Cod_Emp"])."'><i class='fa fa-pencil'></i></a>
-                  <a href='../Controller/Gestionar_servicio_emp.controller.php?ui=".base64_encode($row["Estado"])."&accion=d'><i class='fa fa-trash'></i></a>
-
-
+                  <a href='../View/Actualizar_servicio.php?ui=".base64_encode($row["Cod_serv"])."'><i class='fa fa-pencil'></i></a>
+                  <a href='../Controller/servicio_emp.controller.php?ui=".base64_encode($row["Cod_serv"])."&accion=d'><i class='fa fa-trash'></i></a>
                 </td>
               </tr>";
       }

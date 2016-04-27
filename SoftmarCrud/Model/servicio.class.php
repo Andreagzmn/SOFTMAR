@@ -36,13 +36,13 @@ class Gestion_servicio{
     function ReadbyID($Cod_Emp){
 
 	   $conexion=softmar_BD::connect();
-	   $conexion->SetAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXEPTION);
+	   $conexion->SetAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 	   $consulta="SELECT * FROM servicio_emp WHERE Cod_Emp=?";
 	   $query=$conexion->prepare($consulta);
-	   $squery=excute(array($Cod_serv, $Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor));
+	   $query->execute(array($Cod_Emp));
 
-       $resultado=$query->fetch(PDO::FETCH_BOTH);
+       $resultado = $query->fetch(PDO::FETCH_BOTH);
        return $resultado;
 
        softmar_BD::Disconnect();
@@ -55,19 +55,19 @@ class Gestion_servicio{
 
 	   $consulta="UPDATE servicio_emp SET Cod_Emp=?, Nombre=?, Descripcion=?, Estado=?, Valor_=? WHERE Cod_serv=?";
 	   $query=$conexion->prepare($consulta);
-	   $query=execute(array($Cod_Emp));
+	   $query->execute(array($Cod_Emp));
 
 	   softmar_BD::Disconnect();
     }
 
-    function delete($Cod_Emp){
+    function delete($Cod_serv){
 
       $Conexion = Softmar_BD::Connect();
       $Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
       $consulta= "DELETE FROM servicio_emp WHERE Cod_serv=?";
       $query = $Conexion->prepare($consulta);
-      $query->execute(array($Cod_Emp));
+      $query->execute(array($Cod_serv));
 
       softmar_BD::Disconnect();
     }

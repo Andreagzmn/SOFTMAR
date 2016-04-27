@@ -41,7 +41,20 @@
 		    # leer
 
 		case 'u':
-			# actualizar...
+			$Cod_Emp 		= $_POST["Cod_Emp"];			
+			$Nombre		    = $_POST["Nombre"];
+			$Descripcion    = $_POST["Descripcion"];
+			$Estado	        = $_POST["Estado"];
+			$Valor	        = $_POST["Valor"];
+
+
+			try{
+				Gestion_Contacto::Update($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor);
+				$mensaje = "Se actualizo correctamente";
+			}catch(Exception $e){
+				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 
+			}
+			header("Location: ../View/Gestion_servicio.php?m= ".$mensaje);
 			break;
 			
 		case 'd':

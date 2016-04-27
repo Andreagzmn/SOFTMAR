@@ -54,18 +54,17 @@
         }elseif($row["Estado"] == 2){
           $Estado = "Inactivo";
         }
-
         echo "<tr>
                 <td>".$row["Cod_serv"]."</td>
                 <td>".$row["Cod_Emp"]."</td>
                 <td>".$row["Nombre"]."</td>
                 <td>".$row["Descripcion"]."</td>
-                <td>".$row["Estado"]."</td>
+                <td>".$Estado."</td>
                 <td>".$row["Valor"]."</td>
                 <td>
 
-                  <a href='#?ui=".base64_encode($row["Estado"])."'><i class='fa fa-pencil'></i></a>
-                  <a href='../Controller/servicio_emp.controller.php?ui=".base64_encode($row["Estado"])."&accion=d'><i class='fa fa-trash'></i></a>
+                  <a href='../View/Actualizar_servicio.php?ui=".base64_encode($row["Cod_serv"])."'><i class='fa fa-pencil'></i></a>
+                  <a href='../Controller/servicio_emp.controller.php?ui=".base64_encode($row["Cod_serv"])."&accion=d'><i class='fa fa-trash'></i></a>
                 </td>
               </tr>";
       }

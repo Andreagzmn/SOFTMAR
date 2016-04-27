@@ -71,24 +71,17 @@
 			$Foto4			= $_POST["Foto4"];
 			$Logo			= $_POST["Logo"];
 			try{
-<<<<<<< HEAD
+
 				 Gestion_Empresa::Update($Cod_Emp,$Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta,$Foto1,$Foto2,$Foto3,$Foto4,$Logo);
 				$mensaje = "Se actualizo correctamente";
 				$tipomensaje="success";
-=======
-				Gestion_Empresa::Update($Cod_Emp,$Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta,$Foto1,$Foto2,$Foto3,$Foto4,$Logo);
-				$tipomensaje = "success";
->>>>>>> origin/master
 				header("Location: ../View/Gestion_Empresa_admin.php?m=".$mensaje."&tm=".$tipomensaje);
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 				$tipomensaje = "error";
-<<<<<<< HEAD
 				header("Location: ../View/Actualizar_empresa.php?m=".$mensaje."&tm=".$tipomensaje);
-=======
-			header("Location: ../View/Gestion_Empresa_admin.php?m= ".$mensaje."&tm=".$tipomensaje);
->>>>>>> origin/master
 			}
+			
 			
 
 		break;
@@ -97,11 +90,12 @@
 		case 'd':
         try {
           	$empresa = Gestion_Empresa::Delete(base64_decode($_REQUEST["ei"]));
+          	$mensaje = "Se elimino exitosamente";
           	$tipomensaje = "success";
 			header("Location: ../View/Gestion_Empresa_admin.php?m=".$mensaje."&tm=".$tipomensaje);
         } catch (Exception $e) {
-         	$tipomensaje = "error";
 			header("Location: ../View/Gestion_Empresa_admin.php?m= ".$mensaje."&tm=".$tipomensaje);
+			$tipomensaje = "error";
         }
       break;
 

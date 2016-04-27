@@ -21,7 +21,28 @@
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
+    <?php
 
+       if(isset($_GET["m"]) and isset($_GET["tm"])){
+         if($_GET["m"] != ""){
+           echo "<script>
+                   $(document).ready(function(){
+                      sweetAlert({
+                           title: 'Mensaje de SOFTMAR',   
+                           text: '".$_GET["m"]."',   
+                           type: '".$_GET["tm"]."',   
+                           showCancelButton: false,
+                           confirmButtonColor: '#4db6ac',   
+                           confirmButtonText: 'Aceptar',   
+                          cancelButtonText: 'No, cancel plx!',   
+                           closeOnConfirm: false,   
+                           closeOnCancel: false
+                       });
+                   });
+                </script>";
+           }
+         }
+?>
     <script>
     $(document).ready( function () {
       $('#datatable').DataTable();
@@ -30,12 +51,12 @@
    </head>
   <body>
     <h1>GESTIONAR SERVICIOS</h1>
-
+    <a href="Registrar_servicio.php">Nueva Empresa</a>
     <table id="datatable" class="display">
       <thead>
         <tr>
-          <th>Cod_serv</th>
-          <th>Cod_Emp</th>
+          <th>servicio</th>
+          <th>Empresa</th>
           <th>Nombre</th>
           <th>Descripcion</th>
           <th>Estado</th>
@@ -63,8 +84,8 @@
                 <td>".$row["Valor"]."</td>
                 <td>
 
-                  <a href='../View/Actualizar_servicio.php?ui=".base64_encode($row["Cod_serv"])."'><i class='fa fa-pencil'></i></a>
-                  <a href='../Controller/servicio_emp.controller.php?ui=".base64_encode($row["Cod_serv"])."&accion=d'><i class='fa fa-trash'></i></a>
+                  <a href='../View/Actualizar_servicio.php?sr=".base64_encode($row["Cod_serv"])."'><i class='fa fa-pencil'></i></a>
+                  <a href='../Controller/servicio_emp.controller.php?sr=".base64_encode($row["Cod_serv"])."&accion=d'><i class='fa fa-trash'></i></a>
                 </td>
               </tr>";
       }

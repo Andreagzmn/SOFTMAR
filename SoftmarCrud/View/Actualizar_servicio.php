@@ -10,9 +10,9 @@
     header("Location: ../View/login.php?m=".$msn."&tm=".$tipo_msn);
   }
   require_once("../Model/Servicio.class.php");
-  $servicio =  Gestion_servicio::ReadbyID(base64_decode($_REQUEST["ui"]));
+  $servicio =  Gestion_servicio::ReadbyID(base64_decode($_REQUEST["sr"]));
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8"/>
@@ -21,52 +21,39 @@
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Servicios empresa</title>
+    <script>
+      <?php
+
+          if(isset($_GET["m"])){
+            if($_GET["m"] != ""){
+              echo "<script>alert('".$_GET["m"]."')</script>";
+            }
+          }
+
+      ?>
+    </script>
 </head>
 <body>
     <div class="container">
             <h3 style="text-align:center; margin-bottom: -47px; ">Actualizar Servicios</h3>
             <form  action="../Controller/servicio_emp.controller.php" method="POST" id="formi" class="contenedor"class="col s12">
-                <section class="col s12" >
-                    <input type="hidden" readonly name="Cod_Emp" required value="<?php echo $servicio[0] ?>">
-                    <div class="row"> 
-                        <div class="input-field col s12">
-                            <select  name="Cod_Emp">
-                                <option value="" disabled selected>Seleccione una empresa</option>
-                                <?php
-                                    // Cargo la bd
-                                    require_once("../Model/db_conn.php");
-                                    // Cargo la clase tipo empresa
-                                    require_once("../Model/empresa.class.php");
-
-                                    $empresa = Gestion_Empresa::ReadAll();
-
-                                    foreach ($empresa as $row){
-                                        echo "<option value='".$row["Cod_Emp"]."'>".$row["Nombre"]."</option>";
-                                        
-                                    }
-                                    //foreach ($imagenes as $row){
-                                    //    echo "<img src='".$row["Nombre"]."'/>";
-                                    //}
-                                ?>
-                            </select>
-                            <label></label>
-                        </div>
-                    </div>
+             <input type="hidden" readonly name="Cod_serv" required value="<?php echo $servicio[0] ?>">
+                <input type="hidden" readonly name="Cod_Emp" required value="<?php echo $servicio[1] ?>">
                     <div class="row">    
                         <div class="input-field col s12">
-                            <input id="last_name" type="text" class="validate" required name="Nombre" value="<?php echo $servicio[1] ?>">
+                            <input id="last_name" type="text" class="validate" required name="Nombre" value="<?php echo $servicio[2] ?>">
                             <label for="last_name">Nombre del servicio</label>
                         </div>
                      </div> 
                     <div class="row">   
                         <div class="input-field col s12">
-                           <input id="first_name" type="text" class="validate" required name="Descripcion" value="<?php echo $servicio[2] ?>">
+                           <input id="first_name" type="text" class="validate" required name="Descripcion" value="<?php echo $servicio[3] ?>">
                            <label for="first_name">Descripción</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s10">
-                            <select required name="Estado" value="<?php echo $servicio[3] ?>">
+                            <select required name="Estado" value="<?php echo $servicio[4] ?>">
                                 <option value="" disabled selected>---Seleccione estado---</option>
                                 <option value="1">Activo</option>
                                 <option value="2">Inactivo</option>
@@ -75,7 +62,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="first_name" type="number" class="validate" required name="Valor" value="<?php echo $servicio[2] ?>">
+                            <input id="first_name" type="number" class="validate" required name="Valor" value="<?php echo $servicio[5] ?>">
                             <label for="first_name">Valor</label>
                         </div>
                     </div>  

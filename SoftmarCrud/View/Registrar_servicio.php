@@ -9,8 +9,6 @@
 
     header("Location: ../View/login.php?m=".$msn."&tm=".$tipo_msn);
   }
-
-
 ?>
 <!doctype html>
 <html>
@@ -21,6 +19,17 @@
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>Servicios empresa</title>
+    <script>
+      <?php
+
+          if(isset($_GET["m"])){
+            if($_GET["m"] != ""){
+              echo "<script>alert('".$_GET["m"]."')</script>";
+            }
+          }
+
+      ?>
+      </script>
 </head>
 <body>
     <div class="container">

@@ -30,17 +30,21 @@
 
 			try{
 				Gestion_servicio::Create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor);
-				$msn = "El servicio se registro correctamente";
+				$mensaje = "El servicio se registro correctamente";
+				$tipomensaje = "success";
+				header("Location: ../View/Gestion_Servicio_admin.php?m=".$mensaje."&tm=".$tipomensaje);
 			}catch (Exception $e){
-				$msn = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	
+				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	
+				$tipomensaje = "error";
+				header("Location: ../View/actualizar.servicio.php?m=".$mensaje."&tm=".$tipomensaje);
 			}
-			header("Location: ../View/Registrar_servicio.php?m=".$msn);
 			break;
 
 		case 'r':
 		    # leer
-
+		break;
 		case 'u':
+			$Cod_serv		= $_POST["Cod_serv"];
 			$Cod_Emp 		= $_POST["Cod_Emp"];			
 			$Nombre		    = $_POST["Nombre"];
 			$Descripcion    = $_POST["Descripcion"];
@@ -51,10 +55,13 @@
 			try{
 				Gestion_Contacto::Update($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor);
 				$mensaje = "Se actualizo correctamente";
+				$tipomensaje = "success";
+				header("Location: ../View/Gestion_Servicio_admin.php?m=".$mensaje."&tm=".$tipomensaje);
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 
+				$tipomensaje = "error";
+				header("Location: ../View/Registrar_servicio.php?m=".$mensaje."&tm=".$tipomensaje);
 			}
-			header("Location: ../View/Gestion_servicio.php?m= ".$mensaje);
 			break;
 			
 		case 'd':

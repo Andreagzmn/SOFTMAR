@@ -21,38 +21,39 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="estilos.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
     <link rel="stylesheet" type="text/css" href="sweetalert-master/sweetalert.css">
     <script type="text/javascript" src="sweetalert-master/sweetalert.min.js"></script>
-
-    <script>
-    $(document).ready( function () {
-      $('#datatable').DataTable();
-    });
-    </script>
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
 
 <?php
 
-      if(isset($_GET["m"]) and isset($_GET["tm"])){
-        if($_GET["m"] != ""){
-          echo "<script>
-                  $(document).ready(function(){
+       if(isset($_GET["m"]) and isset($_GET["tm"])){
+         if($_GET["m"] != ""){
+           echo "<script>
+                   $(document).ready(function(){
                       sweetAlert({
-                          title: 'Mensaje de SOFTMAR',   
-                          text: '".$_GET["m"]."',   
-                          type: '".$_GET["tm"]."',   
-                          showCancelButton: false,
-                          confirmButtonColor: '#4db6ac',   
-                          confirmButtonText: 'Aceptar',   
+                           title: 'Mensaje de SOFTMAR',   
+                           text: '".$_GET["m"]."',   
+                           type: '".$_GET["tm"]."',   
+                           showCancelButton: false,
+                           confirmButtonColor: '#4db6ac',   
+                           confirmButtonText: 'Aceptar',   
                           cancelButtonText: 'No, cancel plx!',   
-                          closeOnConfirm: false,   
-                          closeOnCancel: false
-                      });
-                    });
+                           closeOnConfirm: false,   
+                           closeOnCancel: false
+                       });
+                   });
                 </script>";
-          }
-        }
+           }
+         }
 ?>
+
+    <script>
+    $(document).ready( function () {
+      $('#datatable').dataTable();
+    });
+    </script>
+
       
    </head>
   <body>
@@ -62,8 +63,8 @@
     <table id="datatable" class="display" >
       <thead>
         <tr>
-          <th>Cod_Emp</th>
-          <th>Cod_TipEmp</th>
+          <th>Codigo Empresa</th>
+          <th>Tipo Empresa</th>
           <th>Nombre</th>
           <th>Telefono</th>
           <th>Direccion</th>
@@ -73,6 +74,7 @@
           <th>Dias de atencion</th>
           <th>Hora desde</th>
           <th>Hora hasta</th>
+          <th>acciones</th>
         </tr>
       </thead>
       <tbody>
@@ -110,7 +112,6 @@
                 </td>
               </tr>";
       }
-
       ?>
       </tbody>
     </table>

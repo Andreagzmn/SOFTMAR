@@ -26,7 +26,7 @@
 				$Telefono    	=$_POST["Telefono"];
 				$Direccion   	=$_POST["Direccion"];
 				$Edad        	=$_POST["Edad"];
-				$Correo      	=$_POST["Email"];
+				$Correo      	=$_POST["Correo"];
 				$Cargo    		=$_POST["Cargo"];
 				$Cedula     	=$_POST["Cedula"];
 

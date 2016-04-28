@@ -32,10 +32,15 @@
 			try{
 				Gestion_Contacto::Create($cod_rol,$Nombre,$Apellido,$Direccion,$Edad,$Clave,$Correo,$Cedula);
 				$mensaje = "Su registro se creo correctamente";
+				$tipomensaje = "success";
+				header("Location: ../View/Gestion_Usuario_admin.php?m=".$mensaje."&tm=".$tipomensaje);
 			}catch(Exception $e){
-				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 
+				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	
+				$tipomensaje = "error";
+				header("Location: ../View/Registrar_Usuario.php?m=".$mensaje."&tm=".$tipomensaje);		 
 			}
-			header("Location: ../View/login.php?m= ".$mensaje);
+
+			
 	break;
 
 		break;
@@ -100,20 +105,26 @@
 			try{
 				Gestion_Contacto::Update($Cod_usu,$cod_rol,$Nombre, $Apellido, $Direccion, $Edad, $Clave, $Correo, $Cedula);
 				$mensaje = "Se actualizo correctamente";
+				$tipomensaje = "success";
+				header("Location: ../View/Gestion_Usuario_admin.php?m=".$mensaje."&tm=".$tipomensaje);
 			}catch(Exception $e){
-				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 
+				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	
+				$tipomensaje = "error";		 
+				header("Location: ../View/editar.usuario.php?m=".$mensaje."&tm=".$tipomensaje);	
 			}
-			header("Location: ../View/Gestion_Usuario_admin.php?m= ".$mensaje);
 			break;
 			
 		case 'd':
         try {
           $usuario = Gestion_Contacto::Delete(base64_decode($_REQUEST["ui"]));
-          $msn = "se elimino correctamente";
+          $mensaje = "Se elimino exitosamente";
+          $tipomensaje = "success";
+		header("Location: ../View/Gestion_Usuario_admin.php?m=".$mensaje."&tm=".$tipomensaje);
         } catch (Exception $e) {
-          $msn = "error";
+        	header("Location: ../View/Gestion_Usuario_admin.php?m= ".$mensaje."&tm=".$tipomensaje);
+			$tipomensaje = "error";
         }
-        header("Location: ../View/Gestion_Usuario_admin.php?msn=".$msn);
+        
       break;
 
 		default:

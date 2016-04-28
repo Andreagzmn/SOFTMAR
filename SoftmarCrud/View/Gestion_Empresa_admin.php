@@ -15,15 +15,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
+   <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="estilos.css">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>    
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>      
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" type="text/css" href="sweetalert-master/sweetalert.css">
     <script type="text/javascript" src="sweetalert-master/sweetalert.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title></title>    
+    <link type="text/css" rel="stylesheet" href="estilos.css">    
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster" />
 
 <?php
 
@@ -57,10 +61,17 @@
       
    </head>
   <body>
-    <h1>GESTIONAR EMPRESA</h1>
-    <a href="Registrar_Empresa.php">Nueva Empresa</a>
+  <nav class="black">
+      <div class="nav-wrapper " style="margin-left: 5px; margin-right: 5px;">
+        <a href="#!" class="brand-logo"><img src="img/SOFTMAR.png" style="width: 500%; margin-top: -15px; position: relative;"></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <?php include_once("../View/comp.menu.php"); ?>
+     </div>
+  </nav> 
+    <center><h3>Gestionar Empresa</h3></center>
+    <center><a href="Registrar_Empresa.php" class="btn-floating waves-effect waves-light cyan darken-3"><i class="material-icons">add</i></a>Agregar Empresa</center>
 
-    <table id="datatable" class="display" >
+    <center><table id="datatable" class="display highlight" >
       <thead>
         <tr>
           <th>Codigo Empresa</th>
@@ -114,6 +125,14 @@
       }
       ?>
       </tbody>
-    </table>
+    </table></center>
+    <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="materialize/js/materialize.js"></script>
+     <script type="text/javascript">
+      $(document).ready(function(){    
+         $(".button-collapse").sideNav();
+         $(".dropdown-button").dropdown();
+      });
+    </script>
   </body>
 </html>

@@ -25,6 +25,17 @@
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+    <script>
+      <?php
+
+          if(isset($_GET["m"])){
+            if($_GET["m"] != ""){
+              echo "<script>alert('".$_GET["m"]."')</script>";
+            }
+          }
+
+      ?>
+      </script>
 </head>
 <body >
   <!--<section class="contenedor">
@@ -38,7 +49,7 @@
           	<form action="../Controller/Usuariocontroller.php" method="POST" class="col s12 m8 offset-l8 z-depth-4 formulario " id="formulario" >
               <section class="col s12" >              
                 <label>Cod_Usu</label>
-         		    <input type="text" readonly name="Cod_usu" required value="<?php echo $usuario[0] ?>">                   
+         		    <input type="hidden" readonly name="Cod_usu" required value="<?php echo $usuario[0] ?>">                   
                 <div class="col l6 s12 input-field form center" >
                  <div class="row">
                     <select name="cod_rol">

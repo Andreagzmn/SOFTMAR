@@ -21,10 +21,35 @@
     <meta charset="utf-8">
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>      
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="sweetalert-master/sweetalert.css">
+    <script type="text/javascript" src="sweetalert-master/sweetalert.min.js"></script>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title></title>    
     <link type="text/css" rel="stylesheet" href="estilos.css">    
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster" />
+    <?php
+
+       if(isset($_GET["m"]) and isset($_GET["tm"])){
+         if($_GET["m"] != ""){
+           echo "<script>
+                   $(document).ready(function(){
+                      sweetAlert({
+                           title: 'Mensaje de SOFTMAR',   
+                           text: '".$_GET["m"]."',   
+                           type: '".$_GET["tm"]."',   
+                           showCancelButton: false,
+                           confirmButtonColor: '#4db6ac',   
+                           confirmButtonText: 'Aceptar',   
+                          cancelButtonText: 'No, cancel plx!',   
+                           closeOnConfirm: false,   
+                           closeOnCancel: false
+                       });
+                   });
+                </script>";
+           }
+         }
+?>
+
     <script>
     $(document).ready( function () {
       $('#datatable').DataTable();

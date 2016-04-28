@@ -64,6 +64,7 @@
       
    </head>
   <body>
+<<<<<<< HEAD
   <nav class="black">
       <div class="nav-wrapper " style="margin-left: 5px; margin-right: 5px;">
         <a href="#!" class="brand-logo"><img src="img/SOFTMAR.png" style="width: 500%; margin-top: -15px; position: relative;"></a>
@@ -74,6 +75,11 @@
   <center><h3>Gestionar Empresa</h3></center>
     <center><a href="Registrar_servicio.php" class="btn-floating waves-effect waves-light cyan darken-3"><i class="material-icons">add</i></a>Agregar Servicio</center>
     <table id="datatable" class="display highlight">
+=======
+    <h1>GESTIONAR SERVICIOS</h1>
+    <a href="Registrar_servicio.php">Nuevo Servicio</a>
+    <table id="datatable" class="display">
+>>>>>>> origin/master
       <thead>
         <tr>
           <th>servicio</th>

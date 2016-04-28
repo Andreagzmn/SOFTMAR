@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-04-2016 a las 13:59:58
--- Versión del servidor: 10.1.9-MariaDB
--- Versión de PHP: 5.5.30
+-- Tiempo de generación: 28-04-2016 a las 23:32:16
+-- Versión del servidor: 10.1.13-MariaDB
+-- Versión de PHP: 5.6.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -68,13 +68,23 @@ CREATE TABLE `empleado` (
   `Cod_Emp` int(11) NOT NULL,
   `Nombre` varchar(100) NOT NULL,
   `Apellido` varchar(100) NOT NULL,
-  `Telefono` varchar(100) NOT NULL,
+  `Telefono` int(100) NOT NULL,
   `Direccion` varchar(100) NOT NULL,
-  `Edad` varchar(100) NOT NULL,
+  `Edad` int(100) NOT NULL,
   `Correo` varchar(100) NOT NULL,
   `Cargo` varchar(100) NOT NULL,
-  `Cedula` varchar(100) NOT NULL
+  `Cedula` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `empleado`
+--
+
+INSERT INTO `empleado` (`Cod_empl`, `Cod_Emp`, `Nombre`, `Apellido`, `Telefono`, `Direccion`, `Edad`, `Correo`, `Cargo`, `Cedula`) VALUES
+(1, 1, 'ñoño', '', 451451, 'cll 55', 154, 'psa@ksdh', 'cargo', 10212120),
+(2, 1, 'ñoño', 'ño', 451451, 'cll 55', 154, 'psa@ksdh', 'cargo', 10212120),
+(3, 1, 'josefo', 'kaka', 292929, 'cll 77', 29, 'hola@fjisj', 'hola', 185151521),
+(4, 1, 'andrea', 'Oorozco', 16561, 'cll 44', 28, 'hola@hotmail', 'hola', 1255);
 
 -- --------------------------------------------------------
 
@@ -104,6 +114,13 @@ CREATE TABLE `empresa` (
   `Foto4` longtext NOT NULL,
   `Logo` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `empresa`
+--
+
+INSERT INTO `empresa` (`Cod_Emp`, `Cod_TipEmp`, `Nombre`, `Telefono`, `Direccion`, `Ciudad`, `NIT`, `Correo`, `Geo_x`, `Geo_y`, `Informacion`, `Dias_aten`, `Hor_desde`, `Hor_hasta`, `Foto1`, `Foto2`, `Foto3`, `Foto4`, `Logo`) VALUES
+(1, 3, 'ño', '10120520', 'cll 44', '0102022', 22002, 'hola@SMRRFLASM', '', '', 0x756a79666a79666975796866796a686667796a68, 'jkhlkjhlklkn', '15:20:00', '03:03:00', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -212,9 +229,15 @@ CREATE TABLE `servicio_emp` (
   `Cod_Emp` int(11) NOT NULL,
   `Nombre` varchar(100) NOT NULL,
   `Descripcion` varchar(100) NOT NULL,
-  `Estado` varchar(100) NOT NULL,
   `Valor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `servicio_emp`
+--
+
+INSERT INTO `servicio_emp` (`Cod_serv`, `Cod_Emp`, `Nombre`, `Descripcion`, `Valor`) VALUES
+(2, 1, 'peluu', 'cll44', 2000);
 
 -- --------------------------------------------------------
 
@@ -294,7 +317,7 @@ INSERT INTO `usuario` (`Cod_usu`, `cod_rol`, `Nombre`, `Apellido`, `Direccion`, 
 (1, 101, 'Andrea', 'Guzman', 'cll 40 n 57', 18, 'asdfghjklñ', 'andre@hotmail.com', '', '32101475'),
 (2, 101, 'Valentina', 'Chica', 'Cll 35 n 74', 18, 'soyvalen', 'valen@chica.com', '', '10147584'),
 (3, 102, 'Sledy Andrea', 'Orozco', 'Cll 20 n 10', 18, 'soy andrea', 'sledy@orozco.com', '', '45712360'),
-(4, 102, 'Rodrigo', 'Mena', 'Cll 11 n 88', 21, 'soyrodri', 'Rodri@mena.com', '', '7894561'),
+(4, 103, 'Rodrigo', 'Mena', 'Cll 11 n 88', 21, 'soyrodri', 'Rodri@mena.com', '', '7894561'),
 (5, 101, 'Andrea', 'Arias', 'call ', 18, 'asdfgh', 'andrea@guzman.com', '', '32101475');
 
 --
@@ -422,12 +445,12 @@ ALTER TABLE `citas`
 -- AUTO_INCREMENT de la tabla `empleado`
 --
 ALTER TABLE `empleado`
-  MODIFY `Cod_empl` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Cod_empl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `Cod_Emp` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Cod_Emp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `oferta_emp`
 --
@@ -447,7 +470,7 @@ ALTER TABLE `puntuacion`
 -- AUTO_INCREMENT de la tabla `servicio_emp`
 --
 ALTER TABLE `servicio_emp`
-  MODIFY `Cod_serv` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Cod_serv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `tipo_emp`
 --

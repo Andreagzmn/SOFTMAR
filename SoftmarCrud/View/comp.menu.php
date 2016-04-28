@@ -11,6 +11,7 @@ if($_SESSION["cod_rol"]==103){
     <li><a href="Gestion_Usuario_admin.php">Gestionar usuario</a></li>
     <li><a href="Gestion_Empresa_admin.php">Gestionar empresa</a></li>
     <li><a href="Gestion_Servicio_admin.php">Gestionar servicio</a></li>
+    <li><a href="Gestionar_Empleado.php">Gestionar empleado</a></li>
     <li><a href="../Controller/cerrarusuario.php">Cerrar sesión</a></li>
   </ul>
 

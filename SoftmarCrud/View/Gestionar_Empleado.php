@@ -14,20 +14,18 @@
 ?>
 <!DOCTYPE html>
 <html>
-  <head>
-   <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>    
+  <head>     
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">   
     <meta charset="utf-8">
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>      
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" type="text/css" href="sweetalert-master/sweetalert.css">
+    <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="materialize/js/materialize.js"></script>
     <script type="text/javascript" src="sweetalert-master/sweetalert.min.js"></script>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title></title>    
     <link type="text/css" rel="stylesheet" href="estilos.css">    
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster"/>
 
 <?php
 
@@ -52,9 +50,15 @@
          }
 ?>
 
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
+
+
     <script>
-    $(document).ready( function () {
-      $('#datatable').dataTable();
+    $(document).ready(function() {
+        $('#datatable').DataTable();
+        $(".button-collapse").sideNav();
+         $(".dropdown-button").dropdown();
     });
     </script>
 
@@ -80,61 +84,39 @@
           <th>Apellido</th>
           <th>Telefono</th>
           <th>Direccion</th>
-          <th>NIT</th>
+          <th>Edad</th>
           <th>Correo</th>
-          <th>Informacion</th>
-          <th>Dias de atencion</th>
-          <th>Hora desde</th>
-          <th>Hora hasta</th>
-          <th>acciones</th>
+          <th>Cargo</th>
+          <th>Cedula</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
 
       <?php
-      $empresa = Gestion_Empresa::ReadAll();
+      $empleado = Gestion_Empleados::ReadAll();
 
-      foreach ($empresa as $row) {
-
-        if($row["Cod_TipEmp"] == 3){
-          $Cod_TipEmp = "Peluqueria";
-        }elseif($row["Cod_TipEmp"] == 4){
-          $Cod_TipEmp = "Barberia";
-        }elseif($row["Cod_TipEmp"] == 5){
-          $Cod_TipEmp = "Spa";
-        }elseif($row["Cod_TipEmp"] == 6){
-          $Cod_TipEmp = "Peluqueria Infantil";
-        }
-
+      foreach ($empleado as $row) {
         echo "<tr>
+                <td>".$row["Cod_empl"]."</td>
                 <td>".$row["Cod_Emp"]."</td>
-                <td>".$Cod_TipEmp."</td>
                 <td>".$row["Nombre"]."</td>
+                <td>".$row["Apellido"]."</td>
                 <td>".$row["Telefono"]."</td>
                 <td>".$row["Direccion"]."</td>
-                <td>".$row["NIT"]."</td>
+                <td>".$row["Edad"]."</td>
                 <td>".$row["Correo"]."</td>
-                <td>".$row["Informacion"]."</td>
-                <td>".$row["Dias_aten"]."</td>
-                <td>".$row["Hor_desde"]."</td>
-                <td>".$row["Hor_hasta"]."</td>
+                <td>".$row["Cargo"]."</td>
+                <td>".$row["Cedula"]."</td>
                 <td>
-                  <a href='../View/actualizar_empresa.php?ei=".base64_encode($row["Cod_Emp"])."'><i class='fa fa-pencil'></i></a>
-                  <a href='../Controller/empresa.controller.php?ei=".base64_encode($row["Cod_Emp"])."&accion=d'><i class='fa fa-trash'></i></a>
+                  <a href='../View/actualizar_empleado.php?ei=".base64_encode($row["Cod_empl"])."'><i class='fa fa-pencil'></i></a>
+                  <a href='../Controller/Empleados.controller.php?ei=".base64_encode($row["Cod_empl"])."&accion=d'><i class='fa fa-trash'></i></a>
                 </td>
               </tr>";
       }
       ?>
       </tbody>
     </table></center>
-    <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
-    <script type="text/javascript" src="materialize/js/materialize.js"></script>
-     <script type="text/javascript">
-      $(document).ready(function(){    
-         $(".button-collapse").sideNav();
-         $(".dropdown-button").dropdown();
-      });
-    </script>
   </body>
 </html>
 

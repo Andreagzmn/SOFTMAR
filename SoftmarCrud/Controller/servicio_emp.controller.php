@@ -25,18 +25,17 @@
 			$Cod_Emp 		= $_POST["Cod_Emp"];			
 			$Nombre		    = $_POST["Nombre"];
 			$Descripcion    = $_POST["Descripcion"];
-			$Estado	        = $_POST["Estado"];
 			$Valor	        = $_POST["Valor"];
 
 			try{
-				Gestion_servicio::Create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor);
+				Gestion_servicio::Create($Cod_Emp, $Nombre, $Descripcion, $Valor);
 				$mensaje = "El servicio se registro correctamente";
 				$tipomensaje = "success";
 				header("Location: ../View/Gestion_Servicio_admin.php?m=".$mensaje."&tm=".$tipomensaje);
 			}catch (Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	
 				$tipomensaje = "error";
-				header("Location: ../View/actualizar.servicio.php?m=".$mensaje."&tm=".$tipomensaje);
+				header("Location: ../View/Registrar_servicio.php?m=".$mensaje."&tm=".$tipomensaje);
 			}
 			break;
 
@@ -48,30 +47,32 @@
 			$Cod_Emp 		= $_POST["Cod_Emp"];			
 			$Nombre		    = $_POST["Nombre"];
 			$Descripcion    = $_POST["Descripcion"];
-			$Estado	        = $_POST["Estado"];
 			$Valor	        = $_POST["Valor"];
 
 
 			try{
-				Gestion_Contacto::Update($Cod_Emp, $Nombre, $Descripcion, $Estado, $Valor);
+				Gestion_servicio::update($Cod_serv,$Cod_Emp, $Nombre, $Descripcion, $Valor);
 				$mensaje = "Se actualizo correctamente";
 				$tipomensaje = "success";
 				header("Location: ../View/Gestion_Servicio_admin.php?m=".$mensaje."&tm=".$tipomensaje);
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 
 				$tipomensaje = "error";
-				header("Location: ../View/Registrar_servicio.php?m=".$mensaje."&tm=".$tipomensaje);
+				header("Location: ../View/Actualizar_servicio.php?m=".$mensaje."&tm=".$tipomensaje);
 			}
 			break;
 			
 		case 'd':
         try {
-          $servicio= Gestion_servicio::Delete(base64_decode($_REQUEST["ui"]));
+          $servicio= Gestion_servicio::Delete(base64_decode($_REQUEST["sr"]));
           $msn = "se elimino correctamente";
+          $tipomensaje = "success";
+          header("Location: ../View/Gestion_Servicio_admin.php?m=".$mensaje."&tm=".$tipomensaje);
         } catch (Exception $e) {
           $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
+          $tipomensaje = "error";
+          header("Location: ../View/Gestion_Servicio_admin.php?m=".$mensaje."&tm=".$tipomensaje);
         }
-        header("Location: ../View/Gestion_Servicio_admin.php?msn=".$msn);
       break;
 
 	}

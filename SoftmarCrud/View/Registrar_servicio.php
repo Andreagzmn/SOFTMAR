@@ -13,13 +13,15 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8"/>
-	<link type="text/css" rel="stylesheet" href="estilos.css">
-	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>Servicios empresa</title>
-    <script>
+  <meta charset="utf-8"/>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" type="text/css" href="estilos.css">
+
       <?php
 
           if(isset($_GET["m"])){
@@ -29,7 +31,6 @@
           }
 
       ?>
-      </script>
 </head>
 <body>
     <div class="container">
@@ -72,22 +73,13 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s10">
-          	                <select required name="Estado">
-                                <option value="" disabled selected>---Seleccione estado---</option>
-                                <option value="1">Activo</option>
-                                <option value="2">Inactivo</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
                         <div class="input-field col s12">
                             <input id="first_name" type="number" class="validate" required name="Valor">
                             <label for="first_name">Valor</label>
                         </div>
                     </div>  
                     <button type="submit" name="accion" value="c" id="botn" id="buton" class="btn waves-effect  cyan darken-3">Registrar</button>
-                    <a href="dashboard.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
+                    <a href="Gestion_Servicio.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
                     <?php echo @$_REQUEST["$msn"]; ?>   
                 </section>            
             </form>

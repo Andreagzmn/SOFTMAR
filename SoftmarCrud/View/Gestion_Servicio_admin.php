@@ -14,14 +14,19 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">   
     <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>      
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="sweetalert-master/sweetalert.css">
+    <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="materialize/js/materialize.js"></script>
+    <script type="text/javascript" src="sweetalert-master/sweetalert.min.js"></script>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="estilos.css">    
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster"/>
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
-    <?php
+<?php
 
        if(isset($_GET["m"]) and isset($_GET["tm"])){
          if($_GET["m"] != ""){
@@ -43,24 +48,40 @@
            }
          }
 ?>
+
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
+
+
     <script>
-    $(document).ready( function () {
-      $('#datatable').DataTable();
+    $(document).ready(function() {
+        $('#datatable').DataTable();
+        $(".button-collapse").sideNav();
+         $(".dropdown-button").dropdown();
     });
     </script>
+
+      
    </head>
   <body>
-    <h1>GESTIONAR SERVICIOS</h1>
-    <a href="Registrar_servicio.php">Nueva Empresa</a>
-    <table id="datatable" class="display">
+  <nav class="black">
+      <div class="nav-wrapper " style="margin-left: 5px; margin-right: 5px;">
+        <a href="#!" class="brand-logo"><img src="img/SOFTMAR.png" style="width: 500%; margin-top: -15px; position: relative;"></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons"></i></a>
+        <?php include_once("../View/comp.menu.php"); ?>
+     </div>
+  </nav> 
+  <center><h3>Gestionar Empresa</h3></center>
+    <center><a href="Registrar_servicio.php" class="btn-floating waves-effect waves-light cyan darken-3"><i class="material-icons">add</i></a>Agregar Servicio</center>
+    <table id="datatable" class="display highlight">
       <thead>
         <tr>
           <th>servicio</th>
           <th>Empresa</th>
           <th>Nombre</th>
           <th>Descripcion</th>
-          <th>Estado</th>
           <th>Valor</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -69,21 +90,13 @@
       $servicios = Gestion_servicio::ReadAll();
 
       foreach ($servicios as $row) {
-
-        if($row["Estado"] == 1){
-          $Estado = "Activo";
-        }elseif($row["Estado"] == 2){
-          $Estado = "Inactivo";
-        }
         echo "<tr>
                 <td>".$row["Cod_serv"]."</td>
                 <td>".$row["Cod_Emp"]."</td>
                 <td>".$row["Nombre"]."</td>
                 <td>".$row["Descripcion"]."</td>
-                <td>".$Estado."</td>
                 <td>".$row["Valor"]."</td>
                 <td>
-
                   <a href='../View/Actualizar_servicio.php?sr=".base64_encode($row["Cod_serv"])."'><i class='fa fa-pencil'></i></a>
                   <a href='../Controller/servicio_emp.controller.php?sr=".base64_encode($row["Cod_serv"])."&accion=d'><i class='fa fa-trash'></i></a>
                 </td>

@@ -33,11 +33,13 @@
 			try{
 				Gestion_Empleados::Create($Cod_Emp ,$Nombre,$Apellido,$Telefono,$Direccion,$Edad ,$Correo ,$Cargo,$Cedula);
 				$mensaje = "Su registro se creo correctamente";
+				$tipomensaje = "success";
+				header("Location: ../View/Gestionar_Empleado.php?m=".$mensaje."&tm=".$tipomensaje);
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 
+				$tipomensaje = "error";
+				header("Location: ../View/Registrar_Empleado.php?m= ".$mensaje);
 			}
-			header("Location: ../View/Registrar_Empleado.php?m= ".$mensaje);
-	break;
 
 		break;
 
@@ -46,11 +48,39 @@
 		break;
 
 		case 'u':
-			# actualizar...
+				$Cod_empl		=$_POST["Cod_empl"];
+				$Cod_Emp     	=$_POST["Cod_Emp"];
+				$Nombre      	=$_POST["Nombre"];
+				$Apellido    	=$_POST["Apellido"];
+				$Telefono    	=$_POST["Telefono"];
+				$Direccion   	=$_POST["Direccion"];
+				$Edad        	=$_POST["Edad"];
+				$Correo      	=$_POST["Correo"];
+				$Cargo    		=$_POST["Cargo"];
+				$Cedula     	=$_POST["Cedula"];
+
+			try{
+				Gestion_Empleados::Update($Cod_empl,$Cod_Emp ,$Nombre,$Apellido,$Telefono,$Direccion,$Edad ,$Correo ,$Cargo,$Cedula);
+				$mensaje = "Se actualizo correctamente";
+				$tipomensaje = "success";
+				header("Location: ../View/Gestionar_Empleado.php?m=".$mensaje."&tm=".$tipomensaje);
+			}catch(Exception $e){
+				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 
+				$tipomensaje = "error";
+				header("Location: ../View/actualizar_empleado.php?m= ".$mensaje);
+			}
 			break;
 			
 		case 'd':
-			# eliminar...
+			try {
+          	$empleado = Gestion_Empleados::Delete(base64_decode($_REQUEST["sr"]));
+          	$mensaje = "Se elimino exitosamente";
+          	$tipomensaje = "success";
+			header("Location: ../View/Gestionar_Empleado.php?m=".$mensaje."&tm=".$tipomensaje);
+        } catch (Exception $e) {
+			header("Location: ../View/Gestionar_Empleado.php?m= ".$mensaje."&tm=".$tipomensaje);
+			$tipomensaje = "error";
+        }
 			break;
 
 		default:

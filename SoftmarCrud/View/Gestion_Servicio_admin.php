@@ -51,7 +51,7 @@
    </head>
   <body>
     <h1>GESTIONAR SERVICIOS</h1>
-    <a href="Registrar_servicio.php">Nueva Empresa</a>
+    <a href="Registrar_servicio.php">Nuevo Servicio</a>
     <table id="datatable" class="display">
       <thead>
         <tr>

@@ -71,8 +71,13 @@ main{
   width: 70%;
 }
 #formi{
-margin-left: 120px;
+margin-left: 225px;
+margin-top: 80px;
 } 
+
+#btn-can-serv{
+  margin-top: 50px;
+}
 
 /*dash*/
 

@@ -50,7 +50,7 @@
             </div>
             <div class="row">
               <div class="input-field col s12">
-                 <input id="edad" type="text" class="validate" name="edad" required>
+                 <input id="edad" type="number" class="validate" name="edad" required>
                 <label for="edad">Edad</label>
               </div>
             </div>
@@ -62,13 +62,13 @@
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <input id="Correo" type="text" class="validate" name="correo" required>
+                <input id="Correo" type="email" class="validate" name="correo" required>
                 <label for="Correo">Correo</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <input id="Cc" type="text" class="validate" name="cedula" required>
+                <input id="Cc" type="number" class="validate" name="cedula" required>
                 <label for="Cc">Cedula</label>
               </div>
             </div>

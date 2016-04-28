@@ -14,23 +14,23 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>    
     <meta charset="utf-8">
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>      
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <link type="text/css" rel="stylesheet" href="estilos.css">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
+    <title></title>    
+    <link type="text/css" rel="stylesheet" href="estilos.css">    
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster" />
     <script>
     $(document).ready( function () {
       $('#datatable').DataTable();
     });
     </script>
-   </head>
+  </head>
    <nav class="black">
       <div class="nav-wrapper " style="margin-left: 5px; margin-right: 5px;">
         <a href="#!" class="brand-logo"><img src="img/SOFTMAR.png" style="width: 500%; margin-top: -15px; position: relative;"></a>
@@ -99,7 +99,6 @@
          $(".button-collapse").sideNav();
          $(".dropdown-button").dropdown();
       });
-
     </script>
   </body>
 </html>

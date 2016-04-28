@@ -66,7 +66,7 @@
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <input id="edad" type="text" class="validate" name="edad" required  value="<?php echo $usuario[5] ?>">
+                      <input id="edad" type="number" class="validate" name="edad" required  value="<?php echo $usuario[5] ?>">
                       <label for="edad">Edad</label>
                     </div>
                   </div>  
@@ -78,13 +78,13 @@
                   </div> 
                   <div class="row">
                     <div class="input-field col s12">
-                      <input id="Correo" type="text" class="validate" name="correo" required  value="<?php echo $usuario[7] ?>">
+                      <input id="Correo" type="email" class="validate" name="correo" required  value="<?php echo $usuario[7] ?>">
                       <label for="Correo">Correo</label>
                     </div>
                   </div> 
                   <div class="row">
                     <div class="input-field col s12">
-                      <input id="Cc" type="text" class="validate" name="cedula" required  value="<?php echo $usuario[9] ?>">
+                      <input id="Cc" type="number" class="validate" name="cedula" required  value="<?php echo $usuario[9] ?>">
                       <label for="Cc">Cedula</label>
                     </div>
                   </div>         

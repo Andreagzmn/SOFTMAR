@@ -14,20 +14,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>    
     <meta charset="utf-8">
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>      
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" type="text/css" href="sweetalert-master/sweetalert.css">
+    <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="materialize/js/materialize.js"></script>
+ 
     <script type="text/javascript" src="sweetalert-master/sweetalert.min.js"></script>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title></title>    
     <link type="text/css" rel="stylesheet" href="estilos.css">    
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster" />
-    <?php
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster"/>
+
+<?php
 
        if(isset($_GET["m"]) and isset($_GET["tm"])){
          if($_GET["m"] != ""){
@@ -50,9 +50,15 @@
          }
 ?>
 
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
+
+
     <script>
-    $(document).ready( function () {
-      $('#datatable').DataTable();
+    $(document).ready(function() {
+        $('#datatable').DataTable();
+        $(".button-collapse").sideNav();
+        $(".dropdown-button").dropdown();
     });
     </script>
   </head>
@@ -78,6 +84,7 @@
           <th>Edad</th>
           <th>Correo</th>
           <th>Cedula</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -105,11 +112,8 @@
                 <td>".$row["Correo"]."</td>
                 <td>".$row["Cedula"]."</td>
                 <td>
-
                   <a href='../View/editar.usuario.php?ui=".base64_encode($row["Cod_usu"])."'><i class='fa fa-pencil'></i></a>
                   <a href='../Controller/Usuariocontroller.php?ui=".base64_encode($row["Cod_usu"])."&accion=d'><i class='fa fa-trash'></i></a>
-
-
                 </td>
               </tr>";
       }
@@ -117,13 +121,5 @@
       ?>
       </tbody>
     </table></center>
-      <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
-    <script type="text/javascript" src="materialize/js/materialize.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){    
-         $(".button-collapse").sideNav();
-         $(".dropdown-button").dropdown();
-      });
-    </script>
   </body>
 </html>

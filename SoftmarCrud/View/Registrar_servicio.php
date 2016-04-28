@@ -79,11 +79,7 @@
                         </div>
                     </div>  
                     <button type="submit" name="accion" value="c" id="botn" id="buton" class="btn waves-effect  cyan darken-3">Registrar</button>
-<<<<<<< HEAD
                     <a href="Gestion_Servicio.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
-=======
-                    <a href="dashboard.php" id="btn-can-serv" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
->>>>>>> origin/master
                     <?php echo @$_REQUEST["$msn"]; ?>   
                 </section>            
             </form>

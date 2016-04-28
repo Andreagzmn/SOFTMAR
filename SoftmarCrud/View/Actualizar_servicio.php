@@ -61,16 +61,9 @@
                             <label for="first_name">Valor</label>
                         </div>
                     </div>  
-<<<<<<< HEAD
                    <button name="accion" value="u" id="boton" class="btn waves-effect" style="margin: 20px;">Actualizar</button>
                   <a href="Gestion_Servicio_admin.php" id="boton" class="btn waves-effect" style="margin: 20px;" >Cancelar</a>
                 <?php echo @$_REQUEST["$mensaje"]; ?>            
-=======
-                    <button type="submit" name="accion" value="c" id="botn" id="buton" class="btn waves-effect  cyan darken-3">Actualizar</button>
-                    <a href="Gestion_Servicio_admin.php" id="btn-can-serv" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
-                    <?php echo @$_REQUEST["$msn"]; ?>   
-                </section>            
->>>>>>> origin/master
             </form>
             </div>
         </div></center>

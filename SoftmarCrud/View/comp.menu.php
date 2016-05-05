@@ -2,7 +2,11 @@
 <link rel="stylesheet" href="../../font-awesome-4.6.2/css/font-awesome.min.css">
 <?php
 if($_SESSION["cod_rol"]==103){
+<<<<<<< HEAD
 ?>bn
+=======
+?>
+>>>>>>> origin/master
  
 
  <ul class="right hide-on-med-and-down">

@@ -46,7 +46,9 @@
           <h3  style="text-align:center; margin-bottom: -47px; ">Softmar</h3>
           	<form action="../Controller/Usuariocontroller.php" method="POST" class="col s12 m8 offset-l8 z-depth-4 formulario " id="formulario" >
               <section class="col s12" > 
-                              
+                  <label>Cod_Usu</label>
+                  <input type="hidden" readonly name="Cod_usu" required value="<?php echo $usuario[0] ?>">
+                  <div class="col l6 s12 input-field form center" >                   
                   <div class="row">
                     <div class="input-field col s12">
                       <input id="Nombre" type="text" class="validate" name="nombre" required  value="<?php echo $usuario[2] ?>">
@@ -70,13 +72,7 @@
                       <input id="edad" type="number" class="validate" name="edad" required  value="<?php echo $usuario[5] ?>">
                       <label for="edad">Edad</label>
                     </div>
-                  </div>  
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <input id="contra" required type="password" class="validate" name="clave"  value="<?php echo $usuario[6] ?>">
-                      <label for="contra">Contraseña</label>
-                    </div>
-                  </div> 
+                  </div>                     
                   <div class="row">
                     <div class="input-field col s12">
                       <input id="Correo" type="email" class="validate" name="correo" required  value="<?php echo $usuario[7] ?>">

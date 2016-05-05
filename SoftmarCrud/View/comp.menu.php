@@ -1,13 +1,12 @@
 <!-- Menu Administrador = perfil 1 -->
 <?php
 if($_SESSION["cod_rol"]==103){
-?> bn
+?>
  
 
  <ul class="right hide-on-med-and-down">
     <li><a href="dashboard.php">Inicio</a></li>
     <li><a href="#">Información</a></li>
-    <li><a href="#">Visualizar pagina web</a></li>
     <li><a href="Gestion_Usuario_admin.php">Gestionar usuario</a></li>
     <li><a href="Gestion_Empresa_admin.php">Gestionar empresa</a></li>
     <li><a href="Gestion_Servicio_admin.php">Gestionar servicio</a></li>
@@ -27,7 +26,7 @@ if($_SESSION["cod_rol"]==103){
     <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Perfil<i class="material-icons right">arrow_drop_down</i></a></li>
   </ul>
   <ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">Editar Perfil</a></li>
+    <li><a href="ActualizarMiperfil.php">Editar Perfil</a></li>
     <li><a href="../Controller/cerrarusuario.php">Cerrar sesión</a></li>
   </ul> 
 <?php
@@ -48,3 +47,27 @@ if($_SESSION["cod_rol"]==103){
 <?php  	   
 }
 ?>
+<footer id="piedepagina" class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Footer Content</h5>
+        <p class="grey-text text-lighten-4"></p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a id="faceicon"class="grey-text text-lighten-3" href="#!"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+            <li><a id="faceicon"class="grey-text text-lighten-3" href="#!"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+            <li><a id="faceicon"class="grey-text text-lighten-3" href="#!"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+      <div class="container">
+      © SOFTMAR 2016 Copyright todos los derechos reservados 
+      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+  </div>
+</footer>

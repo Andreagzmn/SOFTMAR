@@ -1,18 +1,16 @@
-
-
 <?php
  session_start();
   require_once("../Model/db_conn.php");
   require_once("../Model/contactos.class.php");
 
    if(!isset($_SESSION["Cod_usu"])){
-    //$msn = base64_encode("Debe iniciar sesion primero!");
+    $msn = base64_encode("Debe iniciar sesion primero!");
     $tipo_msn = base64_encode("advertencia");
 
     header("Location: ../View/login.php?m=".$msn."&tm=".$tipo_msn);
   }
 
-  $usuario =  Gestion_Contacto::ReadbyID(base64_decode($_REQUEST["ui"]));
+  $usuario =  Gestion_Contacto::ReadbyID($_SESSION["Cod_usu"]);
 ?>
 <!DOCTYPE html>
 <html>
@@ -47,16 +45,10 @@
           <div class="col s12 l8  ">
           <h3  style="text-align:center; margin-bottom: -47px; ">Softmar</h3>
           	<form action="../Controller/Usuariocontroller.php" method="POST" class="col s12 m8 offset-l8 z-depth-4 formulario " id="formulario" >
-              <section class="col s12" >              
-                <label>Cod_Usu</label>
-         		    <input type="hidden" readonly name="Cod_usu" required value="<?php echo $usuario[0] ?>">                   
-                <div class="col l6 s12 input-field form center" >
-                 <div class="row">
-                    <select name="cod_rol">
-                      <option value="102" <?php if($usuario["cod_rol"] == 102){ echo "selected"; } ?>>Cliente</option>
-                      <option value="101" <?php if($usuario["cod_rol"] == 101){ echo "selected"; } ?>>Dueño de Local</option>
-                    </select>  
-                  </div>
+              <section class="col s12" > 
+                  <label>Cod_Usu</label>
+                  <input type="hidden" readonly name="Cod_usu" required value="<?php echo $usuario[0] ?>">
+                  <div class="col l6 s12 input-field form center" >                   
                   <div class="row">
                     <div class="input-field col s12">
                       <input id="Nombre" type="text" class="validate" name="nombre" required  value="<?php echo $usuario[2] ?>">
@@ -80,7 +72,7 @@
                       <input id="edad" type="number" class="validate" name="edad" required  value="<?php echo $usuario[5] ?>">
                       <label for="edad">Edad</label>
                     </div>
-                  </div>                    
+                  </div>                     
                   <div class="row">
                     <div class="input-field col s12">
                       <input id="Correo" type="email" class="validate" name="correo" required  value="<?php echo $usuario[7] ?>">
@@ -95,7 +87,7 @@
                   </div>         
                     		
             		  <button  name="accion" value="u" id="boton" class="btn waves-effect cyan darken-3" id="btn-crear-cuenta" >Actualizar</button>
-            		  <a href="Gestion_Usuario_admin.php" id="boton" class="btn waves-effect blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
+            		  <a href="dashboard.php" id="boton" class="btn waves-effect blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
                   
                 <?php echo @$_REQUEST["$mensaje"]; ?>
                 </div>

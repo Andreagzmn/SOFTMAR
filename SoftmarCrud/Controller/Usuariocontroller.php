@@ -68,7 +68,7 @@
 			      // Creamos variables de SESSION
 
 			    $_SESSION["Cod_usu"]     = $usuario[0];
-			    $_SESSION["cod_rol"]     = $usuario[1];			    ;
+			    $_SESSION["cod_rol"]     = $usuario[1];			    
 			    $_SESSION["Nombre"] 	 = $usuario[2];
 			    $_SESSION["Apellido"] 	 = $usuario[3];
 			    $_SESSION["Direccion"] 	 = $usuario[4];
@@ -92,25 +92,36 @@
 
 		case 'u':
 			$Cod_usu		= $_POST["Cod_usu"];
-			$cod_rol 		= $_POST["cod_rol"];			
+			// $cod_rol 		= $_POST["cod_rol"];			
 			$Nombre			= $_POST["nombre"];
 			$Apellido		= $_POST["apellido"];
 			$Direccion      = $_POST["direccion"];			
-			$Edad	    	= $_POST["edad"];
-			$clave  		= $_POST["clave"];			
+			$Edad	    	= $_POST["edad"];					
 			$Correo         = $_POST["correo"];			
 			$Cedula			= $_POST["cedula"];
 
 
-			try{
-				Gestion_Contacto::Update($Cod_usu,$cod_rol,$Nombre, $Apellido, $Direccion, $Edad, $Clave, $Correo, $Cedula);
-				$mensaje = "Se actualizo correctamente";
-				$tipomensaje = "success";
-				header("Location: ../View/Gestion_Usuario_admin.php?m=".$mensaje."&tm=".$tipomensaje);
+			try{				
+				if ($_SESSION["cod_rol"]==103) {
+					Gestion_Contacto::Update($Cod_usu,/*$cod_rol,*/$Nombre, $Apellido, $Direccion, $Edad, $Correo, $Cedula);
+					$mensaje = "Se actualizo correctamente";
+					$tipomensaje = "success";					
+					header("Location: ../View/Gestion_Usuario_admin.php?m=".$mensaje."&tm=".$tipomensaje);
+				}else{
+					Gestion_Contacto::Update($Cod_usu,$Nombre, $Apellido, $Direccion, $Edad, $Correo, $Cedula);
+					$mensaje = "Se actualizo correctamente";
+					$tipomensaje = "success";
+					header("Location: ../View/dashboard.php?m=".$mensaje."&tm=".$tipomensaje);
+				}								
+
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	
-				$tipomensaje = "error";		 
-				header("Location: ../View/editar.usuario.php?m=".$mensaje."&tm=".$tipomensaje);	
+				$tipomensaje = "error";	
+				if ($_SESSION["cod_rol"]==103) {
+					 	header("Location: ../View/editar.usuario.php?m=".$mensaje."&tm=".$tipomensaje);
+				}else{
+					header("Location: ../View/ActualizarMiperfil.php?m=".$mensaje."&tm=".$tipomensaje);	
+				} 				
 			}
 			break;
 			

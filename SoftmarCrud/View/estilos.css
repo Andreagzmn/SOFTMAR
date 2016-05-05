@@ -336,3 +336,12 @@ h3 {
   margin-left: -5px;
   background-color: #000000;
 }
+#faceicon{
+  font-size: 50px;
+  margin-left: 200%;
+  border-radius: 10px;
+}
+
+div#copy{
+   margin-left: 250px;
+}

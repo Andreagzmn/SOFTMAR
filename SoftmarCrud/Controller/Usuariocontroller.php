@@ -113,8 +113,12 @@
 				}								
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	
-				$tipomensaje = "error";		 
-				header("Location: ../View/editar.usuario.php?m=".$mensaje."&tm=".$tipomensaje);	
+				$tipomensaje = "error";	
+				if ($_SESSION["cod_rol"]==103) {
+					 	header("Location: ../View/editar.usuario.php?m=".$mensaje."&tm=".$tipomensaje);
+				}else{
+					header("Location: ../View/ActualizarMiperfil.php?m=".$mensaje."&tm=".$tipomensaje);	
+				} 				
 			}
 			break;
 			

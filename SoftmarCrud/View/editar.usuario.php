@@ -80,13 +80,7 @@
                       <input id="edad" type="number" class="validate" name="edad" required  value="<?php echo $usuario[5] ?>">
                       <label for="edad">Edad</label>
                     </div>
-                  </div>  
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <input id="contra" required type="password" class="validate" name="clave"  value="<?php echo $usuario[6] ?>">
-                      <label for="contra">Contraseña</label>
-                    </div>
-                  </div> 
+                  </div>                    
                   <div class="row">
                     <div class="input-field col s12">
                       <input id="Correo" type="email" class="validate" name="correo" required  value="<?php echo $usuario[7] ?>">

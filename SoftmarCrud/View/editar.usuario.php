@@ -6,7 +6,7 @@
   require_once("../Model/contactos.class.php");
 
    if(!isset($_SESSION["Cod_usu"])){
-    $msn = base64_encode("Debe iniciar sesion primero!");
+    //$msn = base64_encode("Debe iniciar sesion primero!");
     $tipo_msn = base64_encode("advertencia");
 
     header("Location: ../View/login.php?m=".$msn."&tm=".$tipo_msn);

@@ -328,7 +328,6 @@ h3 {
   font-size: 1.8em;
   text-shadow: #aaa 4px 4px 4px;
 }
-<<<<<<< HEAD
 /*Geolocali*/
   #map{
     width: 100%;
@@ -347,7 +346,6 @@ nav{
   background: #fafafa;
   background-color: rgb(0, 0, 0, 0.5);
 }
-=======
 
 /*Pie de página-footer*/
 
@@ -356,4 +354,3 @@ nav{
   margin-left: -5px;
   background-color: #000000;
 }
->>>>>>> origin/master

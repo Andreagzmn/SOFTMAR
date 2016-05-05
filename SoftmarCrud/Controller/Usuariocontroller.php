@@ -96,19 +96,21 @@
 			$Nombre			= $_POST["nombre"];
 			$Apellido		= $_POST["apellido"];
 			$Direccion      = $_POST["direccion"];			
-			$Edad	    	= $_POST["edad"];
-			$clave  		= $_POST["clave"];			
+			$Edad	    	= $_POST["edad"];					
 			$Correo         = $_POST["correo"];			
 			$Cedula			= $_POST["cedula"];
 
 
-			try{
-				Gestion_Contacto::Update($Cod_usu,$cod_rol,$Nombre, $Apellido, $Direccion, $Edad, $Clave, $Correo, $Cedula);
-				$mensaje = "Se actualizo correctamente";
-				$tipomensaje = "success";
-				if ($_SESSION["cod_rol"]==103) {					
+			try{				
+				if ($_SESSION["cod_rol"]==103) {
+					Gestion_Contacto::Update($Cod_usu,$cod_rol,$Nombre, $Apellido, $Direccion, $Edad, $Correo, $Cedula);
+					$mensaje = "Se actualizo correctamente";
+					$tipomensaje = "success";					
 					header("Location: ../View/Gestion_Usuario_admin.php?m=".$mensaje."&tm=".$tipomensaje);
 				}else{
+					Gestion_Contacto::Update($Cod_usu,$Nombre, $Apellido, $Direccion, $Edad, $Correo, $Cedula);
+					$mensaje = "Se actualizo correctamente";
+					$tipomensaje = "success";
 					header("Location: ../View/dashboard.php?m=".$mensaje."&tm=".$tipomensaje);
 				}								
 			}catch(Exception $e){

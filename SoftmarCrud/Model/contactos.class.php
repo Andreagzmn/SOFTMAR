@@ -83,7 +83,7 @@ class Gestion_Contacto{
 		Softmar_BD::Disconnect();
 	} 
  
-	function Update($Cod_usu,$cod_rol,$Nombre, $Apellido, $Direccion, $Edad, $Clave, $Correo, $Cedula){
+	function Update($Cod_usu,$cod_rol,$Nombre, $Apellido, $Direccion, $Edad, $Correo, $Cedula){
 	//Instanciamos y nos conectamos a la bd
 		$Conexion = Softmar_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -91,10 +91,10 @@ class Gestion_Contacto{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "UPDATE usuario SET cod_rol=?, Nombre=?, Apellido=?, Direccion=?, Edad=?, Clave=?, Correo=?, Cedula=? WHERE Cod_usu = ?" ;
+		$consulta = "UPDATE usuario SET cod_rol=?, Nombre=?, Apellido=?, Direccion=?, Edad=?, Correo=?, Cedula=? WHERE Cod_usu = ?" ;
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($cod_rol,$Nombre, $Apellido, $Direccion, $Edad, $Clave, $Correo, $Cedula, $Cod_usu));		
+		$query->execute(array($cod_rol,$Nombre, $Apellido, $Direccion, $Edad,  $Correo, $Cedula, $Cod_usu));		
 
 		Softmar_BD::Disconnect();
 	

@@ -45,7 +45,8 @@
           <div class="col s12 l8  ">
           <h3  style="text-align:center; margin-bottom: -47px; ">Softmar</h3>
           	<form action="../Controller/Usuariocontroller.php" method="POST" class="col s12 m8 offset-l8 z-depth-4 formulario " id="formulario" >
-              <section class="col s12" >                 
+              <section class="col s12" > 
+                              
                   <div class="row">
                     <div class="input-field col s12">
                       <input id="Nombre" type="text" class="validate" name="nombre" required  value="<?php echo $usuario[2] ?>">

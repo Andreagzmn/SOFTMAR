@@ -1,7 +1,7 @@
 <!-- Menu Administrador = perfil 1 -->
 <?php
 if($_SESSION["cod_rol"]==103){
-?> bn
+?>
  
 
  <ul class="right hide-on-med-and-down">

@@ -90,7 +90,7 @@
                   </div>         
                     		
             		  <button  name="accion" value="u" id="boton" class="btn waves-effect cyan darken-3" id="btn-crear-cuenta" >Actualizar</button>
-            		  <a href="Gestion_Usuario_admin.php" id="boton" class="btn waves-effect blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
+            		  <a href="dashboard.php" id="boton" class="btn waves-effect blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
                   
                 <?php echo @$_REQUEST["$mensaje"]; ?>
                 </div>

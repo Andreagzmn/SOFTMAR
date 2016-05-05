@@ -106,7 +106,11 @@
 				Gestion_Contacto::Update($Cod_usu,$cod_rol,$Nombre, $Apellido, $Direccion, $Edad, $Clave, $Correo, $Cedula);
 				$mensaje = "Se actualizo correctamente";
 				$tipomensaje = "success";
-				header("Location: ../View/Gestion_Usuario_admin.php?m=".$mensaje."&tm=".$tipomensaje);
+				if ($_SESSION["cod_rol"]==103) {					
+					header("Location: ../View/Gestion_Usuario_admin.php?m=".$mensaje."&tm=".$tipomensaje);
+				}else{
+					header("Location: ../View/dashboard.php?m=".$mensaje."&tm=".$tipomensaje);
+				}								
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	
 				$tipomensaje = "error";		 

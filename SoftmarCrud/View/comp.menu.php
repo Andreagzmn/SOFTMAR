@@ -1,7 +1,7 @@
 <!-- Menu Administrador = perfil 1 -->
 <?php
 if($_SESSION["cod_rol"]==103){
-?>
+?>.
  
 
  <ul class="right hide-on-med-and-down">
@@ -58,7 +58,7 @@ if($_SESSION["cod_rol"]==103){
         <h5 class="white-text">Links</h5>
           <ul>
             <li><a id="faceicon"class="grey-text text-lighten-3" href="#!"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
-            <li><a id="faceicon"class="grey-text text-lighten-3" href="#!"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+            <li><a id="faceicon"class="grey-text text-lighten-3" href="#!"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
             <li><a id="faceicon"class="grey-text text-lighten-3" href="#!"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
           </ul>
       </div>

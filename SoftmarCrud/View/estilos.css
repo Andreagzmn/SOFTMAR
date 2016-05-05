@@ -328,3 +328,11 @@ h3 {
   font-size: 1.8em;
   text-shadow: #aaa 4px 4px 4px;
 }
+
+/*Pie de página-footer*/
+
+#piedepagina{
+  margin-top: 600px;
+  margin-left: -5px;
+  background-color: #000000;
+}

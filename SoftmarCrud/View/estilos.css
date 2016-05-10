@@ -350,9 +350,10 @@ nav{
 /*Pie de página-footer*/
 
 #piedepagina{
-  margin-top: 600px;
-  margin-left: -5px;
+  margin-top: 500px;
+  margin-right: -2px;
   background-color: #000000;
+  width: 1400px;
 }
 #faceicon{
   font-size: 50px;

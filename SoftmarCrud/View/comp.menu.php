@@ -2,11 +2,7 @@
 <link rel="stylesheet" href="../../font-awesome-4.6.2/css/font-awesome.min.css">
 <?php
 if($_SESSION["cod_rol"]==103){
-<<<<<<< HEAD
 ?>bn
-=======
-?>
->>>>>>> origin/master
  
 
  <ul class="right hide-on-med-and-down">
@@ -62,8 +58,8 @@ if($_SESSION["cod_rol"]==103){
       <div class="col l4 offset-l2 s12">
         <h5 class="white-text"></h5>
           <ul>
-            <li><a id="faceicon"class="grey-text text-lighten-3" href="www.facebook.com"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
-            <li><a id="faceicon"class="grey-text text-lighten-3" href="www.twitter.com"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+            <li><a id="faceicon"class="grey-text text-lighten-3" href="https://www.facebook.com"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+            <li><a id="faceicon"class="grey-text text-lighten-3" href="https://www.twitter.com"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
             <li><a id="faceicon"class="grey-text text-lighten-3" href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
           </ul>
       </div>

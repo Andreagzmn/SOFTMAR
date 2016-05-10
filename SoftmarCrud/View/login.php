@@ -28,7 +28,7 @@
             	  		  </div>
                           <div class="row">
                             <div class="input-field col s12">
-                                <input id="Correo" type="text" class="validate" required name="correo">
+                                <input id="Correo" type="email" class="validate" required name="correo">
                                 <label for="Correo">Correo electrónico</label>
                             </div>
                             <div class="input-field col s12">

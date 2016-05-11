@@ -107,5 +107,6 @@
       ?>
       </tbody>
     </table>
+    <?php include_once("../View/pie_pagina.php"); ?>
   </body>
 </html>

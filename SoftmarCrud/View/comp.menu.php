@@ -1,5 +1,5 @@
 <!-- Menu Administrador = perfil 1 -->
-<link rel="stylesheet" href="../../font-awesome-4.6.2/css/font-awesome.min.css">
+
 <?php
 if($_SESSION["cod_rol"]==103){
 ?>

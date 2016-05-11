@@ -277,9 +277,10 @@ table.dataTable td {
   clear: both;
   *zoom: 1;
   zoom: 1;
+  width: 97% !important;
 }
 .dataTables_wrapper .dataTables_length {
-  float: left;
+  display: none !important;
 }
 .dataTables_wrapper .dataTables_filter {
   float: right;

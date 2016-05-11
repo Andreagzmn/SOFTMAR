@@ -50,8 +50,8 @@
          }
 ?>
 
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
-    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" type="text/css" href="Jquery/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="Jquery/jquery.dataTables.js"></script>
 
 
     <script>
@@ -72,7 +72,7 @@
         <?php include_once("../View/comp.menu.php"); ?>
      </div>
   </nav> 
-    <center><h3>Gestionar Empresa</h3></center>
+    <center><h3>Gestionar Empleado</h3></center>
     <center><a href="Registrar_Empleado.php" class="btn-floating waves-effect waves-light cyan darken-3"><i class="material-icons">add</i></a>Agregar Empleado</center>
 
     <center><table id="datatable" class="display highlight" >

@@ -42,32 +42,31 @@
 
 
   <div class="container-fluid">
-
     <div class="row opt" style="margin-bottom: 0;">
-      <div class="col s2">
-        <form>
-        <div class="input" style="margin-top: 20px;">
-          <input type="text" id="address" name="address" placeholder="¿Que Buscas?"/>
-          <input type="submit" class="btn" value="Buscar" style="width: 100%;" />
-        </div>
-      </form>
+      <div class="col s2" style="margin-top: 20px;">
       <form action="#">
-        <p style="margin-top: 20px;">
+         <p style="margin-top: 20px;">
           <input name="group1" type="radio" id="test1" />
           <label for="test1">Barberias</label>
         </p>
         <p style="margin-top: 20px;">
-          <input name="group1" type="radio" id="test1" />
-          <label for="test1">Peluquerias</label>
+          <input name="group1" type="radio" id="test2" />
+          <label for="test2">Peluquerias</label>
         </p>
         <p style="margin-top: 20px;">
-          <input name="group1" type="radio" id="test1" />
-          <label for="test1">Peluquerias infantiles</label>
+          <input name="group1" type="radio" id="test3" />
+          <label for="test3">Peluquerias infantiles</label>
         </p>
         <p style="margin-top: 20px;">
-          <input name="group1" type="radio" id="test1" />
-          <label for="test1">Spa</label>
+          <input name="group1" type="radio" id="test4" />
+          <label for="test4">Spa</label>
         </p>
+      </form>
+      <form>
+        <div class="input" style="margin-top: 20px;">
+          <input type="text" id="address" name="address" placeholder="¿Que Buscas?"/>
+          <input type="submit" class="btn" value="Buscar" style="width: 100%;" />
+        </div>
       </form>
     </div>
       <div class="col s10" style="padding: 0;">

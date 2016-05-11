@@ -9,21 +9,16 @@
       </div>
       <div id="pie" class="col l4 offset-l2 s12">
         <h5 class="white-text"></h5>
-          <ul id="instagram"class="left hide-on-med-and-down">
+          <ul id="instagram">
             <li><a id="faceicon"class="grey-text text-lighten-3" href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
           </ul>
-          <ul id="twitter" class="center hide-on-med-and-down">
+          <ul id="twitter">
             <li><a id="faceicon"class="grey-text text-lighten-3" href="https://www.twitter.com"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
           </ul>
-          <ul id="facebook" class="right hide-on-med-and-down">
+          <ul id="facebook">
             <li><a id="faceicon"class="grey-text text-lighten-3" href="https://www.facebook.com"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
           </ul>
       </div>
-    </div>
-  </div>
-  <div id="copy" class="footer-copyright">
-      <div class="container">
-      © Copyright  2016 SOFTMAR todos los derechos reservados
     </div>
   </div>
 </footer>

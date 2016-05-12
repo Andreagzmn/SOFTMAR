@@ -57,11 +57,11 @@ main{
 .boton{
  	margin-left: 550px;
 }
-/*form_Em*/
+/*Registrar_empresa*/
 .formem{
   background-color: rgba(244, 238, 247, 0.5) !important;
   border-radius:5px;
-  width: 80%;
+  width: 90%;
 }
 .empref {
 	width: 80%;
@@ -69,14 +69,14 @@ main{
 .test{
   margin-right: 20px;
   width: 70%;
-}
-#formi{
-margin-left: 225px;
-margin-top: 80px;
 } 
 
 #btn-can-serv{
   margin-top: 50px;
+}
+.contamap{
+  width: 50%;
+  margin-top: 40px;
 }
 
 /*dash*/

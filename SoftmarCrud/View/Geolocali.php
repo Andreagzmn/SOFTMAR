@@ -1,12 +1,25 @@
 <?php
   session_start();
 
+  require_once("../Model/db_conn.php");
+  require_once("../Model/tipo_Empresa.class.php");
+  require_once("../Model/empresa.class.php");
+
   if(!isset($_SESSION["Cod_usu"])){
     $msn = base64_encode("Debe iniciar sesion primero!");
     $tipo_msn = base64_encode("advertencia");
 
     header("Location: ../View/Index.php?m=".$msn."&tm=".$tipo_msn);
   }
+
+  if(isset($_GET["eid"])){
+    $TipEmpresa = $_GET["eid"];
+    $empresas = Gestion_Empresa::ReadbyTipEmp($TipEmpresa);
+  }else{
+    $empresas = Gestion_Empresa::ReadAll();
+  }
+   
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,11 +36,63 @@
   <script type="text/javascript" src="Jquery/gmaps.js"></script>
   <script>
     $(document).ready(function(){
-      new GMaps({
+
+    $("#tipoempresa").change(function(){ 
+      var eid = $("#tipoempresa").val();
+      location.href = "Geolocali.php?eid="+eid;
+
+    });
+    
+    var map;
+    $('select').material_select();
+    
+        var map = new GMaps({
         div: '#map',
-        lat: -12.043333,
-        lng: -77.028333
+        lat: 6.244203,
+        lng: -75.58121189999997,
+        zoom: 12
       });
+        <?php
+
+        foreach ($empresas as $row) {
+            
+            echo "map.addMarker({ 
+                    lat: ".$row["Geo_x"].",
+                    lng: ".$row["Geo_y"].",
+                    title: '".$row["Nombre"]."'
+                  });";
+        }
+
+      ?>  
+ 
+      GMaps.geolocate({
+        success: function(position){
+          map.setCenter(position.coords.latitude, position.coords.longitude);
+          map.addMarker({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+            title: 'Este sos vos'
+          });
+
+
+          $("#btn").click(function(){
+            map.drawRoute({
+              origin: [position.coords.latitude, position.coords.longitude],
+              destination: [6.181814216283209, -75.60323774814606],
+              travelMode: 'driving',
+              strokeColor: '#131540',
+              strokeOpacity: 0.6,
+              strokeWeight: 6
+            });
+        
+        });
+      },
+        not_supported: function(){
+          alert("Su navegador no soporta el geolocalizador");
+        }
+      });
+
+
     });  
   </script>
 </head>
@@ -45,27 +110,39 @@
     <div class="row opt" style="margin-bottom: 0;">
       <div class="col s2" style="margin-top: 20px;">
       <form action="#">
-         <p style="margin-top: 20px;">
-          <input name="group1" type="radio" id="test1" />
-          <label for="test1">Barberias</label>
-        </p>
-        <p style="margin-top: 20px;">
-          <input name="group1" type="radio" id="test2" />
-          <label for="test2">Peluquerias</label>
-        </p>
-        <p style="margin-top: 20px;">
-          <input name="group1" type="radio" id="test3" />
-          <label for="test3">Peluquerias infantiles</label>
-        </p>
-        <p style="margin-top: 20px;">
-          <input name="group1" type="radio" id="test4" />
-          <label for="test4">Spa</label>
-        </p>
+      <select name="tipoempresa" id="tipoempresa">
+      <option value='' disabled selected>Escoger una opción</option>
+      <?php
+
+        $tipo_Empresa = Gestion_Tipo_Empresa::ReadAll();
+
+        $x = 1;
+        foreach ($tipo_Empresa as $row) {
+
+          if(isset($_GET["eid"])){
+             if($row[0] == $_GET["eid"]){
+                $select = "selected"; 
+             }else{
+                $select = ""; 
+             }
+          } 
+          echo "<option value='".$row[0]."' $select>".$row[1]."</option>";
+        }
+      ?>
+      </select>  
       </form>
       <form>
         <div class="input" style="margin-top: 20px;">
           <input type="text" id="address" name="address" placeholder="¿Qué Buscas?"/>
           <input type="submit" class="btn" value="Buscar" style="width: 100%;" />
+        </div>
+        <div> <br>
+          <?php
+            if(count($empresas) > 0){
+              echo "Se ha encontrado ".count($empresas)." registros";
+            }
+
+          ?><br>
         </div>
       </form>
     </div>

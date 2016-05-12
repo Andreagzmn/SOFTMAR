@@ -72,6 +72,30 @@ class Gestion_Empresa{
 
 		Softmar_BD::Disconnect();
 	}
+
+	function ReadbyTipEmp($Cod_TipEmp){
+
+		//Instanciamos y nos conectamos a la bd
+		$Conexion = Softmar_BD::Connect();
+		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		
+
+		//Crear el query que vamos a realizar
+		$consulta = "SELECT * FROM empresa WHERE Cod_TipEmp=?";
+
+		$query = $Conexion->prepare($consulta);
+		$query->execute(array($Cod_TipEmp));
+
+		//Devolvemos el resultado en un arreglo
+		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
+		//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
+
+		$resultado = $query->fetchALL(PDO::FETCH_BOTH);
+		return $resultado;
+
+		Softmar_BD::Disconnect();
+	}
  
 	function Update($Cod_Emp,$Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta,$Foto1,$Foto2,$Foto3,$Foto4,$Logo){
 	//Instanciamos y nos conectamos a la bd

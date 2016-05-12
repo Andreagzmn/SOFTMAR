@@ -9,6 +9,9 @@
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <link rel="stylesheet" type="text/css" href="estilos.css">
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+      <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+      <script type="text/javascript" src="Jquery/gmaps.js"></script>
 
       <?php
 
@@ -19,14 +22,35 @@
           }
 
       ?>
+<script>
+    var map;
+    $(document).ready(function(){
+      var map = new GMaps({
+        el: '#map',
+        lat: 6.244203,
+        lng: -75.58121189999997,
+         click: function(e){
+
+          map.addMarker({
+            lat: e.latLng.lat(),
+            lng: e.latLng.lng()
+          });
+
+          $("#ltn").val(e.latLng.lat());
+          $("#lng").val(e.latLng.lng());
+        }
+      });   
+    });
+      </script>
     </head>
     <body>
+    
      <center><div class="empref">
       <h4 class="teal-text text-teal lighten-3 test">Registra tu empresa</h4>
       <div class="row formem">
         <form class="col s12"  action="../controller/empresa.controller.php" method="POST">
           <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s3">
               <select  name="Cod_TipEmp" id="demo">
                   <option value="" disabled selected>Tipo de empresa</option>
                   <?php
@@ -48,7 +72,7 @@
                 <label>Tipo empresa</label>
               </div>
               <div>
-              <div class="input-field col s12">
+              <div class="input-field col s9">
                 <input id="demo" type="text" class="validate" name="Nombre" required>
                 <label for="Nombre" data-error="wrong" >Nombre Empresa</label>
               </div>
@@ -95,8 +119,8 @@
                   <input type="time" id="demo" name="Hor_hasta" required>
                 </div>
               </div>
-              <input type="hidden" value="" name="Geo_x">     
-              <input type="hidden" value="" name="Geo_y">
+              <input type="hidden" value="" name="Geo_x" id="ltn"> 
+              <input type="hidden" value="" name="Geo_y" id="lng">
               <div class="file-field input-field col s6">
                 <div class="btn">
                   <span>Foto 1:</span>
@@ -143,12 +167,21 @@
                       </div>
                   </div>
             </div>
+               
           </div>
-           <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect">Registrarse</button>
+          <div class="contamap col s12">
+            <div style="padding: 0;">
+              <div id="map" class="contamap"></div>
+            </div>
+           </div>
+
+           <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect" style="margin-top: 30px;">Registrarse</button>
                 <?php echo @$_REQUEST["msn"]; ?>
+
         </form>
       </div>
     </div></center>
+     
     <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
     <script>

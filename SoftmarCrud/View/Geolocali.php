@@ -64,7 +64,7 @@
       </form>
       <form>
         <div class="input" style="margin-top: 20px;">
-          <input type="text" id="address" name="address" placeholder="¿Que Buscas?"/>
+          <input type="text" id="address" name="address" placeholder="¿Qué Buscas?"/>
           <input type="submit" class="btn" value="Buscar" style="width: 100%;" />
         </div>
       </form>

@@ -48,13 +48,14 @@
           <h3  style="text-align:center; margin-bottom: -47px; ">Softmar</h3>
           	<form action="../Controller/Usuariocontroller.php" method="POST" class="col s12 m8 offset-l8 z-depth-4 formulario " id="formulario" >
               <section class="col s12" >              
-                <label>Cod_Usu</label>
+                
          		    <input type="hidden" readonly name="Cod_usu" required value="<?php echo $usuario[0] ?>">                   
                 <div class="col l6 s12 input-field form center" >
                  <div class="row">
                     <select name="cod_rol">
                       <option value="102" <?php if($usuario["cod_rol"] == 102){ echo "selected"; } ?>>Cliente</option>
                       <option value="101" <?php if($usuario["cod_rol"] == 101){ echo "selected"; } ?>>Dueño de Local</option>
+                      <option value="101" <?php if($usuario["cod_rol"] == 103){ echo "selected"; } ?>>Administrador</option>
                     </select>  
                   </div>
                   <div class="row">

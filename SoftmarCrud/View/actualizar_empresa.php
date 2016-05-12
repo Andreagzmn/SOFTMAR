@@ -7,7 +7,7 @@
     $msn = base64_encode("Debe iniciar sesion primero!");
     $tipo_msn = base64_encode("advertencia");
 
-    header("Location: ../View/login.php?m=".$msn."&tm=".$tipo_msn);
+    header("Location: ../View/Index.php?m=".$msn."&tm=".$tipo_msn);
   }
    require_once("../Model/empresa.class.php");
    $empresa =  Gestion_Empresa::ReadbyID(base64_decode($_REQUEST["ei"]));

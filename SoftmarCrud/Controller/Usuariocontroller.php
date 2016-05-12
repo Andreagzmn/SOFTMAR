@@ -36,7 +36,7 @@
 					$mensaje = "Su registro se creo correctamente";
 					$tipomensaje = "success";
 					
-					header("Location: ../View/login.php?m=".$mensaje."&tm=".$tipomensaje);  				
+					header("Location: ../View/Index.php?m=".$mensaje."&tm=".$tipomensaje);  				
 				}else{
 					header("Location: ../View/Gestion_Usuario_admin.php?m=".$mensaje."&tm=".$tipomensaje);
 				}
@@ -69,7 +69,7 @@
 			     $msn = base64_encode("Debes tener una cuenta para poder iniciar sesión");
 			     $tipo_msn = base64_encode("advertencia");
 
-			     header("Location: ../View/login.php?m=".$msn."&tm=".$tipo_msn);
+			     header("Location: ../View/Index.php?m=".$msn."&tm=".$tipo_msn);
 			  }else{
 
 			      // Creamos variables de SESSION
@@ -91,7 +91,7 @@
 			 $msn = base64_encode("A ocurrido un error ".$e->getMessage());
 			 $tipo_msn = base64_encode("error");
 
-			header("Location: ../View/login.php?m=".$msn."&tm=".$tipo_msn);
+			header("Location: ../View/Index.php?m=".$msn."&tm=".$tipo_msn);
 			}
 						
 				

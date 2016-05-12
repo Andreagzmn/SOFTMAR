@@ -1,3 +1,15 @@
+<?php
+ session_start();
+  require_once("../Model/db_conn.php");
+  require_once("../Model/contactos.class.php");
+
+   if(!isset($_SESSION["Cod_usu"])){
+    $msn = base64_encode("Debe iniciar sesion primero!");
+    $tipo_msn = base64_encode("advertencia");
+
+    header("Location: ../View/Index.php?m=".$msn."&tm=".$tipo_msn);
+  }
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,7 +61,9 @@
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</b></p>
 		</div>
 	</div>
+
 </div>
+<?php include_once("../View/pie_pagina.php"); ?>
 <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
 <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 </div>

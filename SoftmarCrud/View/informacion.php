@@ -30,13 +30,16 @@
         <?php include_once("../View/comp.menu.php"); ?>
      </div>
    </nav> 
-	<div class="conte">
+	<div class="inf-conte">
     <div class="row formulario">
       	<div class="col s12 center">
       	<img src="img/SOFTMAR.png" class="login">
 	      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	      	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	      	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	      	Excepteur sint occaecat cupidatat non
+	      	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	      	aboris nisi ut aliquip ex ea commodo
 	      	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 	      	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 	      	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -45,13 +48,10 @@
 	      	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 	      	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 	      	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	      	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	      	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	      	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	      	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	      	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	      	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	      	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br><br>
+
+	      	<em>copyright softmar 2016 todos los derechos reservados</em>
+	      </p>
 	    </div>
 	</div>
 	</div>

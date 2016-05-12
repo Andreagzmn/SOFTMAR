@@ -190,6 +190,12 @@ h5 span{
 	margin: 20px;
 }
 /*informacion*/
+.inf-conte{
+  margin-left: 60px;
+  margin-top: -15px;
+  width:90%;
+  padding: 5px;
+}
 .login{
 	width: 20%;
 }
@@ -379,23 +385,23 @@ nav{
   bottom: 0;
 }
 #faceicon{
-  font-size: 40px;
+  font-size: 270%;
   border-radius: 10px;
 
 }
 #facebook{
   margin-top: -60px;
-  margin-left: 170px;
+  margin-left: 30%;
 }
 
 #instagram{
   margin-top: -20px;
-  margin-left: 360px; 
+  margin-left: 99%;
 }
 
 #twitter{
   margin-top: -60px;
-  margin-left: 280px; 
+  margin-left: 70%; 
 }
 #container{
   height: 100%;

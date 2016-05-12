@@ -31,16 +31,7 @@
       <form action="../Controller/Usuariocontroller.php" method="POST" class="col s12 m8 offset-l8 z-depth-4 formulario " id="formulario" >
         <section class="col s12" >                
           <div class="col l6 s12 input-field form center">
-            <div class="row">
-                <div class="input-field col s12"> 
-									<select name="cod_rol">
-										<option value="" selected>Seleccione un tipo de usuario</option>
-										<option value="102">Cliente</option>
-										<option value="101">Dueño de Local</option>
-									</select>
-
-                </div>
-            </div>
+           <input type="hidden" value="102" name="cod_rol"/>
             <div class="row">
               <div class="input-field col s12">
                 <input id="Nombre" type="text" class="validate" name="nombre" required>

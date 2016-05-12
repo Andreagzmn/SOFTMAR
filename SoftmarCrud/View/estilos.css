@@ -286,7 +286,7 @@ h5 span{
   color: #00838f;
 }
 /*AndreaGuzman Gestionar usuario menú-admn*/
-.dropdown-content li > a, .dropdown-content li > span {
+nav .dropdown-content li > a, .dropdown-content li > span {
     font-size: 16px;
     color: #FFFFFF;
     display: block;
@@ -296,6 +296,10 @@ h5 span{
 }
 .dropdown-content a:hover{
   background-color: #696969;
+}
+nav ul a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
 }
 .brand-logo{
   width: 20px;

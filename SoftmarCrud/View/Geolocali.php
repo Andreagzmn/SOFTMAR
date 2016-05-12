@@ -16,7 +16,7 @@
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster" />
   <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
-  <title>GMaps.js &mdash; Geolocation</title>
+  <title></title>
 
   <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>

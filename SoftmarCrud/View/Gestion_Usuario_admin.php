@@ -18,10 +18,11 @@
     <meta charset="utf-8">
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>      
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- sweet alert -->
     <link rel="stylesheet" type="text/css" href="sweetalert-master/sweetalert.css">
     <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.js"></script>
- 
+    <!-- sweet alert -->
     <script type="text/javascript" src="sweetalert-master/sweetalert.min.js"></script>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="estilos.css">    

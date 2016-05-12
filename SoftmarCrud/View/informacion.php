@@ -1,3 +1,14 @@
+<?php
+  session_start();
+
+  if(!isset($_SESSION["Cod_usu"])){
+    $msn = base64_encode("Debe iniciar sesion primero!");
+    $tipo_msn = base64_encode("advertencia");
+
+    header("Location: ../View/login.php?m=".$msn."&tm=".$tipo_msn);
+  }
+?>
+
 <!doctype html>
 <html>
 <meta charset="utf-8" />
@@ -11,6 +22,13 @@
 	<title>Informacion SOFTMAR</title>
 </head>
 <body>
+  <nav class="black">
+        <div class="nav-wrapper " style="margin-left: 5px; margin-right: 5px;">
+            <a href="#!" class="brand-logo"><img src="img/SOFTMAR.png" style="width: 500%; margin-top: -15px; position: relative;"></a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons"></i></a>
+            <?php include_once("../View/comp.menu.php"); ?>
+        </div>
+    </nav> 
 	<div class="conte">
     <div class="row formulario">
       	<div class="col s12 center">
@@ -36,6 +54,7 @@
 	    </div>
 	</div>
 	</div>
+	<?php include_once("../View/pie_pagina.php"); ?>
 <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
 <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 </body>

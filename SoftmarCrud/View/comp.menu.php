@@ -4,17 +4,18 @@
 if($_SESSION["cod_rol"]==103){
 ?>
  
-
- <ul class="right hide-on-med-and-down">
-    <li><a href="dashboard.php">Inicio</a></li>
-    <li><a href="#">Información</a></li>
+  <ul id="dropdown1" class="dropdown-content">
     <li><a href="Gestion_Usuario_admin.php">Gestionar usuario</a></li>
     <li><a href="Gestion_Empresa_admin.php">Gestionar empresa</a></li>
     <li><a href="Gestion_Servicio_admin.php">Gestionar servicio</a></li>
     <li><a href="Gestionar_Empleado.php">Gestionar empleado</a></li>
+      </ul>
+ <ul class="right hide-on-med-and-down">
+    <li><a href="dashboard.php">Inicio</a></li>
+    <li><a href="informacion.php">Información</a></li>
+    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Gestionar<i class="material-icons right">reorder</i></a></li>
     <li><a href="../Controller/cerrarusuario.php">Cerrar sesión</a></li>
-  </ul>
-
+ </ul>  
 
 <?php
 }elseif($_SESSION["cod_rol"]==102){

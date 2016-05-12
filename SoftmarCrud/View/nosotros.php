@@ -23,12 +23,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-	<nav class="black">
-        <div class="nav-wrapper " style="margin-left: 5px; margin-right: 5px;">
-            <a href="#!" class="brand-logo"><img src="img/SOFTMAR.png" style="width: 500%; margin-top: -15px; position: relative;"></a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons"></i></a>
-            <?php include_once("../View/comp.menu.php"); ?>
-        </div>
+	 <nav class="black">
+      <div class="nav-wrapper " style="margin-left: 5px; margin-right: 5px;">
+        <h2 href="#!" class="brand-logo" style="text-align:center; margin-top: 10px; "><!-- <img src="img/SOFTMAR.png" style="width: 500%; margin-top: -15px; position: relative;"> -->Softmar</h2>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <?php include_once("../View/comp.menu.php"); ?>
+     </div>
     </nav> 
 <div class="conte">
     <div class="row formulario">

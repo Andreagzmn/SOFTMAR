@@ -132,6 +132,8 @@ class Gestion_Contacto{
 
       return $results;
     }
+
+    
 }
 
 ?>

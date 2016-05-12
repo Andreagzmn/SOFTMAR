@@ -30,7 +30,7 @@
     <h3  style="text-align:center; margin-bottom: -47px; ">Softmar</h3>
       <form action="../Controller/Usuariocontroller.php" method="POST" class="col s12 m8 offset-l8 z-depth-4 formulario " id="formulario" >      
         <section class="col s12" >
-        <p>Los campos con el * son obligatorios.</p>                
+        <p style="text-align: center;"><b>Los campos con el * son obligatorios.<b></p>                
           <div class="col l6 s12 input-field form center">
            <input type="hidden" value="102" name="cod_rol"/>
             <div class="row">
@@ -72,12 +72,12 @@
             <div class="row">
               <div class="input-field col s12">
                 <input id="Cc" type="number" class="validate" name="cedula" required>
-                <label for="Cc">Cedula*</label>
+                <label for="Cc">Documento de identidad*</label>
               </div>
             </div>
 
             <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect  cyan darken-3" id="btn-crear-cuenta">Registrarse</button>
-            <a href="login.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
+            <a href="Index.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
           <?php echo @$_REQUEST["$mensaje"]; ?>
         </section>
       </form>     

@@ -327,6 +327,10 @@ h3 {
   font-size: 1.8em;
   text-shadow: #aaa 4px 4px 4px;
 }
+h2{
+  font-family: "Lobster", "Times", serif;
+  font-size: 1.8em;
+}
 /*Geolocali*/
   #map{
     width: 100%;

@@ -33,6 +33,15 @@
         <p style="text-align: center;"><b>Los campos con el * son obligatorios.<b></p>                
           <div class="col l6 s12 input-field form center">
            <input type="hidden" value="102" name="cod_rol"/>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="Cc" type="number" class="validate" name="cedula" required>
+                <label for="Cc">Documento de identidad*</label>
+                <span id="resultadobusqueda" class="red-text accent-3 left"> </span>
+              </div>
+            </div>
+            <div id="last">
             <div class="row">
               <div class="input-field col s12">
                 <input id="Nombre" type="text" class="validate" name="nombre" required>
@@ -69,14 +78,11 @@
                 <label for="Correo">Correo*</label>
               </div>
             </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="Cc" type="number" class="validate" name="cedula" required>
-                <label for="Cc">Documento de identidad*</label>
-              </div>
-            </div>
 
-            <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect  cyan darken-3" id="btn-crear-cuenta">Registrarse</button>
+            <div id="buttons">
+            <button type="submit" name="accion" value="c" id="btn-crear-cuenta" class=" btn waves-effect  cyan darken-3"  >Registrarse</button>
+            </div>
+            </div>
             <a href="Index.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
           <?php echo @$_REQUEST["$mensaje"]; ?>
         </section>
@@ -88,6 +94,28 @@
 	<script>
 		$(document).ready(function() {
 	    $('select').material_select();
+
+      $("#Cc").keyup(function(){
+          var cedula = $("#Cc").val();
+          var accion = "existe_usuario";
+
+          $.post("../Controller/Usuariocontroller.php", {cedula: cedula, accion: accion}, function(result){
+
+              $("#resultadobusqueda").html(result.msn); 
+
+              if(result.ue == true){ 
+                $("button").prop("disabled",true);
+                $("#last").addClass("hide");
+              }
+
+              if(result.ue == false){ 
+                $("button").prop("disabled",false);
+                $("#last").removeClass("hide");
+              }
+          }, "json");
+      });
+
+
 	  });
 
 	</script>

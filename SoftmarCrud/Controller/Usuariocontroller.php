@@ -145,10 +145,25 @@
         
       break;
 
-		default:
-			#hacer cualquier cosa...
-		break;
-	
+	  case 'existe_usuario':
+	  	$cedula = $_POST["cedula"]; 
+	  	try{
+	  		$usuario = Gestion_Contacto::ReadbyCC($cedula);
+
+	  		if(count($usuario[0]) > 0){
+	  			$existe = true;	
+	  			$message = "El usuario ya existe en nuestra aplicación";
+	  		}else{
+	  			$existe = false;
+	  			$message = "";
+	  		} 
+	  	}catch(Exception $e){
+	  		echo $e->getMessage();
+	  	}
+
+	  	echo json_encode(array('ue' => $existe, 'msn' => $message));
+
+	  break;
 
 
 	}

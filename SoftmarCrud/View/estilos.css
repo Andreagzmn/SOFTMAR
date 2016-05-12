@@ -406,3 +406,9 @@ nav{
 #container{
   height: 100%;
 }
+
+#resultadobusqueda{
+  font-weight: normal;
+  text-align: left !important; 
+  font-size: 13px;
+}

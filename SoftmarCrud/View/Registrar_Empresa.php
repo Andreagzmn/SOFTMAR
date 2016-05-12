@@ -95,7 +95,7 @@
                   <input type="time" id="demo" name="Hor_hasta" required>
                 </div>
               </div>
-              <input type="hidden" value="" name="Geo_x">
+              <input type="hidden" value="" name="Geo_x">     
               <input type="hidden" value="" name="Geo_y">
               <div class="file-field input-field col s6">
                 <div class="btn">

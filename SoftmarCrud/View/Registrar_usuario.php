@@ -28,50 +28,51 @@
   </section>-->
   <center><div class="container">         
     <h3  style="text-align:center; margin-bottom: -47px; ">Softmar</h3>
-      <form action="../Controller/Usuariocontroller.php" method="POST" class="col s12 m8 offset-l8 z-depth-4 formulario " id="formulario" >
-        <section class="col s12" >                
+      <form action="../Controller/Usuariocontroller.php" method="POST" class="col s12 m8 offset-l8 z-depth-4 formulario " id="formulario" >      
+        <section class="col s12" >
+        <p>Los campos con el * son obligatorios.</p>                
           <div class="col l6 s12 input-field form center">
            <input type="hidden" value="102" name="cod_rol"/>
             <div class="row">
               <div class="input-field col s12">
                 <input id="Nombre" type="text" class="validate" name="nombre" required>
-                <label for="Nombre">Nombre</label>
+                <label for="Nombre">Nombre*</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
                 <input id="Apellido" type="text" class="validate" name="apellido" required>
-                <label for="Apellido">Apellido</label>
+                <label for="Apellido">Apellido*</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <input id="Dir" type="text" class="validate" name="direccion" required>
-                <label for="Dir">Direccion</label>
+                <input id="Dir" type="text" class="validate" name="direccion" >
+                <label for="Dir">Dirección</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
                  <input id="edad" type="number" class="validate" name="edad" required>
-                <label for="edad">Edad</label>
+                <label for="edad">Edad*</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
                 <input id="contra" required type="password" class="validate" name="clave" >
-                 <label for="contra">Contraseña</label>
+                 <label for="contra">Contraseña*</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
                 <input id="Correo" type="email" class="validate" name="correo" required>
-                <label for="Correo">Correo</label>
+                <label for="Correo">Correo*</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
                 <input id="Cc" type="number" class="validate" name="cedula" required>
-                <label for="Cc">Cedula</label>
+                <label for="Cc">Cedula*</label>
               </div>
             </div>
 

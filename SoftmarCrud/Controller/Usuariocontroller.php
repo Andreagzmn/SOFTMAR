@@ -30,10 +30,17 @@
 			$Cedula			= $_POST["cedula"];
 
 			try{
-				Gestion_Contacto::Create($cod_rol,$Nombre,$Apellido,$Direccion,$Edad,$Clave,$Correo,$Cedula);
-				$mensaje = "Su registro se creo correctamente";
-				$tipomensaje = "success";
-				header("Location: ../View/Gestion_Usuario_admin.php?m=".$mensaje."&tm=".$tipomensaje);
+				
+				if ($_SESSION["cod_rol"]==102) {
+					Gestion_Contacto::Create($cod_rol,$Nombre,$Apellido,$Direccion,$Edad,$Clave,$Correo,$Cedula);
+					$mensaje = "Su registro se creo correctamente";
+					$tipomensaje = "success";
+					
+					header("Location: ../View/login.php?m=".$mensaje."&tm=".$tipomensaje);  				
+				}else{
+					header("Location: ../View/Gestion_Usuario_admin.php?m=".$mensaje."&tm=".$tipomensaje);
+				}
+				
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	
 				$tipomensaje = "error";

@@ -387,32 +387,26 @@ nav{
 #faceicon{
   font-size: 270%;
   border-radius: 10px;
-  margin:5px;
-  position: static;
-
 
 }
 #facebook{
   margin-top: -60px;
-  margin-left: 55%;
-  float: left;
+  margin-left: 30%;
 }
 
 #instagram{
   margin-top: -20px;
-  margin-left: 75%;
+  margin-left: 99%;
 }
 
 #twitter{
   margin-top: -60px;
-  margin-left: 45%;
+  margin-left: 70%; 
 }
 #container{
   height: 100%;
-  
 }
 
-/*    */
 #resultadobusqueda{
   font-weight: normal;
   text-align: left !important; 

@@ -376,33 +376,23 @@ nav{
 #pie ul{
     list-style-type: none;
 }
-#piedepagina{
-  margin-top:180px;
-  margin-right: -2px;
+#piedepagina{ 
   background-color: #000000;
   width: 100%;
   height: 50px;
-  position: fixed;
+  position: relative;
   bottom: 0;
-}
-#faceicon{
-  font-size: 270%;
-  border-radius: 10px;
-
-}
-#facebook{
-  margin-top: -60px;
-  margin-left: 30%;
+  font-size: 25px;
+  padding: 10px 0;
 }
 
-#instagram{
-  margin-top: -20px;
-  margin-left: 99%;
+#piedepagina .row, #piedepagina .row .col{
+  margin-bottom: 0;
+  margin-top: 0;
 }
-
-#twitter{
-  margin-top: -60px;
-  margin-left: 70%; 
+ 
+#piedepagina ul{
+  display: inline-block;
 }
 #container{
   height: 100%;
@@ -414,6 +404,13 @@ nav{
   font-size: 13px;
 }
 
+#menu-empresa{
+  margin-bottom: 0;
+}
+
+#piedepagina{
+  margin-top: 0;
+}
 /*Perfil empleado*/
 .minimenu{
   background: black;
@@ -431,7 +428,12 @@ nav{
     position: relative;
     height: 400px !important;
     width: 100%;
+}
 
 #sidenav-overlay {
   position: inherit !important;
+}
+
+.bgcontent{
+  background-color: rgba(255,255,255,0.5);
 }

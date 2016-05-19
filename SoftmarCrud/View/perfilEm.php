@@ -24,7 +24,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <link rel="stylesheet" type="text/css" href="estilos.css">
 	<title>Perfil</title>
-	
+
 </head>
 <body>
  <nav class="black">
@@ -128,6 +128,7 @@
 	      	Interval: 600,
 	      	Indicators: false
 	      });
+ 
 	    });
 	</script>
 </body>

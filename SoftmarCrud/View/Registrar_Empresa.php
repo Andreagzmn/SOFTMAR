@@ -48,6 +48,11 @@
      <center><div class="empref">
       <h4 class="teal-text text-teal lighten-3 test">Registra tu empresa</h4>
       <div class="row formem">
+       <div class="contamap col s12">
+            <div style="padding: 0;">
+              <div id="map" class="contamap"></div>
+            </div>
+           </div>
         <form class="col s12"  action="../controller/empresa.controller.php" method="POST"  action="upload.php" enctype="multipart/form-data">
           <div class="row">
             <div class="input-field col s3">
@@ -124,7 +129,7 @@
               <div class="file-field input-field col s6">
                 <div class="btn">
                   <span>Foto 1:</span>
-                  <input  type="file"  >
+                  <input  type="file" >
                 </div>
                 <div class="file-path-wrapper">
                   <input name="Foto1" id="demo" class="file-path validate" type="text" placeholder="Upload one or more files">
@@ -133,7 +138,7 @@
               <div class="file-field input-field col s6">
                 <div class="btn">
                   <span>Foto 2:</span>
-                  <input type="file"   name="Imagen_Upload">
+                  <input type="file">
                 </div>
                 <div class="file-path-wrapper">
                   <input name="Foto2" id="demo" class="file-path validate" type="text" placeholder="Upload one or more files">
@@ -142,13 +147,13 @@
               <div class="file-field input-field col s6">
                 <div class="btn">
                   <span>Foto 3:</span>
-                  <input type="file"    name="Imagen_Upload">
+                  <input type="file" >
                 </div>
                 <div class="file-path-wrapper">
                   <input name="Foto3" id="demo" class="file-path validate" type="text" placeholder="Upload one or more files">
                 </div>
               </div>
-              <div class="file-field input-field col s6"    name="Imagen_Upload">
+              <div class="file-field input-field col s6">
                 <div class="btn">
                   <span>Foto 4:</span>
                   <input type="file">
@@ -160,7 +165,7 @@
                   <div class="file-field input-field col s6">
                       <div class="btn">
                         <span>Logo</span>
-                        <input type="file"    name="Imagen_Upload">
+                        <input type="file">
                       </div>
                       <div class="file-path-wrapper">
                           <input name="Logo" id="demo" class="file-path validate" type="text">
@@ -169,13 +174,7 @@
             </div>
                
           </div>
-          <div class="contamap col s12">
-            <div style="padding: 0;">
-              <div id="map" class="contamap"></div>
-            </div>
-           </div>
-
-           <button name="Imagen_Upload[]" multiple="multiple"  type="submit" name="accion" value="c" id="boton" class="btn waves-effect" style="margin-top: 30px;">Registrarse</button>
+           <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect" style="margin-top: 30px;">Registrarse</button>
                 <?php echo @$_REQUEST["msn"]; ?>
 
         </form>

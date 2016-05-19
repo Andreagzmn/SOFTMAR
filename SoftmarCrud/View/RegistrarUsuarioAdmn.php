@@ -33,6 +33,14 @@
             </div>
             <div class="row">
               <div class="input-field col s12">
+                <input id="Cc" type="number" class="validate" name="cedula" required>
+                <label for="Cc">Documento de identidad*</label>
+                <span id="resultadobusqueda" class="red-text accent-3 left"> </span>
+              </div>
+            </div>
+            <div id="last">
+            <div class="row">
+              <div class="input-field col s12">
                 <input id="Nombre" type="text" class="validate" name="nombre" required>
                 <label for="Nombre">Nombre</label>
               </div>
@@ -67,14 +75,10 @@
                 <label for="Correo">Correo</label>
               </div>
             </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="Cc" type="number" class="validate" name="cedula" required>
-                <label for="Cc">Cedula</label>
-              </div>
-            </div>
-
+            <div class="buttons">    
             <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect  cyan darken-3" id="btn-crear-cuenta">Registrarse</button>
+            </div>
+            </div>
             <a href="Gestion_Usuario_admin.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
           <?php echo @$_REQUEST["$mensaje"]; ?>
         </section>
@@ -86,6 +90,34 @@
   <script>
     $(document).ready(function() {
       $('select').material_select();
+    });
+
+  </script>
+  <script>
+    $(document).ready(function() {
+      $('select').material_select();
+
+      $("#Cc").keyup(function(){
+          var cedula = $("#Cc").val();
+          var accion = "existe_usuario";
+
+          $.post("../Controller/Usuariocontroller.php", {cedula: cedula, accion: accion}, function(result){
+
+              $("#resultadobusqueda").html(result.msn); 
+
+              if(result.ue == true){ 
+                $("button").prop("disabled",true);
+                $("#last").addClass("hide");
+              }
+
+              if(result.ue == false){ 
+                $("button").prop("disabled",false);
+                $("#last").removeClass("hide");
+              }
+          }, "json");
+      });
+
+
     });
 
   </script>

@@ -100,6 +100,7 @@ main{
     position: relative;
     overflow: hidden;
 }
+
 .inf{
     width: 50.5%;
    position: relative;
@@ -412,6 +413,7 @@ nav{
   text-align: left !important; 
   font-size: 13px;
 }
+<<<<<<< HEAD
 /*Perfil empleado*/
 .minimenu{
   background: black;
@@ -429,4 +431,9 @@ nav{
     position: relative;
     height: 400px !important;
     width: 100%;
+=======
+
+#sidenav-overlay {
+  position: inherit !important;
+>>>>>>> origin/master
 }

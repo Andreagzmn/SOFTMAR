@@ -58,5 +58,11 @@
 	<?php include_once("../View/pie_pagina.php"); ?>
 <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
 <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+<script type="text/javascript">
+      $(document).ready(function(){    
+         $(".button-collapse").sideNav();
+         $(".dropdown-button").dropdown();
+      });
+</script>
 </body>
 </html>

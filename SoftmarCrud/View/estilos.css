@@ -412,3 +412,21 @@ nav{
   text-align: left !important; 
   font-size: 13px;
 }
+/*Perfil empleado*/
+.minimenu{
+  background: black;
+  position: absolute;
+}
+.list{
+  color:white;
+  font-size: 18px;
+  margin-top: 30px;
+}
+.slider .indicators {
+  display: none;
+}
+.slider {
+    position: relative;
+    height: 400px !important;
+    width: 100%;
+}

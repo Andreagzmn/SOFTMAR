@@ -412,3 +412,7 @@ nav{
   text-align: left !important; 
   font-size: 13px;
 }
+
+#sidenav-overlay {
+  position: inherit !important;
+}

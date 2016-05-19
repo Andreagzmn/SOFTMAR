@@ -29,21 +29,16 @@
 			$Correo         = $_POST["correo"];			
 			$Cedula			= $_POST["cedula"];
 
-			try{
+			try{			
 				
-				if ($_SESSION["cod_rol"]==102) {
-					Gestion_Contacto::Create($cod_rol,$Nombre,$Apellido,$Direccion,$Edad,$Clave,$Correo,$Cedula);
-					$mensaje = "Su registro se creo correctamente";
-					$tipomensaje = "success";
-					
-					header("Location: ../View/Index.php?m=".$mensaje."&tm=".$tipomensaje);  				
-				}else{
-					header("Location: ../View/Gestion_Usuario_admin.php?m=".$mensaje."&tm=".$tipomensaje);
-				}
+				Gestion_Contacto::Create($cod_rol,$Nombre,$Apellido,$Direccion,$Edad,$Clave,$Correo,$Cedula);
+					$mensaje = base64_encode("Su registro se creo correctamente");
+					$tipomensaje = base64_encode("success"); 				
+					header("Location: ../View/Index.php?m=".$mensaje."&tm=".$tipomensaje); 			
 				
 			}catch(Exception $e){
-				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	
-				$tipomensaje = "error";
+				$mensaje = base64_encode("Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine());	
+				$tipomensaje = base64_encode("error");
 				header("Location: ../View/Registrar_Usuario.php?m=".$mensaje."&tm=".$tipomensaje);		 
 			}
 
@@ -88,8 +83,8 @@
 
 			}catch (Exception $e) {
 
-			 $msn = base64_encode("A ocurrido un error ".$e->getMessage());
-			 $tipo_msn = base64_encode("error");
+			 $msn = base64_decode("A ocurrido un error ".$e->getMessage());
+			 $tipo_msn = base64_decode("error");
 
 			header("Location: ../View/Index.php?m=".$msn."&tm=".$tipo_msn);
 			}

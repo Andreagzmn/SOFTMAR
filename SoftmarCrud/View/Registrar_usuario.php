@@ -80,7 +80,7 @@
             </div>
 
             <div id="buttons">
-            <button type="submit" name="accion" value="c" id="btn-crear-cuenta" class=" btn waves-effect  cyan darken-3"  >Registrarse</button>
+            <button type="submit" name="accion" value="c" id="btn-crear-cuenta boton" class=" btn waves-effect  cyan darken-3 ">Registrarse</button>
             </div>
             </div>
             <a href="Index.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>

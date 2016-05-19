@@ -29,33 +29,33 @@
     <div class="conte">
       <div class="row imgn hover">
         <div>
-          <div class="col s6 ">
+          <div class="col s12 l6">
             <a href="Geolocali.php"><img src="img/peluquerias.jpg" class="imgn"/></a>
             <h3 class="info"><span>Peluqueria</span></h3>
           </div>
         </div>
-        <div class="col s6">
+        <div class="col s12 l6">
 
-          <div id="infantil" class="inf">
+          <div id="infantil" class="inf col s12 l6">
             <a href="Geolocali.php"><img src="img/infantil.jpg" class="imgn"></a>
             <div >
               <h5><span>Infantil</span></h5>
             </div>
           </div>
 
-          <div  id="barberia" class="bar">
+          <div  id="barberia" class="bar col s12 l6">
             <a href="Geolocali.php"><img src= "img/barberia.jpg" class="imgn"></a>
             <div>
               <h5><span>Barberia</span></h5>
             </div>
           </div>
-          <div id="spa" class="inf2">
+          <div id="spa" class="inf2 col s12 l6">
             <a href="Geolocali.php"><img src="img/spa.jpg" class="imgn"></a>
             <div>
               <h5><span>Spa</span></h5>
             </div>
           </div>
-          <div id="estilo" class="bar2">
+          <div id="estilo" class="bar2 col s12 l6">
             <img src="img/estilo.jpg" class=" imgn" >
             <div>
               <h5><span>Estilo</span></h5>

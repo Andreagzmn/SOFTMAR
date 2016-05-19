@@ -9,6 +9,67 @@
 	require_once("../Model/db_conn.php");
 	require_once("../Model/empresa.class.php");
 
+
+
+  $nombre_archivo = $_POST["nom"];
+
+  // INICIALIZAMOS LAS VARIABLES PARA LA SUBIDA DEL ARCHIVO
+
+  // Directorio = Donde quiero guardar mis imagenes
+  $directorio  = "uploads/";
+
+  // Capturo el nombre del archivo
+  $archivo     = basename($_FILES["Imagen_Upload"]["name"]);
+  $uploadOk    = 0;
+
+  $extension_archivo = pathinfo($archivo,PATHINFO_EXTENSION);
+  $archivo = $directorio . $nombre_archivo .".". $extension_archivo;
+ 
+  $check = getimagesize($_FILES["Imagen_Upload"]["tmp_name"]);
+
+
+
+      if($check !== false) {
+          echo "El archivo si es una imagen <br>";
+          $uploadOk = 1;
+      }else{
+          echo "El archivo no es una imagen  <br>";
+          $uploadOk = 0;
+      }
+
+// COMPROBAMOS QUE EL ARCHIVO NO EXISTA
+
+  if(file_exists($archivo)){
+    echo "Lo siento, el archivo ya existe en nuestra aplicación!  <br>";
+    $uploadOk = 0;
+  }
+
+// ASIGNAMOS UN LIMITE DE PESO A NUESTRO ARCHIVO ASIGNANDO UN VALOR EN BIT
+
+  if($_FILES["Imagen_Upload"]["size"] > 8388608){
+    echo "Ooops! tu imagen no puede superar mas de 1MB  <br>";
+    $uploadOk = 0;
+  }
+
+// VALIDAMOS EL TIPO DE ARCHIVO ES UNA IMAGEN
+  if($extension_archivo != "jpg" && $extension_archivo != "png" && $extension_archivo != "jpeg" && $extension_archivo != "gif" ) {
+      echo "El archivo no tiene un formato valido de imagen  <br>";
+      $uploadOk = 0;
+  }
+
+// VALIDAMOS SI $UPLOADOK ESTA EN 1 DE ESA FORMA SE PUEDE SUBIR
+  if($uploadOk == 1){
+      if (move_uploaded_file($_FILES["Imagen_Upload"]["tmp_name"], $archivo)) {
+          echo "El archivo ". basename( $_FILES["Imagen_Upload"]["name"]). " se subio correctamente.  <br>";
+      } else {
+          echo "Oops! ha ocurrido un error.  <br>".$_FILES["Imagen_Upload"]["error"];
+      }
+  } else {
+    echo "Lo sentimos su archivo no se puede subir porque no cumple con nuestros estandares.  <br>";
+  }
+
+
+
 	//3. Instanciamos las variables globales y una llamada $accion.
 	//La variable accion nos va a indicar que parte del crud vamos hacer.
 
@@ -109,3 +170,4 @@
 
 
 ?>
+<img src="<?php echo $archivo; ?>">

@@ -128,38 +128,11 @@
               <input type="hidden" value="" name="Geo_y" id="lng">
               <div class="file-field input-field col s6">
                 <div class="btn">
-                  <span>Foto 1:</span>
-                  <input  type="file" >
+                  <span>File</span>
+                  <input type="file" multiple>
                 </div>
                 <div class="file-path-wrapper">
-                  <input name="Foto1" id="demo" class="file-path validate" type="text" placeholder="Upload one or more files">
-                </div>
-              </div>
-              <div class="file-field input-field col s6">
-                <div class="btn">
-                  <span>Foto 2:</span>
-                  <input type="file">
-                </div>
-                <div class="file-path-wrapper">
-                  <input name="Foto2" id="demo" class="file-path validate" type="text" placeholder="Upload one or more files">
-                </div>
-              </div>
-              <div class="file-field input-field col s6">
-                <div class="btn">
-                  <span>Foto 3:</span>
-                  <input type="file" >
-                </div>
-                <div class="file-path-wrapper">
-                  <input name="Foto3" id="demo" class="file-path validate" type="text" placeholder="Upload one or more files">
-                </div>
-              </div>
-              <div class="file-field input-field col s6">
-                <div class="btn">
-                  <span>Foto 4:</span>
-                  <input type="file">
-                </div>
-                <div class="file-path-wrapper">
-                  <input name="Foto4" id="demo" class="file-path validate" type="text" placeholder="Upload one or more files">
+                  <input class="file-path validate" type="text" placeholder="Upload one or more files" name="Imagen_Upload[]" >
                 </div>
               </div>
                   <div class="file-field input-field col s6">

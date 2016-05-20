@@ -11,6 +11,7 @@
   }
    require_once("../Model/empresa.class.php");
    $informacion = Gestion_Empresa::ReadAll();
+   
 ?>
 <!DOCTYPE html>
 <html>
@@ -72,9 +73,9 @@
 	  		</div>
 	  		<div class="col s9 bgcontent">
 	  		<?php
-
 		      foreach ($informacion as $text) {
-		        echo "<p>".$text["Nombre"]."</p>";
+		        echo "<h3>".$text["Nombre"]."</h3>
+		        		<p>".$text["Informacion"]."</p>";
 		      }
 		      ?>
 	  		</div>
@@ -90,7 +91,6 @@
 	      	Interval: 600,
 	      	Indicators: false
 	      });
- 
 	    });
 	</script>
 </body>

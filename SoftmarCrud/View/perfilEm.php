@@ -11,7 +11,6 @@
   }
    require_once("../Model/empresa.class.php");
    $informacion = Gestion_Empresa::ReadAll();
-   
 ?>
 <!DOCTYPE html>
 <html>

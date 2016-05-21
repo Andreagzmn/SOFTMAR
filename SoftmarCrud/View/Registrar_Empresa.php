@@ -128,7 +128,7 @@
               <input type="hidden" value="" name="Geo_y" id="lng">
               <div class="file-field input-field col s6">
                 <div class="btn">
-                  <span>File</span>
+                  <span>Galeria</span>
                   <input type="file" multiple>
                 </div>
                 <div class="file-path-wrapper">

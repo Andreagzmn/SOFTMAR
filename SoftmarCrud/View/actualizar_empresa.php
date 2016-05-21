@@ -98,40 +98,13 @@
                   <input type="time" name="Hor_hasta" required  value="<?php echo $empresa[13] ?>">
                 </div>
               </div>
-              <div class="file-field input-field col s6">
+             <div class="file-field input-field col s6">
                 <div class="btn">
-                  <span>Foto 1:</span>
-                  <input type="file">
+                  <span>Galeria</span>
+                  <input type="file" multiple>
                 </div>
                 <div class="file-path-wrapper">
-                  <input name="Foto1" class="file-path validate" type="text" value="<?php echo $empresa[14] ?>" placeholder="Upload one or more files">
-                </div>
-              </div>
-              <div class="file-field input-field col s6">
-                <div class="btn">
-                  <span>Foto 2:</span>
-                  <input type="file" >
-                </div>
-                <div class="file-path-wrapper">
-                  <input name="Foto2" class="file-path validate" type="text" value="<?php echo $empresa[15] ?>" placeholder="Upload one or more files">
-                </div>
-              </div>
-              <div class="file-field input-field col s6">
-                <div class="btn">
-                  <span>Foto 3:</span>
-                  <input type="file">
-                </div>
-                <div class="file-path-wrapper">
-                  <input name="Foto3"  value="<?php echo $empresa[16] ?>" class="file-path validate" type="text" placeholder="Upload one or more files">
-                </div>
-              </div>
-              <div class="file-field input-field col s6">
-                <div class="btn">
-                  <span>Foto 4:</span>
-                  <input type="file" >
-                </div>
-                <div class="file-path-wrapper">
-                  <input name="Foto4" value="<?php echo $empresa[17] ?>" class="file-path validate" type="text" placeholder="Upload one or more files">
+                  <input class="file-path validate" type="text" placeholder="Upload one or more files" name="Imagen_Upload[]" >
                 </div>
               </div>
                   <div class="file-field input-field col s6">

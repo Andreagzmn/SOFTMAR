@@ -12,11 +12,12 @@
 <html>
   <head>
     <meta charset="utf-8"/>
-    <link type="text/css" rel="stylesheet" href="estilos.css">  
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster" />
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="flexboxgrid.min.css">
+    <link type="text/css" rel="stylesheet" href="estilos.css">  
   </head>
   <body>
     <nav class="black">
@@ -26,36 +27,66 @@
         <?php include_once("../View/comp.menu.php"); ?>
      </div>
     </nav>
-    <div class="conte">
-      <div class="row imgn hover">
-        <div>
-          <div  class="col s12 l6">
-            <a href="Geolocali.php"><img src="img/peluquerias.jpg" class="imgn"/></a>
-            <h3 class="info"><span>Peluqueria</span></h3>
+     <section class="contenido">
+      <div class="container-fluid centr">
+        <div class="row hover">
+          <div class="thumb col-xs-6" id="gran">
+          <!-- <div id="prim">
+            <h3><span>Peluqueria</span></h3>
+          </div> -->
+            <img src="img/peluquerias.jpg" alt="">
+          </div>
+          <div class="thumb col-xs-3">
+          <!-- <div id="seg">
+            <h5><span>Infantil</span></h5> 
+          </div> -->
+            <img src="img/infantil.jpg" alt=""> 
+            <!-- <div id="ter">
+              <h5><span>Spa</span></h5> 
+            </div> -->
+            <img src="img/spa.jpg" alt="">    
+          </div>
+          <div class="thumb col-xs-3">
+          <!-- <div id="cuar">
+            <h5><span>Barberia</span></h5> 
+          </div> -->
+            <img src="img/barberia.jpg" alt="">
+            <!-- <div id="quin">
+              <h5><span>estilo</span></h5>
+            </div> -->
+            <img src="img/estilo.jpg" alt="">
           </div>
         </div>
-        <div class="col l6 s12">
-
-          <div id="infantil" class="inf col s12 l6">
+    </div>
+    </section>
+    <!-- <div class="conte">
+      <div class="row imgn hover">
+        <div>
+          <div  class="col ">
+            <a href="Geolocali.php"><img src="img/peluquerias.jpg" class="imgn"/></a>
+            
+          </div>
+        </div>
+        <div class="col">
+          <div  class="inf ">
             <a href="Geolocali.php"><img src="img/infantil.jpg" class="imgn"></a>            
-              <h5><span>Infantil</span></h5>            
+                         
           </div>
-          <div  id="barberia" class="bar col s12 l6">
+          <div  id="barberia" class="bar col ">
             <a href="Geolocali.php"><img src= "img/barberia.jpg" class="imgn"></a>           
-              <h5><span>Barberia</span></h5>            
+                        
           </div>
-          <div id="spa" class="inf2 col s12 l6">
+          <div id="spa" class="inf2 col ">
             <a href="Geolocali.php"><img src="img/spa.jpg" class="imgn"></a>           
-              <h5><span>Spa</span></h5>            
+                       
           </div>
-          <div id="estilo" class="bar2 col s12 l6">
+          <div id="estilo" class="bar2">
             <img src="img/estilo.jpg" class=" imgn" >           
-              <h5><span>Estilo</span></h5>            
+                         
           </div>
         </div>
       </div>
-    </div>
-    <?php include_once("../View/pie_pagina.php"); ?>
+    </div> -->
   <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
   <script type="text/javascript" src="materialize/js/materialize.js"></script>
    <script type="text/javascript">

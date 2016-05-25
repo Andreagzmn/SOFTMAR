@@ -53,7 +53,7 @@
               <div id="map" class="contamap"></div>
             </div>
            </div>
-        <form class="col s12"  action="../controller/empresa.controller.php" method="POST"  action="upload.php" enctype="multipart/form-data">
+        <form class="col s12"  action="../controller/empresa.controller.php" method="POST" enctype="multipart/form-data">
           <div class="row">
             <div class="input-field col s3">
               <select  name="Cod_TipEmp" id="demo">
@@ -105,7 +105,7 @@
               </div>
               <div class="input-field col s12">
                 <textarea id="demo" class="materialize-textarea" name="Informacion" required></textarea>
-                <label for="textarea1" >Informacion</label>
+                <label for="textarea1" >Describe tu empresa</label>
               </div>
               <div class="col s12">
                 <p class="center">Dias de atencion</p>
@@ -129,19 +129,19 @@
               <div class="file-field input-field col s6">
                 <div class="btn">
                   <span>Galeria</span>
-                  <input type="file" multiple>
+                  <input type="file" multiple name="Imagen_Upload[]">
                 </div>
                 <div class="file-path-wrapper">
-                  <input class="file-path validate" type="text" placeholder="Upload one or more files" name="Imagen_Upload[]" >
+                  <input class="file-path validate"  type="text" placeholder="Puede subir mas de una imagen" name="galeria"  >
                 </div>
               </div>
                   <div class="file-field input-field col s6">
                       <div class="btn">
                         <span>Logo</span>
-                        <input type="file">
+                        <input type="file" name="Imagen_Logo">
                       </div>
                       <div class="file-path-wrapper">
-                          <input name="Logo" id="demo" class="file-path validate" type="text">
+                          <input name="Logo"  id="demo" class="file-path validate" type="text">
                       </div>
                   </div>
             </div>

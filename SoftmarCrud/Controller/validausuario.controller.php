@@ -25,7 +25,7 @@
 			      // Creamos variables de SESSION
 
 			    $_SESSION["Cod_usu"]     = $usuario[0];
-			    $_SESSION["cod_rol"]     = $usuario[1];			    ;
+			    $_SESSION["cod_rol"]     = $usuario[1];			    
 			    $_SESSION["Nombre"] 	 = $usuario[2];
 			    $_SESSION["Apellido"] 	 = $usuario[3];
 			    $_SESSION["Direccion"] 	 = $usuario[4];

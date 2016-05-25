@@ -36,11 +36,9 @@
   <script type="text/javascript" src="Jquery/gmaps.js"></script>
   <script>
     $(document).ready(function(){
-
-    $("#tipoempresa").change(function(){ 
-      var eid = $("#tipoempresa").val();
-      location.href = "Geolocali.php?eid="+eid;
-
+      $("#tipoempresa").change(function(){ 
+        var eid = $("#tipoempresa").val();
+        location.href = "Geolocali.php?eid="+eid;
     });
     
     var map;
@@ -52,8 +50,8 @@
         lng: -75.58121189999997,
         zoom: 12
       });
-        <?php
-
+        
+      <?php
         foreach ($empresas as $row) {
             
             echo "map.addMarker({ 
@@ -62,7 +60,6 @@
                     title: '".$row["Nombre"]."'
                   });";
         }
-
       ?>  
  
       GMaps.geolocate({

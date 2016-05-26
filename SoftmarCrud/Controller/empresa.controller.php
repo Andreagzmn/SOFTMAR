@@ -34,7 +34,7 @@
 			$Hor_desde		= $_POST["Hor_desde"];
 			$Hor_hasta    	= $_POST["Hor_hasta"]; 
 			$Galeria   		= $_POST["galeria"];
- 
+ 			
  			try{ 
 				if($Galeria != ""){ 
 					include("Upload_Image.php");
@@ -48,14 +48,14 @@
 				}				
 				 
 				
-				Gestion_Empresa::Create($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta,$Galeria,$Logo);
+				//Gestion_Empresa::Create($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta,$Galeria,$Logo);
 				$mensaje = "Su registro se creo correctamente";
 				$tipomensaje = "success";
-				header("Location: ../View/Gestion_Empresa_admin.php?m=".$mensaje."&tm=".$tipomensaje);
+				//header("Location: ../View/Gestion_Empresa_admin.php?m=".$mensaje."&tm=".$tipomensaje);
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 				$tipomensaje = "error";
-				header("Location: ../View/Registrar_Empresa.php?m=".$mensaje."&tm=".$tipomensaje);
+				//header("Location: ../View/Registrar_Empresa.php?m=".$mensaje."&tm=".$tipomensaje);
 			}
 	break;
 

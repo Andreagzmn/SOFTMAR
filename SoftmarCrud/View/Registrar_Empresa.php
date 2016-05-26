@@ -48,14 +48,9 @@
      <center><div class="empref">
       <h4 class="teal-text text-teal lighten-3 test">Registra tu empresa</h4>
       <div class="row formem">
-       <div class="contamap col s12">
-            <div style="padding: 0;">
-              <div id="map" class="contamap"></div>
-            </div>
-           </div>
-        <form class="col s12"  action="../controller/empresa.controller.php" method="POST" enctype="multipart/form-data">
+        <form class="col s12 m6"  action="../controller/empresa.controller.php" method="POST" enctype="multipart/form-data">
           <div class="row">
-            <div class="input-field col s3">
+            <div class="input-field col s6 m4">
               <select  name="Cod_TipEmp" id="demo">
                   <option value="" disabled selected>Tipo de empresa</option>
                   <?php
@@ -77,15 +72,15 @@
                 <label>Tipo empresa</label>
               </div>
               <div>
-              <div class="input-field col s9">
+              <div class="input-field col s6 m8">
                 <input id="demo" type="text" class="validate" name="Nombre" required>
                 <label for="Nombre" data-error="wrong" >Nombre Empresa</label>
               </div>
-              <div class="input-field col s6">
+              <div class="input-field col s6 m6">
                 <input id="demo" type="number" class="validate" name="Telefono" required>
                 <label for="Telefono" data-error="wrong" >Telefono</label>
               </div>
-              <div class="input-field col s6">
+              <div class="input-field col s6 m6">
                 <input id="demo" type="text" class="validate" name="Direccion" required>
                 <label for="Direccion" data-error="wrong" >Direccion</label>
               </div>
@@ -95,38 +90,83 @@
                 </select>
                 <label>Ciudad</label>
               </div> -->
-              <div class="input-field col s6">
+              <div class="input-field col s6 m6">
                 <input id="demo" type="number" class="validate" name="NIT" required>
                 <label for="NIT" data-error="wrong"  >NIT</label>
               </div>
-              <div class="input-field col s6">
+              <div class="input-field col s6 m6">
                 <input id="demo" type="email" class="validate" name="Correo" required>
                 <label for="email" data-error="wrong" >Correo electronico</label>
               </div>
-              <div class="input-field col s12">
+              <div class="input-field col s12 m12">
                 <textarea id="demo" class="materialize-textarea" name="Informacion" required></textarea>
                 <label for="textarea1" >Describe tu empresa</label>
               </div>
-              <div class="col s12">
+              <div class="col s12 m12 ">
                 <p class="center">Dias de atencion</p>
-                <div class="col s6">
-                  <input type="text" id="demo" name="Dias_aten" required>
+                <div class="col s6 m6">
+                  <p>
+                    <input type="checkbox" id="l" value="L" name="Dias_aten[]"/>
+                    <label for="l">Lunes</label>
+                  </p>
                 </div>
+                  <div class="col s6 m6">
+                  <p>
+                     <input type="checkbox" id="m" value="M" name="Dias_aten[]"/>
+                     <label for="m">Martes</label>
+                   </p>
+                  </div>
+                   <div class="col s6 m6">
+                   <p>
+                     <input type="checkbox" id="mi" value="Mi" name="Dias_aten[]" />
+                     <label for="mi">Miercoles</label>
+                   </p>
+                  </div>
+                   <div class="col s6 m6">
+                   <p>
+                     <input type="checkbox" id="j" value="J" name="Dias_aten[]"/>
+                     <label for="j">Jueves</label>
+                   </p>
+                  </div>
+                   <div class="col s6 m6">
+                    <p>
+                     <input type="checkbox" id="v" value="V" name="Dias_aten[]"/>
+                     <label for="v">Viernes</label>
+                   </p>
+                  </div>
+                   <div class="col s6 m6">
+                   <p>
+                     <input type="checkbox" id="s" value="S" name="Dias_aten[]"/>
+                     <label for="s">Sabado</label>
+                   </p>
+                  </div>
+                   <div class="col s6 m6">
+                   <p>
+                     <input type="checkbox" id="d" value="D" name="Dias_aten[]"/>
+                     <label for="d">Domingo</label>
+                   </p>
+                  </div>
+                  <div class="col s6 m6">
+                   <p>
+                     <input type="checkbox" id="DF" value="F" name="Dias_aten[]"/>
+                     <label for="DF">Dias Festivos</label>
+                   </p>
+                  </div>
               </div>
-              <div class="col s12">
+              <div class="col s12 m12">
               <p class="center">Horario</p>
-                <div class="col s6">
+                <div class="col s6 m6">
                   <label>desde</label>
                   <input type="time" id="demo" name="Hor_desde" required>
                 </div>
-                <div class="col s6">
+                <div class="col s6 m6">
                 <label>Hasta</label>
                   <input type="time" id="demo" name="Hor_hasta" required>
                 </div>
               </div>
               <input type="hidden" value="" name="Geo_x" id="ltn"> 
               <input type="hidden" value="" name="Geo_y" id="lng">
-              <div class="file-field input-field col s6">
+              <div class="file-field input-field col s12 m6">
                 <div class="btn">
                   <span>Galeria</span>
                   <input type="file" multiple name="Imagen_Upload[]">
@@ -135,7 +175,7 @@
                   <input class="file-path validate"  type="text" placeholder="Puede subir mas de una imagen" name="galeria"  >
                 </div>
               </div>
-                  <div class="file-field input-field col s6">
+                  <div class="file-field input-field col s12 m6">
                       <div class="btn">
                         <span>Logo</span>
                         <input type="file" name="Imagen_Logo">
@@ -151,6 +191,13 @@
                 <?php echo @$_REQUEST["msn"]; ?>
 
         </form>
+          
+        <!-- <h5 style="color: #80cbc4; margin-top: -5%">Ubica tu empresa</h5> -->
+        <div class="contamap col s12 m6">
+            <div style="padding: 0; " >
+              <div id="map" class="contamap" style="background: black;"></div>
+            </div>
+        </div>
       </div>
     </div></center>
      

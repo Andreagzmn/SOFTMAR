@@ -61,10 +61,10 @@ main{
 .formem{
   background-color: rgba(244, 238, 247, 0.5) !important;
   border-radius:5px;
-  width: 90%;
+  width: 100%;
 }
 .empref {
-	width: 80%;
+	width: 90%;
 }
 .test{
   margin-right: 20px;
@@ -75,8 +75,8 @@ main{
   margin-top: 50px;
 }
 .contamap{
-  width: 50%;
-  margin-top: 40px;
+  width: 70%;
+  margin-top: 10%;
 }
 
 /*dash*/

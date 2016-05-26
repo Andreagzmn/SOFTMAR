@@ -7,10 +7,10 @@ class Gestion_producto{
         $Conexion = Softmar_BD::Connect();
         $Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $consulta = "INSERT INTO productos_emp (Cod_Emp, Nombre, Descripcion, Valor, Cant) VALUES (?,?,?,?.?)";
+        $consulta = "INSERT INTO productos_emp (Cod_Emp, Nombre, Descripcion, Valor, Cant) VALUES (?,?,?,?,?)";
 
         $query = $Conexion->prepare($consulta);
-        $query->execute(array($Cod_prod, $Cod_Emp, $Nombre, $Descripcion, $Valor, $Cantidad));
+        $query->execute(array($Cod_Emp, $Nombre, $Descripcion, $Valor, $Cantidad));
 
         Softmar_BD::Disconnect();
     }
@@ -57,16 +57,21 @@ class Gestion_producto{
     Softmar_BD::Disconnect();
   }
 
-    function update($Cod_prod, $Cod_Emp, $Nombre, $Descripcion, $Valor, $Cantidad){
+    function Update($Cod_prod, $Nombre, $Descripcion, $Valor, $Cantidad){
+    //Instanciamos y nos conectamos a la bd
+        $Conexion = Softmar_BD::Connect();
+        $Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-	   $conexion=softmar_BD::connect();
-	   $conexion->SetAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        
 
-	   $consulta="UPDATE productos_emp SET Cod_prod=?, Cod_Emp=?, Nombre=?, Descripcion=?, Valor=?, Cant=? WHERE Cod_prod=?";
-	   $query=$conexion->prepare($consulta);
-	   $query->execute(array($Cod_prod, $Cod_Emp, $Nombre, $Descripcion, $Valor, $Cantidad));
+        //Crear el query que vamos a realizar
+        $consulta = "UPDATE productos_emp SET  Nombre=?, Descripcion=?, Valor=?, Cant=? WHERE Cod_prod = ?" ;
 
-	   softmar_BD::Disconnect();
+        $query = $Conexion->prepare($consulta);
+        $query->execute(array(  $Nombre, $Descripcion, $Valor, $Cantidad, $Cod_prod));        
+
+        Softmar_BD::Disconnect();
+    
     }
 
     function delete($Cod_prod){

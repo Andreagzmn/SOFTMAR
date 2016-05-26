@@ -89,9 +89,9 @@
       <tbody>
 
       <?php
-      $servicios = Gestion_producto::ReadAll();
+      $producto = Gestion_producto::ReadAll();
 
-      /*foreach ($producto as $row) {
+      foreach ($producto as $row) {
         echo "<tr>
                 <td>".$row["Cod_prod"]."</td>
                 <td>".$row["Cod_Emp"]."</td>
@@ -101,11 +101,11 @@
                 <td>".$row["Cant"]."</td>
 
                 <td>
-                  <a href='../View/Actualizar_servicio.php?sr=".base64_encode($row["Cod_prod"])."'><i class='fa fa-pencil'></i></a>
-                  <a href='../Controller/servicio_emp.controller.php?sr=".base64_encode($row["Cod_prod"])."&accion=d'><i class='fa fa-trash'></i></a>
+                  <a href='../View/Actualizar_producto.php?pr=".base64_encode($row["Cod_prod"])."'><i class='fa fa-pencil'></i></a>
+                  <a href='../Controller/producto.controller.php?pr=".base64_encode($row["Cod_prod"])."&accion=d'><i class='fa fa-trash'></i></a>
                 </td>
               </tr>";
-      }*/
+      }
 
       ?>
       </tbody>

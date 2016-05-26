@@ -78,7 +78,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="first_name" type="number" class="validate" required name="Valor">
+                            <input id="first_name" type="number" class="validate" required name="Cant">
                             <label for="first_name">Cantidad</label>
                         </div>
                     </div>  

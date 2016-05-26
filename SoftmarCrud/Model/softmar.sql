@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-05-2016 a las 18:56:05
+-- Tiempo de generación: 26-05-2016 a las 15:37:33
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -28,7 +28,6 @@ USE `softmar`;
 -- Estructura de tabla para la tabla `buscar_estilo`
 --
 
-DROP TABLE IF EXISTS `buscar_estilo`;
 CREATE TABLE `buscar_estilo` (
   `Cod_buscar` int(11) NOT NULL,
   `Cod_usu` int(11) NOT NULL,
@@ -42,7 +41,6 @@ CREATE TABLE `buscar_estilo` (
 -- Estructura de tabla para la tabla `citas`
 --
 
-DROP TABLE IF EXISTS `citas`;
 CREATE TABLE `citas` (
   `Cod_cita` int(11) NOT NULL,
   `Cod_Emp` int(11) NOT NULL,
@@ -59,10 +57,21 @@ CREATE TABLE `citas` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `dueños`
+--
+
+CREATE TABLE `dueños` (
+  `Cod_due` int(11) NOT NULL,
+  `Cod_Emp` int(11) NOT NULL,
+  `Cod_usu` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `empleado`
 --
 
-DROP TABLE IF EXISTS `empleado`;
 CREATE TABLE `empleado` (
   `Cod_empl` int(11) NOT NULL,
   `Cod_Emp` int(11) NOT NULL,
@@ -82,7 +91,6 @@ CREATE TABLE `empleado` (
 -- Estructura de tabla para la tabla `empresa`
 --
 
-DROP TABLE IF EXISTS `empresa`;
 CREATE TABLE `empresa` (
   `Cod_Emp` int(11) NOT NULL,
   `Cod_TipEmp` int(11) NOT NULL,
@@ -108,7 +116,6 @@ CREATE TABLE `empresa` (
 -- Estructura de tabla para la tabla `oferta_emp`
 --
 
-DROP TABLE IF EXISTS `oferta_emp`;
 CREATE TABLE `oferta_emp` (
   `Cod_ofer` int(11) NOT NULL,
   `Cod_Emp` int(11) NOT NULL,
@@ -126,7 +133,6 @@ CREATE TABLE `oferta_emp` (
 -- Estructura de tabla para la tabla `permiso`
 --
 
-DROP TABLE IF EXISTS `permiso`;
 CREATE TABLE `permiso` (
   `codigo_permiso` int(11) NOT NULL,
   `nombre_permiso` char(100) DEFAULT NULL
@@ -138,7 +144,6 @@ CREATE TABLE `permiso` (
 -- Estructura de tabla para la tabla `permiso_rol`
 --
 
-DROP TABLE IF EXISTS `permiso_rol`;
 CREATE TABLE `permiso_rol` (
   `cod_rol` int(11) NOT NULL,
   `codigo_permiso` int(11) NOT NULL,
@@ -151,7 +156,6 @@ CREATE TABLE `permiso_rol` (
 -- Estructura de tabla para la tabla `productos_emp`
 --
 
-DROP TABLE IF EXISTS `productos_emp`;
 CREATE TABLE `productos_emp` (
   `Cod_prod` int(11) NOT NULL,
   `Cod_Emp` int(11) NOT NULL,
@@ -167,7 +171,6 @@ CREATE TABLE `productos_emp` (
 -- Estructura de tabla para la tabla `puntuacion`
 --
 
-DROP TABLE IF EXISTS `puntuacion`;
 CREATE TABLE `puntuacion` (
   `Cod_punt` int(11) NOT NULL,
   `Cod_usu` int(11) NOT NULL,
@@ -180,7 +183,6 @@ CREATE TABLE `puntuacion` (
 -- Estructura de tabla para la tabla `rol`
 --
 
-DROP TABLE IF EXISTS `rol`;
 CREATE TABLE `rol` (
   `cod_rol` int(11) NOT NULL,
   `cod_nombre` char(100) NOT NULL
@@ -203,7 +205,6 @@ INSERT INTO `rol` (`cod_rol`, `cod_nombre`) VALUES
 -- Estructura de tabla para la tabla `servicio_emp`
 --
 
-DROP TABLE IF EXISTS `servicio_emp`;
 CREATE TABLE `servicio_emp` (
   `Cod_serv` int(11) NOT NULL,
   `Cod_Emp` int(11) NOT NULL,
@@ -218,7 +219,6 @@ CREATE TABLE `servicio_emp` (
 -- Estructura de tabla para la tabla `servicio_emple`
 --
 
-DROP TABLE IF EXISTS `servicio_emple`;
 CREATE TABLE `servicio_emple` (
   `Cod_serv` int(11) NOT NULL,
   `Cod_empl` int(11) NOT NULL
@@ -230,7 +230,6 @@ CREATE TABLE `servicio_emple` (
 -- Estructura de tabla para la tabla `tipo_emp`
 --
 
-DROP TABLE IF EXISTS `tipo_emp`;
 CREATE TABLE `tipo_emp` (
   `Cod_TipEmp` int(11) NOT NULL,
   `Nombre` varchar(100) NOT NULL
@@ -252,7 +251,6 @@ INSERT INTO `tipo_emp` (`Cod_TipEmp`, `Nombre`) VALUES
 -- Estructura de tabla para la tabla `tips_emp`
 --
 
-DROP TABLE IF EXISTS `tips_emp`;
 CREATE TABLE `tips_emp` (
   `Cod_tips` int(11) NOT NULL,
   `Cod_Emp` int(11) NOT NULL,
@@ -268,7 +266,6 @@ CREATE TABLE `tips_emp` (
 -- Estructura de tabla para la tabla `usuario`
 --
 
-DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `Cod_usu` int(11) NOT NULL,
   `cod_rol` int(11) NOT NULL,
@@ -309,6 +306,14 @@ ALTER TABLE `buscar_estilo`
 --
 ALTER TABLE `citas`
   ADD PRIMARY KEY (`Cod_cita`),
+  ADD KEY `Cod_Emp` (`Cod_Emp`),
+  ADD KEY `Cod_usu` (`Cod_usu`);
+
+--
+-- Indices de la tabla `dueños`
+--
+ALTER TABLE `dueños`
+  ADD PRIMARY KEY (`Cod_due`),
   ADD KEY `Cod_Emp` (`Cod_Emp`),
   ADD KEY `Cod_usu` (`Cod_usu`);
 
@@ -415,6 +420,11 @@ ALTER TABLE `buscar_estilo`
 ALTER TABLE `citas`
   MODIFY `Cod_cita` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT de la tabla `dueños`
+--
+ALTER TABLE `dueños`
+  MODIFY `Cod_due` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT de la tabla `empleado`
 --
 ALTER TABLE `empleado`
@@ -475,6 +485,13 @@ ALTER TABLE `buscar_estilo`
 ALTER TABLE `citas`
   ADD CONSTRAINT `citas_ibfk_1` FOREIGN KEY (`Cod_Emp`) REFERENCES `empresa` (`Cod_Emp`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `citas_ibfk_2` FOREIGN KEY (`Cod_usu`) REFERENCES `usuario` (`Cod_usu`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `dueños`
+--
+ALTER TABLE `dueños`
+  ADD CONSTRAINT `dueños_ibfk_1` FOREIGN KEY (`Cod_Emp`) REFERENCES `empresa` (`Cod_Emp`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `dueños_ibfk_2` FOREIGN KEY (`Cod_usu`) REFERENCES `usuario` (`Cod_usu`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `empleado`

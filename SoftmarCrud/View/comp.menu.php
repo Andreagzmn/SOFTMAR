@@ -58,7 +58,7 @@ if($_SESSION["cod_rol"]==103){
 	    <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><?php echo($_SESSION["Nombre"])." ".($_SESSION["Apellido"]) ?><i class="material-icons right">arrow_drop_down</i></a></li>
 	  </ul>
 	  <ul id="dropdown1" class="dropdown-content">
-	    <li><a href="#!">Editar Perfil</a></li>
+	    <li><a href="ActualizarMiperfil.php">Editar Perfil</a></li>
 	    <li><a href="../Controller/cerrarusuario.php">Cerrar sesión</a></li>
 	  </ul>
     <ul class="side-nav" id="mobile-demo">

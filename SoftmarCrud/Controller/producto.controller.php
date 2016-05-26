@@ -26,10 +26,10 @@
 			$Nombre		    = $_POST["Nombre"];
 			$Descripcion    = $_POST["Descripcion"];
 			$Valor	        = $_POST["Valor"];
-			$Cantidad       = $_POST["Cant"];
+			$Cantidad           = $_POST["Cant"];
 
 			try{
-				Gestion_producto::Create($Cod_prod, $Cod_Emp, $Nombre, $Descripcion, $Valor, $Cantidad );
+				Gestion_producto::Create($Cod_Emp, $Nombre, $Descripcion, $Valor, $Cantidad);
 				$mensaje = "El producto se registro correctamente";
 				$tipomensaje = "success";
 				header("Location: ../View/Gestion_Producto_admin.php?m=".$mensaje."&tm=".$tipomensaje);
@@ -43,9 +43,8 @@
 		case 'r':
 		    # leer
 		break;
-		case 'u':
-            $Cod_prod       = $_POST["Cod_prod"];
-			$Cod_Emp 		= $_POST["Cod_Emp"];			
+		case 'u':	
+		    $Cod_prod		= $_POST["Cod_prod"];
 			$Nombre		    = $_POST["Nombre"];
 			$Descripcion    = $_POST["Descripcion"];
 			$Valor	        = $_POST["Valor"];
@@ -53,20 +52,20 @@
 
 
 			try{
-				Gestion_servicio::update($Cod_prod, $Cod_Emp, $Nombre, $Descripcion, $Valor, $Cant );
+				Gestion_producto::Update($Cod_prod, $Nombre, $Descripcion, $Valor, $Cantidad);
 				$mensaje = "Se actualizo correctamente";
 				$tipomensaje = "success";
 				header("Location: ../View/Gestion_Producto_admin.php?m=".$mensaje."&tm=".$tipomensaje);
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 
 				$tipomensaje = "error";
-				header("Location: ../View/Actualizar_servicio.php?m=".$mensaje."&tm=".$tipomensaje);
+				header("Location: ../View/Actualizar_producto.php?m=".$mensaje."&tm=".$tipomensaje);
 			}
 			break;
 			
 		case 'd':
         try {
-          $producto = Gestion_servicio::Delete(base64_decode($_REQUEST["sr"]));
+          $producto = Gestion_producto::Delete(base64_decode($_REQUEST["pr"]));
           $msn = "se elimino correctamente";
           $tipomensaje = "success";
           header("Location: ../View/Gestion_Producto_admin.php?m=".$mensaje."&tm=".$tipomensaje);

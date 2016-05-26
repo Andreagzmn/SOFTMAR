@@ -15,13 +15,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	 <meta charset="utf-8"/>
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster" />
-    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">   
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>      
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="flexboxgrid.min.css">
-    <link type="text/css" rel="stylesheet" href="estilos.css">  
+    <link rel="stylesheet" type="text/css" href="sweetalert-master/sweetalert.css">
+    <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="materialize/js/materialize.js"></script>
+    <script type="text/javascript" src="sweetalert-master/sweetalert.min.js"></script>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="estilos.css">    
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster"/>
+
     <link rel="stylesheet" type="text/css" href="Jquery/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="Jquery/jquery.dataTables.js"></script>
 
@@ -33,30 +38,29 @@
          $(".dropdown-button").dropdown();
     });
     </script>
-</head>
-<body>
-	 <nav class="black navbar-fixed">
+
+      
+   </head>
+  <body>
+  <nav class="black">
       <div class="nav-wrapper " style="margin-left: 5px; margin-right: 5px;">
         <h2 href="#!" class="brand-logo" style="text-align:center; margin-top: 10px; "><!-- <img src="img/SOFTMAR.png" style="width: 500%; margin-top: -15px; position: relative;"> -->Softmar</h2>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <?php include_once("../View/comp.menu.php"); ?>
-
      </div>
-     </nav>
-     <center><table id="datatable" class="display highlight" >
+  </nav> 
+  <div class="container">
+  		<center><a href="Geolocali.php" class="waves-effect waves-light btn" ><i class="material-icons">location_on</i>  Ver por geolocalizacion</a></center>
+ </div>
+    <center><table id="datatable" class="display highlight" >
       <thead>
         <tr>
-          <th>Codigo Empresa</th>
           <th>Tipo Empresa</th>
           <th>Nombre</th>
           <th>Telefono</th>
           <th>Direccion</th>
-          <th>NIT</th>
           <th>Correo</th>
           <th>Informacion</th>
-          <th>Dias de atencion</th>
-          <th>Hora desde</th>
-          <th>Hora hasta</th>
           <th></th>
         </tr>
       </thead>
@@ -78,20 +82,13 @@
         }
 
         echo "<tr>
-                <td>".$row["Cod_Emp"]."</td>
                 <td>".$Cod_TipEmp."</td>
                 <td>".$row["Nombre"]."</td>
                 <td>".$row["Telefono"]."</td>
                 <td>".$row["Direccion"]."</td>
-                <td>".$row["NIT"]."</td>
                 <td>".$row["Correo"]."</td>
                 <td>".$row["Informacion"]."</td>
-                <td>".$row["Dias_aten"]."</td>
-                <td>".$row["Hor_desde"]."</td>
-                <td>".$row["Hor_hasta"]."</td>
                 <td>
-                  <a href='../View/actualizar_empresa.php?ei=".base64_encode($row["Cod_Emp"])."'><i class='fa fa-pencil'></i></a>
-                  <a href='../Controller/empresa.controller.php?ei=".base64_encode($row["Cod_Emp"])."&accion=d'><i class='fa fa-trash'></i></a>
                  <a href='../View/PerfilEm.php?ei=".base64_encode($row["Cod_Emp"])."'><i class='fa fa-user'></i></a>
                 </td>
               </tr>";
@@ -100,7 +97,5 @@
       </tbody>
     </table></center>
 
-  <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
-  <script type="text/javascript" src="materialize/js/materialize.js"></script>
 </body>
 </html>

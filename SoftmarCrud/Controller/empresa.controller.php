@@ -61,7 +61,8 @@
 
 
 		case 'r':
-			#leer...
+			$empresa = Gestion_Empresa::ReadbyID($Cod_Emp);
+    		
 		break;
 
 		case 'u':

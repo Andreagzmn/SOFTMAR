@@ -7,7 +7,7 @@
 
     header("Location: ../View/Index.php?m=".$msn."&tm=".$tipo_msn);
   }
-?>
+  ?>
 <!DOCTYPE html>
 <html>
   <head>

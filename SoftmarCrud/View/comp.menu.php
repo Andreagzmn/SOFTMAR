@@ -47,22 +47,7 @@ if($_SESSION["cod_rol"]==103){
     <li><a href="#">Contacto</a></li>
   </ul> 
 <?php
-  }elseif ($_SESSION["cod_rol"]==101) {    
-    try {      
-      
-
-    if(count(@$empresa[0]) == 0){
-?>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="Registrar_Empresa.php">Registra tu empresa</a></li>
-      <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><?php echo($_SESSION["Nombre"])." ".($_SESSION["Apellido"]) ?><i class="material-icons right">arrow_drop_down</i></a></li>
-    </ul> 
-    <ul id="dropdown1" class="dropdown-content"> 
-      <li><a href="ActualizarMiperfil.php">Editar Perfil</a></li>   
-      <li><a href="../Controller/cerrarusuario.php">Cerrar sesión</a></li>
-  </ul> 
-<?php
-      }else{
+  }elseif ($_SESSION["cod_rol"]==101) {       
 ?>
       <ul class="right hide-on-med-and-down">
       <li><a href="dashboard.php">Inicio</a></li>
@@ -83,10 +68,8 @@ if($_SESSION["cod_rol"]==103){
       <li><a href="#">Citas</a></li>
       <li><a href="#">Reportes</a></li>
     </ul>
-<?php 
-    }
-    }catch (Exception $e){} 
-  } 
+<?php     
+} 
 ?> 
           
    

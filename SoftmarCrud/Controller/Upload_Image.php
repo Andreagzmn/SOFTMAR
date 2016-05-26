@@ -9,9 +9,9 @@ if (!file_exists($directorio)) {
   mkdir($directorio, 0777, true);
 }
 
-for($i=0; $i<$total; $i++) {
+for($i=0; $i<$total; $i++) { 
 
-  $archivo     = $directorio.basename($_FILES["Imagen_Upload"]["name"][$i]);
+  $archivo     = $directorio.basename(str_replace(" ", "",$_FILES["Imagen_Upload"]["name"][$i]));
   $uploadOk    = 0;
   $extension_archivo = pathinfo($archivo,PATHINFO_EXTENSION);
   

@@ -30,11 +30,11 @@
 			$Geo_x			= $_POST["Geo_x"];
 			$Geo_y			= $_POST["Geo_y"];
 			$Informacion	= $_POST["Informacion"];
-			$Dias_aten		= $_POST["Dias_aten"];
+			$Dias_aten		= implode(",", $_POST["Dias_aten"]);
 			$Hor_desde		= $_POST["Hor_desde"];
 			$Hor_hasta    	= $_POST["Hor_hasta"]; 
 			$Galeria   		= $_POST["galeria"];
- 			
+
  			try{ 
 				if($Galeria != ""){ 
 					include("Upload_Image.php");

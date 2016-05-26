@@ -10,7 +10,8 @@
     header("Location: ../View/Index.php?m=".$msn."&tm=".$tipo_msn);
   }
    require_once("../Model/empresa.class.php");
-   $informacion = Gestion_Empresa::ReadAll();
+
+   $informacion = Gestion_Empresa::ReadbyID(base64_decode($_GET["ei"]));
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,26 +38,23 @@
 	<div class="container-fluid">
 		<center><div class="slider">
 		    <ul class="slides">
-		    <!--   <?php
+			  <?php
+ 				
+  			 $fotos = explode(",", $informacion["Galeria"]);
+  			 $nombre_empresa = strtolower(str_replace('ñ', 'n', $informacion["Nombre"]));
+			 $nombre_empresa = strtolower(str_replace(' ', '', $nombre_empresa));
 
-		      // $fotos = Gestion_Empresa::ReadAll();
+  			 $directorio = "img/Imagenes_Empresas/".$nombre_empresa."/";
+  			 
+  			 for ($i=0; $i < count($fotos) ; $i++) {
+  			 	$foto = str_replace(' ', '', $fotos[$i]);
+  			 	echo "<li><img src='img/Imagenes_Empresas/manhatan/".$foto."'></li>";
+  			 }
+  		 
 
-		      // foreach ($fotos as $row) {
-		      ?>
 
-		      <li>
-		        <img src="img/<?php //echo $row["Foto1"].$row["Foto2"].$row["Foto3"].$row["Foto4"] ?>">
-		      </li>
-
-		      <?php
-		        // }
-		      ?> -->
-		      <li>
-		      	<img src="img/3.jpg">
-		      </li>
-		      <li>
-		      	<img src="img/4.jpg">
-		      </li>
+ 
+		     ?>
 		    </ul>
 
   		</div></center>
@@ -72,10 +70,10 @@
 	  		</div>
 	  		<div class="col s9 bgcontent">
 	  		<?php
-		      foreach ($informacion as $text) {
-		        echo "<h3>".$text["Nombre"]."</h3>
-		        		<p>".$text["Informacion"]."</p>";
-		      }
+		  
+		        echo "<h3>".$informacion["Nombre"]."</h3>
+		        		<p>".$informacion["Informacion"]."</p>";
+		 
 		      ?>
 	  		</div>
   		</div>

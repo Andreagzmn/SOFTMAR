@@ -51,7 +51,7 @@
         <form class="col s12 m6"  action="../controller/empresa.controller.php" method="POST" enctype="multipart/form-data">
           <div class="row">
             <div class="input-field col s6 m4">
-              <select  name="Cod_TipEmp" id="demo">
+              <select  name="Cod_TipEmp" id="demo" required>
                   <option value="" disabled selected>Tipo de empresa</option>
                   <?php
                     // Cargo la bd

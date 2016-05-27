@@ -73,7 +73,7 @@
 			
 		case 'd':
 			try {
-          	$empleado = Gestion_Empleados::Delete(base64_decode($_REQUEST["sr"]));
+          	$empleado = Gestion_Empleados::Delete(base64_decode($_REQUEST["em"]));
           	$mensaje = "Se elimino exitosamente";
           	$tipomensaje = "success";
 			header("Location: ../View/Gestionar_Empleado.php?m=".$mensaje."&tm=".$tipomensaje);

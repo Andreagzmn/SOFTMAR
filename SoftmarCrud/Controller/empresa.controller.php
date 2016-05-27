@@ -69,17 +69,28 @@
 			$Cod_Emp 		= $_POST["Cod_Emp"];
 			$Cod_TipEmp 	= $_POST["Cod_TipEmp"];
 			$Nombre			= $_POST["Nombre"];
+			$nombre_empresa = strtolower(str_replace('ñ', 'n', $Nombre));
+			$nombre_empresa = strtolower(str_replace(' ', '', $nombre_empresa));
 			$Telefono		= $_POST["Telefono"];
-			$Direccion      = $_POST["Direccion"];
+			$Direccion    	= $_POST["Direccion"];
 			$NIT 			= $_POST["NIT"];
-			$Correo         = $_POST["Correo"];
+			$Correo       	= $_POST["Correo"];
 			$Informacion	= $_POST["Informacion"];
-			$Dias_aten		= $_POST["Dias_aten"];
+			$Dias_aten		= implode(",", $_POST["Dias_aten"]);
 			$Hor_desde		= $_POST["Hor_desde"];
-			$Hor_hasta      = $_POST["Hor_hasta"];
-			$Galeria		= $_POST["Galeria"];
-			$Logo			= $_POST["Logo"];
-			try{
+			$Hor_hasta    	= $_POST["Hor_hasta"]; 
+			$Galeria   		= $_POST["galeria"];
+			try{ 
+				if($Galeria != ""){ 
+					include("Upload_Image.php");
+				} 
+
+				if(isset($_FILES['Imagen_Logo']['name'])){
+					$Logo = $_POST["Logo"];
+					include("Upload_Logo.php");
+				}else{
+					$Logo = "";
+				}	
 
 				 Gestion_Empresa::Update($Cod_Emp,$Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta,$Galeria,$Logo);
 				$mensaje = "Se actualizo correctamente";

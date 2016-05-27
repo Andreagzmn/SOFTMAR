@@ -109,8 +109,8 @@
                 <td>".$row["Cargo"]."</td>
                 <td>".$row["Cedula"]."</td>
                 <td>
-                  <a href='../View/actualizar_empleado.php?ei=".base64_encode($row["Cod_empl"])."'><i class='fa fa-pencil'></i></a>
-                  <a href='../Controller/Empleados.controller.php?ei=".base64_encode($row["Cod_empl"])."&accion=d'><i class='fa fa-trash'></i></a>
+                  <a href='../View/actualizar_empleado.php?em=".base64_encode($row["Cod_empl"])."'><i class='fa fa-pencil'></i></a>
+                  <a href='../Controller/Empleados.controller.php?em=".base64_encode($row["Cod_empl"])."&accion=d'><i class='fa fa-trash'></i></a>
                 </td>
               </tr>";
       }

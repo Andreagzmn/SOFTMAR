@@ -30,9 +30,9 @@
         <?php include_once("../View/comp.menu.php"); ?>
      </div>
     </nav> 
-<div class="conte">
+<center><div class="conte">
     <div class="row formulario">
-      	<div class="col s6 push-s6  ">
+      	<div class="col s12 push-s12 m12">
 	      	<h5 class="pink-text text-purple lighten-2 center-align ">Mision</h5>
 	      		<p><b>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	      		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -49,7 +49,7 @@
 		      	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 		      	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</b></p>
 	     </div>
-      	<div class="col s6 pull-s6 quienes" >
+      	<div class="col s12 pull-s12 m12 quienes" >
 			<h5 class="pink-text text-purple lighten-2 center-align " >¿Quienes somos?</h5>
 		  		<p><b>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
@@ -62,7 +62,7 @@
 		</div>
 	</div>
 
-</div>
+</div></center>
 <?php include_once("../View/pie_pagina.php"); ?>
 <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
 <script type="text/javascript" src="materialize/js/materialize.min.js"></script>

@@ -121,6 +121,12 @@ section {
   width:90%;
   padding: 5px;
 }
+.forma{
+    margin-top: 3%;
+  background-color: rgba(244, 238, 247, 0.5) !important;
+  border-radius:5px;
+  width: 100%;
+}
 .login{
 	width: 20%;
 }
@@ -381,3 +387,13 @@ input:not([type]), input[type=text], input[type=password], input[type=email], in
   border-bottom: 1px solid #26a69a;
   border-radius: 4px;
 }
+/*actualizar*/
+.formu{
+  background-color: rgba(244, 238, 247, 0.5) !important;
+  border-radius:5px;
+  width: 100%;
+}
+.containact {
+  width: 50%;
+}
+/*Perfil Empresa*/

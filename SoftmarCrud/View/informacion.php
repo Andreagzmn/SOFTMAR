@@ -31,7 +31,7 @@
      </div>
    </nav> 
 	<div class="inf-conte">
-    <div class="row formulario">
+    <div class="row forma">
       	<div class="col s12 center">
       	<img src="img/SOFTMAR.png" class="login">
 	      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

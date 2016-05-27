@@ -48,7 +48,7 @@
   			 
   			 for ($i=0; $i < count($fotos) ; $i++) {
   			 	$foto = str_replace(' ', '', $fotos[$i]);
-  			 	echo "<li><img src='img/Imagenes_Empresas/manhatan/".$foto."'></li>";
+  			 	echo "<li><img src='img/Imagenes_Empresas/".$nombre_empresa."/".$foto."'></li>";
   			 }
   		 
 
@@ -58,8 +58,8 @@
 		    </ul>
 
   		</div></center>
-  		<div id="menu-empresa" class="row">
-	  		<div class="black col s3">
+<!--   		<div id="menu-empresa" class="row">
+	  		<div class="black col s12 m12">
 	  			<ul>
 	  				<li><a href="" class="list">Productos y servicios</a></li>
 	  				<li><a href="" class="list">Citas disponibles</a></li>
@@ -67,25 +67,28 @@
 	  				<li><a href="" class="list">Tips</a></li>
 	  				<li><a href="" class="list">Contactos</a></li>
 	  			</ul>
-	  		</div>
-	  		<div class="col s9 bgcontent">
+	  		</div> -->
+<!-- 	  		<div class="col s9 bgcontent">
 	  		<?php
 		  
-		        echo "<h3>".$informacion["Nombre"]."</h3>
-		        		<p>".$informacion["Informacion"]."</p>";
+		        // echo "<h3>".$informacion["Nombre"]."</h3>
+		        		// <p>".$informacion["Informacion"]."</p>";
 		 
 		      ?>
-	  		</div>
+	  		</div> -->
   		</div>
 	</div>
  <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
  <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
  <script >
+ // $(document).ready(function(){
+ //      $('.slider').slider({full_width: true});
+ //    });
 		$(document).ready(function(){
 	      $('.slider').slider({
-	      	Height:400,
-	      	Transition: 500,
-	      	Interval: 600,
+	      	Height:900,
+	      	Transition: 400,
+	      	Interval: 400,
 	      	Indicators: false
 	      });
 	    });

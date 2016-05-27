@@ -36,9 +36,9 @@
       </script>
 </head>
 <body>
-    <center><div class="empref">
+    <center><div class="containact">
       <h4 class="teal-text text-teal lighten-3 test">Actualizar</h4>
-      <div class="row formem">
+      <div class="row formu">
         <form class="col s12" action="../Controller/servicio_emp.controller.php" method="POST">
           <div class="row">
               <input type="hidden" readonly name="Cod_serv" required value="<?php echo $servicio[0] ?>">

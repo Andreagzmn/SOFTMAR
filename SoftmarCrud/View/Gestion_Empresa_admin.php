@@ -85,7 +85,6 @@
           <th>Direccion</th>
           <th>NIT</th>
           <th>Correo</th>
-          <th>Informacion</th>
           <th>Dias de atencion</th>
           <th>Hora desde</th>
           <th>Hora hasta</th>
@@ -117,7 +116,6 @@
                 <td>".$row["Direccion"]."</td>
                 <td>".$row["NIT"]."</td>
                 <td>".$row["Correo"]."</td>
-                <td>".$row["Informacion"]."</td>
                 <td>".$row["Dias_aten"]."</td>
                 <td>".$row["Hor_desde"]."</td>
                 <td>".$row["Hor_hasta"]."</td>
@@ -131,6 +129,5 @@
       ?>
       </tbody>
     </table></center>
-    <?php include_once("../View/pie_pagina.php"); ?>
   </body>
 </html>

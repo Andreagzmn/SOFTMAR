@@ -21,12 +21,12 @@
       ?>
     </head>
     <body>
-     <center><div class="empref">
+     <center><div class="containact">
       <h4 class="teal-text text-teal lighten-3 test">Registrar Empleado</h4>
-      <div class="row formem">
+      <div class="row formu">
         <form class="col s12"  action="../controller/Empleados.controller.php" method="POST">
           <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s12 m4">
               <select  name="Cod_Emp" id="demo">
                   <option value="" disabled selected>Empresa</option>
                   <?php
@@ -48,37 +48,37 @@
                 <label>Empresa</label>
               </div>
               <div>
-              <div class="input-field col s6">
+              <div class="input-field col s12 m8">
                 <input id="demo" type="text" class="validate" name="Nombre" required>
                 <label for="Nombre" data-error="wrong" >Nombre empleado</label>
               </div>
-              <div class="input-field col s6">
+              <div class="input-field col s12 m6">
                 <input id="demo" type="text" class="validate" name="Apellido" required>
                 <label for="Nombre" data-error="wrong" >Apellido</label>
               </div>
-              <div class="input-field col s6">
+              <div class="input-field col s12 m6">
                 <input id="demo" type="number" class="validate" name="Telefono" required>
                 <label for="Telefono" data-error="wrong" >Telefono</label>
               </div>
-              <div class="input-field col s6">
+              <div class="input-field col s12 m6">
                 <input id="demo" type="text" class="validate" name="Direccion" required>
                 <label for="Direccion" data-error="wrong" >Direccion</label>
               </div>
-              <div class="input-field col s6">
+              <div class="input-field col s12 m6">
                 <input id="demo" type="number" class="validate" name="Edad" required>
                 <label for="NIT" data-error="wrong"  >Edad</label>
               </div>
-              <div class="input-field col s6">
+              <div class="input-field col s12 m6">
                 <input id="demo" type="email" class="validate" name="Correo" required>
                 <label for="email" data-error="wrong" >Correo electronico</label>
               </div>
-              <div class="input-field col s6">
-                <input id="demo" type="text" class="validate" name="Cargo" required>
-                <label for="Cargo" data-error="wrong">Cargo</label>
-              </div>
-              <div class="input-field col s6">
+              <div class="input-field col s12 m6">
                 <input id="demo" type="number" class="validate" name="Cedula" required>
                 <label for="Cedula" data-error="wrong" >Cedula</label>
+              </div>
+              <div class="input-field col s12 m12">
+                <input id="demo" type="text" class="validate" name="Cargo" required>
+                <label for="Cargo" data-error="wrong">Cargo</label>
               </div>
             </div>
           </div>

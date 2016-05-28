@@ -397,3 +397,6 @@ input:not([type]), input[type=text], input[type=password], input[type=email], in
   width: 50%;
 }
 /*Perfil Empresa*/
+.caption h4 {
+  color: black;
+}

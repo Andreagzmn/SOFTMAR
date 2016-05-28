@@ -36,7 +36,7 @@
      </div>
   </nav>
 	<div class="container-fluid">
-		<center><div class="slider">
+		<div class="slider">
 		    <ul class="slides">
 			  <?php
  				
@@ -48,16 +48,14 @@
   			 
   			 for ($i=0; $i < count($fotos) ; $i++) {
   			 	$foto = str_replace(' ', '', $fotos[$i]);
-  			 	echo "<li><img src='img/Imagenes_Empresas/".$nombre_empresa."/".$foto."'></li>";
+  			 	echo "<li><img src='img/Imagenes_Empresas/".$nombre_empresa."/".$foto."'><div class='caption left-align'>
+          			<h4>".$informacion['Nombre']."</h4>
+        			</div></li>";
   			 }
-  		 
-
-
  
 		     ?>
 		    </ul>
-
-  		</div></center>
+  		</div>
 <!--   		<div id="menu-empresa" class="row">
 	  		<div class="black col s12 m12">
 	  			<ul>
@@ -70,10 +68,8 @@
 	  		</div> -->
 <!-- 	  		<div class="col s9 bgcontent">
 	  		<?php
-		  
 		        // echo "<h3>".$informacion["Nombre"]."</h3>
 		        		// <p>".$informacion["Informacion"]."</p>";
-		 
 		      ?>
 	  		</div> -->
   		</div>
@@ -81,17 +77,17 @@
  <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
  <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
  <script >
- // $(document).ready(function(){
- //      $('.slider').slider({full_width: true});
- //    });
-		$(document).ready(function(){
-	      $('.slider').slider({
-	      	Height:900,
-	      	Transition: 400,
-	      	Interval: 400,
-	      	Indicators: false
-	      });
-	    });
+  $(document).ready(function(){
+      $('.slider').slider({full_width: true});
+     });
+		//$(document).ready(function(){
+	     // $('.slider').slider({
+	      //	Height:400,
+	      //	Transition: 400,
+	      //	Interval: 400,
+	      //	Indicators: false
+	     // });
+	   //});
 	</script>
 </body>
 </html>

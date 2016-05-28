@@ -14,13 +14,15 @@
 <html>
 <head>
 	<title>Nosotros</title>
-	<meta charset="utf-8" />
-	<link rel="stylesheet" type="text/css" href="estilos.css">
+<meta charset="utf-8" />
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
       <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster"/>
+    
+    <link type="text/css" rel="stylesheet" href="estilos.css"> 
 </head>
 <body>
 	 <nav class="black">
@@ -30,7 +32,7 @@
         <?php include_once("../View/comp.menu.php"); ?>
      </div>
     </nav> 
-<center><div class="conte">
+<center><div class="conteno">
     <div class="row formulario">
       	<div class="col s12 push-s12 m12">
 	      	<h5 class="pink-text text-purple lighten-2 center-align ">Mision</h5>

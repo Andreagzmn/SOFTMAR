@@ -12,13 +12,15 @@
 <!doctype html>
 <html>
 <meta charset="utf-8" />
-	<link rel="stylesheet" type="text/css" href="estilos.css">
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
       <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster"/>
+    
+    <link type="text/css" rel="stylesheet" href="estilos.css"> 
+
 <head>
 	<title>Informacion SOFTMAR</title>
 </head>
@@ -55,14 +57,14 @@
 	    </div>
 	</div>
 	</div>
-	<?php include_once("../View/pie_pagina.php"); ?>
-<script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
-<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
-<script type="text/javascript">
+    <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+    <script type="text/javascript">
       $(document).ready(function(){    
          $(".button-collapse").sideNav();
          $(".dropdown-button").dropdown();
       });
-</script>
+    </script>
+    <?php include_once("../View/pie_pagina.php"); ?>
 </body>
 </html>

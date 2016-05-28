@@ -3,8 +3,9 @@
   <div class="container">
   <center><div  class="footer-copyright">
     <div class="iconos" class="container">
-    <i class="fa fa-twitter-square" aria-hidden="true"></i>
-    <i class="fa fa-instagram" aria-hidden="true"></i>
+    <a id="link" href="https://www.facebook.com" target="_blank"><i  class="fa fa-facebook-square" aria-hidden="true"></i></a>
+    <a id="link" href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i>
+    <a id="link" href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i>
     </div>
   </center>
   </div>

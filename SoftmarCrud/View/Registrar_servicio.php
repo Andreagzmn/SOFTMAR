@@ -40,7 +40,7 @@
                 <section class="col s12" >
 			        <div class="row">
     			        <div class="input-field col s12">
-                            <select  name="Cod_Emp">
+                            <select  required name="Cod_Emp">
                                 <option value="" disabled selected>Seleccione una empresa</option>
                                 <?php
                                     // Cargo la bd

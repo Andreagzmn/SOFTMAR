@@ -305,12 +305,15 @@ nav{
 }
 
 /*Pie de página-footer*/
-a{
-    color: #FCFBFB;
-    text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
+.fa-facebook-square:before {
+  color: #FCFBFB;
 }
-
+.fa-twitter-square:before {
+  color: #FCFBFB;
+}
+.fa-instagram:before{
+  color: #FCFBFB;
+}
 .contenido{
 	margin-top: -40px;
 }

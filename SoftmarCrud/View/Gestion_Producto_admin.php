@@ -85,6 +85,7 @@
           <th>Descripcion</th>
           <th>Valor</th>
           <th>Cantidad</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>

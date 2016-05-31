@@ -363,15 +363,6 @@ footer.page-footer .footer-copyright {
   margin-top: 0;
 }
 /*Perfil empleado*/
-.minimenu{
-  background: black;
-  position: absolute;
-}
-.list{
-  color:white;
-  font-size: 18px;
-  margin-top: 30px;
-}
 .slider .indicators {
   display: none;
 }

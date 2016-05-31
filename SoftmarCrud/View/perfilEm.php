@@ -56,38 +56,34 @@
 		     ?>
 		    </ul>
   		</div>
-<!--   		<div id="menu-empresa" class="row">
-	  		<div class="black col s12 m12">
-	  			<ul>
-	  				<li><a href="" class="list">Productos y servicios</a></li>
-	  				<li><a href="" class="list">Citas disponibles</a></li>
-	  				<li><a href="" class="list">Ofertas</a></li>
-	  				<li><a href="" class="list">Tips</a></li>
-	  				<li><a href="" class="list">Contactos</a></li>
-	  			</ul>
-	  		</div> -->
+  	</div>
+  		<header>
+              <nav>
+                <a href="#">Populares</a>
+                <a href="#">Recientes</a>
+                <a href="#">Favoritos</a>
+              </nav>
+        </header>
+
 <!-- 	  		<div class="col s9 bgcontent">
 	  		<?php
 		        // echo "<h3>".$informacion["Nombre"]."</h3>
 		        		// <p>".$informacion["Informacion"]."</p>";
 		      ?>
 	  		</div> -->
-  		</div>
-	</div>
+
  <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
  <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
  <script >
-  $(document).ready(function(){
-      $('.slider').slider({full_width: true});
-     });
-		//$(document).ready(function(){
-	     // $('.slider').slider({
-	      //	Height:400,
-	      //	Transition: 400,
-	      //	Interval: 400,
-	      //	Indicators: false
-	     // });
-	   //});
+  
+		$(document).ready(function(){
+	     $('.slider').slider({
+	      	Height:400,
+	      	Transition: 400,
+	      	Interval: 400,
+	      	Indicators: false
+	     });
+	   });
 	</script>
 </body>
 </html>

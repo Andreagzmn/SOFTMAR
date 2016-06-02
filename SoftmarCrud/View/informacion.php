@@ -36,21 +36,26 @@
     <div class="row forma">
       	<div class="col s12 center">
       	<img src="img/SOFTMAR.png" class="login">
-	      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	      	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	      	Excepteur sint occaecat cupidatat non
-	      	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	      	aboris nisi ut aliquip ex ea commodo
-	      	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	      	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	      	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	      	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	      	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	      	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	      	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	      	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	      	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br><br>
+	      	<p>Las peluquerías cuentan con una gran variedad de herramientas para sus diferentes servicios
+           y trabajos para con el cliente o para sus empleados. Sus útiles principales son aquellos 
+           instrumentos con los que se realizan las tareas otorgadas por el cliente como peinados, 
+           cortes, cepillado… entre otros. Los útiles auxiliares son objetos que se emplean como protección 
+           es decir guantes, gorros, toallas, entre otros. Los útiles de laboratorio son aquellos materiales 
+           que se emplean para hacer mezclas de sustancias químicas como recipientes de vidrio, papel 
+           tornasol.
+            La aparatología es un conjunto de aparatos diseñados para la realización de las
+             técnicas de peluquería como secadores, esterilizadores, entre otros. 
+          </p>
+	      	<p>Con que las peluquería, barberías y salones de belleza no cuentan es
+             con un software que le permita a la peluquería y al estilista una 
+             facilidad de trabajo, es decir, que dicha peluquería muestre el 
+             cronograma de atención y disponibilidad con el requerimiento, 
+             para que no sea necesario que el cliente llame a todas las peluquerías 
+             para que le den un turno, el propósito seria que esto mostrara fecha, hora,
+              día que están disponibles en las diferentes peluquerías que usen nuestro 
+              software, para que el cliente tenga varias opciones de elegir de acuerdo a 
+              su disponibilidad de tiempo.</p>
+	      	<p><br><br><br>
 
 	      	<em>copyright softmar 2016 todos los derechos reservados</em>
 	      </p>

@@ -61,7 +61,12 @@
 
 				$mensaje = "Su registro se creo correctamente";
 				$tipomensaje = "success";
-				header("Location: ../View/Gestion_Empresa_admin.php?m=".$mensaje."&tm=".$tipomensaje);
+				if($_SESSION["cod_rol"] == "101"){ 
+					header("Location: ../View/perfilEm.php?m=".$mensaje."&tm=".$tipomensaje);
+				}else{
+					header("Location: ../View/Gestion_Empresa_admin.php?m=".$mensaje."&tm=".$tipomensaje);
+				}
+				
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 				$tipomensaje = "error";

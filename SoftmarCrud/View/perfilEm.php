@@ -57,20 +57,26 @@
 		    </ul>
   		</div>
   	</div>
-  		<header>
-              <nav>
-                <a href="#">Populares</a>
-                <a href="#">Recientes</a>
-                <a href="#">Favoritos</a>
-              </nav>
+  		<header class="container sub-menu">
+              <nav class=" grey lighten-5">
+			    <div class="nav-wrapper">
+			      <ul id="nav-mobile" class="center hide-on-med-and-down " >
+			        <li><a href="#">Productos y servicios</a></li>
+			        <li><a href="#">Citas</a></li>
+			        <li><a href="#">Ofertas</a></li>
+			        <li><a href="#">Contacto</a></li>
+			      </ul>
+			    </div>
+			  </nav>
         </header>
 
-<!-- 	  		<div class="col s9 bgcontent">
+  		<div class="col s9 bgcontent">
 	  		<?php
-		        // echo "<h3>".$informacion["Nombre"]."</h3>
-		        		// <p>".$informacion["Informacion"]."</p>";
+		         echo "<h3>".$informacion["Nombre"]."</h3>
+		         <p>".$informacion["Informacion"]."</p>
+		         <p>".$informacion["Telefono"]."</p>";
 		      ?>
-	  		</div> -->
+	  		</div> 
 
  <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
  <script type="text/javascript" src="materialize/js/materialize.min.js"></script>

@@ -36,6 +36,7 @@
     <div class="row forma">
         <div class="col s12 center">
         <img src="img/SOFTMAR.png" class="login">
+          <p><br><br>Dirección<hr>Celular<hr>Correo eletrónico<hr>Integrantes<br></p>
       </div>
   </div>
   </div>

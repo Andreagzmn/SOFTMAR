@@ -33,7 +33,15 @@
 			    $_SESSION["Correo"] 	 = $usuario[7];
 			    $_SESSION["Cedula"] 	 = $usuario[9];
 
-			   header("Location: ../View/dashboard.php");
+
+
+			    //Si el usuario es dueño verificar si ya tiene empresa
+
+			    $dueno = Gestion_Contacto::tieneempresa($_SESSION["Cod_usu"]);
+
+			    echo count($dueno);
+
+			   //header("Location: ../View/dashboard.php");
 			 }
 
 			}catch (Exception $e) {

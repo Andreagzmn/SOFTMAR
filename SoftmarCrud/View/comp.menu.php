@@ -48,7 +48,8 @@ if($_SESSION["cod_rol"]==103){
     <li><a href="#">Contacto</a></li>
   </ul> 
 <?php
-  }elseif ($_SESSION["cod_rol"]==101) {       
+  }elseif ($_SESSION["cod_rol"]==101) {
+         
 ?>
       <ul class="right hide-on-med-and-down">
       <li><a href="dashboard.php">Inicio</a></li>

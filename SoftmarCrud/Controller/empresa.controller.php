@@ -10,6 +10,7 @@
 	require_once("../Model/empresa.class.php");
 
 
+
 	//3. Instanciamos las variables globales y una llamada $accion.
 	//La variable accion nos va a indicar que parte del crud vamos hacer.
 
@@ -49,6 +50,15 @@
 				 
 				
 				Gestion_Empresa::Create($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta,$Galeria,$Logo);
+
+				$empresa = Gestion_Empresa::ReadbyNIT($NIT);
+
+				$Cod_Emp = $empresa[0];
+				$Cod_usu = $_SESSION["Cod_usu"];
+
+				Gestion_Empresa::Createdueno($Cod_Emp, $Cod_usu);
+				$_SESSION["Cod_Emp"] = $Cod_Emp;
+
 				$mensaje = "Su registro se creo correctamente";
 				$tipomensaje = "success";
 				header("Location: ../View/Gestion_Empresa_admin.php?m=".$mensaje."&tm=".$tipomensaje);

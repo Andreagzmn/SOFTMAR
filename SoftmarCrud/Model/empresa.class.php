@@ -23,6 +23,20 @@ class Gestion_Empresa{
 
 		Softmar_BD::Disconnect();
 	}
+
+	function Createdueno($Cod_Emp, $Cod_usu){
+
+		//Instanciamos y nos conectamos a la bd
+		$Conexion = Softmar_BD::Connect();
+		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		//Crear el query que vamos a realizar
+		$consulta = "INSERT INTO duenos (Cod_Emp, Cod_usu) VALUES (?,?)";
+
+		$query = $Conexion->prepare($consulta);
+		$query->execute(array($Cod_Emp, $Cod_usu));
+
+		Softmar_BD::Disconnect();
+	}
 	//Metodo ReadAll()
 	//Busca todos los registros de la tabla
 
@@ -72,6 +86,31 @@ class Gestion_Empresa{
 
 		Softmar_BD::Disconnect();
 	}
+
+	function ReadbyNIT($Nit){
+
+		//Instanciamos y nos conectamos a la bd
+		$Conexion = Softmar_BD::Connect();
+		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		
+
+		//Crear el query que vamos a realizar
+		$consulta = "SELECT * FROM empresa WHERE NIT=?";
+
+		$query = $Conexion->prepare($consulta);
+		$query->execute(array($Nit));
+
+		//Devolvemos el resultado en un arreglo
+		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
+		//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
+
+		$resultado = $query->fetch(PDO::FETCH_BOTH);
+		return $resultado;
+
+		Softmar_BD::Disconnect();
+	}
+
 
 	function ReadbyTipEmp($Cod_TipEmp){
 

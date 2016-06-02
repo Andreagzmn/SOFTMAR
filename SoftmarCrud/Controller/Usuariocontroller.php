@@ -78,7 +78,20 @@
 			    $_SESSION["Correo"] 	 = $usuario[7];
 			    $_SESSION["Cedula"] 	 = $usuario[9];
 
-			  header("Location: ../View/dashboard.php");
+			    $page = "../View/dashboard.php";
+
+			    if($_SESSION["cod_rol"] == "101"){ 
+				    $dueno = Gestion_Contacto::tieneempresa($_SESSION["Cod_usu"]);
+
+				    if(($dueno[0] == "")OR($dueno[0] == null)){
+				    	$page = "../View/Registrar_Empresa.php";
+				    }else{
+				    	$_SESSION["Cod_Emp"] = $dueno[1];
+				    }
+
+			    }
+
+				header("Location: ".$page);
 			 }
 
 			}catch (Exception $e) {

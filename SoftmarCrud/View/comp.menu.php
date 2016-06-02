@@ -34,7 +34,7 @@ if($_SESSION["cod_rol"]==103){
     <li><a href="dashboard.php">Inicio</a></li>
     <li><a href="informacion.php">Información</a></li>
     <li><a href="nosotros.php">Nosotros</a></li>
-    <li><a href="#">Contacto</a></li>
+    <li><a href="contacto.php">Contacto</a></li>
     <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><?php echo($_SESSION["Nombre"])." ".($_SESSION["Apellido"]) ?><i class="material-icons right">arrow_drop_down</i></a></li>
   </ul>
   <ul id="dropdown1" class="dropdown-content">

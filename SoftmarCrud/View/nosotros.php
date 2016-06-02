@@ -37,9 +37,9 @@
       	<div class="col s12 push-s12 m12">
 	      	<h5 class="pink-text text-purple lighten-2 center-align ">Misión</h5>
 	      		<p><b>Lograr un equipo comprometido y motivado a mejorar los procesos 
-	      			funcionales en una peluquería, barbería o salon de eventos y a los 
+	      			funcionales en una peluquería, barbería o salon de belleza y a los 
 	      			cambios del negocio sistematizando los procesos relevantes y 
-	      			aumentando nuestra participación en el segmento de medianas y grandes empresas. 
+	      			aumentando nuestra participación en el segmento de pequeñas y medianas empresas. 
 	      			Y consolidarnos como unos estudiantes emprendedores reconocidos por su alto grado
 	      			de satisfacción de clientes en la oferta de soluciones integrales de tecnología,
 	      			que contribuyan con el desarrollo de la competitividad en nuestro país.</b></p>
@@ -54,8 +54,7 @@
 	     </div>
       	<div class="col s12 pull-s12 m12 quienes" >
 			<h5 class="pink-text text-purple lighten-2 center-align " >¿Quienes somos?</h5>
-		  		<p><bLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+		  		<p><b>
 			    <br>
 			    <br>Somos un grupo de estudiantes de la tecnología análisis y desarrollo de
 			    sistemas de información, Un grupo de emprendedores joven y dinámico que entiende 

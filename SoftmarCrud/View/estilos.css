@@ -380,8 +380,19 @@ footer.page-footer .footer-copyright {
 }
 
 .bgcontent{
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255,255,255,0.3);
 }
+.nava{
+  width: 45%;
+  border-radius: 0px 0px 20px 20px;
+}
+.log img {
+  width: 100%;
+}
+.bgcontent p {
+    margin: 10px;
+}
+
 
 /*bucar.php*/
 .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{

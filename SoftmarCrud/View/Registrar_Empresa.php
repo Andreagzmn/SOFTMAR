@@ -106,49 +106,49 @@
                 <p class="center">Dias de atencion</p>
                 <div class="col s6 m6">
                   <p>
-                    <input type="checkbox" id="l" value="L" name="Dias_aten[]"/>
+                    <input type="checkbox" id="l" value="Lunes" name="Dias_aten[]"/>
                     <label for="l">Lunes</label>
                   </p>
                 </div>
                   <div class="col s6 m6">
                   <p>
-                     <input type="checkbox" id="m" value="M" name="Dias_aten[]"/>
+                     <input type="checkbox" id="m" value="Martes" name="Dias_aten[]"/>
                      <label for="m">Martes</label>
                    </p>
                   </div>
                    <div class="col s6 m6">
                    <p>
-                     <input type="checkbox" id="mi" value="Mi" name="Dias_aten[]" />
+                     <input type="checkbox" id="mi" value="Miercoles" name="Dias_aten[]" />
                      <label for="mi">Miercoles</label>
                    </p>
                   </div>
                    <div class="col s6 m6">
                    <p>
-                     <input type="checkbox" id="j" value="J" name="Dias_aten[]"/>
+                     <input type="checkbox" id="j" value="Jueves" name="Dias_aten[]"/>
                      <label for="j">Jueves</label>
                    </p>
                   </div>
                    <div class="col s6 m6">
                     <p>
-                     <input type="checkbox" id="v" value="V" name="Dias_aten[]"/>
+                     <input type="checkbox" id="v" value="Viernes" name="Dias_aten[]"/>
                      <label for="v">Viernes</label>
                    </p>
                   </div>
                    <div class="col s6 m6">
                    <p>
-                     <input type="checkbox" id="s" value="S" name="Dias_aten[]"/>
+                     <input type="checkbox" id="s" value="Sabado" name="Dias_aten[]"/>
                      <label for="s">Sabado</label>
                    </p>
                   </div>
                    <div class="col s6 m6">
                    <p>
-                     <input type="checkbox" id="d" value="D" name="Dias_aten[]"/>
+                     <input type="checkbox" id="d" value="Domingo" name="Dias_aten[]"/>
                      <label for="d">Domingo</label>
                    </p>
                   </div>
                   <div class="col s6 m6">
                    <p>
-                     <input type="checkbox" id="DF" value="F" name="Dias_aten[]"/>
+                     <input type="checkbox" id="DF" value="Festivos" name="Dias_aten[]"/>
                      <label for="DF">Dias Festivos</label>
                    </p>
                   </div>

@@ -49,7 +49,7 @@
   			 for ($i=0; $i < count($fotos) ; $i++) {
   			 	$foto = str_replace(' ', '', $fotos[$i]);
   			 	echo "<li><img src='img/Imagenes_Empresas/".$nombre_empresa."/".$foto."'><div class='caption left-align'>
-          			<h4>".$informacion['Nombre']."</h4>
+          			<h4 class='nombr'><span>".$informacion['Nombre']."</span></h4>
         			</div></li>";
   			 }
  
@@ -58,7 +58,7 @@
   		</div>
   	</div>
   		<header class="container sub-menu">
-              <nav class=" grey lighten-5">
+        <center><nav class=" nava grey darken-1">
 			    <div class="nav-wrapper">
 			      <ul id="nav-mobile" class="center hide-on-med-and-down " >
 			        <li><a href="#">Productos y servicios</a></li>
@@ -67,16 +67,24 @@
 			        <li><a href="#">Contacto</a></li>
 			      </ul>
 			    </div>
-			  </nav>
+			  </nav></center>
         </header>
-
-  		<div class="col s9 bgcontent">
-	  		<?php
-		         echo "<h3>".$informacion["Nombre"]."</h3>
-		         <p>".$informacion["Informacion"]."</p>
-		         <p>".$informacion["Telefono"]."</p>";
-		      ?>
-	  		</div> 
+      <div class="container-fluid ">
+        <div class="row">
+  	  		<?php
+  		         echo "
+               <div class='log col s6 m3'><img src='img/Imagenes_Empresas/".$nombre_empresa."/logo.png'></div>
+               <div class='col s6 m9 bgcontent'>
+               <h4>".$informacion["Nombre"]."</h4>
+  		         <p>".$informacion["Informacion"]."</p>
+  		         <p>Dias de atencion ".$informacion["Dias_aten"]."</p>
+               <p>".$informacion["Telefono"]."</p>
+               <p>".$informacion["Correo"]."</p> 
+               <p>".$informacion["Direccion"]."</p>
+               </div>";
+  		      ?>
+          </div>
+      </div>
 
  <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
  <script type="text/javascript" src="materialize/js/materialize.min.js"></script>

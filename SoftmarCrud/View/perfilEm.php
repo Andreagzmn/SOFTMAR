@@ -11,7 +11,13 @@
   }
    require_once("../Model/empresa.class.php");
 
-   $informacion = Gestion_Empresa::ReadbyID(base64_decode($_GET["ei"]));
+   if(isset($_GET["ei"])){
+      $ei =  base64_decode($_GET["ei"]);
+   }else{
+      $ei = $_SESSION["Cod_Emp"];
+   }
+   
+   $informacion = Gestion_Empresa::ReadbyID($ei);
 ?>
 <!DOCTYPE html>
 <html>

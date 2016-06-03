@@ -48,7 +48,7 @@
         div: '#map',
         lat: 6.244203,
         lng: -75.58121189999997,
-        zoom: 12
+        zoom: 10
       });
         
       <?php
@@ -57,7 +57,10 @@
             echo "map.addMarker({ 
                     lat: ".$row["Geo_x"].",
                     lng: ".$row["Geo_y"].",
-                    title: '".$row["Nombre"]."'
+                    title: '".$row["Nombre"]."',
+                    click: function(e) {
+                      location.href='../View/PerfilEm.php?ei=".base64_encode($row["Cod_Emp"])."';
+                    }
                   });";
         }
       ?>  
@@ -129,10 +132,10 @@
       </select>  
       </form>
       <form>
-        <div class="input" style="margin-top: 20px;">
+        <!-- <div class="input" style="margin-top: 20px;">
           <input type="text" id="address" name="address" placeholder="¿Qué Buscas?"/>
           <input type="submit" class="btn" value="Buscar" style="width: 100%;" />
-        </div>
+        </div> -->
         <div> <br>
           <?php
             if(count($empresas) > 0){

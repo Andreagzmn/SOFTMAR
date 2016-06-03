@@ -30,31 +30,31 @@
      <section class="contenido">
       <div class="container-fluid centr">
         <div class="row hover">
-          <div class="thumb col-xs-6" id="gran">
+          <div  class="thumb col-xs-6" id="gran">
           <!-- <div id="prim">
             <h3><span>Peluqueria</span></h3>
           </div> -->
-            <img src="img/peluquerias.jpg" alt="">
+            <a href="buscar.php"><img  src="img/peluquerias.jpg" alt=""></a>
           </div>
           <div class="thumb col-xs-3">
           <!-- <div id="seg">
             <h5><span>Infantil</span></h5> 
           </div> -->
-            <img src="img/infantil.jpg" alt=""> 
+            <a href="buscar.php"><img src="img/infantil.jpg" alt=""></a>
             <!-- <div id="ter">
               <h5><span>Spa</span></h5> 
             </div> -->
-            <img src="img/spa.jpg" alt="">    
+            <a href="buscar.php"><img src="img/spa.jpg" alt=""></a>   
           </div>
           <div class="thumb col-xs-3">
           <!-- <div id="cuar">
             <h5><span>Barberia</span></h5> 
           </div> -->
-            <img src="img/barberia.jpg" alt="">
+            <a href="buscar.php"><img src="img/barberia.jpg" alt=""></a>
             <!-- <div id="quin">
               <h5><span>estilo</span></h5>
             </div> -->
-            <img src="img/estilo.jpg" alt="">
+            <a href="buscar.php"><img src="img/estilo.jpg" alt=""></a>
           </div>
         </div>
     </div>

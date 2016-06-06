@@ -34,9 +34,11 @@
    </nav>
   <div class="inf-conte">
     <div class="row forma">
-        <div class="col s12 center">
-        <img src="img/SOFTMAR.png" class="login">
-          <p><br><br>Dirección<hr>Celular<hr>Correo eletrónico<hr>Integrantes<br></p>
+        <div class="contac" class="col s12 center">
+        <center><img src="img/SOFTMAR.png" class="login"></center>
+          <br><br><p><strong>Dirección</strong></p><br><em>Cl. 64 #63, Las Americas, Itagüi, Antioquia.</em><br><br><hr width="55%" color="grey">
+          <br><br><p><strong>Teléfono</strong></p><br><em>3-02-221-94-93</em><br><br><hr width="55%" color="grey">
+          <br><br><p><strong>Email</strong></p><br><em>softmar@gmail.com</em><br><br><hr width="55%" color="grey"><br><br>
       </div>
   </div>
   </div>

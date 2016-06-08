@@ -30,14 +30,15 @@
 <body>
 
 <center><form   action="../Controller/Usuariocontroller.php" method="POST" >
-	<div class="con">
+	<div class="con" style="height: 84px;">
+  </div> 
 		<div class="tarjeta">		    
       <div class="row">
 
-            <div class="col s12 m7  offset-m2 l4 offset-l4 z-depth-4 formulario center">
+            <div class="col s12 m9  offset-m2 l4 offset-l4  z-depth-4 formregistrar center" id="formulario">
 
               <a href="Registrar_Usuario.php" id="btn-crear-cuenta" class="waves-effect waves-light btn right blue-grey lighten-1 ">Crea una cuenta</a>
-              <div class="card-content black-text" >                  		
+              <div class="card-content black-text col s12 center" >                  		
                   
                     	<div class="card-image">
                       
@@ -79,7 +80,7 @@
         	 </div>
       </div>
     </div>                        
-	</div>     
+	    
 </form></center>
   <?php
     /*if( base64_decode(@$_GET["tm"]) == "advertencia"){

@@ -27,15 +27,16 @@
   <H5 id="crea">CREA UNA CUENTA</H5>
   </section>-->
   <center><div class="container">         
-    <h3  style="text-align:center; margin-bottom: -47px; ">Softmar</h3>
-      <form action="../Controller/Usuariocontroller.php" method="POST" class="col s12 m8 offset-l8 z-depth-4 formulario " id="formulario" >      
+    <h3  style="text-align:center; margin-bottom: 5px; ">Softmar</h3>
+    <div class="row">
+      <form action="../Controller/Usuariocontroller.php" method="POST" class="col l6 s12 m9 offset-l3 offset-m2 z-depth-4 formregistrar " id="formulario" >      
         <section class="col s12" >
         <p style="text-align: center;"><b>Los campos con el * son obligatorios.<b></p>                
-          <div class="col l6 s12 input-field form center">
+          <div class="col l12 s12 m12 input-field form center">
            <input type="hidden" value="102" name="cod_rol"/>
 
             <div class="row">
-              <div class="input-field col s12">
+              <div class="input-field col s12 m12">
                 <input id="Cc" type="number" class="validate" name="cedula" required>
                 <label for="Cc">Documento de identidad*</label>
                 <span id="resultadobusqueda" class="red-text accent-3 left"> </span>
@@ -43,50 +44,58 @@
             </div>
             <div id="last">
             <div class="row">
-              <div class="input-field col s12">
+              <div class="input-field col s12 m12">
                 <input id="Nombre" type="text" class="validate" name="nombre" required>
                 <label for="Nombre">Nombre*</label>
               </div>
             </div>
             <div class="row">
-              <div class="input-field col s12">
+              <div class="input-field col s12 m12">
                 <input id="Apellido" type="text" class="validate" name="apellido" required>
                 <label for="Apellido">Apellido*</label>
               </div>
             </div>
             <div class="row">
-              <div class="input-field col s12">
+              <div class="input-field col s12 m12">
                 <input id="Dir" type="text" class="validate" name="direccion" >
                 <label for="Dir">Dirección</label>
               </div>
             </div>
             <div class="row">
-              <div class="input-field col s12">
+              <div class="input-field col s12 m12">
                  <input id="edad" type="number" class="validate" name="edad" required>
                 <label for="edad">Edad*</label>
               </div>
             </div>
             <div class="row">
-              <div class="input-field col s12">
+              <div class="input-field col s12 m12">
                 <input id="contra" required type="password" class="validate" name="clave" >
                  <label for="contra">Contraseña*</label>
               </div>
             </div>
             <div class="row">
-              <div class="input-field col s12">
+              <div class="input-field col s12 m12">
                 <input id="Correo" type="email" class="validate" name="correo" required>
                 <label for="Correo">Correo*</label>
               </div>
             </div>
 
-            <div id="buttons">
-            <button type="submit" name="accion" value="c" id="btn-crear-cuenta boton" class=" btn waves-effect  cyan darken-3 ">Registrarse</button>
+            <div id="buttons" >
+            <div class="col l12 s12">
+              <div class="col l6 s6">
+              <button type="submit" name="accion" value="c" id="boton" class=" btn waves-effect  cyan darken-3 ">Registrarse</button></div>
+              <div class="col l6 s6">
+              <a href="Index.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
+              </div>  
+            </div>
+            
             </div>
             </div>
-            <a href="Index.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
+            
           <?php echo @$_REQUEST["$mensaje"]; ?>
         </section>
-      </form>     
+      </form>
+      </div>     
    </div></center>
 
   <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>

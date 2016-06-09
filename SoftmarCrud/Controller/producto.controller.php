@@ -66,7 +66,7 @@
 		case 'd':
         try {
           $producto = Gestion_producto::Delete(base64_decode($_REQUEST["pr"]));
-          $msn = "se elimino correctamente";
+          $mensaje = "se elimino correctamente";
           $tipomensaje = "success";
           header("Location: ../View/Gestion_Producto_admin.php?m=".$mensaje."&tm=".$tipomensaje);
         } catch (Exception $e) {

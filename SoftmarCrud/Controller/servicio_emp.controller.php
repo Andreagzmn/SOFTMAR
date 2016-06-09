@@ -65,7 +65,7 @@
 		case 'd':
         try {
           $servicio= Gestion_servicio::Delete(base64_decode($_REQUEST["sr"]));
-          $msn = "se elimino correctamente";
+          $mensaje = "se elimino correctamente";
           $tipomensaje = "success";
           header("Location: ../View/Gestion_Servicio_admin.php?m=".$mensaje."&tm=".$tipomensaje);
         } catch (Exception $e) {

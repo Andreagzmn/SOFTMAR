@@ -17,7 +17,7 @@
 			    // Encriptacion a traves de base64_encode, base64_decode
 
 			     $msn = base64_encode("Debes tener una cuenta para poder iniciar sesión");
-			     $tipo_msn = base64_encode("advertencia");
+			     $tipo_msn = base64_encode("warning");
 
 			     header("Location: ../View/Index.php?m=".$msn."&tm=".$tipo_msn);
 			  }else{

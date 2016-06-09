@@ -6,8 +6,25 @@
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">      
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>      
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+    <link rel="stylesheet" type="text/css" href="sweetalert-master/sweetalert.css">
+    
   <link rel="stylesheet" type="text/css" href="estilos.css">
+      <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="materialize/js/materialize.js"></script>
+
+    <script type="text/javascript" src="sweetalert-master/sweetalert.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){    
+        $('.modal-trigger').leanModal();
+        <?php
+          if (isset($_GET["m"]))
+          {
+           echo "swal('".base64_decode($_GET["m"])."','','warning');";
+          }
+        ?> 
+      });
+
+    </script>
 
 </head>
 <body>
@@ -65,22 +82,15 @@
 	</div>     
 </form></center>
   <?php
-   if( base64_decode(@$_GET["tm"]) == "advertencia"){
+    /*if( base64_decode(@$_GET["tm"]) == "advertencia"){
                        $estilos = "orange";
-  }else{
-    $estilos = "red";
-   }
+    }else{
+     $estilos = "red";
+    }
 
-echo "<div style='background-color:".$estilos."'>".base64_decode(@$_GET["m"])."</div>";?>
-	  <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
-    <script type="text/javascript" src="materialize/js/materialize.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){    
-        $('.modal-trigger').leanModal();
+    echo "<div style='background-color:".$estilos."'>".base64_decode(@$_GET["m"])."</div>";*/
+  ?>
 
-      });
-
-    </script>
 
 </body>
 </html>

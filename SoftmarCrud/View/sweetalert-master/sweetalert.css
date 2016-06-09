@@ -690,9 +690,9 @@ body.stop-scrolling {
 
 @keyframes pulseWarning {
   0% {
-    border-color: #F8D486; }
+    border-color: rgb(140, 212, 245); }
   100% {
-    border-color: #F8BB86; } }
+    border-color: #fff; } }
 
 .pulseWarning {
   -webkit-animation: pulseWarning 0.75s infinite alternate;
@@ -706,9 +706,9 @@ body.stop-scrolling {
 
 @keyframes pulseWarningIns {
   0% {
-    background-color: #F8D486; }
+    background-color: rgb(140, 212, 245); }
   100% {
-    background-color: #F8BB86; } }
+    background-color: #fff;} }
 
 .pulseWarningIns {
   -webkit-animation: pulseWarningIns 0.75s infinite alternate;

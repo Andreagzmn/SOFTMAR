@@ -3,48 +3,48 @@
 class Gestionar_citas{
 
 	// Reservar las citas
-	function Create($fecha,$hora,$servicio,$barbero,$id_usuario){
-		$conexion=BarberGarage_BD::Connect();
+	function Create($Cod_Emp,$Cod_usu,$Telefono,$Hora,$Fecha,$Estado,$Cod_empl,$Cod_serv){
+		$conexion=Softmar_BD::Connect();
 		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-		$consulta="INSERT INTO citas (Fecha,Hora,Servicio,Barbero,Id_usuario) VALUES (?,?,?,?,?)";		
+		$consulta="INSERT INTO citas (Cod_Emp,Cod_usu,Telefono,Hora,Fecha,Estado,Cod_empl,Cod_serv) VALUES (?,?,?,?,?,?,?,?)";		
 		$query=$conexion->prepare($consulta);
-		$query->execute(array($fecha,$hora,$servicio,$barbero,$id_usuario));
+		$query->execute(array($Cod_Emp,$Cod_usu,$Telefono,$Hora,$Fecha,$Estado,$Cod_empl,$Cod_serv));
 
-		BarberGarage_BD::Disconect();			
+		Softmar_BD::Disconect();			
 	}
 
 	// modificacion de las citas
-	function Update($Cod_cita,$fecha,$hora,$servicio,$barbero,$id_usuario){
-		$conexion=BarberGarage_BD::Connect();
+	function Update($Cod_cita, $Cod_Emp,$Cod_usu,$Telefono,$Hora,$Fecha,$Estado,$Cod_empl,$Cod_serv){
+		$conexion=Softmar_BD::Connect();
 		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 		
 
-		$consulta="UPDATE citas SET Fecha=?,Hora=?,Servicio=?,Barbero=?,Id_usuario=? WHERE Cod_cita=? ";		
+		$consulta="UPDATE citas SET Cod_Emp=?,Cod_usu=?,Telefono=?,Hora=?,Fecha=?,Estado=?,Cod_empl=?,Cod_serv=? WHERE Cod_cita=? ";		
 		$query=$conexion->prepare($consulta);
-		$query->execute(array($fecha,$hora,$servicio,$barbero,$id_usuario,$Cod_cita));
+		$query->execute(array($Cod_Emp,$Cod_usu,$Telefono,$Hora,$Fecha,$Estado,$Cod_empl,$Cod_serv));
 		
-		BarberGarage_BD::Disconect();		
+		Softmar_BD::Disconect();		
 
 	}
 
 	// eliminar cita
 
 	function Delete($Cod_cita){ 
-		$conexion=BarberGarage_BD::Connect();
+		$conexion=Softmar_BD::Connect();
 		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 		
 		$consulta="DELETE FROM citas WHERE Cod_cita=?";
 		$query=$conexion->prepare($consulta);
 		$query->execute(array($Cod_cita));
 
-		BarberGarage_BD::Disconect();
+		Softmar_BD::Disconect();
 	}
 
 	// funcion ReadbyId
 
 	function ReadbyId($Cod_cita){//para el modificar de todos los usuarios
-		$conexion=BarberGarage_BD::Connect();
+		$conexion=Softmar_BD::Connect();
 		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 		$consulta="SELECT * FROM citas WHERE Cod_cita=?";
@@ -53,22 +53,22 @@ class Gestionar_citas{
 
 		$resultado=$query->fetch(PDO::FETCH_BOTH);
 
-		BarberGarage_BD::Disconect();
+		Softmar_BD::Disconect();
 
 		return $resultado;		
 	}
 
-	function Mi_Cita($id_usuario){//para el modificar de todos los usuarios
-		$conexion=BarberGarage_BD::Connect();
+	function Mi_Cita($Cod_usu){//para el modificar de todos los usuarios
+		$conexion=Softmar_BD::Connect();
 		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-		$consulta="SELECT * FROM citas WHERE Id_usuario=?";
+		$consulta="SELECT * FROM citas WHERE Cod_usu=?";
 		$query=$conexion->prepare($consulta);
-		$query->execute(array($id_usuario));
+		$query->execute(array($Cod_usu));
 
 		$resultado=$query->fetchAll(PDO::FETCH_BOTH);
 
-		BarberGarage_BD::Disconect();
+		Softmar_BD::Disconect();
 
 		return $resultado;		
 	}
@@ -76,7 +76,7 @@ class Gestionar_citas{
 
 
 	function ReadAll(){//para el administrador y el barbero
-		$conexion=BarberGarage_BD::Connect();
+		$conexion=Softmar_BD::Connect();
 		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 		
 		$consulta="SELECT * FROM citas";
@@ -85,24 +85,24 @@ class Gestionar_citas{
 
 		$resultado=$query->fetchAll(PDO::FETCH_BOTH);
 
-		BarberGarage_BD::Disconect();
+		Softmar_BD::Disconect();
 
 		return $resultado;		
 	}
 
-	function ValidoCita($fecha, $hora, $barbero){
+	function ValidoCita($Fecha, $Hora, $Cod_empl){
 
 		//Instanciamos y nos conectamos a la bd
-		$Conexion = BarberGarage_BD::Connect();
+		$Conexion = Softmar_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "SELECT * FROM citas WHERE Fecha =? AND Hora = ? AND Barbero =? ";
+		$consulta = "SELECT * FROM citas WHERE Fecha =? AND Hora = ? AND Cod_empl =? ";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($fecha, $hora, $barbero ));
+		$query->execute(array($Fecha, $Hora, $Cod_empl ));
 
 		//Devolvemos el resultado en un arreglo
 		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
@@ -111,7 +111,7 @@ class Gestionar_citas{
 		$resultado = $query->fetch(PDO::FETCH_BOTH);
 		return $resultado;
 
-		BarberGarage_BD::Disconnect();
+		Softmar_BD::Disconnect();
 	}
 }
 

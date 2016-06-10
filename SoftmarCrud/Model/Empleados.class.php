@@ -112,6 +112,24 @@ class Gestion_Empleados{
 
 		Softmar_BD::Disconnect();
 	}
+	// metodo para seleccionar el nombre del barbero en el formulario de Reservar Citas
+	function Empleado(){
+			$conexion=Softmar_BD::Connect();
+			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+			$consulta ="SELECT * FROM empleado WHERE Cod_empl=?";
+
+			$query = $conexion->prepare($consulta);
+			$query->execute();
+
+			$results = $query->fetchALL(PDO::FETCH_BOTH);
+			Softmar_BD::Disconect();
+
+			return $results;
+
+
+		}
+
 }
 
 ?>

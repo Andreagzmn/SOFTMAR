@@ -1,24 +1,28 @@
 <?php 
  session_start();
 
-include_once("../Model/conexion.php");
+include_once("../Model/db_conn.php");
 include_once("../Model/Citas.class.php");
 
 
 	$accion=$_REQUEST["acc"];
 	switch ($accion) {
 
-	case 'R':
+	case 'create':
 
-	$fecha=$_POST["Fecha"];
-	$hora=$_POST["Hora"];
-	$servicio=$_POST["Servicio"];
-	$barbero=$_POST["Barbero"];
-	$id_usuario=$_POST["Id_usuario"];
+	$Cod_Emp=$_POST["Cod_Emp"];
+	$Cod_usu=$_POST["Cod_usu"];
+	$Telefono=$_POST["Telefono"];
+	$Fecha=$_POST["Fecha"];
+	$Hora=$_POST["Hora"];
+	$Estado=$_POST["Estado"];
+	$Cod_serv=$_POST["Cod_serv"];
+	$Cod_empl=$_POST["Cod_empl"];
+	
 
 	try{
 
-		Gestionar_citas::Create($fecha,$hora,$servicio,$barbero,$id_usuario);
+		Gestionar_citas::Create($Cod_Emp,$Cod_usu,$Telefono,$Fecha,$Hora,$Estado,$Cod_serv,$Cod_empl);
 		$mensaje="Su cita fue reservada con exito";
 		$tipomensaje = "success";
 		header("Location: ../View/Reservar_Citas.php?m=".$mensaje."&tm=".$tipomensaje);
@@ -33,25 +37,27 @@ include_once("../Model/Citas.class.php");
 
 	case 'U':
 
-	$Cod_cita=$_POST["Cod_cita"];
-	$fecha=$_POST["Fecha"];
-	$hora=$_POST["Hora"];
-	$servicio=$_POST["Servicio"];
-	$barbero=$_POST["Barbero"];
-	$id_usuario=$_POST["Id_usuario"];
+	$Cod_Emp=$_POST["Cod_Emp"];
+	$Cod_usu=$_POST["Cod_usu"];
+	$Telefono=$_POST["Telefono"];
+	$Fecha=$_POST["Fecha"];
+	$Hora=$_POST["Hora"];
+	$Estado=$_POST["Estado"];
+	$Cod_serv=$_POST["Cod_serv"];
+	$Cod_empl=$_POST["Cod_empl"];
 
 	try{
-		Gestionar_citas::Update($Cod_cita,$fecha,$hora,$servicio,$barbero,$id_usuario);
+		Gestionar_citas::Update($Cod_Emp,$Cod_usu,$Telefono,$Fecha,$Hora,$Estado,$Cod_serv,$Cod_empl);
 		$mensaje="la cita se modifico correctamente";
 		$tipomensaje="success";
-		if ($_SESSION["Perfil"] =="Administrador") {
+		// if ($_SESSION["Perfil"] =="Administrador") {
 		
-		header("Location: ../View/Gestion_Citas.php?m=".$mensaje."&tm=".$tipomensaje);	
-		}
-		elseif ($_SESSION["Perfil"] =="Usuario") {
+		// header("Location: ../View/Gestion_Citas.php?m=".$mensaje."&tm=".$tipomensaje);	
+		// }
+		// elseif ($_SESSION["Perfil"] =="Usuario") {
 			
-			header("Location: ../View/Mi_Cita.php?m=".$mensaje."&tm=".$tipomensaje);
-		}
+		// 	header("Location: ../View/Mi_Cita.php?m=".$mensaje."&tm=".$tipomensaje);
+		// }
 
 
 		
@@ -59,7 +65,7 @@ include_once("../Model/Citas.class.php");
 		}catch(Exception $e){
 			$mensaje="ha ocurrido un error, el error fue:".$e->getMessage()."en el archivo:".$e->getFile()."en la linea:".$e->getLine();
 			$tipomensaje="error";
-			header("Location: ../View/Modificar_Cita.php?m=".$mensaje."&tm=".$tipomensaje);
+			// header("Location: ../View/Modificar_Cita.php?m=".$mensaje."&tm=".$tipomensaje);
 
 		}
 

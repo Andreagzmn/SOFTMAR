@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-06-2016 a las 03:05:40
+-- Tiempo de generación: 10-06-2016 a las 05:13:33
 -- Versión del servidor: 10.1.10-MariaDB
 -- Versión de PHP: 5.5.33
 
@@ -47,7 +47,8 @@ CREATE TABLE `citas` (
   `Hora` date NOT NULL,
   `Fecha` date NOT NULL,
   `Estado` varchar(100) NOT NULL,
-  `Cod_empl` int(11) NOT NULL
+  `Cod_empl` int(11) NOT NULL,
+  `Cod_serv` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -220,7 +221,8 @@ CREATE TABLE `servicio_emp` (
   `Cod_Emp` int(11) NOT NULL,
   `Nombre` varchar(100) NOT NULL,
   `Descripcion` varchar(100) NOT NULL,
-  `Valor` int(11) NOT NULL
+  `Precio` int(11) NOT NULL,
+  `Duracion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -319,7 +321,8 @@ ALTER TABLE `citas`
   ADD PRIMARY KEY (`Cod_cita`),
   ADD KEY `Cod_Emp` (`Cod_Emp`),
   ADD KEY `Cod_usu` (`Cod_usu`),
-  ADD KEY `Cod_empl` (`Cod_empl`);
+  ADD KEY `Cod_empl` (`Cod_empl`),
+  ADD KEY `Cod_serv` (`Cod_serv`);
 
 --
 -- Indices de la tabla `duenos`

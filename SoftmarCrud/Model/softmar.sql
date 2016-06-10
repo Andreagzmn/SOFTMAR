@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-05-2016 a las 15:37:33
--- Versión del servidor: 10.1.9-MariaDB
--- Versión de PHP: 5.5.30
+-- Tiempo de generación: 10-06-2016 a las 03:05:40
+-- Versión del servidor: 10.1.10-MariaDB
+-- Versión de PHP: 5.5.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `softmar`
 --
-CREATE DATABASE IF NOT EXISTS `softmar` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `softmar`;
 
 -- --------------------------------------------------------
 
@@ -45,26 +43,31 @@ CREATE TABLE `citas` (
   `Cod_cita` int(11) NOT NULL,
   `Cod_Emp` int(11) NOT NULL,
   `Cod_usu` int(11) NOT NULL,
-  `Nombre` varchar(100) NOT NULL,
-  `Apellido` varchar(100) NOT NULL,
   `Telefono` varchar(100) NOT NULL,
-  `Correo` varchar(100) NOT NULL,
   `Hora` date NOT NULL,
   `Fecha` date NOT NULL,
-  `Estado` varchar(100) NOT NULL
+  `Estado` varchar(100) NOT NULL,
+  `Cod_empl` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `dueños`
+-- Estructura de tabla para la tabla `duenos`
 --
 
-CREATE TABLE `dueños` (
+CREATE TABLE `duenos` (
   `Cod_due` int(11) NOT NULL,
   `Cod_Emp` int(11) NOT NULL,
   `Cod_usu` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `duenos`
+--
+
+INSERT INTO `duenos` (`Cod_due`, `Cod_Emp`, `Cod_usu`) VALUES
+(1, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -109,6 +112,13 @@ CREATE TABLE `empresa` (
   `Galeria` longtext NOT NULL,
   `Logo` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `empresa`
+--
+
+INSERT INTO `empresa` (`Cod_Emp`, `Cod_TipEmp`, `Nombre`, `Telefono`, `Direccion`, `Ciudad`, `NIT`, `Correo`, `Geo_x`, `Geo_y`, `Informacion`, `Dias_aten`, `Hor_desde`, `Hor_hasta`, `Galeria`, `Logo`) VALUES
+(2, 4, 'quince', '3747703', 'cll 40 n 57 - 08', '', 123654, 'quince15@hotmail.com', '6.173515986490716', '-75.61811059713364', 0x4e75657374726120626172626572ed612c206573207265636f6e6f6369646120706f722074656e657220756e206772616e20736572766963696f, 'Lunes,Martes,Miercoles,Jueves,Viernes', '08:30:00', '08:30:00', 'cache_30150532.jpg, IMG_2314.jpg, kinzecuchilleros-barberia-madrid.jpg', 'logo1.png');
 
 -- --------------------------------------------------------
 
@@ -284,11 +294,12 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`Cod_usu`, `cod_rol`, `Nombre`, `Apellido`, `Direccion`, `Edad`, `Clave`, `Correo`, `Foto`, `Cedula`) VALUES
-(1, 101, 'Andrea', 'Guzman', 'cll 40 n 57', 18, 'asdfghjklñ', 'andre@hotmail.com', '', '32101475'),
+(1, 101, 'Andrea', 'Guzman', 'cll 40 n 57', 18, '123', 'andre@hotmail.com', '', '32101475'),
 (2, 101, 'Valentina', 'Chica', 'Cll 35 n 74', 18, 'soyvalen', 'valen@chica.com', '', '10147584'),
 (3, 102, 'Sledy Andrea', 'Orozco', 'Cll 20 n 10', 18, 'soy andrea', 'sledy@orozco.com', '', '45712360'),
 (4, 103, 'Rodrigo', 'Mena', 'Cll 11 n 88', 21, 'soyrodri', 'Rodri@mena.com', '', '7894561'),
-(5, 101, 'Andrea', 'Arias', 'call ', 18, 'asdfgh', 'andrea@guzman.com', '', '32101475');
+(5, 101, 'Andrea', 'Arias', 'call ', 18, 'asdfgh', 'andrea@guzman.com', '', '32101475'),
+(6, 102, 'Rosmary', 'Arias', 'Santamaria', 15, '1234', 'labrava@hotmail.com', '', '32101475');
 
 --
 -- Índices para tablas volcadas
@@ -307,12 +318,13 @@ ALTER TABLE `buscar_estilo`
 ALTER TABLE `citas`
   ADD PRIMARY KEY (`Cod_cita`),
   ADD KEY `Cod_Emp` (`Cod_Emp`),
-  ADD KEY `Cod_usu` (`Cod_usu`);
+  ADD KEY `Cod_usu` (`Cod_usu`),
+  ADD KEY `Cod_empl` (`Cod_empl`);
 
 --
--- Indices de la tabla `dueños`
+-- Indices de la tabla `duenos`
 --
-ALTER TABLE `dueños`
+ALTER TABLE `duenos`
   ADD PRIMARY KEY (`Cod_due`),
   ADD KEY `Cod_Emp` (`Cod_Emp`),
   ADD KEY `Cod_usu` (`Cod_usu`);
@@ -420,20 +432,20 @@ ALTER TABLE `buscar_estilo`
 ALTER TABLE `citas`
   MODIFY `Cod_cita` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `dueños`
+-- AUTO_INCREMENT de la tabla `duenos`
 --
-ALTER TABLE `dueños`
-  MODIFY `Cod_due` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `duenos`
+  MODIFY `Cod_due` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `empleado`
 --
 ALTER TABLE `empleado`
-  MODIFY `Cod_empl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Cod_empl` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `Cod_Emp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Cod_Emp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `oferta_emp`
 --
@@ -453,7 +465,7 @@ ALTER TABLE `puntuacion`
 -- AUTO_INCREMENT de la tabla `servicio_emp`
 --
 ALTER TABLE `servicio_emp`
-  MODIFY `Cod_serv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Cod_serv` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `tipo_emp`
 --
@@ -468,7 +480,7 @@ ALTER TABLE `tips_emp`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `Cod_usu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Cod_usu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Restricciones para tablas volcadas
 --
@@ -484,14 +496,15 @@ ALTER TABLE `buscar_estilo`
 --
 ALTER TABLE `citas`
   ADD CONSTRAINT `citas_ibfk_1` FOREIGN KEY (`Cod_Emp`) REFERENCES `empresa` (`Cod_Emp`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `citas_ibfk_2` FOREIGN KEY (`Cod_usu`) REFERENCES `usuario` (`Cod_usu`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `citas_ibfk_2` FOREIGN KEY (`Cod_usu`) REFERENCES `usuario` (`Cod_usu`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `citas_ibfk_3` FOREIGN KEY (`Cod_empl`) REFERENCES `empleado` (`Cod_empl`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `dueños`
+-- Filtros para la tabla `duenos`
 --
-ALTER TABLE `dueños`
-  ADD CONSTRAINT `dueños_ibfk_1` FOREIGN KEY (`Cod_Emp`) REFERENCES `empresa` (`Cod_Emp`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `dueños_ibfk_2` FOREIGN KEY (`Cod_usu`) REFERENCES `usuario` (`Cod_usu`) ON UPDATE CASCADE;
+ALTER TABLE `duenos`
+  ADD CONSTRAINT `duenos_ibfk_1` FOREIGN KEY (`Cod_Emp`) REFERENCES `empresa` (`Cod_Emp`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `duenos_ibfk_2` FOREIGN KEY (`Cod_usu`) REFERENCES `usuario` (`Cod_usu`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `empleado`

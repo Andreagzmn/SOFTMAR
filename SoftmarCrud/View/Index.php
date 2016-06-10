@@ -30,7 +30,7 @@
 <body>
 
 <center><form   action="../Controller/Usuariocontroller.php" method="POST" >
-	<div class="con" style="height: 84px;">
+	<div class="con" style="height: 150px;">
   </div> 
 		<div class="tarjeta">		    
       <div class="row">

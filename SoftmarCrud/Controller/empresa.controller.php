@@ -73,7 +73,7 @@
 				header("Location: ../View/Registrar_Empresa.php?m=".$mensaje."&tm=".$tipomensaje);
 			}
 	break;
-
+	
 
 		case 'r':
 			$empresa = Gestion_Empresa::ReadbyID($Cod_Emp);

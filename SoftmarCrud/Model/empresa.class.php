@@ -110,8 +110,7 @@ class Gestion_Empresa{
 
 		Softmar_BD::Disconnect();
 	}
-
-
+ 
 	function ReadbyTipEmp($Cod_TipEmp){
 
 		//Instanciamos y nos conectamos a la bd

@@ -36,7 +36,7 @@
 <body>
     <center><div class="container">
         <h3 style="text-align:center; margin-bottom: -47px; ">Softmar</h3>
-          <form  action="../Controller/producto.controller.php" method="POST" id="formulario" class="col s12 formulario">
+          <form  action="../Controller/oferta.controller.php" method="POST" id="formulario" class="col s12 formulario">
                 <section class="col s12" >
               <div class="row">
                   <div class="input-field col s12">
@@ -72,7 +72,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="first_name" type="text" class="validate" required name="Valor">
+                            <input id="first_name" type="text" class="validate" required name="Estado">
                             <label for="first_name">Estado</label>
                         </div>
                     </div>
@@ -87,18 +87,18 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="first_name" type="text" class="validate" required name="Cat">
+                            <input id="first_name" type="text" class="validate" required name="Categoria">
                             <label for="first_name">Categoria</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="first_name" type="number" class="validate" required name="Dispo">
+                            <input id="first_name" type="number" class="validate" required name="Disponible">
                             <label for="first_name">Oferta disponibles</label>
                         </div>
                     </div>    
                     <button type="submit" name="accion" value="c" id="boton" id="btn-crear-cuenta" class="btn waves-effect  cyan darken-3">Registrar</button>
-                    <a href="Gestion_Producto_admin.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
+                    <a href="Gestion_Oferta_admin.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
                     <?php echo @$_REQUEST["$msn"]; ?>   
                 </section>            
             </form>

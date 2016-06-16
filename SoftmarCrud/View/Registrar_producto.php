@@ -40,24 +40,24 @@
                 <section class="col s12" >
               <div class="row">
                   <div class="input-field col s12">
-                            <select  name="Cod_Emp">
-                                <option value="" disabled selected>Seleccione una empresa</option>
-                                <?php
-                                    // Cargo la bd
-                                    require_once("../Model/db_conn.php");
-                                    // Cargo la clase tipo empresa
-                                    require_once("../Model/empresa.class.php");
+                        <select  name="Cod_Emp">
+                            <option value="" disabled selected>Seleccione una empresa</option>
+                            <?php
+                                 // Cargo la bd
+                                 require_once("../Model/db_conn.php");
+                                // Cargo la clase tipo empresa
+                                require_once("../Model/empresa.class.php");
 
-                                    $empresa = Gestion_Empresa::ReadAll();
+                                 $empresa = Gestion_Empresa::ReadAll();
 
-                                    foreach ($empresa as $row){
-                                        echo "<option value='".$row["Cod_Emp"]."'>".$row["Nombre"]."</option>";
-                                    }
-                                ?>
-                            </select>
-                            <label></label>
-                        </div>
+                                foreach ($empresa as $row){
+                                    echo "<option value='".$row["Cod_Emp"]."'>".$row["Nombre"]."</option>";
+                                }
+                             ?>
+                        </select>
+                        <label></label>
                     </div>
+                  </div>
                     <div class="row">    
                         <div class="input-field col s12">
                             <input id="last_name" type="text" class="validate" required name="Nombre">

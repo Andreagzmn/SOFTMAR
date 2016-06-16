@@ -18,18 +18,18 @@ include_once("../Model/Citas.class.php");
 	$Estado=$_POST["Estado"];
 	$Cod_serv=$_POST["Cod_serv"];
 	$Cod_empl=$_POST["Cod_empl"];
-	
+	 
 
 	try{
 
 		Gestionar_citas::Create($Cod_Emp,$Cod_usu,$Telefono,$Fecha,$Hora,$Estado,$Cod_serv,$Cod_empl);
 		$mensaje="Su cita fue reservada con exito";
 		$tipomensaje = "success";
-		header("Location: ../View/Reservar_Citas.php?m=".$mensaje."&tm=".$tipomensaje);
+		header("Location: ../View/Registrar_cita.php?m=".$mensaje."&tm=".$tipomensaje);
 	}catch(Exception $e){
 		$mensaje="ha ocurrido un error, el error fue:".$e->getMessage()."en el archivo:".$e->getFile()."en la linea:".$e->getLine();
 		$tipomensaje="error";
-		header("Location: ../View/Reservar_Citas.php?m=".$mensaje."&tm=".$tipomensaje);		
+		header("Location: ../View/Registrar_cita.php?m=".$mensaje."&tm=".$tipomensaje);		
 
 	}
 	

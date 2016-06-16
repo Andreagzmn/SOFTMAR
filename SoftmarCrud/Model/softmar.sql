@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-06-2016 a las 05:13:33
--- Versión del servidor: 10.1.10-MariaDB
--- Versión de PHP: 5.5.33
+-- Tiempo de generación: 16-06-2016 a las 18:48:36
+-- Versión del servidor: 10.1.9-MariaDB
+-- Versión de PHP: 5.5.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -88,6 +88,13 @@ CREATE TABLE `empleado` (
   `Cargo` varchar(100) NOT NULL,
   `Cedula` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `empleado`
+--
+
+INSERT INTO `empleado` (`Cod_empl`, `Cod_Emp`, `Nombre`, `Apellido`, `Telefono`, `Direccion`, `Edad`, `Correo`, `Cargo`, `Cedula`) VALUES
+(1, 2, 'Andrea ', 'Guzman', 3747703, 'cll 40 n 57-08', 18, 'andrea@hotmail.com', 'peluquero', 1036677760);
 
 -- --------------------------------------------------------
 
@@ -220,10 +227,16 @@ CREATE TABLE `servicio_emp` (
   `Cod_serv` int(11) NOT NULL,
   `Cod_Emp` int(11) NOT NULL,
   `Nombre` varchar(100) NOT NULL,
-  `Descripcion` varchar(100) NOT NULL,
-  `Precio` int(11) NOT NULL,
-  `Duracion` int(11) NOT NULL
+  `Duracion` varchar(100) NOT NULL,
+  `Precio` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `servicio_emp`
+--
+
+INSERT INTO `servicio_emp` (`Cod_serv`, `Cod_Emp`, `Nombre`, `Duracion`, `Precio`) VALUES
+(1, 2, 'corte', '30 min', 5000);
 
 -- --------------------------------------------------------
 
@@ -443,7 +456,7 @@ ALTER TABLE `duenos`
 -- AUTO_INCREMENT de la tabla `empleado`
 --
 ALTER TABLE `empleado`
-  MODIFY `Cod_empl` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Cod_empl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `empresa`
 --
@@ -468,7 +481,7 @@ ALTER TABLE `puntuacion`
 -- AUTO_INCREMENT de la tabla `servicio_emp`
 --
 ALTER TABLE `servicio_emp`
-  MODIFY `Cod_serv` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Cod_serv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `tipo_emp`
 --

@@ -81,8 +81,8 @@
           <th>servicio</th>
           <th>Empresa</th>
           <th>Nombre</th>
-          <th>Descripcion</th>
-          <th>Valor</th>
+          <th>Duracion</th>
+          <th>Precio</th>
           <th></th>
         </tr>
       </thead>
@@ -96,8 +96,8 @@
                 <td>".$row["Cod_serv"]."</td>
                 <td>".$row["Cod_Emp"]."</td>
                 <td>".$row["Nombre"]."</td>
-                <td>".$row["Descripcion"]."</td>
-                <td>".$row["Valor"]."</td>
+                <td>".$row["Duracion"]."</td>
+                <td>".$row["Precio"]."</td>
                 <td>
                   <a href='../View/Actualizar_servicio.php?sr=".base64_encode($row["Cod_serv"])."'><i class='fa fa-pencil'></i></a>
                   <a href='../Controller/servicio_emp.controller.php?sr=".base64_encode($row["Cod_serv"])."&accion=d'><i class='fa fa-trash'></i></a>
@@ -108,6 +108,7 @@
       ?>
       </tbody>
     </table>
-    <?php include_once("../View/pie_pagina.php"); ?>
+    <?php include_once("../View/pie_pagina.php"); ?>    
+    <script type="text/javascript" src="materialize/js/materialize.js"></script>
   </body>
 </html>

@@ -68,15 +68,15 @@
                         </div>
                      </div> 
                     <div class="row">   
-				        <div class="input-field col s12">
-					       <input id="first_name" type="text" class="validate" required name="Descripcion">
-					       <label for="first_name">Descripción</label>
-                        </div>
+    				          <div class="input-field col s12">
+        					       <input id="first_name" type="text" class="validate" required name="Duracion">
+        					       <label for="first_name">Duración</label>
+                      </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="first_name" type="number" class="validate" required name="Valor">
-                            <label for="first_name">Valor</label>
+                            <input id="first_name" type="number" class="validate" required name="Precio">
+                            <label for="first_name">Precio</label>
                         </div>
                     </div>  
                     <button type="submit" name="accion" value="c" id="boton" id="btn-crear-cuenta" class="btn waves-effect  cyan darken-3">Registrar</button>

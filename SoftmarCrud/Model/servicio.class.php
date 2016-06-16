@@ -2,15 +2,15 @@
 
 class Gestion_servicio{
 
-    function create($Cod_Emp, $Nombre, $Descripcion, $Precio, $Duracion){
+    function create($Cod_Emp, $Nombre,$Duracion, $Precio){
 
         $Conexion = Softmar_BD::Connect();
         $Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $consulta = "INSERT INTO servicio_emp (Cod_Emp, Nombre, Descripcion, Precio, Duracion) VALUES (?,?,?,?,?)";
+        $consulta = "INSERT INTO servicio_emp (Cod_Emp, Nombre,Duracion,Precio ) VALUES (?,?,?,?)";
 
         $query = $Conexion->prepare($consulta);
-        $query->execute(array($Cod_Emp, $Nombre, $Descripcion, $Precio, $Duracion));
+        $query->execute(array($Cod_Emp, $Nombre, $Duracion, $Precio));
 
         Softmar_BD::Disconnect();
     }
@@ -57,14 +57,14 @@ class Gestion_servicio{
     Softmar_BD::Disconnect();
   }
 
-    function update($Cod_serv,$Cod_Emp, $Nombre, $Descripcion, $Precio, $Duracion){
+    function update($Cod_serv,$Cod_Emp, $Nombre, $Duracion, $Precio){
 
 	   $conexion=softmar_BD::connect();
 	   $conexion->SetAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-	   $consulta="UPDATE servicio_emp SET Cod_Emp=?,Nombre=?, Descripcion=?, Precio=?, Duracion=? WHERE Cod_serv=?";
+	   $consulta="UPDATE servicio_emp SET Cod_Emp=?,Nombre=?, Duracion=?, Precio=? WHERE Cod_serv=?";
 	   $query=$conexion->prepare($consulta);
-	   $query->execute(array($Cod_Emp,$Nombre, $Descripcion, $Precio, $Duracion, $Cod_serv));
+	   $query->execute(array($Cod_Emp,$Nombre, $Duracion, $Precio, $Cod_serv));
 
 	   softmar_BD::Disconnect();
     }

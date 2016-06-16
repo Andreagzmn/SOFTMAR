@@ -51,14 +51,14 @@
                      </div> 
                     <div class="row">   
                         <div class="input-field col s12">
-                           <input id="first_name" type="text" class="validate" required name="Descripcion" value="<?php echo $servicio[3] ?>">
-                           <label for="first_name">Descripción</label>
+                           <input id="first_name" type="text" class="validate" required name="Duracion" value="<?php echo $servicio[3] ?>">
+                           <label for="first_name">Duración</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="first_name" type="number" class="validate" required name="Valor" value="<?php echo $servicio[4] ?>">
-                            <label for="first_name">Valor</label>
+                            <input id="first_name" type="number" class="validate" required name="Precio" value="<?php echo $servicio[4] ?>">
+                            <label for="first_name">Precio</label>
                         </div>
                     </div>  
                    <button name="accion" value="u" id="boton" class="btn waves-effect" style="margin: 20px;">Actualizar</button>

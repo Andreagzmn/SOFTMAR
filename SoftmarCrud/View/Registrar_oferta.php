@@ -61,7 +61,7 @@
                     <div class="row">    
                         <div class="input-field col s12">
                             <input id="last_name" type="text" class="validate" required name="Nombre">
-                            <label for="last_name">Nombre del servicio</label>
+                            <label for="last_name">Nombre de la oferta</label>
                         </div>
                      </div> 
                     <div class="row">   

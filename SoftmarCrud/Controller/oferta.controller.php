@@ -27,7 +27,7 @@
 			$Categoria      = $_POST["Categoria"];
 			$Oferta         = $_POST["Oferta"];
 
- 			try{ 
+ 			/*try{ 
 				if($Galeria != ""){ 
 					include("Upload_Image.php");
 				} 
@@ -37,10 +37,10 @@
 					include("Upload_Logo.php");
 				}else{
 					$Logo = "";
-				}	
+				}*/
 
 			try{
-				Gestion_oferta::Create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Categoria, $Oferta));
+				Gestion_oferta::Create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Categoria, $Oferta);
 				$mensaje = "La oferta se registro correctamente";
 				$tipomensaje = "success";
 				header("Location: ../View/Gestion_Oferta_admin.php?m=".$mensaje."&tm=".$tipomensaje);
@@ -50,8 +50,9 @@
 				header("Location: ../View/Registrar_oferta.php?m=".$mensaje."&tm=".$tipomensaje);
 			}
 			break;
+		}
 
-		case 'r':
+		/*case 'r':
 		    # leer
 		break;
 		case 'u':	
@@ -101,7 +102,7 @@
         }
       break;
 
-	}
+	}*/
 
 
 ?>

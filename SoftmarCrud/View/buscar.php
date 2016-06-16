@@ -26,7 +26,8 @@
     <script type="text/javascript" src="sweetalert-master/sweetalert.min.js"></script>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="estilos.css">    
-       <script type="text/javascript" src="ajax.js"></script>
+    <script type="text/javascript" src="ajax.js"></script>
+
 
       
    </head>
@@ -40,62 +41,11 @@
   </nav> 
   <div class="container cbus">
     <div class="form">
-      <form action="" method="POST" name="search_form" id="search_form">
+      <form action="" method="POST" name="bus" id="bus">
         <input type="text"  name="search" id="search">
       </form>
     </div>
-    <div id="resultados">
-
-    </div>
+    <div id="myDiv"></div>
   </div>
-
-  <!-- <div class="container">
-  		<center><a href="Geolocali.php" class="waves-effect waves-light btn" ><i class="material-icons">location_on</i>  Ver por geolocalizacion</a></center>
- </div>
-    <center><table id="datatable" class="display highlight" >
-      <thead>
-        <tr>
-          <th>Tipo Empresa</th>
-          <th>Nombre</th>
-          <th>Telefono</th>
-          <th>Direccion</th>
-          <th>Correo</th>
-          <th>Informacion</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-
-      <?php
-      // $empresa = Gestion_Empresa::ReadAll();
-
-      // foreach ($empresa as $row) {
-
-      //   if($row["Cod_TipEmp"] == 3){
-      //     $Cod_TipEmp = "Peluqueria";
-      //   }elseif($row["Cod_TipEmp"] == 4){
-      //     $Cod_TipEmp = "Barberia";
-      //   }elseif($row["Cod_TipEmp"] == 5){
-      //     $Cod_TipEmp = "Spa";
-      //   }elseif($row["Cod_TipEmp"] == 6){
-      //     $Cod_TipEmp = "Peluqueria Infantil";
-      //   }
-
-        // echo "<tr>
-        //         <td>".$Cod_TipEmp."</td>
-        //         <td>".$row["Nombre"]."</td>
-        //         <td>".$row["Telefono"]."</td>
-        //         <td>".$row["Direccion"]."</td>
-        //         <td>".$row["Correo"]."</td>
-        //         <td>".$row["Informacion"]."</td>
-        //         <td>
-        //          <a href='../View/PerfilEm.php?ei=".base64_encode($row["Cod_Emp"])."'><i class='fa fa-user'></i></a>
-        //         </td>
-        //       </tr>";
-      // }
-      ?>
-      </tbody>
-    </table></center>
- -->
 </body>
 </html>

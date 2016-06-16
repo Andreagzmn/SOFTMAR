@@ -48,7 +48,7 @@
  				
   			 $fotos = explode(",", $informacion["Galeria"]);
   			 $nombre_empresa = strtolower(str_replace('ñ', 'n', $informacion["Nombre"]));
-			 $nombre_empresa = strtolower(str_replace(' ', '', $nombre_empresa));
+			   $nombre_empresa = strtolower(str_replace(' ', '', $nombre_empresa));
 
   			 $directorio = "img/Imagenes_Empresas/".$nombre_empresa."/";
   			 

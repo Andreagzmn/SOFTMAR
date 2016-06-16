@@ -420,6 +420,7 @@ footer.page-footer .footer-copyright {
 /*bucar.php*/
 .cbus{
   margin-top: 10px;
+  background-color: rgba(244, 238, 247, 0.5) !important;
 }
 /*actualizar*/
 .formu{

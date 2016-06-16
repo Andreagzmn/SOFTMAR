@@ -70,6 +70,12 @@
                       </select>
                   </div>
                 </div>
+                <div class="row">    
+                  <div class="input-field col s12">
+                      <input id="last_name" type="text" class="validate" required name="Estado">
+                      <label for="last_name">Estado</label>
+                  </div>
+                </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <select  name="Cod_serv">

@@ -137,13 +137,13 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                     <!-- combobox de los barberos -->
                 <div class="input-field col s12">
                 <?php 
-                $barberos= Gestion_Empleados::ReadAll();
+                $empleados= Gestion_Empleados::ReadAll();
                 ?>
     						<select name="Cod_empl" id="emple">
     						<option value="" disabled selected>Seleccione un Empleado</option>
-    						<?php foreach ($barberos as $row) {
+    						<?php foreach ($empleados as $row) {
     							?>
-    							<option value="<?php echo $row["Cod_empl"] ?>"><?php echo $row["Nombre"] ?></option>
+    							<option value="<?php echo $row["Nombre"] ?>"><?php echo $row["Nombre"] ?></option>
     						<?php } ?>       						
     						</select>  
   							</div> 

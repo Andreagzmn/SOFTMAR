@@ -10,19 +10,20 @@ include_once("../Model/Citas.class.php");
 
 	case 'create':
 
-	$Cod_Emp=$_POST["Cod_Emp"];
+	
 	$Cod_usu=$_POST["Cod_usu"];
 	$Telefono=$_POST["Telefono"];
 	$Fecha=$_POST["Fecha"];
 	$Hora=$_POST["Hora"];
 	$Estado=$_POST["Estado"];
-	$Cod_serv=$_POST["Cod_serv"];
-	$Cod_empl=$_POST["Cod_empl"];
+	$Servicio=$_POST["Cod_serv"];
+	$empleado=$_POST["Cod_empl"];
+	
 	 
 
 	try{
 
-		Gestionar_citas::Create($Cod_Emp,$Cod_usu,$Telefono,$Fecha,$Hora,$Estado,$Cod_serv,$Cod_empl);
+		Gestionar_citas::Create($Cod_usu,$Telefono,$Fecha,$Hora,$Estado,$Servicio,$empleado);
 		$mensaje="Su cita fue reservada con exito";
 		$tipomensaje = "success";
 		header("Location: ../View/Registrar_cita.php?m=".$mensaje."&tm=".$tipomensaje);

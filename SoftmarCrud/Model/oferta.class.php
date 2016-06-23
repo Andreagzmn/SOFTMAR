@@ -68,7 +68,7 @@ class Gestion_oferta{
         $consulta = "UPDATE oferta_emp SET  Nombre=?, Descripcion=?, Valor=?, Cant=? WHERE Cod_prod = ?" ;
 
         $query = $Conexion->prepare($consulta);
-        $query->execute(array($Nombre, $Descripcion, $Estado, $Foto, $Categoria, $Oferta);        
+        $query->execute(array($Nombre, $Descripcion, $Estado, $Foto, $Categoria, $Oferta));        
 
         Softmar_BD::Disconnect();
     

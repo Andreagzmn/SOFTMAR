@@ -65,25 +65,24 @@
                         </div>
                      </div> 
                     <div class="row">   
-                <div class="input-field col s12">
-                 <input id="first_name" type="text" class="validate" required name="Descripcion">
-                 <label for="first_name">Descripción</label>
-                        </div>
+                      <div class="input-field col s12">
+                        <input id="first_name" type="text" class="validate" required name="Descripcion">
+                        <label for="first_name">Descripción</label>
+                      </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="first_name" type="text" class="validate" required name="Estado">
-                            <label for="first_name">Estado</label>
+                            <select id="first_name" type="text" class="validate" required name="Estado"required><option value="">Estado</option>
+                              <option value="disponible">Disponible</option>
+                              <option value="">No disponible</option>
+                          </select>
                         </div>
                     </div>
-                    <div class="file-field input-field col s12 m6">
-                      <div class="btn">
-                        <span>Foto oferta</span>
-                        <input type="file" name="Imagen_Logo">
-                      </div>
-                      <div class="file-path-wrapper">
-                        <input name="Log"  id="demo" class="file-path validate" type="text">
-                      </div>
+                   <div class="row">
+                        <div class="input-field col s12">
+                            <input id="first_name" type="text" class="validate" required name="Foto">
+                            <label for="first_name">Foto</label>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">

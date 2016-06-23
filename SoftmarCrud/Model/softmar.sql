@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-06-2016 a las 18:48:36
+-- Tiempo de generación: 23-06-2016 a las 14:29:19
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `softmar`
 --
+CREATE DATABASE IF NOT EXISTS `softmar` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
+USE `softmar`;
 
 -- --------------------------------------------------------
 
@@ -26,6 +28,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `buscar_estilo`
 --
 
+DROP TABLE IF EXISTS `buscar_estilo`;
 CREATE TABLE `buscar_estilo` (
   `Cod_buscar` int(11) NOT NULL,
   `Cod_usu` int(11) NOT NULL,
@@ -39,17 +42,32 @@ CREATE TABLE `buscar_estilo` (
 -- Estructura de tabla para la tabla `citas`
 --
 
+DROP TABLE IF EXISTS `citas`;
 CREATE TABLE `citas` (
   `Cod_cita` int(11) NOT NULL,
-  `Cod_Emp` int(11) NOT NULL,
   `Cod_usu` int(11) NOT NULL,
   `Telefono` varchar(100) NOT NULL,
-  `Hora` date NOT NULL,
-  `Fecha` date NOT NULL,
+  `Hora` varchar(100) NOT NULL,
+  `Fecha` varchar(100) NOT NULL,
   `Estado` varchar(100) NOT NULL,
-  `Cod_empl` int(11) NOT NULL,
-  `Cod_serv` int(11) NOT NULL
+  `Servicio` varchar(100) NOT NULL,
+  `empleado` varchar(100) NOT NULL,
+  `Cod_Emp` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `citas`
+--
+
+INSERT INTO `citas` (`Cod_cita`, `Cod_usu`, `Telefono`, `Hora`, `Fecha`, `Estado`, `Servicio`, `empleado`, `Cod_Emp`) VALUES
+(15, 4, '3747703', '8:00 am', '8:00 am', 'disponible', 'corte', '1', 0),
+(16, 4, '3747703', '8:00 am', '8:00 am', 'disponible', 'corte', '1', 0),
+(17, 4, '377125', '8:30 am', '8:00 am', 'Ocupado', 'corte', '2', 0),
+(18, 2, '5782588', '8:00 am', '8:00 am', 'Ocupado', 'corte', '1', 0),
+(19, 4, '374703', '8:00 am', '8:00 am', 'ocupado', 'corte', '2', 0),
+(20, 2, '4', '3747703', '8:00 am', '8:00 am', 'ocupado', 'corte', 1),
+(21, 2, '4', '3747703', '8:30 am', '9:00 am', 'ocupado', 'corte', 1),
+(22, 4, '3747703', '8:00 am', '8:00 am', 'ocupado', 'corte', '1', 2);
 
 -- --------------------------------------------------------
 
@@ -57,6 +75,7 @@ CREATE TABLE `citas` (
 -- Estructura de tabla para la tabla `duenos`
 --
 
+DROP TABLE IF EXISTS `duenos`;
 CREATE TABLE `duenos` (
   `Cod_due` int(11) NOT NULL,
   `Cod_Emp` int(11) NOT NULL,
@@ -68,7 +87,8 @@ CREATE TABLE `duenos` (
 --
 
 INSERT INTO `duenos` (`Cod_due`, `Cod_Emp`, `Cod_usu`) VALUES
-(1, 2, 1);
+(1, 2, 1),
+(2, 3, 2);
 
 -- --------------------------------------------------------
 
@@ -76,6 +96,7 @@ INSERT INTO `duenos` (`Cod_due`, `Cod_Emp`, `Cod_usu`) VALUES
 -- Estructura de tabla para la tabla `empleado`
 --
 
+DROP TABLE IF EXISTS `empleado`;
 CREATE TABLE `empleado` (
   `Cod_empl` int(11) NOT NULL,
   `Cod_Emp` int(11) NOT NULL,
@@ -94,7 +115,8 @@ CREATE TABLE `empleado` (
 --
 
 INSERT INTO `empleado` (`Cod_empl`, `Cod_Emp`, `Nombre`, `Apellido`, `Telefono`, `Direccion`, `Edad`, `Correo`, `Cargo`, `Cedula`) VALUES
-(1, 2, 'Andrea ', 'Guzman', 3747703, 'cll 40 n 57-08', 18, 'andrea@hotmail.com', 'peluquero', 1036677760);
+(1, 2, 'Andrea ', 'Guzman', 3747703, 'cll 40 n 57-08', 18, 'andrea@hotmail.com', 'peluquero', 1036677760),
+(2, 2, 'Cristian', 'Villada', 3747703, 'cll 10', 20, 'criss@hotmail.com', 'Barbero', 2147483647);
 
 -- --------------------------------------------------------
 
@@ -102,31 +124,33 @@ INSERT INTO `empleado` (`Cod_empl`, `Cod_Emp`, `Nombre`, `Apellido`, `Telefono`,
 -- Estructura de tabla para la tabla `empresa`
 --
 
+DROP TABLE IF EXISTS `empresa`;
 CREATE TABLE `empresa` (
   `Cod_Emp` int(11) NOT NULL,
   `Cod_TipEmp` int(11) NOT NULL,
-  `Nombre` varchar(100) NOT NULL,
-  `Telefono` varchar(100) NOT NULL,
-  `Direccion` varchar(100) NOT NULL,
-  `Ciudad` varchar(100) NOT NULL,
+  `Nombre` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `Telefono` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `Direccion` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `Ciudad` varchar(100) CHARACTER SET latin1 NOT NULL,
   `NIT` int(11) NOT NULL,
-  `Correo` varchar(100) NOT NULL,
-  `Geo_x` longtext NOT NULL,
-  `Geo_y` longtext NOT NULL,
+  `Correo` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `Geo_x` longtext CHARACTER SET latin1 NOT NULL,
+  `Geo_y` longtext CHARACTER SET latin1 NOT NULL,
   `Informacion` blob NOT NULL,
-  `Dias_aten` varchar(100) NOT NULL,
+  `Dias_aten` varchar(100) CHARACTER SET latin1 NOT NULL,
   `Hor_desde` time NOT NULL,
   `Hor_hasta` time NOT NULL,
-  `Galeria` longtext NOT NULL,
-  `Logo` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `Galeria` longtext CHARACTER SET latin1 NOT NULL,
+  `Logo` longtext CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `empresa`
 --
 
 INSERT INTO `empresa` (`Cod_Emp`, `Cod_TipEmp`, `Nombre`, `Telefono`, `Direccion`, `Ciudad`, `NIT`, `Correo`, `Geo_x`, `Geo_y`, `Informacion`, `Dias_aten`, `Hor_desde`, `Hor_hasta`, `Galeria`, `Logo`) VALUES
-(2, 4, 'quince', '3747703', 'cll 40 n 57 - 08', '', 123654, 'quince15@hotmail.com', '6.173515986490716', '-75.61811059713364', 0x4e75657374726120626172626572ed612c206573207265636f6e6f6369646120706f722074656e657220756e206772616e20736572766963696f, 'Lunes,Martes,Miercoles,Jueves,Viernes', '08:30:00', '08:30:00', 'cache_30150532.jpg, IMG_2314.jpg, kinzecuchilleros-barberia-madrid.jpg', 'logo1.png');
+(2, 4, 'quince', '3747703', 'cll 40 n 57 - 08', '', 123654, 'quince15@hotmail.com', '6.173515986490716', '-75.61811059713364', 0x4e75657374726120626172626572ed612c206573207265636f6e6f6369646120706f722074656e657220756e206772616e20736572766963696f, 'Lunes,Martes,Miércoles,Jueves,Viernes', '08:30:00', '08:30:00', 'cache_30150532.jpg, IMG_2314.jpg, kinzecuchilleros-barberia-madrid.jpg', 'logo1.png'),
+(3, 3, 'Cambios positivos', '3654789', 'Crra 80', '', 856974, 'cambios@hotmail.com', '6.263727514446294', '-75.59635519981384', 0xda6e69636f73206520696e696775616c61626c657320, 'Lunes,Martes,Miercoles,Jueves,Viernes,Sabado', '09:30:00', '08:30:00', '252624--salon-de-belleza-y-peluqueria-jessica-vargas-banner.jpg, bg-5.jpg, tintes.jpg', '18076571-Sal-n-de-pelo-corte-de-pelo-dise-o-o-s-mbolo-peluquer-a-Foto-de-archivo.jpg');
 
 -- --------------------------------------------------------
 
@@ -134,6 +158,7 @@ INSERT INTO `empresa` (`Cod_Emp`, `Cod_TipEmp`, `Nombre`, `Telefono`, `Direccion
 -- Estructura de tabla para la tabla `oferta_emp`
 --
 
+DROP TABLE IF EXISTS `oferta_emp`;
 CREATE TABLE `oferta_emp` (
   `Cod_ofer` int(11) NOT NULL,
   `Cod_Emp` int(11) NOT NULL,
@@ -151,6 +176,7 @@ CREATE TABLE `oferta_emp` (
 -- Estructura de tabla para la tabla `permiso`
 --
 
+DROP TABLE IF EXISTS `permiso`;
 CREATE TABLE `permiso` (
   `codigo_permiso` int(11) NOT NULL,
   `nombre_permiso` char(100) DEFAULT NULL
@@ -162,6 +188,7 @@ CREATE TABLE `permiso` (
 -- Estructura de tabla para la tabla `permiso_rol`
 --
 
+DROP TABLE IF EXISTS `permiso_rol`;
 CREATE TABLE `permiso_rol` (
   `cod_rol` int(11) NOT NULL,
   `codigo_permiso` int(11) NOT NULL,
@@ -174,6 +201,7 @@ CREATE TABLE `permiso_rol` (
 -- Estructura de tabla para la tabla `productos_emp`
 --
 
+DROP TABLE IF EXISTS `productos_emp`;
 CREATE TABLE `productos_emp` (
   `Cod_prod` int(11) NOT NULL,
   `Cod_Emp` int(11) NOT NULL,
@@ -189,6 +217,7 @@ CREATE TABLE `productos_emp` (
 -- Estructura de tabla para la tabla `puntuacion`
 --
 
+DROP TABLE IF EXISTS `puntuacion`;
 CREATE TABLE `puntuacion` (
   `Cod_punt` int(11) NOT NULL,
   `Cod_usu` int(11) NOT NULL,
@@ -201,6 +230,7 @@ CREATE TABLE `puntuacion` (
 -- Estructura de tabla para la tabla `rol`
 --
 
+DROP TABLE IF EXISTS `rol`;
 CREATE TABLE `rol` (
   `cod_rol` int(11) NOT NULL,
   `cod_nombre` char(100) NOT NULL
@@ -223,6 +253,7 @@ INSERT INTO `rol` (`cod_rol`, `cod_nombre`) VALUES
 -- Estructura de tabla para la tabla `servicio_emp`
 --
 
+DROP TABLE IF EXISTS `servicio_emp`;
 CREATE TABLE `servicio_emp` (
   `Cod_serv` int(11) NOT NULL,
   `Cod_Emp` int(11) NOT NULL,
@@ -244,6 +275,7 @@ INSERT INTO `servicio_emp` (`Cod_serv`, `Cod_Emp`, `Nombre`, `Duracion`, `Precio
 -- Estructura de tabla para la tabla `servicio_emple`
 --
 
+DROP TABLE IF EXISTS `servicio_emple`;
 CREATE TABLE `servicio_emple` (
   `Cod_serv` int(11) NOT NULL,
   `Cod_empl` int(11) NOT NULL
@@ -255,6 +287,7 @@ CREATE TABLE `servicio_emple` (
 -- Estructura de tabla para la tabla `tipo_emp`
 --
 
+DROP TABLE IF EXISTS `tipo_emp`;
 CREATE TABLE `tipo_emp` (
   `Cod_TipEmp` int(11) NOT NULL,
   `Nombre` varchar(100) NOT NULL
@@ -276,6 +309,7 @@ INSERT INTO `tipo_emp` (`Cod_TipEmp`, `Nombre`) VALUES
 -- Estructura de tabla para la tabla `tips_emp`
 --
 
+DROP TABLE IF EXISTS `tips_emp`;
 CREATE TABLE `tips_emp` (
   `Cod_tips` int(11) NOT NULL,
   `Cod_Emp` int(11) NOT NULL,
@@ -291,6 +325,7 @@ CREATE TABLE `tips_emp` (
 -- Estructura de tabla para la tabla `usuario`
 --
 
+DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `Cod_usu` int(11) NOT NULL,
   `cod_rol` int(11) NOT NULL,
@@ -332,10 +367,7 @@ ALTER TABLE `buscar_estilo`
 --
 ALTER TABLE `citas`
   ADD PRIMARY KEY (`Cod_cita`),
-  ADD KEY `Cod_Emp` (`Cod_Emp`),
-  ADD KEY `Cod_usu` (`Cod_usu`),
-  ADD KEY `Cod_empl` (`Cod_empl`),
-  ADD KEY `Cod_serv` (`Cod_serv`);
+  ADD KEY `Cod_usu` (`Cod_usu`);
 
 --
 -- Indices de la tabla `duenos`
@@ -446,22 +478,22 @@ ALTER TABLE `buscar_estilo`
 -- AUTO_INCREMENT de la tabla `citas`
 --
 ALTER TABLE `citas`
-  MODIFY `Cod_cita` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Cod_cita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT de la tabla `duenos`
 --
 ALTER TABLE `duenos`
-  MODIFY `Cod_due` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Cod_due` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `empleado`
 --
 ALTER TABLE `empleado`
-  MODIFY `Cod_empl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Cod_empl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `Cod_Emp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Cod_Emp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `oferta_emp`
 --
@@ -511,9 +543,7 @@ ALTER TABLE `buscar_estilo`
 -- Filtros para la tabla `citas`
 --
 ALTER TABLE `citas`
-  ADD CONSTRAINT `citas_ibfk_1` FOREIGN KEY (`Cod_Emp`) REFERENCES `empresa` (`Cod_Emp`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `citas_ibfk_2` FOREIGN KEY (`Cod_usu`) REFERENCES `usuario` (`Cod_usu`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `citas_ibfk_3` FOREIGN KEY (`Cod_empl`) REFERENCES `empleado` (`Cod_empl`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `citas_ibfk_2` FOREIGN KEY (`Cod_usu`) REFERENCES `usuario` (`Cod_usu`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `duenos`

@@ -1,0 +1,1 @@
+ofertas<?php echo $_GET["ei"]?>

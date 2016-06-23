@@ -32,24 +32,7 @@
       <link rel="stylesheet" type="text/css" href="estilos.css">
       <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster"/>
 	<title>Perfil</title>
- <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
- <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
- <script >
-  
-    $(document).ready(function(){
-       $('.slider').slider({
-          Height:400,
-          Transition: 400,
-          Interval: 400,
-          Indicators: false
-       });
 
-       $("#btn_ofertas").click(function(){
-          var ei = "<?php echo $ei ?>";
-          $("#secciones").load("ofertaem.php?ei="+ei);
-       });
-     });
-  </script>
 </head>
 <body>
  <nav class="black">
@@ -81,14 +64,12 @@
 		    </ul>
   		</div>
   	</div>
-  		<header class="sub-menu ">
-        <center><nav class="nav-wrapper blue-grey lighten-2" >
-			    <div class="nava">
+  		<header class="container sub-menu">
+        <center><nav class=" nava grey darken-1">
+			    <div class="nav-wrapper">
 			      <ul id="nav-mobile" class="center hide-on-med-and-down " >
 
               <li><a href="perfilEm.php?ei=<?php echo base64_encode("$ei");?>">La Empresa</a></li>
-              <li><a id="btn_ofertas">Ofertas ajax</a></li>
-              
 			        <li><a href="producEm.php?ei=<?php echo base64_encode("$ei");?>">Productos y servicios</a></li>
 			        <li><a href="RegcitaEm.php?ei=<?php echo base64_encode("$ei");?>">Citas</a></li>
 			        <li><a href="ofertaEm.php?ei=<?php echo base64_encode("$ei");?>">Ofertas</a></li>
@@ -99,7 +80,7 @@
         </header>
       <div class="container-fluid ">
         <div class="row">
-          <div id="secciones">
+        <H2>CONTACTO</H2>
   	  		<?php
   		         echo "
                <div class='log col s6 m3'><img src='img/Imagenes_Empresas/".$nombre_empresa."/logo.png'></div>
@@ -113,9 +94,20 @@
                </div>";
   		      ?>
           </div>
-        </div>
       </div>
 
-
+ <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
+ <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+ <script >
+  
+		$(document).ready(function(){
+	     $('.slider').slider({
+	      	Height:400,
+	      	Transition: 400,
+	      	Interval: 400,
+	      	Indicators: false
+	     });
+	   });
+	</script>
 </body>
 </html>

@@ -47,7 +47,7 @@
           <form  action="../Controller/citas.controller.php" method="POST" id="formulario" class="col s12 formulario">
                 <section class="col s12" >
                 <div class="row">  
-                  <input id="Cod_Emp" type="hidden" value="<?php echo base64_decode($_GET["ei"])?>" name="Cod_Emp">
+                  <input id="Cod_Emp" type="hidden" value="<?php echo $_GET["ei"]?>" name="Cod_Emp">
                   <div class="input-field col s12">
                       <input id="last_name" type="number" class="validate" required name="Telefono">
                       <label for="last_name">Telefono</label>

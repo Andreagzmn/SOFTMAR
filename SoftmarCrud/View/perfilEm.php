@@ -68,7 +68,7 @@
 			    <div class="nav-wrapper">
 			      <ul id="nav-mobile" class="center hide-on-med-and-down " >
 			        <li><a href="#">Productos y servicios</a></li>
-			        <li><a href="Registrar_cita.php">Citas</a></li>
+			        <li><a href="Registrar_cita.php?ei=<?php echo base64_encode("$ei");?>">Citas</a></li>
 			        <li><a href="#">Ofertas</a></li>
 			        <li><a href="#">Contacto</a></li>
 			      </ul>

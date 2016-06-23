@@ -23,7 +23,7 @@ class Softmar_BD{
 				//conexion instancia la clase PDO(), para instanciar una clase necesitamos variable = new clase
 
 				self::$conn = new PDO("mysql:host=".self::$db_host.";dbname=".self::$db_name,self::$db_user,self::$db_pass);
-				self::$conn -> exec("SET CHARACTER SET utf8");
+				self::$conn -> exec("SET CHARACTER SET UTF8");
 
 			}catch(PDOException $e){
 				die($e -> getMessage());

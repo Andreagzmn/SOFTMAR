@@ -18,12 +18,12 @@ include_once("../Model/Citas.class.php");
 	$Estado=$_POST["Estado"];
 	$Servicio=$_POST["Cod_serv"];
 	$empleado=$_POST["Cod_empl"];
-	
+	$Cod_Emp=$_POST["Cod_Emp"];
 	 
 
 	try{
 
-		Gestionar_citas::Create($Cod_usu,$Telefono,$Fecha,$Hora,$Estado,$Servicio,$empleado);
+		Gestionar_citas::Create($Cod_usu,$Telefono,$Fecha,$Hora,$Estado,$Servicio,$empleado,$Cod_Emp);
 		$mensaje="Su cita fue reservada con exito";
 		$tipomensaje = "success";
 		header("Location: ../View/Registrar_cita.php?m=".$mensaje."&tm=".$tipomensaje);

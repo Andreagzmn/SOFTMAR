@@ -46,7 +46,8 @@
         <h3 style="text-align:center; margin-bottom: -47px; ">Softmar</h3>
           <form  action="../Controller/citas.controller.php" method="POST" id="formulario" class="col s12 formulario">
                 <section class="col s12" >
-                <div class="row">    
+                <div class="row">  
+                  <input id="Cod_Emp" type="hidden" value="<?php echo base64_decode($_GET["ei"])?>" name="Cod_Emp">
                   <div class="input-field col s12">
                       <input id="last_name" type="number" class="validate" required name="Telefono">
                       <label for="last_name">Telefono</label>
@@ -68,11 +69,11 @@
                         <option value="8:30 am">8:30 am</option>
                         <option value="9:00 am">9:00 am</option>
                       </select>
-                  </div>
+                  </div>                  
                 </div>
                 <div class="row">    
                   <div class="input-field col s12">
-                      <input id="last_name" type="text" class="validate" required name="Estado">
+                       <input id="last_name" type="text" class="validate" required name="Estado">
                       <label for="last_name">Estado</label>
                   </div>
                 </div>

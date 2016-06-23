@@ -3,26 +3,26 @@
 class Gestionar_citas{
 
 	// Reservar las citas
-	function Create($Cod_usu,$Telefono,$Hora,$Fecha,$Estado,$Servicio,$empleado){
+	function Create($Cod_usu,$Telefono,$Hora,$Fecha,$Estado,$Servicio,$empleado,$Cod_Emp){
 		$conexion=Softmar_BD::Connect();
 		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-		$consulta="INSERT INTO citas (Cod_usu,Telefono,Hora,Fecha,Estado,Servicio,empleado) VALUES (?,?,?,?,?,?,?)";		
+		$consulta="INSERT INTO citas (Cod_usu,Telefono,Hora,Fecha,Estado,Servicio,empleado,Cod_Emp) VALUES (?,?,?,?,?,?,?,?)";		
 		$query=$conexion->prepare($consulta);
-		$query->execute(array($Cod_usu,$Telefono,$Hora,$Fecha,$Estado,$Servicio,$empleado));
+		$query->execute(array($Cod_usu,$Telefono,$Hora,$Fecha,$Estado,$Servicio,$empleado,$Cod_Emp));
 
 		Softmar_BD::Disconnect();			
 	}
 
 	// modificacion de las citas
-	function Update($Cod_cita,$Cod_usu,$Telefono,$Hora,$Fecha,$Estado,$Cod_empl,$Cod_serv){
+	function Update($Cod_cita,$Cod_usu,$Telefono,$Hora,$Fecha,$Estado,$Cod_empl,$Cod_serv,$Cod_Emp){
 		$conexion=Softmar_BD::Connect();
 		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 		
 
-		$consulta="UPDATE citas SET Cod_usu=?,Telefono=?,Hora=?,Fecha=?,Estado=?,Cod_serv=? WHERE Cod_cita=? ";		
+		$consulta="UPDATE citas SET Cod_usu=?,Telefono=?,Hora=?,Fecha=?,Estado=?,Cod_serv=?,Cod_Emp=? WHERE Cod_cita=? ";		
 		$query=$conexion->prepare($consulta);
-		$query->execute(array($Cod_usu,$Telefono,$Hora,$Fecha,$Estado,$Cod_serv,$Cod_cita));
+		$query->execute(array($Cod_usu,$Telefono,$Hora,$Fecha,$Estado,$Cod_serv,$Cod_Emp,$Cod_cita));
 		
 		Softmar_BD::Disconect();		
 

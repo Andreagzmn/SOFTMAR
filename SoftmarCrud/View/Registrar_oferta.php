@@ -14,100 +14,100 @@
 <html>
 <head>
   <meta charset="utf-8"/>
-      <!--Import Google Icon Font-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
-      <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster" />
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <link rel="stylesheet" type="text/css" href="estilos.css">
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster" />
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" type="text/css" href="estilos.css">
 
-      <?php
+    <?php
 
-          if(isset($_GET["m"])){
-            if($_GET["m"] != ""){
-              echo "<script>alert('".$_GET["m"]."')</script>";
-            }
+        if(isset($_GET["m"])){
+          if($_GET["m"] != ""){
+            echo "<script>alert('".$_GET["m"]."')</script>";
           }
+        }
 
-      ?>
+    ?>
 </head>
 <body>
-    <center><div class="container">
-        <h3 style="text-align:center; margin-bottom: -47px; ">Softmar</h3>
-          <form  action="../Controller/oferta.controller.php" method="POST" id="formulario" class="col s12 formulario">
-                <section class="col s12" >
-              <div class="row">
-                  <div class="input-field col s12">
-                            <select  name="Cod_Emp">
-                                <option value="" disabled selected>Seleccione una empresa</option>
-                                <?php
-                                    // Cargo la bd
-                                    require_once("../Model/db_conn.php");
-                                    // Cargo la clase tipo empresa
-                                    require_once("../Model/empresa.class.php");
+  <center><div class="container">
+  <h3 style="text-align:center; margin-bottom: -47px; ">Softmar</h3>
+  <form  action="../Controller/oferta.controller.php" method="POST" id="formulario" class="col s12 formulario">
+    <section class="col s12" >
+      <div class="row">
+        <div class="input-field col s12">
+          <select  name="Cod_Emp">
+            <option value="" disabled selected>Seleccione una empresa</option>
+              <?php
+                  // Cargo la bd
+                  require_once("../Model/db_conn.php");
+                  // Cargo la clase tipo empresa
+                  require_once("../Model/empresa.class.php");
 
-                                    $empresa = Gestion_Empresa::ReadAll();
+                  $empresa = Gestion_Empresa::ReadAll();
 
-                                    foreach ($empresa as $row){
-                                        echo "<option value='".$row["Cod_Emp"]."'>".$row["Nombre"]."</option>";
-                                    }
-                                ?>
-                            </select>
-                            <label></label>
-                        </div>
-                    </div>
-                    <div class="row">    
-                        <div class="input-field col s12">
-                            <input id="last_name" type="text" class="validate" required name="Nombre">
-                            <label for="last_name">Nombre de la oferta</label>
-                        </div>
-                     </div> 
-                    <div class="row">   
-                      <div class="input-field col s12">
-                        <input id="first_name" type="text" class="validate" required name="Descripcion">
-                        <label for="first_name">Descripción</label>
-                      </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <select id="first_name" type="text" class="validate" required name="Estado"required><option value="">Estado</option>
-                              <option value="disponible">Disponible</option>
-                              <option value="">No disponible</option>
-                          </select>
-                        </div>
-                    </div>
-                   <div class="row">
-                        <div class="input-field col s12">
-                            <input id="first_name" type="text" class="validate" required name="Foto">
-                            <label for="first_name">Foto</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="first_name" type="text" class="validate" required name="Categoria">
-                            <label for="first_name">Categoria</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="first_name" type="number" class="validate" required name="Disponible">
-                            <label for="first_name">Oferta disponibles</label>
-                        </div>
-                    </div>    
-                    <button type="submit" name="accion" value="c" id="boton" id="btn-crear-cuenta" class="btn waves-effect  cyan darken-3">Registrar</button>
-                    <a href="Gestion_Oferta_admin.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
-                    <?php echo @$_REQUEST["$msn"]; ?>   
-                </section>            
-            </form>
-        </div></center>  
-        <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
-        <script type="text/javascript" src="materialize/js/materialize.js"></script>
-        <script>
-            $(document).ready(function() {
-             $('select').material_select();
-            });
-        </script>
+                  foreach ($empresa as $row){
+                      echo "<option value='".$row["Cod_Emp"]."'>".$row["Nombre"]."</option>";
+                  }
+              ?>
+          </select>
+          <label></label>
+        </div>
+      </div>
+      <div class="row">    
+        <div class="input-field col s12">
+          <input id="last_name" type="text" class="validate" required name="Nombre">
+          <label for="last_name">Nombre de la oferta</label>
+        </div>
+      </div> 
+      <div class="row">   
+        <div class="input-field col s12">
+          <input id="first_name" type="text" class="validate" required name="Descripcion">
+          <label for="first_name">Descripción</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <select id="first_name" type="text" class="validate" required name="Estado"required><option value="">Estado</option>
+            <option value="disponible">Disponible</option>
+            <option value="">No disponible</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="first_name" type="text" class="validate" required name="Foto">
+          <label for="first_name">Foto</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="first_name" type="text" class="validate" required name="Categoria">
+          <label for="first_name">Categoria</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="first_name" type="number" class="validate" required name="Oferta">
+          <label for="first_name">Oferta disponibles</label>
+        </div>
+      </div>    
+      <button type="submit" name="accion" value="c" id="boton" id="btn-crear-cuenta" class="btn waves-effect  cyan darken-3">Registrar</button>
+      <a href="Gestion_Oferta_admin.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
+      <?php echo @$_REQUEST["$msn"]; ?>   
+    </section>            
+  </form>
+  </div></center>  
+    <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="materialize/js/materialize.js"></script>
+    <script>
+        $(document).ready(function() {
+         $('select').material_select();
+        });
+    </script>
 </body>
 </html>

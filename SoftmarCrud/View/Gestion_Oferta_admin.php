@@ -108,7 +108,7 @@
 
                 <td>
                   <a href='../View/Actualizar_oferta.php?of=".base64_encode($row["Cod_ofer"])."'><i class='fa fa-pencil'></i></a>
-                  <a href='../Controller/oferta.controller.php?pr=".base64_encode($row["Cod_ofer"])."&accion=d'><i class='fa fa-trash'></i></a>
+                  <a href='../Controller/oferta.controller.php?of=".base64_encode($row["Cod_ofer"])."&accion=d'><i class='fa fa-trash'></i></a>
                 </td>
               </tr>";
       }

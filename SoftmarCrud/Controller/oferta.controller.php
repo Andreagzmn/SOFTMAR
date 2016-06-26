@@ -39,7 +39,45 @@
 				$tipomensaje = "error";
 				header("Location: ../View/Registrar_Oferta.php?m=".$mensaje."&tm=".$tipomensaje);
 			}
-			break;
-		}
+		break;
+
+		case 'u':
+			#modificar...
+			#Inicializar las variables que se envian desde el formulario y las que necesito para almancenar en la tabla.
+            
+            $Cod_ofer       = $_POST["Cod_ofer"];
+			$Cod_Emp 		= $_POST["Cod_Emp"];			
+			$Nombre		    = $_POST["Nombre"];
+			$Descripcion    = $_POST["Descripcion"];
+			$Estado	        = $_POST["Estado"];
+			$Foto           = $_POST["Foto"];
+			$Categoria      = $_POST["Categoria"];
+			$Oferta         = $_POST["Oferta"];
+
+			try{
+				Gestion_oferta::Update($Cod_ofer, $Cod_Emp, $Nombre, $Descripcion, $Estado, $Foto, $Categoria, $Oferta);
+				$mensaje = "La oferta se actualizo correctamente";
+				$tipomensaje = "success";
+				header("Location: ../View/Gestion_Oferta_admin.php?m=".$mensaje."&tm=".$tipomensaje);
+			}catch (Exception $e){
+				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	
+				$tipomensaje = "error";
+				header("Location: ../View/Registrar_Oferta.php?m=".$mensaje."&tm=".$tipomensaje);
+			}
+		break;	
+
+		case 'd':
+        try {
+          $oferta = Gestion_oferta::Delete(base64_decode($_REQUEST["of"]));
+          $mensaje = "se elimino correctamente";
+          $tipomensaje = "success";
+          header("Location: ../View/Gestion_Oferta_admin.php?m=".$mensaje."&tm=".$tipomensaje);
+        } catch (Exception $e) {
+          $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
+          $tipomensaje = "error";
+          header("Location: ../View/Gestion_Oferta_admin.php?m=".$mensaje."&tm=".$tipomensaje);
+        }
+      break;
+	}
 		
 ?>

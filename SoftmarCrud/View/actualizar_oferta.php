@@ -36,56 +36,63 @@
       </script>
 </head>
 <body>
-    <center><div class="containact">
-      <h4 class="teal-text text-teal lighten-3 test">Actualizar</h4>
-      <div class="row formu">
-        <form class="col s12" action="../Controller/oferta.controller.php" method="POST">
-          <div class="row">
-              <input type="hidden" readonly name="Cod_ofer" required value="<?php echo $producto[0] ?>">
-              <input type="hidden" readonly name="Cod_Emp" required value="<?php echo $producto[1] ?>">
-                    <div class="row">    
-                        <div class="input-field col s12">
-                            <input id="last_name" type="text" class="validate" required name="Nombre" value="<?php echo $oferta[2] ?>">
-                            <label for="last_name">Nombre de la oferta</label>
-                        </div>
-                     </div> 
-                    <div class="row">   
-                      <div class="input-field col s12">
-                        <input id="first_name" type="text" class="validate" required name="Descripcion" value="<?php echo $oferta[3] ?>">
-                        <label for="first_name">Descripción</label>
-                      </div>
-                    </div>
-            <div class="input-field col s6 m4">
-               <select name="Estado" required  value="<?php echo $Estado[4] ?>">
-                  <option value="3" <?php if($Estado["Estado"] == 4){ echo "selected"; } ?>>Disponible</option>
-                  <option value="4" <?php if($Estado["Estado"] == 4){ echo "selected"; } ?>>No Disponible</option>
-                </select>
-                <label>Tipo empresa</label>
-              </div>
-              <div>     
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="first_name" type="text" class="validate" required name="Categoria" value="<?php echo $oferta[6] ?>">
-                            <label for="first_name">Categoria</label>
-                        </div>
-                    </div> 
-                        <div class="input-field col s12">
-                            <input id="first_name" type="number" class="validate" required name="Disponible" value="<?php echo $oferta[7]?>">
-                            <label for="first_name">Oferta disponibles</label>
-                        </div>
-                    </div> 
-                   <button name="accion" value="u" id="boton" class="btn waves-effect" style="margin: 20px;">Actualizar</button>
-                  <a href="Gestion_Oferta_admin.php" id="boton" class="btn waves-effect" style="margin: 20px;" >Cancelar</a>
-                <?php echo @$_REQUEST["$mensaje"]; ?>            
-            </form>
+  <center><div class="containact">
+    <h4 class="teal-text text-teal lighten-3 test">Actualizar</h4>
+    <div class="row formu">
+      <form class="col s12" action="../Controller/oferta.controller.php" method="POST">
+        <div class="row">
+          <input type="hidden" readonly name="Cod_ofer" required value="<?php echo $oferta[0] ?>">
+          <input type="hidden" readonly name="Cod_Emp" required value="<?php echo $oferta[1] ?>">
+          <div class="row">    
+            <div class="input-field col s12">
+              <input id="last_name" type="text" class="validate" required name="Nombre" value="<?php echo $oferta[2] ?>">
+              <label for="last_name">Nombre de la oferta</label>
             </div>
-        </div></center>
-        <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
-        <script type="text/javascript" src="materialize/js/materialize.js"></script>
-        <script>
-            $(document).ready(function() {
-             $('select').material_select();
-            });
-        </script>
+           </div> 
+           <div class="row">   
+             <div class="input-field col s12">
+               <input id="first_name" type="text" class="validate" required name="Descripcion" value="<?php echo $oferta[3] ?>">
+               <label for="first_name">Descripción</label>
+             </div>
+           </div>
+            <div class="input-field col s6 m4">
+              <select name="Estado" required  value="<?php echo $Estado[4] ?>">
+                <option>Disponible</option>
+                <option>No Disponible</option>
+              </select>
+              <label>Estado</label>
+            </div>
+            <div>  
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="first_name" type="text" class="validate" required name="Foto" value="<?php echo $oferta[5] ?>">
+                <label for="first_name">Foto</label>
+              </div>
+            </div>                    
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="first_name" type="text" class="validate" required name="Categoria" value="<?php echo $oferta[6] ?>">
+                <label for="first_name">Categoria</label>
+              </div>
+            </div> 
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="first_name" type="number" class="validate" required name="Oferta" value="<?php echo $oferta[7]?>">
+                <label for="first_name">Oferta disponibles</label>
+              </div>
+            </div> 
+            <button name="accion" value="u" id="boton" class="btn waves-effect" style="margin: 20px;">Actualizar</button>
+            <a href="Gestion_Oferta_admin.php" id="boton" class="btn waves-effect" style="margin: 20px;" >Cancelar</a>
+            <?php echo @$_REQUEST["$mensaje"]; ?>            
+      </form>
+    </div>
+  </div></center>
+    <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="materialize/js/materialize.js"></script>
+    <script>
+        $(document).ready(function() {
+         $('select').material_select();
+        });
+    </script>
 </body>
 </html>

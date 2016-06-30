@@ -10,39 +10,29 @@
 
     header("Location: ../View/Index.php?m=".$msn."&tm=".$tipo_msn);
   }
+  require_once("../Model/empresa.class.php");
+
+   if(isset($_GET["ei"])){
+      $ei =  base64_decode($_GET["ei"]);
+   }else{
+      $ei = $_SESSION["Cod_Emp"];
+   }
+   
+   $informacion = Gestion_Empresa::ReadbyID($ei);
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8"/>
-      <!--Import Google Icon Font-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
-      <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster" />
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <link rel="stylesheet" type="text/css" href="estilos.css">
-       <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
-      <script type="text/javascript" src="materialize/js/materialize.js"></script>
-      <script>
+  <title></title>
+  <script>
           $(document).ready(function() {
             $('select').material_select();
           });
       </script>
-
-      <?php
-
-          if(isset($_GET["m"])){
-            if($_GET["m"] != ""){
-              echo "<script>alert('".$_GET["m"]."')</script>";
-            }
-          }
-
-      ?>
 </head>
 <body>
-    <center><div class="container">
+
+<center><div class="container">
         <h3 style="text-align:center; margin-bottom: -47px; ">Softmar</h3>
           <form  action="../Controller/citas.controller.php" method="POST" id="formulario" class="col s12 formulario">
                 <section class="col s12" >
@@ -111,6 +101,7 @@
                     <?php echo @$_REQUEST["$msn"]; ?>   
                 </section>            
             </form>
-    </div></center>    
-    </body>
+</div></center>
+
+</body>
 </html>

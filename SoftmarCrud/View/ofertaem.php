@@ -1,1 +1,1 @@
-ofertas<?php echo $_GET["ei"]?>
+<?php echo $_GET["ei"]?>

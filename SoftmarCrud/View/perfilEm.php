@@ -1,7 +1,9 @@
-<?php
+ <?php
  session_start();
   require_once("../Model/db_conn.php");
   require_once("../Model/contactos.class.php");
+  require_once("../Model/servicio.class.php");
+  require_once("../Model/Empleados.class.php");
 
    if(!isset($_SESSION["Cod_usu"])){
     $msn = base64_encode("Debe iniciar sesion primero!");
@@ -37,19 +39,29 @@
  <script >
   
     $(document).ready(function(){
+
        $('.slider').slider({
           Height:400,
           Transition: 400,
           Interval: 400,
-          Indicators: false
+          Indicators: false          
        });
 
-       $("#btn_ofertas").click(function(){
+       
+
+       $("#btn_citas").click(function(){
           var ei = "<?php echo $ei ?>";
-          $("#secciones").load("ofertaem.php?ei="+ei);
+          $("#secciones").load("Calendario.php?ei="+ei);
        });
-     });
-  </script>
+     });    
+</script>
+  <?php
+    if(isset($_GET["m"])){
+      if($_GET["m"] != ""){
+         echo "<script>alert('".$_GET["m"]."')</script>";
+        }
+      }
+  ?>
 </head>
 <body>
  <nav class="black">
@@ -90,7 +102,7 @@
               <li><a id="btn_ofertas">Ofertas ajax</a></li>
               
 			        <li><a href="producEm.php?ei=<?php echo base64_encode("$ei");?>">Productos y servicios</a></li>
-			        <li><a href="RegcitaEm.php?ei=<?php echo base64_encode("$ei");?>">Citas</a></li>
+			        <li><a id="btn_citas">Citas</a></li>
 			        <li><a href="ofertaEm.php?ei=<?php echo base64_encode("$ei");?>">Ofertas</a></li>
 			        <li><a href="contactoEm.php?ei=<?php echo base64_encode("$ei");?>">Contacto</a></li>
 			      </ul>

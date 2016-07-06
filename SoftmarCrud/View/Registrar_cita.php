@@ -1,6 +1,7 @@
 <?php
  session_start();
   require_once("../Model/db_conn.php");
+  require_once("../Model/contactos.class.php");
   require_once("../Model/servicio.class.php");
   require_once("../Model/Empleados.class.php");
 
@@ -9,26 +10,30 @@
     $tipo_msn = base64_encode("advertencia");
 
     header("Location: ../View/Index.php?m=".$msn."&tm=".$tipo_msn);
-  }
-  require_once("../Model/empresa.class.php");
-
-   if(isset($_GET["ei"])){
-      $ei =  base64_decode($_GET["ei"]);
-   }else{
-      $ei = $_SESSION["Cod_Emp"];
-   }
-   
-   $informacion = Gestion_Empresa::ReadbyID($ei);
+  }   
+ 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
+
   <title></title>
+<link rel="stylesheet" href="iconos/css/font-awesome.min.css">
+<link rel="stylesheet" href="calendario\calendario.css">
+<script type="text/javascript" src="calendario\calendario.js"></script>
   <script>
-          $(document).ready(function() {
-            $('select').material_select();
-          });
-      </script>
+    $(document).ready(function() {
+      $('select').material_select();
+      $('#fecha_cita').datepicker({
+      
+      showOn: "button",
+      buttonImage:"calendario/images/calen.png",
+      buttonImageOnly:true,
+      showButtonPanel:true,
+    
+});
+    });
+  </script>
 </head>
 <body>
 
@@ -44,13 +49,8 @@
                   </div>
                 </div>
                 <div class="input-field col s12">
-                 <select name="Fecha" id="fecha_cita">
-                        <option value="" disabled selected>Seleccione fecha</option>
-                        <option value="8:00 am">8:00 am</option>
-                        <option value="8:30 am">8:30 am</option>
-                        <option value="9:00 am">9:00 am</option>
-                      </select>
-                  </div>
+                 <input type="text" name="Fecha" placeholder="clic en el calendario" required id="fecha_cita" readonly>
+                </div>
                 <div class="row">    
                   <div class="input-field col s12">
                       <select name="Hora" id="hora">

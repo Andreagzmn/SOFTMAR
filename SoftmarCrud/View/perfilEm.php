@@ -24,6 +24,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
 <meta charset="utf-8"/>
       <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -36,7 +38,8 @@
 	<title>Perfil</title>
  <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
  <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
- <script >
+
+  <script >
   
     $(document).ready(function(){
 
@@ -98,9 +101,7 @@
 			    <div class="nava">
 			      <ul id="nav-mobile" class="center hide-on-med-and-down " >
 
-              <li><a href="perfilEm.php?ei=<?php echo base64_encode("$ei");?>">La Empresa</a></li>
-              <li><a id="btn_ofertas">Ofertas ajax</a></li>
-              
+              <li><a href="perfilEm.php?ei=<?php echo base64_encode("$ei");?>">La Empresa</a></li>  
 			        <li><a href="producEm.php?ei=<?php echo base64_encode("$ei");?>">Productos y servicios</a></li>
 			        <li><a id="btn_citas">Citas</a></li>
 			        <li><a href="ofertaEm.php?ei=<?php echo base64_encode("$ei");?>">Ofertas</a></li>

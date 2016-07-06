@@ -65,13 +65,14 @@
       
    </head>
   <body>
-  <nav class="black">
+  <nav id="menufixed" class="black">
       <div class="nav-wrapper " style="margin-left: 5px; margin-right: 5px;">
         <h2 href="#!" class="brand-logo" style="text-align:center; margin-top: 10px; "><!-- <img src="img/SOFTMAR.png" style="width: 500%; margin-top: -15px; position: relative;"> -->Softmar</h2>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <?php include_once("../View/comp.menu.php"); ?>
      </div>
   </nav> 
+  <section class="datagrid">
     <center><h3>Gestionar Empresa</h3></center>
     <center><a href="Registrar_Empresa.php" class="btn-floating waves-effect waves-light cyan darken-3"><i class="material-icons">add</i></a>Agregar Empresa</center>
 
@@ -129,6 +130,7 @@
       ?>
       </tbody>
     </table></center>
+    </section>
     <?php include_once("../View/pie_pagina.php"); ?>
   </body>
 </html>

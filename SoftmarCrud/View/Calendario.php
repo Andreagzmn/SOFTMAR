@@ -44,7 +44,7 @@
 </head>
 <center><body>
 	
-	<div id="agenda" class="bgcontent center" style="width: 60%; height: 10%;"></div>
+	<div id="agenda" class="bgcontent center  grey lighten-1" style="width: 60%; height: 10%;"></div>
 	
 </body></center>
 </html>

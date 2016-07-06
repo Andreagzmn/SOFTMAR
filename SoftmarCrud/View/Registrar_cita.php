@@ -32,9 +32,9 @@
 </head>
 <body>
 
-<center><div class="container">
-        <h3 style="text-align:center; margin-bottom: -47px; ">Softmar</h3>
-          <form  action="../Controller/citas.controller.php" method="POST" id="formulario" class="col s12 formulario">
+<center><div class="container" style="width: 30%;">
+        <h3 style="text-align:center; margin-bottom: 5px; ">Softmar</h3>        
+          <form  action="../Controller/citas.controller.php" method="POST" class="col s12 formulario1">
                 <section class="col s12" >
                 <div class="row">  
                   <input id="Cod_Emp" type="hidden" value="<?php echo $_GET["ei"]?>" name="Cod_Emp">
@@ -100,7 +100,7 @@
                     <a href="perfilEm.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
                     <?php echo @$_REQUEST["$msn"]; ?>   
                 </section>            
-            </form>
+            </form>          
 </div></center>
 
 </body>

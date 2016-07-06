@@ -51,7 +51,7 @@
 
        $("#btn_citas").click(function(){
           var ei = "<?php echo $ei ?>";
-          $("#secciones").load("Calendario.php?ei="+ei);
+          $("#secciones").load("Registrar_cita.php?ei="+ei);
        });
      });    
 </script>
@@ -110,7 +110,7 @@
 			  </nav></center>
         </header>
       <div class="container-fluid ">
-        <div class="row">
+        <div class="row bgcontente">
           <div id="secciones">
   	  		<?php
   		         echo "

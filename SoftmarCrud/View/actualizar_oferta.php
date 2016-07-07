@@ -18,6 +18,7 @@
        <meta charset="utf-8"/>
       <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster" />
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
       <!--Let browser know website is optimized for mobile-->
@@ -36,8 +37,16 @@
       </script>
 </head>
 <body>
-  <center><div class="containact">
-    <h4 class="teal-text text-teal lighten-3 test">Actualizar</h4>
+  <nav id="menufixed" class="black">
+    <div class="nav-wrapper " style="margin-left: 5px; margin-right: 5px;">
+      <h3 href="#!" class="brand-logo" style="text-align:center; margin-top: 10px; "><!-- <img src="img/SOFTMAR.png" style="width: 500%; margin-top: -15px; position: relative;"> -->Softmar</h3>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <?php include_once("../View/comp.menu.php"); ?>
+    </div>
+  </nav>
+  <section class="datagrid">
+  <center><div class="cont-oferta">
+    <h3>Actualizar oferta</h3>
     <div class="row formu">
       <form class="col s12" action="../Controller/oferta.controller.php" method="POST">
         <div class="row">
@@ -81,12 +90,13 @@
                 <label for="first_name">Oferta disponibles</label>
               </div>
             </div> 
-            <button name="accion" value="u" id="boton" class="btn waves-effect" style="margin: 20px;">Actualizar</button>
-            <a href="Gestion_Oferta_admin.php" id="boton" class="btn waves-effect" style="margin: 20px;" >Cancelar</a>
+            <button name="accion" value="u" id="boton" class="btn waves-effect">Actualizar</button>
+            <a href="Gestion_Oferta_admin.php" id="boton" class="btn waves-effect blue-grey darken-2"  id="btn-crear-cuenta" >Cancelar</a>
             <?php echo @$_REQUEST["$mensaje"]; ?>            
       </form>
     </div>
   </div></center>
+  </section>
     <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.js"></script>
     <script>
@@ -94,5 +104,6 @@
          $('select').material_select();
         });
     </script>
+    <?php include_once("../View/pie_pagina.php"); ?>
 </body>
 </html>

@@ -19,6 +19,7 @@
       <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
+      <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster" />
       <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -36,10 +37,11 @@
       </script>
 </head>
 <body>
-    <center><div class="containact">
-      <h4 class="teal-text text-teal lighten-3 test">Actualizar</h4>
-      <div class="row formu">
-        <form class="col s12" action="../Controller/producto.controller.php" method="POST">
+
+    <center><div class="container">
+      <h3  style="text-align:center; margin-bottom: -47px; ">Actualizar</h3>
+      <div class="row">
+        <form class="col s12 " action="../Controller/producto.controller.php" method="POST">
           <div class="row">
               <input type="hidden" readonly name="Cod_prod" required value="<?php echo $producto[0] ?>">
               <input type="hidden" readonly name="Cod_Emp" required value="<?php echo $producto[1] ?>">
@@ -80,5 +82,6 @@
              $('select').material_select();
             });
         </script>
+        <?php include_once("../View/pie_pagina.php"); ?>
 </body>
 </html>

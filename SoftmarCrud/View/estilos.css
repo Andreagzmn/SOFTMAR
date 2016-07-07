@@ -363,6 +363,7 @@ nav{
 }
 footer{
   position: fixed;
+  z-index: 100;
   left: 0;
   bottom: 0;
   height: 20px;
@@ -455,4 +456,9 @@ footer.page-footer .footer-copyright {
 /*Perfil Empresa*/
 .caption h4 {
   color: black;
+}
+/*Actualizar oferta */
+
+.cont-oferta{
+  width: 35%;
 }

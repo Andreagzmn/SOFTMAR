@@ -43,7 +43,7 @@
   </nav>
   <section class="datagrid">
   <center><div class="container">
-  <h3 style="text-align:center; margin-bottom: -47px; ">Agregar oferta</h3>
+  <h3 style="text-align:center">Agregar oferta</h3>
   <form  action="../Controller/oferta.controller.php" method="POST" id="formulario" class="col s12 formulario">
     <section class="col s12" >
       <div class="row">

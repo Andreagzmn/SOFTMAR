@@ -46,7 +46,7 @@
   </nav>
   <section class="datagrid">
   <center><div class="cont-oferta">
-    <h3>Actualizar oferta</h3>
+    <h3 style="text-align:center">Actualizar oferta</h3>
     <div class="row formu">
       <form class="col s12" action="../Controller/oferta.controller.php" method="POST">
         <div class="row">
@@ -91,7 +91,7 @@
               </div>
             </div> 
             <button name="accion" value="u" id="boton" class="btn waves-effect">Actualizar</button>
-            <a href="Gestion_Oferta_admin.php" id="boton" class="btn waves-effect blue-grey darken-2"  id="btn-crear-cuenta" >Cancelar</a>
+            <a href="Gestion_Oferta_admin.php" id="boton" class="btn waves-effect blue-grey darken-2">Cancelar</a>
             <?php echo @$_REQUEST["$mensaje"]; ?>            
       </form>
     </div>

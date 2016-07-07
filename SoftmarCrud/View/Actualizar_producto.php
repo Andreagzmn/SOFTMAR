@@ -37,10 +37,17 @@
       </script>
 </head>
 <body>
-
-    <center><div class="container">
-      <h3  style="text-align:center; margin-bottom: -47px; ">Actualizar</h3>
-      <div class="row">
+  <nav id="menufixed" class="black">
+    <div class="nav-wrapper " style="margin-left: 5px; margin-right: 5px;">
+      <h3 href="#!" class="brand-logo" style="text-align:center; margin-top: 10px; "><!-- <img src="img/SOFTMAR.png" style="width: 500%; margin-top: -15px; position: relative;"> -->Softmar</h3>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <?php include_once("../View/comp.menu.php"); ?>
+    </div>
+  </nav>
+  <section class="datagrid">
+    <center><div class="cont-oferta">
+      <h3  style="text-align:center;">Actualizar Producto</h3>
+      <div class="row formu">
         <form class="col s12 " action="../Controller/producto.controller.php" method="POST">
           <div class="row">
               <input type="hidden" readonly name="Cod_prod" required value="<?php echo $producto[0] ?>">
@@ -69,8 +76,8 @@
                             <label for="first_name">Cantidad</label>
                         </div>
                     </div>  
-                   <button name="accion" value="u" id="boton" class="btn waves-effect" style="margin: 20px;">Actualizar</button>
-                  <a href="Gestion_Producto_admin.php" id="boton" class="btn waves-effect" style="margin: 20px;" >Cancelar</a>
+                   <button name="accion" value="u" id="boton" class="btn waves-effect">Actualizar</button>
+                  <a href="Gestion_Producto_admin.php" id="boton" class="btn waves-effect  blue-grey darken-2" >Cancelar</a>
                 <?php echo @$_REQUEST["$mensaje"]; ?>            
             </form>
             </div>

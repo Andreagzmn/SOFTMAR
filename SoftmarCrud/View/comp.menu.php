@@ -51,7 +51,15 @@ if($_SESSION["cod_rol"]==103){
   }elseif ($_SESSION["cod_rol"]==101) {
          
 ?>
-      <ul class="right hide-on-med-and-down">
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#">Gestionar empresa</a></li>
+        <li><a href="#">Gestionar empleado</a></li>
+        <li><a href="#">Gestionar servicio</a></li>
+        <li><a href="#">Gestionar producto</a></li>
+        <li><a href="#">Gestionar oferta</a></li>      
+      </ul>
+
+    <ul class="right hide-on-med-and-down">
       <li><a href="dashboard.php">Inicio</a></li>
       <li><a href="informacion.php">Información</a></li>
       <li><a href="nosotros.php">Nosotros</a></li>
@@ -60,9 +68,10 @@ if($_SESSION["cod_rol"]==103){
       <li><a href="#">Citas</a></li>
       <li><a href="#">Reportes</a></li>
       <li><a href="perfilEm.php">Ver tu empresa</a></li>
-      <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><?php echo($_SESSION["Nombre"])." ".($_SESSION["Apellido"]) ?><i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Gestionar<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2"><?php echo($_SESSION["Nombre"])." ".($_SESSION["Apellido"]) ?><i class="material-icons right">arrow_drop_down</i></a></li>
     </ul>
-    <ul id="dropdown1" class="dropdown-content">
+    <ul id="dropdown2" class="dropdown-content">
       <li><a href="#!">Editar Perfil</a></li>
       <li><a href="../Controller/cerrarusuario.php">Cerrar sesión</a></li>
     </ul>
@@ -73,6 +82,8 @@ if($_SESSION["cod_rol"]==103){
       <li><a href="#">Citas</a></li>
       <li><a href="#">Reportes</a></li>
     </ul>
+
+
 <?php     
 } 
 ?> 

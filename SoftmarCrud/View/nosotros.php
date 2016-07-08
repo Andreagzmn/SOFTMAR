@@ -25,13 +25,14 @@
     <link type="text/css" rel="stylesheet" href="estilos.css"> 
 </head>
 <body>
-	 <nav class="black">
+	 <nav id="menufixed" class="black">
       <div class="nav-wrapper " style="margin-left: 5px; margin-right: 5px;">
         <h2 href="#!" class="brand-logo" style="text-align:center; margin-top: 10px; "><!-- <img src="img/SOFTMAR.png" style="width: 500%; margin-top: -15px; position: relative;"> -->Softmar</h2>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <?php include_once("../View/comp.menu.php"); ?>
      </div>
     </nav> 
+    <section class="datagrid">
 <center><div class="conteno">
     <div class="row formulario">
       	<div class="col s12 push-s12 m12">
@@ -65,6 +66,7 @@
 	</div>
 
 </div></center>
+</section>
 <?php include_once("../View/pie_pagina.php"); ?>
 <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
 <script type="text/javascript" src="materialize/js/materialize.min.js"></script>

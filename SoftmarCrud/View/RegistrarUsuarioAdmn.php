@@ -1,3 +1,15 @@
+<?php
+ session_start();
+  require_once("../Model/db_conn.php");
+  require_once("../Model/contactos.class.php");
+
+   if(!isset($_SESSION["Cod_usu"])){
+    $msn = base64_encode("Debe iniciar sesion primero!");
+    $tipo_msn = base64_encode("advertencia");
+
+    header("Location: ../View/Index.php?m=".$msn."&tm=".$tipo_msn);
+  }
+?>
 <!DOCTYPE html >
 <html>
 <head>
@@ -15,8 +27,16 @@
   <img class="logoregis" class="bg-principal contenido col-6-s" src="img\SOFTMAR.png">
   <H5 id="crea">CREA UNA CUENTA</H5>
   </section>-->
+  <nav id="menufixed" class="black">
+    <div class="nav-wrapper " style="margin-left: 5px; margin-right: 5px;">
+      <h3 href="#!" class="brand-logo" style="text-align:center; margin-top: 10px; "><!-- <img src="img/SOFTMAR.png" style="width: 500%; margin-top: -15px; position: relative;"> -->Softmar</h3>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <?php include_once("../View/comp.menu.php"); ?>
+   </div>
+  </nav>
+  <section class="datagrid">
   <center><div class="container">         
-    <h3  style="text-align:center; margin-bottom: -47px; ">Softmar</h3>
+    <h3  style="text-align:center;">Registrar Usuario</h3>
       <form action="../Controller/Usuariocontroller.php" method="POST" class="col s12 m8 offset-l8 z-depth-4 formulario " id="formulario" >
         <section class="col s12" >                
           <div class="col l6 s12 input-field form center">
@@ -84,7 +104,8 @@
         </section>
       </form>     
    </div></center>
-
+   </section>
+   <?php include_once("../View/pie_pagina.php"); ?>
   <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
   <script type="text/javascript" src="materialize/js/materialize.js"></script>
   <script>

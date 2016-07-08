@@ -371,7 +371,7 @@ footer{
 }
 .iconos{
   font-size: 35px;
-  margin-top: -8px;
+  margin-top: -9.5px;
 }
 footer.page-footer {
     margin-top: 212.5px;
@@ -379,6 +379,11 @@ footer.page-footer {
     background-color: #030303;
     height: 50px;
 }
+footer.page-footer {
+    margin-top: 20px;
+    padding-top: 20px;
+    background-color: #030303;
+  }
 footer.page-footer .footer-copyright {
     overflow: hidden;
     height: 33px;

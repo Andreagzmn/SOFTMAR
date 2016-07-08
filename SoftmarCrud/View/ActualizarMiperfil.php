@@ -40,10 +40,18 @@
   <img class="logoregis" class="bg-principal contenido col-6-s" src="img\SOFTMAR.png">
   <H5 id="crea">CREA UNA CUENTA</H5>
   </section>-->
+    <nav id="menufixed" class="black">
+    <div class="nav-wrapper " style="margin-left: 5px; margin-right: 5px;">
+      <h3 href="#!" class="brand-logo" style="text-align:center; margin-top: 10px; "><!-- <img src="img/SOFTMAR.png" style="width: 500%; margin-top: -15px; position: relative;"> -->Softmar</h3>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <?php include_once("../View/comp.menu.php"); ?>
+    </div>
+  </nav>
+  <section class="datagrid">
   <center><div class="container">
     <div ="row">
           <div class="col s12 l8  ">
-          <h3  style="text-align:center; margin-bottom: -47px; ">Softmar</h3>
+          <h3 style="text-align:center">Editar Perfil</h3>
           	<form action="../Controller/Usuariocontroller.php" method="POST" class="col s12 m8 offset-l8 z-depth-4 formulario " id="formulario" >
               <section class="col s12" > 
                   <label>Cod_Usu</label>
@@ -97,14 +105,43 @@
         </div>
       </div>
    </div></center>
-
+   </section>
   <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
   <script type="text/javascript" src="materialize/js/materialize.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('select').material_select();
+
+      $("#Cc").keyup(function(){
+          var cedula = $("#Cc").val();
+          var accion = "existe_usuario";
+
+          $.post("../Controller/Usuariocontroller.php", {cedula: cedula, accion: accion}, function(result){
+
+              $("#resultadobusqueda").html(result.msn); 
+
+              if(result.ue == true){ 
+                $("button").prop("disabled",true);
+                $("#last").addClass("hide");
+              }
+
+              if(result.ue == false){ 
+                $("button").prop("disabled",false);
+                $("#last").removeClass("hide");
+              }
+          }, "json");
+      });
+
+
+    });
+
+  </script>
   <script>
     $(document).ready(function() {
       $('select').material_select();
     });
 
   </script>
+  <?php include_once("../View/pie_pagina.php"); ?>
 </body>
 </html>

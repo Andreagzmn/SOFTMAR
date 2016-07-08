@@ -1,4 +1,4 @@
-<?php
+  <?php
   session_start();
   require_once("../Model/db_conn.php");
   require_once("../Model/contactos.class.php");

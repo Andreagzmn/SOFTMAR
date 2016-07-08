@@ -48,7 +48,7 @@
                 
               <div class="row">
                   <div class="input-field col s12">
-                        <select  name="Cod_Emp">
+                        <select  Required name="Cod_Emp">
                             <option value="" disabled selected>Seleccione una empresa</option>
                             <?php
                                  // Cargo la bd

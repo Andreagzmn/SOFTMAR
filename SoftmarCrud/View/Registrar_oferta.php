@@ -48,7 +48,7 @@
     <section class="col s12" >
       <div class="row">
         <div class="input-field col s12">
-          <select  name="Cod_Emp">
+          <select name="Cod_Emp">
             <option value="" disabled selected>Seleccione una empresa</option>
               <?php
                   // Cargo la bd
@@ -94,8 +94,11 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="first_name" type="text" class="validate" required name="Categoria">
-          <label for="first_name">Categoria</label>
+          <select id="first_name" type="text" class="validate" required name="Categoria"><option value="">Categoría</option>
+            <option value="Descuento">Descuento</option>
+            <option value="Promocion">Promocion</option>
+            <option value="Remate">Remate</option>
+          </select>
         </div>
       </div>
       <div class="row">

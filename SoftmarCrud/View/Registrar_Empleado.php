@@ -49,7 +49,7 @@
         <form class="col s12"  action="../controller/Empleados.controller.php" method="POST">
           <div class="row">
             <div class="input-field col s12 m4">
-              <select  name="Cod_Emp" id="demo">
+              <select  Required name="Cod_Emp" id="demo">
                   <option value="" disabled selected>Empresa</option>
                   <?php
                     // Cargo la bd

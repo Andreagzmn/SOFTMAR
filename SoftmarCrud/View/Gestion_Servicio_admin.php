@@ -101,15 +101,23 @@
                 <td>
                   <a href='../View/Actualizar_servicio.php?sr=".base64_encode($row["Cod_serv"])."'><i class='fa fa-pencil'></i></a>
                   <a href='../Controller/servicio_emp.controller.php?sr=".base64_encode($row["Cod_serv"])."&accion=d'><i class='fa fa-trash'></i></a>
+
                 </td>
               </tr>";
       }
-
       ?>
+      <input id="alerta" type="button" value="Confirmacion" onClick="swal({   title: 'Deseas borrar?',  
+         text: 'Si Borra el registro no lo podra recuperar!', 
+         type: 'warning',   showCancelButton: true,   confirmButtonColor: '#DD6B55',   confirmButtonText: 'Yes, delete it!',
+            closeOnConfirm: false }, 
+            function(isConfirm){   
+            swal('Mensaje de Softmar!', 'se elimino correctamente.', 'success'); });">
+
       </tbody>
     </table>
     </section>
     <?php include_once("../View/pie_pagina.php"); ?>    
     <script type="text/javascript" src="materialize/js/materialize.js"></script>
+
   </body>
 </html>

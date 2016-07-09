@@ -32,10 +32,10 @@
         <?php include_once("../View/comp.menu.php"); ?>
      </div>
     </nav> 
-    <section class="datagrid">
-<center><div class="conteno">
+
+<center><div>
     <div class="row formulario">
-      	<div class="col s12 push-s12 m12">
+      	<div class="col s12 m12">
 	      	<h5 class="pink-text text-purple lighten-2 center-align ">Misión</h5>
 	      		<p><b>Lograr un equipo comprometido y motivado a mejorar los procesos 
 	      			funcionales en una peluquería, barbería o salon de belleza y a los 
@@ -53,7 +53,7 @@
 		      		de punta. Nuestro compromiso nos permite desarrollar e implementar 
 		      		exitosamente soluciones de gestión empresarial y servicios tecnológicos</b></p>
 	     </div>
-      	<div class="col s12 pull-s12 m12 quienes" >
+      	<div class="col s12 m12 quienes" >
 			<h5 class="pink-text text-purple lighten-2 center-align " >¿Quienes somos?</h5>
 		  		<p><b>
 			    <br>
@@ -66,7 +66,6 @@
 	</div>
 
 </div></center>
-</section>
 <?php include_once("../View/pie_pagina.php"); ?>
 <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
 <script type="text/javascript" src="materialize/js/materialize.min.js"></script>

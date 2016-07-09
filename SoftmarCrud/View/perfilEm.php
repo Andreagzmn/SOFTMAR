@@ -97,26 +97,24 @@
   		</div>
   	</div>
   		<header class="sub-menu ">
-        <center><nav class="nav-wrapper blue-grey lighten-2" >
-			    <div class="nava">
-			      <ul id="nav-mobile" class="center hide-on-med-and-down " >
-
-              <li><a href="perfilEm.php?ei=<?php echo base64_encode("$ei");?>">La Empresa</a></li>  
-			        <li><a href="producEm.php?ei=<?php echo base64_encode("$ei");?>">Productos y servicios</a></li>
-			        <li><a id="btn_citas">Citas</a></li>
-			        <li><a href="ofertaEm.php?ei=<?php echo base64_encode("$ei");?>">Ofertas</a></li>
-			        <li><a href="contactoEm.php?ei=<?php echo base64_encode("$ei");?>">Contacto</a></li>
+       <nav class="nav-wrapper blue-grey lighten-2" >
+			    <div >
+			       <ul >
+              <li style="margin-left:20px;"><a href="perfilEm.php?ei=<?php echo base64_encode("$ei");?>">La Empresa</a></li> 
+			        <li style=""><a href="producEm.php?ei=<?php echo base64_encode("$ei");?>">Productos y servicios</a></li>
+			        <li style=""><a id="btn_citas">Citas</a></li>
+			        <li style=""><a href="ofertaEm.php?ei=<?php echo base64_encode("$ei");?>">Ofertas</a></li>
 			      </ul>
 			    </div>
-			  </nav></center>
+			  </nav>
         </header>
       <div class="container-fluid ">
         <div class="row bgcontente">
           <div id="secciones">
   	  		<?php
   		         echo "
-               <div class='log col s6 m3'><img src='img/Imagenes_Empresas/".$nombre_empresa."/logo.png'></div>
-               <div class='col s6 m9 bgcontent'>
+               <div class='log col s3 m3'><img src='img/Imagenes_Empresas/".$nombre_empresa."/logo.png'></div>
+               <div class='col s9 m9 bgcontent'>
                <h4>".$informacion["Nombre"]."</h4>
   		         <p>".$informacion["Informacion"]."</p>
   		         <p>Dias de atencion ".$informacion["Dias_aten"]."</p>

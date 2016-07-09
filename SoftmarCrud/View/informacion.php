@@ -32,9 +32,9 @@
         <?php include_once("../View/comp.menu.php"); ?>
      </div>
    </nav> 
-	<div class="inf-conte">
+	<center><div class="inf-conte">
     <div class="row forma">
-      	<div class="col s12 center">
+      	<div class="col s12 m12 center">
       	<img src="img/SOFTMAR.png" class="login">
 	      	<p>Las peluquerías cuentan con una gran variedad de herramientas para sus diferentes servicios
            y trabajos para con el cliente o para sus empleados. Sus útiles principales son aquellos 
@@ -61,7 +61,7 @@
 	      </p>
 	    </div>
 	</div>
-	</div>
+	</div></center>
     <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
     <script type="text/javascript">

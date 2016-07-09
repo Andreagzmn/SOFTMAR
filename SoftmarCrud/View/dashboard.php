@@ -30,13 +30,13 @@
      <section class="dashbo-pel" class="contenido">
       <div class="container-fluid centr">
         <div class="row hover">
-          <div  class="thumb col-xs-6" id="gran">
+          <div  class="thumb  col-xs-12 col-sm-6" id="gran">
           <!-- <div id="prim">
             <h3><span>Peluqueria</span></h3>
           </div> -->
             <a href="buscar.php"><img  src="img/peluquerias.jpg" alt=""></a>
           </div>
-          <div class="thumb col-xs-3">
+          <div class="thumb  col-xs-12 col-sm-3">
           <!-- <div id="seg">
             <h5><span>Infantil</span></h5> 
           </div> -->
@@ -46,7 +46,7 @@
             </div> -->
             <a href="buscar.php"><img src="img/spa.jpg" alt=""></a>   
           </div>
-          <div class="thumb col-xs-3">
+          <div class="thumb  col-xs-12 col-sm-3">
           <!-- <div id="cuar">
             <h5><span>Barberia</span></h5> 
           </div> -->

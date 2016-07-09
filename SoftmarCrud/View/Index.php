@@ -31,7 +31,7 @@
 <body>
 
 <center><form   action="../Controller/Usuariocontroller.php" method="POST" >
-	<div class="con" style="height: 150px;">
+	<div class="con" style="height: 100px;">
   </div> 
 		<div class="tarjeta">		    
       <div class="row">

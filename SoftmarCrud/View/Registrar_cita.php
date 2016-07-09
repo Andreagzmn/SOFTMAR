@@ -94,7 +94,7 @@
                     </div>
                   </div> 
                     <input type="hidden" name="Cod_usu" value="<?php echo $_SESSION["Cod_usu"]; ?>"/>
-                    <!-- <input type="hidden" name="Cod_Emp" value="<?php //echo $_SESSION["Cod_Emp"]; ?>"/>  -->
+                    
 
                     <button type="submit"  name="acc" value="create" id="boton" id="btn-crear-cuenta" class="btn waves-effect  cyan darken-3">Registrar</button>
                     <a href="perfilEm.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>

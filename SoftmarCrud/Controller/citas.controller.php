@@ -23,14 +23,14 @@ include_once("../Model/Citas.class.php");
 
 	try{
 
-		Gestionar_citas::Create($Cod_usu,$Telefono,$Fecha,$Hora,$Estado,$Servicio,$empleado,$Cod_Emp);
+		Gestionar_citas::Create($Cod_usu,$Telefono,$Fecha,$Hora,$Estado,$Servicio,$empleado,$Cod_Emp); 
 		$mensaje="Su cita fue reservada con exito";
 		$tipomensaje = "success";
-		header("Location: ../View/perfilEm.php?ei".base64_encode("$ei").$mensaje."&tm=".$tipomensaje);
+		header("Location: ../View/perfilEm.php?m=".$mensaje."&tm=".$tipomensaje);
 	}catch(Exception $e){
 		$mensaje="ha ocurrido un error, el error fue:".$e->getMessage()."en el archivo:".$e->getFile()."en la linea:".$e->getLine();
 		$tipomensaje="error";
-		header("Location: ../View/perfilEm.php?ei=".base64_encode("$ei").$mensaje."&tm=".$tipomensaje);		
+		header("Location: ../View/perfilEm.php?m=".$mensaje."&tm=".$tipomensaje);		
 
 	}
 	

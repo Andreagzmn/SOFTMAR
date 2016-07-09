@@ -16,7 +16,7 @@
    if(isset($_GET["ei"])){
       $ei =  base64_decode($_GET["ei"]);
    }else{
-      $ei = $_SESSION["Cod_Emp"];
+      $ei = $_SESSION["Cod_Emp"];                                     
    }
    
    $informacion = Gestion_Empresa::ReadbyID($ei);

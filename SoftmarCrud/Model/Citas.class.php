@@ -3,13 +3,13 @@
 class Gestionar_citas{
 
 	// Reservar las citas
-	function Create($Cod_usu,$Telefono,$Hora,$Fecha,$Estado,$Servicio,$empleado,$Cod_Emp){
+	function Create($Cod_usu,$Telefono,$Fecha,$Hora,$Estado,$Servicio,$empleado,$Cod_Emp){
 		$conexion=Softmar_BD::Connect();
 		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-		$consulta="INSERT INTO citas (Cod_usu,Telefono,Hora,Fecha,Estado,Servicio,empleado,Cod_Emp) VALUES (?,?,?,?,?,?,?,?)";		
+		$consulta="INSERT INTO citas (Cod_usu,Telefono,Fecha,Hora,Estado,Servicio,empleado,Cod_Emp) VALUES (?,?,?,?,?,?,?,?)";		
 		$query=$conexion->prepare($consulta);
-		$query->execute(array($Cod_usu,$Telefono,$Hora,$Fecha,$Estado,$Servicio,$empleado,$Cod_Emp));
+		$query->execute(array($Cod_usu,$Telefono,$Fecha,$Hora,$Estado,$Servicio,$empleado,$Cod_Emp));
 
 		Softmar_BD::Disconnect();			
 	}

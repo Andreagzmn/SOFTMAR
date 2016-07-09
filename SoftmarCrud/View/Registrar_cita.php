@@ -23,6 +23,11 @@
 <script type="text/javascript" src="calendario\calendario.js"></script>
   <script>
     $(document).ready(function() {
+      <?php
+        if(isset($_GET["msn"])){
+        echo "swal( '".$_GET["msn"]."','', 'success');";
+        }
+      ?>
       $('select').material_select();
       $('#fecha_cita').datepicker({
       
@@ -32,7 +37,27 @@
       showButtonPanel:true,
     
 });
-    });
+
+  $("#emple").change(function(){
+     var hora        = $("#hora").val();
+     var fecha_cita  = $("#fecha_cita").val();
+     var empleado    = $("#emple").val();
+     // var formato     = $("#formato").val();
+     // var min         = $("#min").val();
+     var accion      = "valida_citas";
+
+     $.post("../Controller/citas.controller.php", {hora: hora, acc: accion, emple: empleado, fecha_cita: fecha_cita}, function(result){
+
+              
+           if(result.ue == true){ 
+              swal(result.msn);
+              $("#btnreg").prop("disabled",true);
+            }else{
+              $("#btnreg").prop("disabled",false);
+          }
+    },"json");
+  });
+});
   </script>
 </head>
 <body>
@@ -41,6 +66,7 @@
         <h3 style="text-align:center; margin-bottom: 5px; ">Softmar</h3>        
           <form  action="../Controller/citas.controller.php" method="POST" class="col s12 formulario1">
                 <section class="col s12" >
+                <p style="text-align: center;"><b>Llena el formulario para separar tu cita.<b></p>    
                 <div class="row">  
                   <input id="Cod_Emp" type="hidden" value="<?php echo $_GET["ei"]?>" name="Cod_Emp">
                   <div class="input-field col s12">
@@ -96,8 +122,8 @@
                     <input type="hidden" name="Cod_usu" value="<?php echo $_SESSION["Cod_usu"]; ?>"/>
                     
 
-                    <button type="submit"  name="acc" value="create" id="boton" id="btn-crear-cuenta" class="btn waves-effect  cyan darken-3">Registrar</button>
-                    <a href="perfilEm.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
+                    <button type="submit"  name="acc" value="create" id="btnreg"  class="btn waves-effect  cyan darken-3" onclick="return validarCita()">Registrar</button>
+                    
                     <?php echo @$_REQUEST["$msn"]; ?>   
                 </section>            
             </form>          

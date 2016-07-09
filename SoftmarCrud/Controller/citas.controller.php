@@ -91,12 +91,12 @@ include_once("../Model/Citas.class.php");
 	break;
     // citas validacion con ajax
 	case 'valida_citas':
-	  	$fecha = $_POST["fecha_cita"]; 
-	  	$hora = $_POST["hora"]; 
-	  	$barbero = $_POST["emple"];
+	  	$Fecha = $_POST["fecha_cita"]; 
+	  	$Hora = $_POST["hora"]; 
+	  	$empleado = $_POST["emple"];
 	 
 	  	try{
-	  		$cita = Gestionar_Citas::ValidoCita($fecha, $hora, $barbero);
+	  		$cita = Gestionar_citas::ValidoCita($Fecha, $Hora, $empleado);
 
 	  		if($cita[0] != ""){
 	  			$existe = true;	

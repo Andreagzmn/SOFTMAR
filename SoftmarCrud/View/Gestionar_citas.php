@@ -71,47 +71,39 @@
      </div>
     </nav>   
   <body> 
-    <center><h3>Gestionar usuarios</h3></center>
-    <center><a href="RegistrarUsuarioAdmn.php" class="btn-floating waves-effect waves-light cyan darken-3"><i class="material-icons">add</i></a>Agregar usuario</center>
-
+    <center><h3>Gestion Citas empresas</h3></center>  
     <center><table id="datatable" class="display highlight" >
       <thead>
         <tr>
           <th>Cod_cita</th>
           <th>Cod_usu</th>
           <th>Telefono</th>
-          <th>Hora</th>
           <th>Fecha</th>
+          <th>Hora</th>
           <th>Estado</th>
           <th>Servicio</th>
           <th>empleado</th>
+          <th>Cod_Emp</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
 
       <?php
-      $usuarios = Gestion_Contacto::ReadAll();
+      $citas = Gestionar_citas::ReadAll();
 
-      foreach ($usuarios as $row) {
-
-        if($row["cod_rol"] == 103){
-          $cod_rol = "Administrador";
-        }elseif($row["cod_rol"] == 102){
-          $cod_rol = "Usuario";
-        }elseif($row["cod_rol"] == 101){
-          $cod_rol = "Cliente";
-        }
+      foreach ($citas as $row) {
 
         echo "<tr>
+                <td>".$row["Cod_cita"]."</td>
                 <td>".$row["Cod_usu"]."</td>
-                <td>".$cod_rol."</td>
-                <td>".$row["Nombre"]."</td>
-                <td>".$row["Apellido"]."</td>
-                <td>".$row["Direccion"]."</td>
-                <td>".$row["Edad"]."</td>
-                <td>".$row["Correo"]."</td>
-                <td>".$row["Cedula"]."</td>
+                <td>".$row["Telefono"]."</td>
+                <td>".$row["Fecha"]."</td>
+                <td>".$row["Hora"]."</td>
+                <td>".$row["Estado"]."</td>
+                <td>".$row["Servicio"]."</td>
+                <td>".$row["empleado"]."</td>
+                <td>".$row["Cod_Emp"]."</td>
                 <td>
                   <a href='../View/editar.usuario.php?ui=".base64_encode($row["Cod_usu"])."'><i class='fa fa-pencil'></i></a>
                   <a href='../Controller/Usuariocontroller.php?ui=".base64_encode($row["Cod_usu"])."&accion=d'><i class='fa fa-trash'></i></a>

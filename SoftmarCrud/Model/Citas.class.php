@@ -85,12 +85,12 @@ class Gestionar_citas{
 
 		$resultado=$query->fetchAll(PDO::FETCH_BOTH);
 
-		Softmar_BD::Disconect();
+		Softmar_BD::Disconnect();
 
 		return $resultado;		
 	}
 
-	function ValidoCita($Fecha, $Hora, $Cod_empl){
+	function ValidoCita($Fecha, $Hora, $empleado){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = Softmar_BD::Connect();
@@ -99,10 +99,10 @@ class Gestionar_citas{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "SELECT * FROM citas WHERE Fecha =? AND Hora = ? AND Cod_empl =? ";
+		$consulta = "SELECT * FROM citas WHERE Fecha =? AND Hora = ? AND empleado =? ";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($Fecha, $Hora, $Cod_empl ));
+		$query->execute(array($Fecha, $Hora, $empleado ));
 
 		//Devolvemos el resultado en un arreglo
 		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso

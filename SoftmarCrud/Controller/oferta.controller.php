@@ -25,12 +25,17 @@
 			$Nombre		    = $_POST["Nombre"];
 			$Descripcion    = $_POST["Descripcion"];
 			$Estado	        = $_POST["Estado"];
-			$Foto           = $_POST["Foto"];
 			$Categoria      = $_POST["Categoria"];
 			$Oferta         = $_POST["Oferta"];
+ 			try{ 
 
-			try{
-				Gestion_oferta::Create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Foto, $Categoria, $Oferta);
+				if(isset($_FILES['Imagen_Oferta']['name'])){
+					$Foto = $_POST["Imoferta"];
+					include("Upload_Logo.php");
+				}else{
+					$Foto = "";
+				}				
+				 
 				$mensaje = "La oferta se registro correctamente";
 				$tipomensaje = "success";
 				header("Location: ../View/Gestion_Oferta_admin.php?m=".$mensaje."&tm=".$tipomensaje);

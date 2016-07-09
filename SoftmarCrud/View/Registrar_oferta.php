@@ -48,7 +48,7 @@
     <section class="col s12" >
       <div class="row">
         <div class="input-field col s12">
-          <select name="Cod_Emp">
+          <select Required name="Cod_Emp">
             <option value="" disabled selected>Seleccione una empresa</option>
               <?php
                   // Cargo la bd
@@ -86,11 +86,20 @@
           </select>
         </div>
       </div>
-      <div class="row">
+      <!--<div class="row">
         <div class="input-field col s12">
           <input id="first_name" type="text" class="validate" required name="Foto">
           <label for="first_name">Foto</label>
         </div>
+      </div>-->
+      <div class="file-field input-field col s12 m6">
+          <div class="btn">
+            <span>Imagen</span>
+            <input type="file" name="imagen_oferta">
+          </div>
+          <div class="file-path-wrapper">
+              <input name="Imoferta"  id="demo" class="file-path validate" type="text">
+          </div>
       </div>
       <div class="row">
         <div class="input-field col s12">

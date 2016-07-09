@@ -13,6 +13,7 @@
     <script type="text/javascript" src="materialize/js/materialize.js"></script>
 
     <script type="text/javascript" src="sweetalert-master/sweetalert.min.js"></script>
+    <script type="text/javascript" src="../Controller/Validarcampos.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){    
         $('.modal-trigger').leanModal();

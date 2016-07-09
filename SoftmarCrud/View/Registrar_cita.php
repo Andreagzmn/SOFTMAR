@@ -21,44 +21,43 @@
 <link rel="stylesheet" href="iconos/css/font-awesome.min.css">
 <link rel="stylesheet" href="calendario\calendario.css">
 <script type="text/javascript" src="calendario\calendario.js"></script>
-  <script>
-    $(document).ready(function() {
-      <?php
-        if(isset($_GET["msn"])){
-        echo "swal( '".$_GET["msn"]."','', 'success');";
-        }
-      ?>
-      $('select').material_select();
-      $('#fecha_cita').datepicker({
+<script>
+  $(document).ready(function() {
+    <?php
+      if(isset($_GET["msn"])){
+      echo "swal( '".$_GET["msn"]."','', 'success');";
+      }
+    ?>
+    $('select').material_select();
+    $('#fecha_cita').datepicker({
       
-      showOn: "button",
-      buttonImage:"calendario/images/calen.png",
-      buttonImageOnly:true,
-      showButtonPanel:true,
+    showOn: "button",
+    buttonImage:"calendario/images/calen.png",
+    buttonImageOnly:true,
+    showButtonPanel:true,
     
-});
+    });
 
   $("#emple").change(function(){
-     var hora        = $("#hora").val();
-     var fecha_cita  = $("#fecha_cita").val();
-     var empleado    = $("#emple").val();
-     // var formato     = $("#formato").val();
-     // var min         = $("#min").val();
-     var accion      = "valida_citas";
+    var hora        = $("#hora").val();
+    var fecha_cita  = $("#fecha_cita").val();
+    var empleado    = $("#emple").val();
+    // var formato     = $("#formato").val();
+    // var min         = $("#min").val();
+    var accion      = "valida_citas";
 
-     $.post("../Controller/citas.controller.php", {hora: hora, acc: accion, emple: empleado, fecha_cita: fecha_cita}, function(result){
-
+    $.post("../Controller/citas.controller.php", {hora: hora, acc: accion, emple: empleado, fecha_cita: fecha_cita}, function(result){
               
-           if(result.ue == true){ 
-              swal(result.msn);
-              $("#btnreg").prop("disabled",true);
-            }else{
-              $("#btnreg").prop("disabled",false);
+          if(result.ue == true){ 
+            swal(result.msn);
+            $("#btnreg").prop("disabled",true);
+          }else{
+            $("#btnreg").prop("disabled",false);
           }
-    },"json");
+      },"json");
+    });
   });
-});
-  </script>
+</script>
 </head>
 <body>
 

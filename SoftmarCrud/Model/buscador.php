@@ -9,12 +9,16 @@ foreach ($result as $row) {
 	$nombre_empresa = strtolower(str_replace('ñ', 'n', $row["Nombre"]));
 	$nombre_empresa = strtolower(str_replace(' ', '', $nombre_empresa));
 	echo "
-		<div class='row'>
-			<div class='log col s6 m3'><img src='img/Imagenes_Empresas/".$nombre_empresa."/logo.png'></div>
-			<div class='col s6 m9 '>
-			<h4>".$row["Nombre"]."</h4>
+		<div class='container-fluid'>
+			<div class='row busca'>
+				<div class='log col s6 m3'><a href='../View/PerfilEm.php?ei=".base64_encode($row["Cod_Emp"])."'><img src='img/Imagenes_Empresas/".$nombre_empresa."/logo.png'> </a></div>
+				<div class='col s6 m9 datos'>
+				<a href='../View/PerfilEm.php?ei=".base64_encode($row["Cod_Emp"])."'><h4 class='nombr'>".$row["Nombre"]."</h4></a>
+				<p style='margin-top: 30px;'>Telefono: ".$row["Telefono"]."</p>
+				<p style='margin-top: 10px;'>Direccion: ".$row["Direccion"]."</p>
+			</div>
 		</div>
-	</div>";
+		<br>";
 }
 
 

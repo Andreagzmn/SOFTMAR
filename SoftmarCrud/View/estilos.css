@@ -451,15 +451,25 @@ footer.page-footer .footer-copyright {
   width: 100%;
 }
 .containact {
-  width: 50%;
+  width: 80%;
 }
 /*Perfil Empresa*/
-.caption h4 {
-  color: black;
+.nombr {
+  color: #fff;
+  margin-top: 250px;
+text-shadow:
+-2px -2px 0 #000, 
+1px -2px 0 #000,
+-2px 2px 0 #000,
+2px 2px 0 #000;
+font-size: 50px;
+font-family: 'Boogaloo', cursive;
 }
 
 /*Actualizar oferta */
 
 .cont-oferta{
-  width: 35%;
+  margin-top: 80px;
+  width: 60%;
+
 }

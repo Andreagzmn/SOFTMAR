@@ -31,11 +31,11 @@
 
 				if(isset($_FILES['Imagen_Oferta']['name'])){
 					$Foto = $_POST["Imoferta"];
-					include("Upload_Logo.php");
+					include("Upload_Oferta.php");
 				}else{
 					$Foto = "";
 				}				
-				 
+				 Gestion_oferta::create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Foto, $Categoria, $Oferta);
 				$mensaje = "La oferta se registro correctamente";
 				$tipomensaje = "success";
 				header("Location: ../View/Gestion_Oferta_admin.php?m=".$mensaje."&tm=".$tipomensaje);

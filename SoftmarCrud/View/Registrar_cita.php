@@ -61,39 +61,34 @@
 </head>
 <body>
 
-<center><div class="container" style="width: 30%;">
+<center><div class="container" style="width: 80%;">
         <h3 style="text-align:center; margin-bottom: 5px; ">Softmar</h3>        
           <form  action="../Controller/citas.controller.php" method="POST" class="col s12 formulario1">
                 <section class="col s12" >
                 <p style="text-align: center;"><b>Llena el formulario para separar tu cita.<b></p>    
                 <div class="row">  
                   <input id="Cod_Emp" type="hidden" value="<?php echo $_GET["ei"]?>" name="Cod_Emp">
-                  <div class="input-field col s12">
+                  <div class="input-field col s12 m6">
                       <input id="last_name" type="number" class="validate" required name="Telefono">
                       <label for="last_name">Telefono</label>
                   </div>
-                </div>
-                <div class="input-field col s12">
+                
+                <div class="input-field col s12 m6">
                  <input type="text" name="Fecha" placeholder="clic en el calendario" required id="fecha_cita" readonly>
                 </div>
-                <div class="row">    
-                  <div class="input-field col s12">
+                  <div class="input-field col s12 m6">
                       <select name="Hora" id="hora">
                         <option value="" disabled selected>Seleccione la hora de su cita</option>
                         <option value="8:00 am">8:00 am</option>
                         <option value="8:30 am">8:30 am</option>
                         <option value="9:00 am">9:00 am</option>
                       </select>
-                  </div>                  
-                </div>
-                <div class="row">    
-                  <div class="input-field col s12">
+                  </div>                    
+                  <div class="input-field col s12 m6">
                        <input id="last_name" type="text" class="validate" required name="Estado">
                       <label for="last_name">Estado</label>
                   </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s12 m6">
                         <select  name="Cod_serv">
                           <option value="" disabled selected>Seleccione un servicio</option>
                           <?php                        
@@ -104,9 +99,7 @@
                           ?>
                         </select>                        
                       </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s12 m6">
                       <select  name="Cod_empl" id="emple">
                         <option value="" disabled selected>Seleccione un empleado</option>
                         <?php                        
@@ -117,7 +110,7 @@
                         ?>
                       </select>                        
                     </div>
-                  </div> 
+                    </div>
                     <input type="hidden" name="Cod_usu" value="<?php echo $_SESSION["Cod_usu"]; ?>"/>
                     
 

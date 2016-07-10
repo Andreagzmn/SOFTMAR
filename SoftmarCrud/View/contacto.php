@@ -32,8 +32,7 @@
         <?php include_once("../View/comp.menu.php"); ?>
      </div>
    </nav>
-   <section class="datagrid">
-  <div class="inf-conte">
+  <center><div class="inf-conte">
     <div class="row forma">
         <div class="contac" class="col s12 center">
         <center><img src="img/SOFTMAR.png" class="login"></center>
@@ -42,8 +41,7 @@
           <br><br><p><strong>Email</strong></p><br><em>softmar@gmail.com</em><br><br><hr width="55%" color="grey"><br><br>
       </div>
   </div>
-  </div>
-  </section>
+  </div></center>
     <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
     <script type="text/javascript">

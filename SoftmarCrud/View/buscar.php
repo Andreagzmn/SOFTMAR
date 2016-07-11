@@ -17,6 +17,7 @@
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">   
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster" />
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>      
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" type="text/css" href="sweetalert-master/sweetalert.css">

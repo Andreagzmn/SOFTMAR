@@ -76,12 +76,33 @@ if($_SESSION["cod_rol"]==103){
       <li><a href="#!">Editar Perfil</a></li>
       <li><a href="../Controller/cerrarusuario.php">Cerrar sesión</a></li>
     </ul>
+
+
+
+    <!--  -->
+    <ul id="dropdown3" class="dropdown-content">
+        <li><a href="#">Gestionar empresa</a></li>
+        <li><a href="#">Gestionar empleado</a></li>
+        <li><a href="#">Gestionar servicio</a></li>
+        <li><a href="#">Gestionar producto</a></li>
+        <li><a href="#">Gestionar oferta</a></li>      
+      </ul>
+
+      <ul id="dropdown4" class="dropdown-content">
+      <li><a href="#!">Editar Perfil</a></li>
+      <li><a href="../Controller/cerrarusuario.php">Cerrar sesión</a></li>
+    </ul>
+
+
     <ul class="side-nav" id="mobile-demo">
       <li><a href="dashboard.php">Inicio</a></li>
       <li><a href="#">Empleados</a></li>
       <li><a href="#">Ofertas</a></li>
       <li><a href="#">Citas</a></li>
       <li><a href="#">Reportes</a></li>
+      <li><a href="perfilEm.php">Ver tu empresa</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Gestionar<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown4"><?php echo($_SESSION["Nombre"])." ".($_SESSION["Apellido"]) ?><i class="material-icons right">arrow_drop_down</i></a></li>
     </ul>
 
 

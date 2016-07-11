@@ -15,7 +15,7 @@ include_once("../Model/Citas.class.php");
 	$Telefono=$_POST["Telefono"];
 	$Fecha=$_POST["Fecha"];
 	$Hora=$_POST["Hora"];
-	$Estado=$_POST["Estado"];
+	$Formato=$_POST["Formato"];
 	$Servicio=$_POST["Cod_serv"];
 	$empleado=$_POST["Cod_empl"];
 	$Cod_Emp=$_POST["Cod_Emp"];
@@ -23,7 +23,8 @@ include_once("../Model/Citas.class.php");
 
 	try{
 
-		Gestionar_citas::Create($Cod_usu,$Telefono,$Fecha,$Hora,$Estado,$Servicio,$empleado,$Cod_Emp); 
+		 $_SESSION["Cod_Emp"] = $Cod_Emp;
+		Gestionar_citas::Create($Cod_usu,$Telefono,$Fecha,$Hora,$Formato,$Servicio,$empleado,$Cod_Emp); 
 		$mensaje="Su cita fue reservada con exito";
 		$tipomensaje = "success";
 		header("Location: ../View/perfilEm.php?m=".$mensaje."&tm=".$tipomensaje);
@@ -93,10 +94,11 @@ include_once("../Model/Citas.class.php");
 	case 'valida_citas':
 	  	$Fecha = $_POST["fecha_cita"]; 
 	  	$Hora = $_POST["hora"]; 
-	  	$empleado = $_POST["emple"];
+	  	$empleado = $_POST["empleado"];
+	  	$formato = $_POST["formato"];
 	 
 	  	try{
-	  		$cita = Gestionar_citas::ValidoCita($Fecha, $Hora, $empleado);
+	  		$cita = Gestionar_citas::ValidoCita($Fecha, $Hora, $empleado, $formato);
 
 	  		if($cita[0] != ""){
 	  			$existe = true;	

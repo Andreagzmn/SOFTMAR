@@ -18,9 +18,20 @@
 <head>
 
   <title></title>
+  <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
+  <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" type="text/css" href="estilos.css">
+      <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster"/>
 <link rel="stylesheet" href="iconos/css/font-awesome.min.css">
 <link rel="stylesheet" href="calendario\calendario.css">
 <script type="text/javascript" src="calendario\calendario.js"></script>
+<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+
 <script>
   $(document).ready(function() {
     <?php
@@ -38,25 +49,25 @@
     
     });
 
-  $("#emple").change(function(){
+  $("#empleado").change(function(){
     var hora        = $("#hora").val();
     var fecha_cita  = $("#fecha_cita").val();
-    var empleado    = $("#emple").val();
-    // var formato     = $("#formato").val();
+    var empleado    = $("#empleado").val();
+    var formato     = $("#formato").val();
     // var min         = $("#min").val();
-    var accion      = "valida_citas";
+    var acc      = "valida_citas";
 
-    $.post("../Controller/citas.controller.php", {hora: hora, acc: accion, emple: empleado, fecha_cita: fecha_cita}, function(result){
+    $.post("../Controller/citas.controller.php", {hora: hora, acc: acc, empleado: empleado, fecha_cita: fecha_cita, formato:formato}, function(result){
               
           if(result.ue == true){ 
-            swal(result.msn);
+            (result.msn);
             $("#btnreg").prop("disabled",true);
           }else{
             $("#btnreg").prop("disabled",false);
           }
       },"json");
     });
-  });
+  })
 </script>
 </head>
 <body>
@@ -85,8 +96,11 @@
                       </select>
                   </div>                    
                   <div class="input-field col s12 m6">
-                       <input id="last_name" type="text" class="validate" required name="Estado">
-                      <label for="last_name">Estado</label>
+                       <select name="Formato" id="formato">
+                        <option value="" disabled selected>Seleccione el horario:</option>
+                        <option value="am">am</option>
+                        <option value="pm">pm</option>
+                        </select>
                   </div>
                     <div class="input-field col s12 m6">
                         <select  name="Cod_serv">
@@ -100,7 +114,7 @@
                         </select>                        
                       </div>
                     <div class="input-field col s12 m6">
-                      <select  name="Cod_empl" id="emple">
+                      <select  name="Cod_empl" id="empleado">
                         <option value="" disabled selected>Seleccione un empleado</option>
                         <?php                        
                           $empleados = Gestion_Empleados::ReadAll();

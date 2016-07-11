@@ -90,9 +90,9 @@
                   <div class="input-field col s12 m6">
                       <select name="Hora" id="hora">
                         <option value="" disabled selected>Seleccione la hora de su cita</option>
-                        <option value="8:00 am">8:00 am</option>
-                        <option value="8:30 am">8:30 am</option>
-                        <option value="9:00 am">9:00 am</option>
+                        <option value="8:0">8:00 am</option>
+                        <option value="8:30">8:30 am</option>
+                        <option value="9:00 ">9:00 am</option>
                       </select>
                   </div>                    
                   <div class="input-field col s12 m6">
@@ -105,7 +105,8 @@
                     <div class="input-field col s12 m6">
                         <select  name="Cod_serv">
                           <option value="" disabled selected>Seleccione un servicio</option>
-                          <?php                        
+                          <?php    
+                                                
                             $services=Gestion_servicio::ReadAll();
                             foreach ($services as $row){
                               echo "<option value='".$row["Nombre"]."'>".$row["Nombre"]."</option>"; 
@@ -128,7 +129,7 @@
                     <input type="hidden" name="Cod_usu" value="<?php echo $_SESSION["Cod_usu"]; ?>"/>
                     
 
-                    <button type="submit"  name="acc" value="create" id="btnreg"  class="btn waves-effect  cyan darken-3" onclick="return validarCita()">Registrar</button>
+                    <button type="submit"  name="acc" value="create" id="btnreg"  class="btn waves-effect  cyan darken-3">Reservar</button>
                     
                     <?php echo @$_REQUEST["$msn"]; ?>   
                 </section>            

@@ -100,10 +100,8 @@
        <nav class="nav-wrapper blue-grey lighten-2" >
 			    <div >
 			       <ul >
-              <li style="margin-left:20px;"><a href="perfilEm.php?ei=<?php echo base64_encode("$ei");?>">La Empresa</a></li> 
-			        <li style=""><a href="producEm.php?ei=<?php echo base64_encode("$ei");?>">Productos y servicios</a></li>
+              <li style="margin-left:20px;"><a href="perfilEm.php?ei=<?php echo base64_encode("$ei");?>">La Empresa</a></li> s
 			        <li style=""><a id="btn_citas">Citas</a></li>
-			        <li style=""><a href="ofertaEm.php?ei=<?php echo base64_encode("$ei");?>">Ofertas</a></li>
 			      </ul>
 			    </div>
 			  </nav>

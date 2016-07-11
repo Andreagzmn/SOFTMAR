@@ -54,7 +54,7 @@
             <!-- <div id="quin">
               <h5><span>estilo</span></h5>
             </div> -->
-            <a href="buscar.php"><img src="img/estilo.jpg" alt=""></a>
+            <a href="buscarofer.php"><img src="img/oferta.jpg" alt=""></a>
           </div>
         </div>
     </div>

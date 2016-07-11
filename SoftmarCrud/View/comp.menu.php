@@ -55,19 +55,14 @@ if($_SESSION["cod_rol"]==103){
       <ul id="dropdown1" class="dropdown-content">
         <li><a href="#">Gestionar empresa</a></li>
         <li><a href="#">Gestionar empleado</a></li>
-        <li><a href="#">Gestionar servicio</a></li>
-        <li><a href="#">Gestionar producto</a></li>
-        <li><a href="#">Gestionar oferta</a></li>      
+        <li><a href="#">Gestionar servicio</a></li>     
       </ul>
 
     <ul class="right hide-on-med-and-down">
       <li><a href="dashboard.php">Inicio</a></li>
       <li><a href="informacion.php">Información</a></li>
       <li><a href="nosotros.php">Nosotros</a></li>
-      <li><a href="#">Empleados</a></li>
-      <li><a href="#">Ofertas</a></li>
       <li><a href="#">Citas</a></li>
-      <li><a href="#">Reportes</a></li>
       <li><a href="perfilEm.php">Ver tu empresa</a></li>
       <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Gestionar<i class="material-icons right">arrow_drop_down</i></a></li>
       <li><a class="dropdown-button" href="#!" data-activates="dropdown2"><?php echo($_SESSION["Nombre"])." ".($_SESSION["Apellido"]) ?><i class="material-icons right">arrow_drop_down</i></a></li>

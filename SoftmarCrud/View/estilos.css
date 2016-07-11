@@ -442,6 +442,7 @@ footer.page-footer .footer-copyright {
 /*bucar.php*/
 .cbus{
   margin-top: 10px;
+  
 }
 .busca{
   background-color: rgba(244, 238, 247, 0.5) !important;
@@ -464,6 +465,7 @@ footer.page-footer .footer-copyright {
 /*Perfil Empresa*/
 .nombr {
   color: #fff;
+
 
 text-shadow:
 -2px -2px 0 #000, 

@@ -26,7 +26,7 @@
 			$Nombre		    = $_POST["Nombre"];
 			$Descripcion    = $_POST["Descripcion"];
 			$Valor	        = $_POST["Valor"];
-			$Cantidad           = $_POST["Cant"];
+			$Cantidad       = $_POST["Cant"];
 
 			try{
 				Gestion_producto::Create($Cod_Emp, $Nombre, $Descripcion, $Valor, $Cantidad);

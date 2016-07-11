@@ -75,7 +75,7 @@
 	break;
 		case 'buscar':
           	Gestion_Empresa::ReadbyNombre($Nombre);
-
+          	 break;
 		case 'r':
 			$empresa = Gestion_Empresa::ReadbyID($Cod_Emp);
     		

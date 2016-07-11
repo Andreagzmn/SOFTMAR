@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-06-2016 a las 14:29:19
+-- Tiempo de generación: 11-07-2016 a las 19:49:54
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `softmar`
 --
-CREATE DATABASE IF NOT EXISTS `softmar` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
+CREATE DATABASE IF NOT EXISTS `softmar` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `softmar`;
 
 -- --------------------------------------------------------
@@ -49,7 +49,7 @@ CREATE TABLE `citas` (
   `Telefono` varchar(100) NOT NULL,
   `Hora` varchar(100) NOT NULL,
   `Fecha` varchar(100) NOT NULL,
-  `Estado` varchar(100) NOT NULL,
+  `Formato` varchar(2) NOT NULL,
   `Servicio` varchar(100) NOT NULL,
   `empleado` varchar(100) NOT NULL,
   `Cod_Emp` int(11) NOT NULL
@@ -59,15 +59,33 @@ CREATE TABLE `citas` (
 -- Volcado de datos para la tabla `citas`
 --
 
-INSERT INTO `citas` (`Cod_cita`, `Cod_usu`, `Telefono`, `Hora`, `Fecha`, `Estado`, `Servicio`, `empleado`, `Cod_Emp`) VALUES
-(15, 4, '3747703', '8:00 am', '8:00 am', 'disponible', 'corte', '1', 0),
-(16, 4, '3747703', '8:00 am', '8:00 am', 'disponible', 'corte', '1', 0),
-(17, 4, '377125', '8:30 am', '8:00 am', 'Ocupado', 'corte', '2', 0),
-(18, 2, '5782588', '8:00 am', '8:00 am', 'Ocupado', 'corte', '1', 0),
-(19, 4, '374703', '8:00 am', '8:00 am', 'ocupado', 'corte', '2', 0),
-(20, 2, '4', '3747703', '8:00 am', '8:00 am', 'ocupado', 'corte', 1),
-(21, 2, '4', '3747703', '8:30 am', '9:00 am', 'ocupado', 'corte', 1),
-(22, 4, '3747703', '8:00 am', '8:00 am', 'ocupado', 'corte', '1', 2);
+INSERT INTO `citas` (`Cod_cita`, `Cod_usu`, `Telefono`, `Hora`, `Fecha`, `Formato`, `Servicio`, `empleado`, `Cod_Emp`) VALUES
+(15, 4, '3747703', '8:00 am', '8:00 am', 'di', 'corte', '1', 0),
+(16, 4, '3747703', '8:00 am', '8:00 am', 'di', 'corte', '1', 0),
+(17, 4, '377125', '8:30 am', '8:00 am', 'Oc', 'corte', '2', 0),
+(18, 2, '5782588', '8:00 am', '8:00 am', 'Oc', 'corte', '1', 0),
+(19, 4, '374703', '8:00 am', '8:00 am', 'oc', 'corte', '2', 0),
+(20, 2, '4', '3747703', '8:00 am', '8:', 'ocupado', 'corte', 1),
+(21, 2, '4', '3747703', '8:30 am', '9:', 'ocupado', 'corte', 1),
+(22, 4, '3747703', '8:00 am', '8:00 am', 'oc', 'corte', '1', 2),
+(23, 3, '2774581', '8:00 am', 'Martes, 26 Julio, 2016', 'oc', 'corte', '1', 2),
+(24, 4, '2458961', '8:00 am', 'Jueves, 28 Julio, 2016', 'oc', 'corte', '1', 2),
+(25, 4, '2', '8:30 am', 'Miercoles, 27 Julio, 2016', 'oc', 'corte', '1', 2),
+(26, 2, '14554', '8:00 am', 'Martes, 26 Julio, 2016', 'oc', 'corte', '1', 2),
+(27, 1, '258964', '8:00 am', 'Martes, 26 Julio, 2016', 'oc', 'corte', '2', 2),
+(28, 4, '8755', '8:30 am', 'Martes, 26 Julio, 2016', 'oc', 'corte', '1', 2),
+(29, 4, '1234567', '8:00 am', 'Lunes, 25 Julio, 2016', 'oc', 'corte', '1', 0),
+(30, 4, '1214253', '8:00 am', 'Lunes, 25 Julio, 2016', 'oc', 'corte', '2', 2),
+(31, 1, '14789', '8:00 am', 'Martes, 26 Julio, 2016', 'oc', 'corte', '1', 2),
+(32, 1, '3216965', '8:00 am', 'Martes, 26 Julio, 2016', 'am', 'corte', '2', 2),
+(33, 1, '365984', '8:00 am', 'Martes, 26 Julio, 2016', 'am', 'corte', '2', 2),
+(34, 1, '789636', '8:00 am', 'Martes, 26 Julio, 2016', 'am', 'corte', '2', 2),
+(35, 1, '1475869', '8:00 am', 'Martes, 26 Julio, 2016', 'am', 'corte', '2', 2),
+(36, 1, '5489678', '8:00 am', 'Martes, 26 Julio, 2016', 'am', 'corte', '2', 2),
+(37, 1, '2365987', '8:00 am', 'Martes, 26 Julio, 2016', 'am', 'corte', '2', 2),
+(38, 4, '245786', '8:00 am', 'Viernes, 29 Julio, 2016', 'am', 'corte', '1', 2),
+(39, 4, '2775896', '8:00 am', 'Miercoles, 27 Julio, 2016', 'am', 'corte', '2', 2),
+(40, 3, '365894', '8:00 am', 'Domingo, 24 Julio, 2016', 'am', 'corte', '2', 2);
 
 -- --------------------------------------------------------
 
@@ -149,7 +167,7 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`Cod_Emp`, `Cod_TipEmp`, `Nombre`, `Telefono`, `Direccion`, `Ciudad`, `NIT`, `Correo`, `Geo_x`, `Geo_y`, `Informacion`, `Dias_aten`, `Hor_desde`, `Hor_hasta`, `Galeria`, `Logo`) VALUES
-(2, 4, 'quince', '3747703', 'cll 40 n 57 - 08', '', 123654, 'quince15@hotmail.com', '6.173515986490716', '-75.61811059713364', 0x4e75657374726120626172626572ed612c206573207265636f6e6f6369646120706f722074656e657220756e206772616e20736572766963696f, 'Lunes,Martes,Miércoles,Jueves,Viernes', '08:30:00', '08:30:00', 'cache_30150532.jpg, IMG_2314.jpg, kinzecuchilleros-barberia-madrid.jpg', 'logo1.png'),
+(2, 4, 'Quince', '3747703', 'cll 40 n 57 - 08', '', 123654, 'quince15@hotmail.com', '6.173515986490716', '-75.61811059713364', 0x414d4d, 'L,M,Mi,J,V,S', '08:30:00', '08:30:00', 'cache_30150532.jpg, IMG_2314.jpg, kinzecuchilleros-barberia-madrid.jpg', 'logo1.png'),
 (3, 3, 'Cambios positivos', '3654789', 'Crra 80', '', 856974, 'cambios@hotmail.com', '6.263727514446294', '-75.59635519981384', 0xda6e69636f73206520696e696775616c61626c657320, 'Lunes,Martes,Miercoles,Jueves,Viernes,Sabado', '09:30:00', '08:30:00', '252624--salon-de-belleza-y-peluqueria-jessica-vargas-banner.jpg, bg-5.jpg, tintes.jpg', '18076571-Sal-n-de-pelo-corte-de-pelo-dise-o-o-s-mbolo-peluquer-a-Foto-de-archivo.jpg');
 
 -- --------------------------------------------------------
@@ -349,7 +367,8 @@ INSERT INTO `usuario` (`Cod_usu`, `cod_rol`, `Nombre`, `Apellido`, `Direccion`, 
 (3, 102, 'Sledy Andrea', 'Orozco', 'Cll 20 n 10', 18, 'soy andrea', 'sledy@orozco.com', '', '45712360'),
 (4, 103, 'Rodrigo', 'Mena', 'Cll 11 n 88', 21, 'soyrodri', 'Rodri@mena.com', '', '7894561'),
 (5, 101, 'Andrea', 'Arias', 'call ', 18, 'asdfgh', 'andrea@guzman.com', '', '32101475'),
-(6, 102, 'Rosmary', 'Arias', 'Santamaria', 15, '1234', 'labrava@hotmail.com', '', '32101475');
+(6, 102, 'Rosmary', 'Arias', 'Santamaria', 15, '1234', 'labrava@hotmail.com', '', '32101475'),
+(7, 102, 'Andrea', 'guzman', 'cll 45 n 15', 18, 'adsad', 'asdsd@sdfd.com', '', '103667756');
 
 --
 -- Índices para tablas volcadas
@@ -478,7 +497,7 @@ ALTER TABLE `buscar_estilo`
 -- AUTO_INCREMENT de la tabla `citas`
 --
 ALTER TABLE `citas`
-  MODIFY `Cod_cita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `Cod_cita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 --
 -- AUTO_INCREMENT de la tabla `duenos`
 --
@@ -528,7 +547,7 @@ ALTER TABLE `tips_emp`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `Cod_usu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Cod_usu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- Restricciones para tablas volcadas
 --

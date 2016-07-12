@@ -47,38 +47,41 @@
     </nav>
   <body>
 
-
+  
   <section class="datagrid"> 
-    <center><a href="ofertas.php" class="btn-floating waves-effect waves-light cyan darken-3"><i class="material-icons">visibility</i></a>Mirar ofertas</center>
-    <center><h3>Productos</h3></center>
-  	   <center><table id="datatable" class="display highlight">
+  
+  <center><a href="buscarofer.php" class="btn-floating waves-effect waves-light cyan darken-3"><i class="material-icons">visibility</i></a>Mirar productos</center>
+  <center><h3>ofertas</h3></center>
+    <center><table id="datatable" class="display highlight">
       <thead>
         <tr>
           <th>Nombre</th>
           <th>Descripcion</th>
-          <th>Valor</th>
-          <th>Cantidad</th>
+          <th>Estado</th>
+          <th>Categoria</th>
+          <th>Ofertas</th>
         </tr>
       </thead>
       <tbody>
 
       <?php
-      $producto = Gestion_producto::ReadAll();
+      $oferta = Gestion_oferta::ReadAll();
 
-      foreach ($producto as $row) {
+      foreach ($oferta as $row) {
         echo "<tr>
                 <td>".$row["Nombre"]."</td>
                 <td>".$row["Descripcion"]."</td>
-                <td>".$row["Valor"]."</td>
-                <td>".$row["Cant"]."</td>  
+                <td>".$row["Estado"]."</td>
+                <td>".$row["Categoria"]."</td>
+                <td>".$row["Oferta"]."</td>
               </tr>";
       }
 
       ?>
       </tbody>
     </table></center>
-  </section>
-
+    </section>
+  
     <?php include_once("../View/pie_pagina.php"); ?>
   </body>
 </html>

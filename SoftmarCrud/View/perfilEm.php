@@ -100,8 +100,8 @@
        <nav class="nav-wrapper blue-grey lighten-2" >
 			    <div >
 			       <ul >
-              <li style="margin-left:20px;"><a href="perfilEm.php?ei=<?php echo base64_encode("$ei");?>">La Empresa</a></li> s
-			        <li style=""><a id="btn_citas">Citas</a></li>
+              <li style="margin-left:20px;"><a href="perfilEm.php?ei=<?php echo base64_encode("$ei");?>">La Empresa</a></li> 
+			        <li style="margin-left:10px;"><a id="btn_citas">Citas</a></li>
 			      </ul>
 			    </div>
 			  </nav>

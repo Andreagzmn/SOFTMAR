@@ -5,7 +5,7 @@ include_once("../Model/db_conn.php");
 include_once("../Model/Citas.class.php");
 
 
-	$accion=$_REQUEST["acc"];
+	$accion=$_REQUEST["c"];
 	switch ($accion) {
 
 	case 'create':
@@ -74,19 +74,18 @@ include_once("../Model/Citas.class.php");
 
 		break;
 
-	case 'D':
+	case 'd':
 
 	try{
-		Gestionar_citas::Delete(base64_decode($_REQUEST["ui"]));
+		Gestionar_citas::Delete(base64_decode($_REQUEST["ci"]));
 		$mensaje="la cita se elimino correctamente";
 		$tipomensaje="success";
-		header("Location: ../View/Gestion_Citas.php?m=".$mensaje."&tm=".$tipomensaje);
-
+		header("Location: ../View/Gestionar_citas.php?m=".$mensaje."&tm=".$tipomensaje);
 	}catch(Exception $e){
 		$mensaje="ha ocurrido un error, el error fue:".$e->getMessage()."en el archivo:".$e->getFile()."en la linea:".$e->getLine();
+		
+		header("Location: ../View/Gestionar_citas.php?m=".$mensaje."&tm=".$tipomensaje);
 		$tipomensaje="error";
-		header("Location: ../View/Gestion_Citas.php?m=".$mensaje."&tm=".$tipomensaje);
-
 	}		
 
 	break;

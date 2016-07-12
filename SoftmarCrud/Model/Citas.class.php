@@ -24,7 +24,7 @@ class Gestionar_citas{
 		$query=$conexion->prepare($consulta);
 		$query->execute(array($Cod_usu,$Telefono,$Hora,$Fecha,$Estado,$Cod_serv,$Cod_Emp,$Cod_cita));
 		
-		Softmar_BD::Disconect();		
+		Softmar_BD::Disconnect();		
 
 	}
 
@@ -38,7 +38,7 @@ class Gestionar_citas{
 		$query=$conexion->prepare($consulta);
 		$query->execute(array($Cod_cita));
 
-		Softmar_BD::Disconect();
+		Softmar_BD::Disconnect();
 	}
 
 	// funcion ReadbyId
@@ -53,7 +53,7 @@ class Gestionar_citas{
 
 		$resultado=$query->fetch(PDO::FETCH_BOTH);
 
-		Softmar_BD::Disconect();
+		Softmar_BD::Disconnect();
 
 		return $resultado;		
 	}
@@ -68,7 +68,7 @@ class Gestionar_citas{
 
 		$resultado=$query->fetchAll(PDO::FETCH_BOTH);
 
-		Softmar_BD::Disconect();
+		Softmar_BD::Disconnect();
 
 		return $resultado;		
 	}

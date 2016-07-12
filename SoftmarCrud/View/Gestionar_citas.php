@@ -105,8 +105,8 @@
                 <td>".$row["empleado"]."</td>
                 <td>".$row["Cod_Emp"]."</td>
                 <td>
-                  <a href='../View/editar.usuario.php?ui=".base64_encode($row["Cod_usu"])."'><i class='fa fa-pencil'></i></a>
-                  <a href='../Controller/Usuariocontroller.php?ui=".base64_encode($row["Cod_usu"])."&accion=d'><i class='fa fa-trash'></i></a>
+                  <a href='../View/#ci=".base64_encode($row["Cod_cita"])."'><i class='fa fa-pencil'></i></a>
+                  <a href='../Controller/citas.controller.php?ci=".base64_encode($row["Cod_cita"])."&c=d'><i class='fa fa-trash'></i></a>
                 </td>
               </tr>";
       }

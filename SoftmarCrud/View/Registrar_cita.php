@@ -140,7 +140,7 @@
                     <input type="hidden" name="Cod_usu" value="<?php echo $_SESSION["Cod_usu"]; ?>"/>
                     
 
-                    <button type="submit"  name="acc" value="create" id="btnreg"  class="btn waves-effect  cyan darken-3">Reservar</button>
+                    <button type="submit"  name="c" value="create" id="btnreg"  class="btn waves-effect  cyan darken-3">Reservar</button>
                     
                     <?php echo @$_REQUEST["$msn"]; ?>   
                 </section>            

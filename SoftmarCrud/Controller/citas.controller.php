@@ -25,7 +25,7 @@ include_once("../Model/Citas.class.php");
 
 		 $_SESSION["Cod_Emp"] = $Cod_Emp;
 		Gestionar_citas::Create($Cod_usu,$Telefono,$Fecha,$Hora,$Formato,$Servicio,$empleado,$Cod_Emp); 
-		$mensaje="Su cita fue reservada con exito";
+		$mensaje="Su cita fue reservada con éxito";
 		$tipomensaje = "success";
 		header("Location: ../View/perfilEm.php?m=".$mensaje."&tm=".$tipomensaje);
 	}catch(Exception $e){

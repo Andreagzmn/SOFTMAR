@@ -187,10 +187,15 @@ section {
 	margin: 20px;
 }
 /*login AndreaGuzman*/
+.carousel{
+  /*margin-top: 10px;*/       
+    float: left;
+}
 .tarjeta{
     margin-top: 10px;
     width: 80%;
     height: 45px;
+    
     /*margin-left: 60px;*/
 }
 .tarjeta2{
@@ -238,8 +243,9 @@ left: 60px;*/
 }
 /*AndreaGuzman Gestionar usuario menú-admn*/
 .bgcontente{
-  width: 100%;
+ 
   background-color: rgba(255,255,255,0.3);
+
 }
 nav .dropdown-content li > a, .dropdown-content li > span {
     font-size: 16px;

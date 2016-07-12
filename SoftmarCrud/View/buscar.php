@@ -48,7 +48,7 @@
     </div>
     <div class="form">
       <form action="" method="POST" name="bus" id="bus">
-        <input type="text"  name="search" id="search">
+        <input type="text"  name="search" id="search" placeholder="Busca tus locales favoritos">
       </form>
     </div>
     <div id="myDiv"></div>

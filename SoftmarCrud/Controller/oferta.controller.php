@@ -34,11 +34,19 @@
 					include("Upload_Oferta.php");
 				}else{
 					$Foto = "";
-				}				
-				 Gestion_oferta::create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Foto, $Categoria, $Oferta);
-				$mensaje = "La oferta se registro correctamente";
-				$tipomensaje = "success";
-				header("Location: ../View/Gestion_Oferta_admin.php?m=".$mensaje."&tm=".$tipomensaje);
+				}
+				if ($_SESSION["cod_rol"] == "101") {
+					Gestion_oferta::create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Foto, $Categoria, $Oferta);
+					$mensaje = "La oferta se registro correctamente";
+					$tipomensaje = "success";
+					header("Location: ../View/dashboard.php?m=".$mensaje."&tm=".$tipomensaje);				
+				}else{
+					Gestion_oferta::create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Foto, $Categoria, $Oferta);
+					$mensaje = "La oferta se registro correctamente";
+					$tipomensaje = "success";
+					header("Location: ../View/Gestion_Oferta_admin.php?m=".$mensaje."&tm=".$tipomensaje);
+				}			
+				 
 			}catch (Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	
 				$tipomensaje = "error";

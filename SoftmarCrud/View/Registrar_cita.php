@@ -25,20 +25,22 @@
       <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
       <link rel="stylesheet" type="text/css" href="estilos.css">
       <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster"/>
+
 <link rel="stylesheet" href="iconos/css/font-awesome.min.css">
 <link rel="stylesheet" href="calendario\calendario.css">
+
 <script type="text/javascript" src="calendario\calendario.js"></script>
 <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 
+<script src="sweetalert-master/sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="sweetalert-master/sweetalert.css">
+
 <script>
   $(document).ready(function() {
-    <?php
-      if(isset($_GET["msn"])){
-      echo "swal( '".$_GET["msn"]."','', 'success');";
-      }
-    ?>
+    
     $('select').material_select();
     $('#fecha_cita').datepicker({
       
@@ -54,13 +56,13 @@
     var fecha_cita  = $("#fecha_cita").val();
     var empleado    = $("#empleado").val();
     var formato     = $("#formato").val();
-    // var min         = $("#min").val();
+    
     var acc      = "valida_citas";
 
     $.post("../Controller/citas.controller.php", {hora: hora, acc: acc, empleado: empleado, fecha_cita: fecha_cita, formato:formato}, function(result){
               
           if(result.ue == true){ 
-            (result.msn);
+            swal(result.msn);
             $("#btnreg").prop("disabled",true);
           }else{
             $("#btnreg").prop("disabled",false);
@@ -90,9 +92,18 @@
                   <div class="input-field col s12 m6">
                       <select name="Hora" id="hora">
                         <option value="" disabled selected>Seleccione la hora de su cita</option>
-                        <option value="8:0">8:00 am</option>
-                        <option value="8:30">8:30 am</option>
-                        <option value="9:00 ">9:00 am</option>
+                        <option value="12">12</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
                       </select>
                   </div>                    
                   <div class="input-field col s12 m6">

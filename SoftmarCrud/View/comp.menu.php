@@ -52,19 +52,15 @@ if($_SESSION["cod_rol"]==103){
   }elseif ($_SESSION["cod_rol"]==101) {
          
 ?>
-      <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#">Gestionar empresa</a></li>
-        <li><a href="#">Gestionar empleado</a></li>
-        <li><a href="#">Gestionar servicio</a></li>     
-      </ul>
+    
 
     <ul class="right hide-on-med-and-down">
       <li><a href="dashboard.php">Inicio</a></li>
       <li><a href="informacion.php">Información</a></li>
-      <li><a href="nosotros.php">Nosotros</a></li>
-      <li><a href="#">Citas</a></li>
+      <li><a href="nosotros.php">Nosotros</a></li>      
       <li><a href="perfilEm.php">Ver tu empresa</a></li>
-      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Gestionar<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a href="Registrar_producto.php">Agrega productos</a></li>
+      <li><a href="Registrar_oferta.php">Agrega ofertas</a></li>
       <li><a class="dropdown-button" href="#!" data-activates="dropdown2"><?php echo($_SESSION["Nombre"])." ".($_SESSION["Apellido"]) ?><i class="material-icons right">arrow_drop_down</i></a></li>
     </ul>
     <ul id="dropdown2" class="dropdown-content">

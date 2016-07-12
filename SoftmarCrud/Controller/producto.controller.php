@@ -29,10 +29,17 @@
 			$Cantidad       = $_POST["Cant"];
 
 			try{
-				Gestion_producto::Create($Cod_Emp, $Nombre, $Descripcion, $Valor, $Cantidad);
-				$mensaje = "El producto se registro correctamente";
-				$tipomensaje = "success";
-				header("Location: ../View/Gestion_Producto_admin.php?m=".$mensaje."&tm=".$tipomensaje);
+				if ($_SESSION["cod_rol"] == "101") {
+					Gestion_producto::Create($Cod_Emp, $Nombre, $Descripcion, $Valor, $Cantidad);
+					$mensaje = "El producto se registro correctamente";
+					$tipomensaje = "success";
+					header("Location: ../View/dashboard.php?m=".$mensaje."&tm=".$tipomensaje);
+				}else{
+					Gestion_producto::Create($Cod_Emp, $Nombre, $Descripcion, $Valor, $Cantidad);
+					$mensaje = "El producto se registro correctamente";
+					$tipomensaje = "success";
+					header("Location: ../View/Gestion_Producto_admin.php?m=".$mensaje."&tm=".$tipomensaje);
+				}
 			}catch (Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	
 				$tipomensaje = "error";

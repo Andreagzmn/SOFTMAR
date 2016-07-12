@@ -7,7 +7,7 @@
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>      
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" type="text/css" href="sweetalert-master/sweetalert.css">
-    
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster" />
   <link rel="stylesheet" type="text/css" href="estilos.css">
       <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.js"></script>
@@ -29,6 +29,18 @@
 
 </head>
 <body>
+<nav id="menufixed" class="black">
+      <div class="nav-wrapper " style="margin-left: 5px; margin-right: 5px;">
+        <h3 href="#!" class="brand-logo" style="text-align:center; margin-top: 10px; "><!-- <img src="img/SOFTMAR.png" style="width: 500%; margin-top: -15px; position: relative;"> -->Softmar</h3>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+         <ul class="right hide-on-med-and-down">
+         <li><a href="Index.php">Iniciar sesión</a></li>
+          <li><a href="Informacion2.php">Informacion acerca de softmar</a></li>
+          <li><a href="contacto2.php">Contactanos</a></li>
+          <li><a href="">¡Facilidad para tu vida y negocio!</a></li>                 
+       </ul> 
+     </div>
+</nav>
 
 <center><form   action="../Controller/Usuariocontroller.php" method="POST" >
 	<div class="con" style="height: 100px;">
@@ -55,44 +67,19 @@
                               <label for="Contraseña">Contraseña</label>                              
                               <button  class="waves-effect waves-light  cyan darken-3 btn btn-large" style="width: 100%" name="accion" value="r" >Iniciar sesión</button>    
                                
-                            </div>                              
-                              <div>
-                                <a href="#modal1" class="lostpass waves-effect waves-light modal-trigger"  >¿Olvidaste la contraseña?</a>
-                              </div>
-                                <div id="modal1" class="modal">
-                                  <div class="modal-content">                                    
-                                    <h4>Recupera tu cuenta</h4>
-                                    <p>Ingresa tu correo electrónico </p> 
-                                    <div class="input-field col s12">                                                                       
-                                      <input id="Correo2" type="text" class="validate">
-                                      <label for="Correo2">Correo electrónico</label>
-                                    </div>
-                                    <p>En breves instantes te enviaremos un enlace al correo ingresado</p>
-                                  </div>
-                                  <div class="modal-footer">
-                                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
-                                  </div>
-                                </div>         
+                            </div>       
                                                             
                           </div>                          
-        		
-                       
+        		                      
         		  </div>
         	 </div>
       </div>
     </div>                        
 	    
 </form></center>
-  <?php
-    /*if( base64_decode(@$_GET["tm"]) == "advertencia"){
-                       $estilos = "orange";
-    }else{
-     $estilos = "red";
-    }
+  
+  
 
-    echo "<div style='background-color:".$estilos."'>".base64_decode(@$_GET["m"])."</div>";*/
-  ?>
-
-
+<?php include_once("../View/pie_pagina.php"); ?>
 </body>
 </html>

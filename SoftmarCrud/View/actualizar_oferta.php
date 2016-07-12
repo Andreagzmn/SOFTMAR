@@ -64,16 +64,11 @@
                 <option>No Disponible</option>
               </select>
               <label>Estado</label>
-            </div> 
-              <div class="input-field col s12 m6">
-                <input id="first_name" type="text" class="validate" required name="Foto" value="<?php echo $oferta[5] ?>">
-                <label for="first_name">Foto</label>
-              </div>                   
+            </div>                   
               <div class="input-field col s12 m6">
                 <input id="first_name" type="text" class="validate" required name="Categoria" value="<?php echo $oferta[6] ?>">
                 <label for="first_name">Categoria</label>
               </div>
- 
               <div class="input-field col s12 m6">
                 <input id="first_name" type="number" class="validate" required name="Oferta" value="<?php echo $oferta[7]?>">
                 <label for="first_name">Oferta disponibles</label>

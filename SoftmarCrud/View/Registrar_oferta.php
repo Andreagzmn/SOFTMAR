@@ -92,7 +92,7 @@
           <label for="first_name">Foto</label>
         </div>
       </div>-->
-      <div class="file-field input-field col s12 m6">
+      <!--<div class="file-field input-field col s12 m6">
           <div class="btn">
             <span>Imagen</span>
             <input type="file" name="imagen_oferta">
@@ -100,7 +100,7 @@
           <div class="file-path-wrapper">
               <input name="Imoferta"  id="demo" class="file-path validate" type="text">
           </div>
-      </div>
+      </div>-->
       <div class="row">
         <div class="input-field col s12">
           <select id="first_name" type="text" class="validate" required name="Categoria"><option value="">Categoría</option>

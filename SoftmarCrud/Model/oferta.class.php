@@ -2,15 +2,15 @@
 
 class Gestion_oferta{
 
-    function create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Foto, $Categoria, $Oferta){
+    function create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Categoria, $Oferta){
 
         $Conexion = Softmar_BD::Connect();
         $Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $consulta = "INSERT INTO oferta_emp (Cod_Emp, Nombre, Descripcion, Estado, Foto, Categoria, Oferta) VALUES (?,?,?,?,?,?,?)";
+        $consulta = "INSERT INTO oferta_emp (Cod_Emp, Nombre, Descripcion, Estado, Categoria, Oferta) VALUES (?,?,?,?,?,?)";
 
         $query = $Conexion->prepare($consulta);
-        $query->execute(array($Cod_Emp, $Nombre, $Descripcion, $Estado, $Foto, $Categoria, $Oferta));
+        $query->execute(array($Cod_Emp, $Nombre, $Descripcion, $Estado, $Categoria, $Oferta));
 
         Softmar_BD::Disconnect();
     }
@@ -57,7 +57,7 @@ class Gestion_oferta{
     Softmar_BD::Disconnect();
   }
 
-    function Update($Cod_ofer, $Cod_Emp, $Nombre, $Descripcion, $Estado, $Foto, $Categoria, $Oferta){
+    function Update($Cod_ofer, $Cod_Emp, $Nombre, $Descripcion, $Estado, $Categoria, $Oferta){
     //Instanciamos y nos conectamos a la bd
         $Conexion = Softmar_BD::Connect();
         $Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -65,10 +65,10 @@ class Gestion_oferta{
         
 
         //Crear el query que vamos a realizar
-        $consulta = "UPDATE oferta_emp SET Cod_Emp=?, Nombre=?, Descripcion=?, Estado=?, Foto=?, Categoria=?, Oferta=? WHERE Cod_ofer = ?" ;
+        $consulta = "UPDATE oferta_emp SET Cod_Emp=?, Nombre=?, Descripcion=?, Estado=?, Categoria=?, Oferta=? WHERE Cod_ofer = ?" ;
 
         $query = $Conexion->prepare($consulta);
-        $query->execute(array($Cod_Emp, $Nombre, $Descripcion, $Estado, $Foto, $Categoria, $Oferta, $Cod_ofer));        
+        $query->execute(array($Cod_Emp, $Nombre, $Descripcion, $Estado, $Categoria, $Oferta, $Cod_ofer));        
 
         Softmar_BD::Disconnect();
     

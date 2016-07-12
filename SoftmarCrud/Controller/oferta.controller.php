@@ -27,15 +27,9 @@
 			$Estado	        = $_POST["Estado"];
 			$Categoria      = $_POST["Categoria"];
 			$Oferta         = $_POST["Oferta"];
- 			try{ 
-
-				if(isset($_FILES['Imagen_Oferta']['name'])){
-					$Foto = $_POST["Imoferta"];
-					include("Upload_Oferta.php");
-				}else{
-					$Foto = "";
-				}				
-				 Gestion_oferta::create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Foto, $Categoria, $Oferta);
+ 			
+ 			try{ 			
+				 Gestion_oferta::create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Categoria, $Oferta);
 				$mensaje = "La oferta se registro correctamente";
 				$tipomensaje = "success";
 				header("Location: ../View/Gestion_Oferta_admin.php?m=".$mensaje."&tm=".$tipomensaje);
@@ -55,12 +49,11 @@
 			$Nombre		    = $_POST["Nombre"];
 			$Descripcion    = $_POST["Descripcion"];
 			$Estado	        = $_POST["Estado"];
-			$Foto           = $_POST["Foto"];
 			$Categoria      = $_POST["Categoria"];
 			$Oferta         = $_POST["Oferta"];
 
 			try{
-				Gestion_oferta::Update($Cod_ofer, $Cod_Emp, $Nombre, $Descripcion, $Estado, $Foto, $Categoria, $Oferta);
+				Gestion_oferta::Update($Cod_ofer, $Cod_Emp, $Nombre, $Descripcion, $Estado, $Categoria, $Oferta);
 				$mensaje = "La oferta se actualizo correctamente";
 				$tipomensaje = "success";
 				header("Location: ../View/Gestion_Oferta_admin.php?m=".$mensaje."&tm=".$tipomensaje);

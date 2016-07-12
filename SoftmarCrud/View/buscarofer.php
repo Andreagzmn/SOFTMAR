@@ -11,6 +11,8 @@
   }
   require_once("../Model/producto.class.php");
    require_once("../Model/oferta.class.php");
+ 
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,6 +37,25 @@
         $('#datatable').DataTable();
         $(".button-collapse").sideNav();
          $(".dropdown-button").dropdown();
+         <?php
+
+          if(isset($_GET["m"])){
+            if($_GET["m"] != ""){
+              echo "sweetAlert({
+                           title: 'Mensaje de SOFTMAR',   
+                           text: '".$_GET["m"]."',   
+                           type: '".$_GET["tm"]."',   
+                           showCancelButton: false,
+                           confirmButtonColor: '#4db6ac',   
+                           confirmButtonText: 'Aceptar',   
+                          cancelButtonText: 'No, cancel plx!',   
+                           closeOnConfirm: false,   
+                           closeOnCancel: false
+                       });";
+            }
+          }
+
+      ?>
     });
     </script>
 </head>
@@ -64,7 +85,8 @@
 
       <?php
       $producto = Gestion_producto::ReadAll();
-
+       
+      
       foreach ($producto as $row) {
         echo "<tr>
                 <td>".$row["Nombre"]."</td>

@@ -33,7 +33,7 @@
 					Gestion_producto::Create($Cod_Emp, $Nombre, $Descripcion, $Valor, $Cantidad);
 					$mensaje = "El producto se registro correctamente";
 					$tipomensaje = "success";
-					header("Location: ../View/dashboard.php?m=".$mensaje."&tm=".$tipomensaje);
+					header("Location: ../View/buscarofer.php?m=".$mensaje."&tm=".$tipomensaje);
 				}else{
 					Gestion_producto::Create($Cod_Emp, $Nombre, $Descripcion, $Valor, $Cantidad);
 					$mensaje = "El producto se registro correctamente";

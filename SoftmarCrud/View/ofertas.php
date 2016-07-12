@@ -11,6 +11,8 @@
   }
   require_once("../Model/producto.class.php");
    require_once("../Model/oferta.class.php");
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -66,6 +68,7 @@
 
       <?php
       $oferta = Gestion_oferta::ReadAll();
+      
 
       foreach ($oferta as $row) {
         echo "<tr>

@@ -40,6 +40,12 @@
           <li><a href="">¡Facilidad para tu vida y negocio!</a></li>                 
        </ul> 
      </div>
+     <ul class="side-nav" id="mobile-demo">
+      <li><a href="Index.php">Iniciar sesió</a></li>
+      <li><a href="Informacion2.php">Informacion de softmar</a></li>
+      <li><a href="contacto2.php">Contactanos</a></li>
+      <li><a href="">¡Facilidad para tu negocio!</a></li>
+    </ul> 
 </nav>
 
 <center><form   action="../Controller/Usuariocontroller.php" method="POST" >
@@ -81,5 +87,13 @@
   
 
 <?php include_once("../View/pie_pagina.php"); ?>
+ <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="materialize/js/materialize.js"></script>
+   <script type="text/javascript">
+      $(document).ready(function(){    
+         $(".button-collapse").sideNav();
+         $(".dropdown-button").dropdown();
+      });
+    </script>
 </body>
 </html>

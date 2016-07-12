@@ -46,7 +46,7 @@ if($_SESSION["cod_rol"]==103){
   <li><a href="dashboard.php">Inicio</a></li>
     <li><a href="informacion.php">Información</a></li>
     <li><a href="nosotros.php">Nosotros</a></li>
-    <li><a href="#">Contacto</a></li>
+    <li><a href="contacto.php">Contacto</a></li>
   </ul> 
 <?php
   }elseif ($_SESSION["cod_rol"]==101) {

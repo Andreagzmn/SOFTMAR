@@ -117,7 +117,7 @@
         </div>
       </div>    
       <button type="submit" name="accion" value="c" id="boton" id="btn-crear-cuenta" class="btn waves-effect  cyan darken-3">Registrar</button>
-      <a href="Gestion_Oferta_admin.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
+      <a href="buscarofer.php" id="boton" class="btn waves-effect  blue-grey darken-2  " id="btn-crear-cuenta">Cancelar</a>
       <?php echo @$_REQUEST["$msn"]; ?>   
     </section>            
   </form>

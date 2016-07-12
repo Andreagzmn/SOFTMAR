@@ -18,6 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="flexboxgrid.min.css">
     <link type="text/css" rel="stylesheet" href="estilos.css">  
+
   </head>
   <body>
     <nav id="menufixed" class="black">
@@ -90,9 +91,11 @@
   <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
   <script type="text/javascript" src="materialize/js/materialize.js"></script>
    <script type="text/javascript">
-      $(document).ready(function(){    
+      $(document).ready(function(){  
+
          $(".button-collapse").sideNav();
          $(".dropdown-button").dropdown();
+
       });
     </script>
     <?php include_once("../View/pie_pagina.php"); ?>

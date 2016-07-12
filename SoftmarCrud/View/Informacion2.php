@@ -27,6 +27,12 @@
           <li><a href="">¡Facilidad para tu vida y negocio!</a></li>                 
        </ul> 
      </div>
+      <ul class="side-nav" id="mobile-demo">
+  <li><a href="Index.php">Iniciar sesió</a></li>
+    <li><a href="Informacion2.php">Informacion acerca de softmar</a></li>
+    <li><a href="contacto2.php">Contactanos</a></li>
+    <li><a href="">¡Facilidad para tu vida y negocio!</a></li>
+  </ul> 
 </nav>
 	<center><div class="inf-conte">
     <div class="row forma">

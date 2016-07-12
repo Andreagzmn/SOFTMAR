@@ -27,7 +27,7 @@
 			$Estado	        = $_POST["Estado"];
 			$Categoria      = $_POST["Categoria"];
 			$Oferta         = $_POST["Oferta"];
-<<<<<<< HEAD
+
  			try{ 
 
 				if(isset($_FILES['Imagen_Oferta']['name'])){
@@ -48,14 +48,14 @@
 					header("Location: ../View/Gestion_Oferta_admin.php?m=".$mensaje."&tm=".$tipomensaje);
 				}			
 				 
-=======
+
  			
  			try{ 			
 				 Gestion_oferta::create($Cod_Emp, $Nombre, $Descripcion, $Estado, $Categoria, $Oferta);
 				$mensaje = "La oferta se registro correctamente";
 				$tipomensaje = "success";
 				header("Location: ../View/Gestion_Oferta_admin.php?m=".$mensaje."&tm=".$tipomensaje);
->>>>>>> d3e0a206c0690a0fe92657938c9a472cd3749bba
+
 			}catch (Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	
 				$tipomensaje = "error";

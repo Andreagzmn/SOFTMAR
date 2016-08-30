@@ -54,27 +54,40 @@
     
     });
 
-    $("#empleado").change(function()
-    {
-    var hora        = $("#hora").val();
-    var fecha_cita  = $("#fecha_cita").val();
-    var empleado    = $("#empleado").val();
-    var formato     = $("#formato").val();
-    
-    var c      = "valida_citas";
+    function validaCita(hora){
+          var hora        = hora;
+          var fecha_cita  = $("#fecha_cita").val();
+          var empleado    = $("#empleado").val();
+          var formato     = $("#formato").val();
+          
+          var c      = "valida_citas";
 
-    $.post("../Controller/citas.controller.php", {hora: hora, c: c, empleado: empleado, fecha_cita: fecha_cita, formato:formato}, function(result)
-    {
-              
-          if(result.ue == true)
-          { 
-            swal(result.msn);
-            $("#btnreg").prop("disabled",true);
-          }else
+          // alert(hora);
+          $.post("../Controller/citas.controller.php", {hora: hora, c: c, empleado: empleado, fecha_cita: fecha_cita, formato:formato}, function(result)
           {
-            $("#btnreg").prop("disabled",false);
-          }
-    },"json");
+                    
+                if(result.ue == true)
+                { 
+                  swal(result.msn);
+                  $("#btnreg").prop("disabled",true);
+                  // $("#hora").val("");
+                }else
+                {
+                  $("#btnreg").prop("disabled",false);
+                }
+          },"json");
+    }
+
+    $("#hora").change(function(){
+        //se asigna el valor de #hora a la variable #horafinal.
+        $("#horafinal").val($("#hora").val());
+
+        validaCita($("#horafinal").val());
+    });
+
+
+    $("#empleado").change(function(){
+        validaCita($("#horafinal").val());
     });
   })
 </script>
@@ -96,9 +109,10 @@
                 <div class="input-field col s12 m6">
                  <input type="text" name="Fecha" placeholder="clic en el calendario" required id="fecha_cita" readonly>
                 </div>
+                  <input type="hidden" name="horafinal" id="horafinal">
                   <div class="input-field col s12 m6">
                       <select name="Hora" id="hora">
-                        <option value="" disabled selected>Seleccione la hora de su cita</option>
+                        <option value="">Seleccione la hora de su cita</option>
                         <option value="12">12</option>
                         <option value="1">1</option>
                         <option value="2">2</option>

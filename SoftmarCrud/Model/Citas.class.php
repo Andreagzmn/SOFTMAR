@@ -90,7 +90,7 @@ class Gestionar_citas{
 		return $resultado;		
 	}
 
-	function ValidoCita($Fecha, $Hora, $Empleado, $Formato){
+	function ValidoCita($Fecha, $Hora, $empleado, $formato){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = Softmar_BD::Connect();
@@ -102,7 +102,7 @@ class Gestionar_citas{
 		$consulta = "SELECT * FROM citas WHERE Fecha =? AND Hora = ? AND empleado =? AND Formato=?";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($Fecha, $Hora, $Empleado, $Formato ));
+		$query->execute(array($Fecha, $Hora, $empleado, $formato ));
 
 		//Devolvemos el resultado en un arreglo
 		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso

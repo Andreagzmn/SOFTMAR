@@ -39,35 +39,42 @@
 <link rel="stylesheet" type="text/css" href="sweetalert-master/sweetalert.css">
 
 <script>
-  $(document).ready(function() {
+  $(document).ready(function()
+  {
+
     
     $('select').material_select();
-    $('#fecha_cita').datepicker({
+    $('#fecha_cita').datepicker
+    ({
       
-    showOn: "button",
-    buttonImage:"calendario/images/calen.png",
-    buttonImageOnly:true,
-    showButtonPanel:true,
+        showOn: "button",
+        buttonImage:"calendario/images/calen.png",
+        buttonImageOnly:true,
+        showButtonPanel:true,
     
     });
 
-  $("#empleado").change(function(){
+    $("#empleado").change(function()
+    {
     var hora        = $("#hora").val();
     var fecha_cita  = $("#fecha_cita").val();
     var empleado    = $("#empleado").val();
     var formato     = $("#formato").val();
     
-    var acc      = "valida_citas";
+    var c      = "valida_citas";
 
-    $.post("../Controller/citas.controller.php", {hora: hora, acc: acc, empleado: empleado, fecha_cita: fecha_cita, formato:formato}, function(result){
+    $.post("../Controller/citas.controller.php", {hora: hora, c: c, empleado: empleado, fecha_cita: fecha_cita, formato:formato}, function(result)
+    {
               
-          if(result.ue == true){ 
+          if(result.ue == true)
+          { 
             swal(result.msn);
             $("#btnreg").prop("disabled",true);
-          }else{
+          }else
+          {
             $("#btnreg").prop("disabled",false);
           }
-      },"json");
+    },"json");
     });
   })
 </script>

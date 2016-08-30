@@ -189,6 +189,23 @@ class Gestion_Empresa{
 
 		Softmar_BD::Disconnect();
 	}
+	function consultaHora($Cod_Emp){
+		$Conexion = Softmar_BD::Connect();
+		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$consulta = "SELECT Hor_desde,Hor_hasta FROM empresa WHERE Cod_Emp = ?" ;
+		$query = $Conexion->prepare($consulta);
+		$query->execute(array($Cod_Emp));
+
+		//Devolvemos el resultado en un arreglo
+		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
+		//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
+
+		$resultado = $query->fetchALL(PDO::FETCH_BOTH);
+		return $resultado;
+
+		Softmar_BD::Disconnect();		
+
+	}
 }
 
 ?>

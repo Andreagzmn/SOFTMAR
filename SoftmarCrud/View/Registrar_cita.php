@@ -4,6 +4,8 @@
   require_once("../Model/contactos.class.php");
   require_once("../Model/servicio.class.php");
   require_once("../Model/Empleados.class.php");
+  require_once("../Model/empresa.class.php");
+
 
    if(!isset($_SESSION["Cod_usu"])){
     $msn = base64_encode("Debe iniciar sesion primero!");
@@ -51,6 +53,7 @@
         buttonImage:"calendario/images/calen.png",
         buttonImageOnly:true,
         showButtonPanel:true,
+        minDate: "-0D"
     
     });
 
@@ -164,7 +167,19 @@
                     <button type="submit"  name="c" value="create" id="btnreg"  class="btn waves-effect  cyan darken-3">Reservar</button>
                     
                     <?php echo @$_REQUEST["$msn"]; ?>   
-                </section>            
+                </section>
+                <div class="col l8 offset l2">
+                <?php      
+                $horadisp=Gestion_Empresa::consultaHora($Cod_Emp);
+                foreach ($horadisp as $row){
+                echo"
+                <td>".$row["Hor_desde"]."</td>
+                <td>".$row["Hor_hasta"]."</td>
+                ";
+                }
+                ?>
+                  
+                </div>            
             </form>          
 </div></center>
 

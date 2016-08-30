@@ -139,6 +139,10 @@
 			#hacer cualquier cosa...
 		break;
 
+		case 'hora_cita':
+			Gestion_Empresa::consultaHora($_SESSION["Cod_Emp"]);
+			break;
+
 
 
 	}

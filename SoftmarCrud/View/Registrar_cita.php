@@ -13,6 +13,10 @@
 
     header("Location: ../View/Index.php?m=".$msn."&tm=".$tipo_msn);
   }   
+
+
+
+  $Cod_Emp = $_REQUEST["ei"];
  
 ?>
 <!DOCTYPE html>
@@ -141,8 +145,8 @@
                         <select  name="Cod_serv">
                           <option value="" disabled selected>Seleccione un servicio</option>
                           <?php    
-                                                
-                            $services=Gestion_servicio::ReadAll();
+
+                            $services=Gestion_servicio::Readbyserv($Cod_Emp);
                             foreach ($services as $row){
                               echo "<option value='".$row["Nombre"]."'>".$row["Nombre"]."</option>"; 
                             }                           
@@ -152,10 +156,11 @@
                     <div class="input-field col s12 m6">
                       <select  name="Cod_empl" id="empleado">
                         <option value="" disabled selected>Seleccione un empleado</option>
-                        <?php                        
-                          $empleados = Gestion_Empleados::ReadAll();
+                        <?php 
+                                             
+                          $empleados = Gestion_Empleados::ReadbyEmpresa($Cod_Emp);                        
                           foreach ($empleados as $row){
-                            echo "<option value='".$row["Cod_empl"]."'>".$row["Nombre"]."</option>"; 
+                            echo "<option value='".$row["Nombre"]."'>".$row["Nombre"]."</option>"; 
                           }                           
                         ?>
                       </select>                        
@@ -169,13 +174,21 @@
                     <?php echo @$_REQUEST["$msn"]; ?>   
                 </section>
                 <div class="col l8 offset l2">
+
+
                 <?php      
+                  
                 $horadisp=Gestion_Empresa::consultaHora($Cod_Emp);
-                foreach ($horadisp as $row){
-                echo"
+                foreach ($horadisp as $row)
+                {
+                echo"                
                 <td>".$row["Hor_desde"]."</td>
                 <td>".$row["Hor_hasta"]."</td>
                 ";
+                $hor=["Hor_desde"];
+                if ($hor=='09:30:00'){
+                echo"1 2 3 4 5 6 7 8 9";
+                }
                 }
                 ?>
                   

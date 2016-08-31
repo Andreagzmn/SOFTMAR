@@ -10,16 +10,16 @@ class Gestion_Empresa{
 	//Metodo create()
 	//El metodo create guarda los datos en la tabla contactos, captura todos los parametros desde el  formulario
 
-	function Create($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta,$Galeria,$Logo){
+	function Create($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hora,$Galeria,$Logo){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = Softmar_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//Crear el query que vamos a realizar
-		$consulta = "INSERT INTO empresa (Cod_TipEmp,Nombre,Telefono,Direccion,NIT,Correo,Geo_x,Geo_y,Informacion,Dias_aten,Hor_desde,Hor_hasta,Galeria,Logo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		$consulta = "INSERT INTO empresa (Cod_TipEmp,Nombre,Telefono,Direccion,NIT,Correo,Geo_x,Geo_y,Informacion,Dias_aten,Hora,Galeria,Logo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta,$Galeria,$Logo));
+		$query->execute(array($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hora,$Galeria,$Logo));
 
 		Softmar_BD::Disconnect();
 	}
@@ -133,6 +133,29 @@ class Gestion_Empresa{
 
 		Softmar_BD::Disconnect();
 	}
+	function ReadbyHora($Cod_Emp){
+
+		//Instanciamos y nos conectamos a la bd
+		$Conexion = Softmar_BD::Connect();
+		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		
+
+		//Crear el query que vamos a realizar
+		$consulta = "SELECT * FROM empresa WHERE Cod_Emp=?";
+
+		$query = $Conexion->prepare($consulta);
+		$query->execute(array($Cod_Emp));
+
+		//Devolvemos el resultado en un arreglo
+		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
+		//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
+
+		$resultado = $query->fetchALL(PDO::FETCH_BOTH);
+		return $resultado;
+
+		Softmar_BD::Disconnect();
+	}
  
 	function ReadbyTipEmp($Cod_TipEmp){
 
@@ -189,23 +212,7 @@ class Gestion_Empresa{
 
 		Softmar_BD::Disconnect();
 	}
-	function consultaHora($Cod_Emp){
-		$Conexion = Softmar_BD::Connect();
-		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$consulta = "SELECT Hor_desde,Hor_hasta FROM empresa WHERE Cod_Emp = ?" ;
-		$query = $Conexion->prepare($consulta);
-		$query->execute(array($Cod_Emp));
-
-		//Devolvemos el resultado en un arreglo
-		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
-		//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
-
-		$resultado = $query->fetchALL(PDO::FETCH_BOTH);
-		return $resultado;
-
-		Softmar_BD::Disconnect();		
-
-	}
+	
 }
 
 ?>

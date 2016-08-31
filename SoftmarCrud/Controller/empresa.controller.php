@@ -32,8 +32,7 @@
 			$Geo_y			= $_POST["Geo_y"];
 			$Informacion	= $_POST["Informacion"];
 			$Dias_aten		= implode(",", $_POST["Dias_aten"]);
-			$Hor_desde		= $_POST["Hor_desde"];
-			$Hor_hasta    	= $_POST["Hor_hasta"]; 
+			$Hora			= implode(",", $_POST["Hora"]);			
 			$Galeria   		= $_POST["galeria"];
 
  			try{ 
@@ -49,7 +48,7 @@
 				}				
 				 
 				
-				Gestion_Empresa::Create($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta,$Galeria,$Logo);
+				Gestion_Empresa::Create($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hora,$Galeria,$Logo);
 
 				$empresa = Gestion_Empresa::ReadbyNIT($NIT);
 

@@ -43,12 +43,21 @@
 
 <script src="sweetalert-master/sweetalert.min.js"></script>
 <link rel="stylesheet" type="text/css" href="sweetalert-master/sweetalert.css">
+<?php
 
+          if(isset($_GET["m"])){
+            if($_GET["m"] != ""){
+              echo "<script>alert('".$_GET["m"]."')</script>";
+            }
+          }
+
+      ?>
 <script>
   $(document).ready(function()
   {
 
-    
+
+          
     $('select').material_select();
     $('#fecha_cita').datepicker
     ({

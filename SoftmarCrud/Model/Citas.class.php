@@ -58,15 +58,15 @@ class Gestionar_citas{
 		return $resultado;		
 	}
 
-	function Mi_Cita($Cod_usu){//para el modificar de todos los usuarios
+	function Mi_Cita($Cod_usua,$Fechaa){//para el modificar de todos los usuarios
 		$conexion=Softmar_BD::Connect();
 		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-		$consulta="SELECT * FROM citas WHERE Cod_usu=?";
+		$consulta="SELECT * FROM citas WHERE Cod_usu=? AND  Fecha =?";
 		$query=$conexion->prepare($consulta);
-		$query->execute(array($Cod_usu));
+		$query->execute(array($Cod_usua, $Fechaa));
 
-		$resultado=$query->fetchAll(PDO::FETCH_BOTH);
+		$resultado=$query->fetch(PDO::FETCH_BOTH);
 
 		Softmar_BD::Disconnect();
 

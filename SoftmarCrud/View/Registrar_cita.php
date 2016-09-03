@@ -126,18 +126,23 @@
                  <input type="text" name="Fecha" placeholder="clic en el calendario" required id="fecha_cita" readonly>
                 </div>
                   <input type="hidden" name="horafinal" id="horafinal">
-                 <div class="input-field col s12 m6">
-                        <select  name="Hora" id="hora">
-                          <option value="" disabled selected>Seleccione una hora</option>
-                          <?php    
-
-                            $hora=Gestion_Empresa::ReadbyHora($Cod_Emp);
-                            foreach ($hora as $row){
-                              echo "<option value='".$row["Hora"]."'>".$row["Hora"]."</option>"; 
-                            }                           
-                          ?>
-                        </select>                        
-                      </div>                   
+                  <div class="input-field col s12 m6">
+                      <select name="Hora" id="hora">
+                        <option value="">Seleccione la hora de su cita</option>
+                        <option value="12">12</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                      </select>
+                  </div>                    
                   <div class="input-field col s12 m6">
                        <select name="Formato" id="formato">
                         <option value="" disabled selected>Seleccione el horario:</option>

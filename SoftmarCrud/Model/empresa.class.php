@@ -10,16 +10,16 @@ class Gestion_Empresa{
 	//Metodo create()
 	//El metodo create guarda los datos en la tabla contactos, captura todos los parametros desde el  formulario
 
-	function Create($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hora,$Galeria,$Logo){
+	function Create($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta,$Galeria,$Logo){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = Softmar_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//Crear el query que vamos a realizar
-		$consulta = "INSERT INTO empresa (Cod_TipEmp,Nombre,Telefono,Direccion,NIT,Correo,Geo_x,Geo_y,Informacion,Dias_aten,Hora,Galeria,Logo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		$consulta = "INSERT INTO empresa (Cod_TipEmp,Nombre,Telefono,Direccion,NIT,Correo,Geo_x,Geo_y,Informacion,Dias_aten,Hor_desde,Hor_hasta,Galeria,Logo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hora,$Galeria,$Logo));
+		$query->execute(array($Cod_TipEmp,$Nombre,$Telefono,$Direccion,$NIT,$Correo,$Geo_x,$Geo_y,$Informacion,$Dias_aten,$Hor_desde,$Hor_hasta,$Galeria,$Logo));
 
 		Softmar_BD::Disconnect();
 	}

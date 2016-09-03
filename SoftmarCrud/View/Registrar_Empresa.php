@@ -173,113 +173,14 @@
                    </p>
                   </div>
               </div>
-             <div class="col s12 m12 ">
-                <p class="center">Horas de atención</p>
-                <div class="col s6 m6">
-                   <p>
-                     <input type="checkbox" id="6" value="06:00:00 am" name="Hora[]"/>
-                     <label for="6">06:00 am</label>
-                   </p>
-                  </div>
-                   <div class="col s6 m6">
-                   <p>
-                     <input type="checkbox" id="7" value="07:00:00 am" name="Hora[]"/>
-                     <label for="7">07:00 am</label>
-                   </p>
-                  </div>
-                  <div class="col s6 m6">
-                   <p>
-                     <input type="checkbox" id="8" value="08:00:00 am" name="Hora[]"/>
-                     <label for="8">08:00 am</label>
-                   </p>
-                  </div>
-                  <div class="col s6 m6">
-                   <p>
-                     <input type="checkbox" id="9" value="09:00:00 am" name="Hora[]"/>
-                     <label for="9">09:00 am</label>
-                   </p>
-                  </div>
-                  <div class="col s6 m6">
-                   <p>
-                     <input type="checkbox" id="10" value="10:00:00 am" name="Hora[]"/>
-                     <label for="10">10:00 am</label>
-                   </p>
-                  </div>
-                <div class="col s6 m6">
-                   <p>
-                     <input type="checkbox" id="11" value="11:00:00 am" name="Hora[]"/>
-                     <label for="11">11:00 am</label>
-                   </p>
-                  </div>
-                <div class="col s6 m6">
-                   <p>
-                     <input type="checkbox" id="12" value="12:00:00 pm" name="Hora[]"/>
-                     <label for="12">12:00 pm</label>
-                   </p>
-                  </div>
-                <div class="col s6 m6">
-                  <p>
-                    <input type="checkbox" id="1" value="01:00:00 pm" name="Hora[]"/>
-                    <label for="1">01:00 pm</label>
-                  </p>
+             <div class="col s12 m12">
+              <p class="center">Horario</p>
+               <label>desde</label>
+                  <input type="time" id="demo" name="Hor_desde" required>
                 </div>
-                  <div class="col s6 m6">
-                  <p>
-                     <input type="checkbox" id="2" value="02:00:00 pm" name="Hora[]"/>
-                     <label for="2">02:00 pm</label>
-                   </p>
-                  </div>
-                   <div class="col s6 m6">
-                   <p>
-                     <input type="checkbox" id="3" value="03:00:00 pm" name="Hora[]" />
-                     <label for="3">03:00 pm</label>
-                   </p>
-                  </div>
-                   <div class="col s6 m6">
-                   <p>
-                     <input type="checkbox" id="4" value="04:00:00 pm" name="Hora[]"/>
-                     <label for="4">04:00 pm</label>
-                   </p>
-                  </div>
-                   <div class="col s6 m6">
-                    <p>
-                     <input type="checkbox" id="5" value="05:00:00 pm" name="Hora[]"/>
-                     <label for="5">05:00 pm</label>
-                   </p>
-                  </div>
-                   <div class="col s6 m6">
-                   <p>
-                     <input type="checkbox" id="18" value="06:00:00 pm" name="Hora[]"/>
-                     <label for="18">06:00 pm</label>
-                   </p>
-                  </div>
-                   <div class="col s6 m6">
-                   <p>
-                     <input type="checkbox" id="19" value="07:00:00 pm" name="Hora[]"/>
-                     <label for="19">07:00 pm</label>
-                   </p>
-                  </div>
-                  <div class="col s6 m6">
-                   <p>
-                     <input type="checkbox" id="20" value="08:00:00 pm" name="Hora[]"/>
-                     <label for="20">08:00 pm</label>
-                   </p>
-                  </div>
-                  <div class="col s6 m6">
-                   <p>
-                     <input type="checkbox" id="21" value="09:00:00 pm" name="Hora[]"/>
-                     <label for="21">09:00 pm</label>
-                   </p>
-                  </div>
-                  <div class="col s6 m6">
-                   <p>
-                     <input type="checkbox" id="22" value="10:00:00 pm" name="Hora[]"/>
-                     <label for="22">10:00 pm</label>
-                   </p>
-                  </div>
-                  
-                  
-              </div>
+                <label>Hasta</label>
+                  <input type="time" id="demo" name="Hor_hasta" required>                 
+            </div>
               <input type="hidden" value="" name="Geo_x" id="ltn"> 
               <input type="hidden" value="" name="Geo_y" id="lng">
               <div class="file-field input-field col s12 m6">

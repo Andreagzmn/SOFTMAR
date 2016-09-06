@@ -22,16 +22,20 @@ include_once("../Model/Citas.class.php");
 	 
 
 	try{
-		Gestionar_citas::Mi_Cita($Cod_usua, $Fechaa);
-		if ($Cod_usu == $Cod_usua && $Fecha != $Fechaa) {
-			$_SESSION["Cod_Emp"] = $Cod_Emp;
-		 Gestionar_citas::Create($Cod_usu,$Telefono,$Fecha,$Hora,$Formato,$Servicio,$empleado,$Cod_Emp); 
-		$mensaje="Su cita fue reservada con éxito";
-		$tipomensaje = "success";
+		$cita = Gestionar_citas::Mi_Cita($Cod_usu, $Fecha);
+		if ($cita[0] == "") {
+			if ($Cod_usu == $cita["Cod_usu"] && $Fecha == $cita["Fecha"]) {
+			$mensaje="lo siento este usuario ya guardo una cita";
+			$tipomensaje = "error";
 		}else{
-		 $mensaje="lo siento este usuario ya guardo una cita";
-		$tipomensaje = "error";
+		 	$_SESSION["Cod_Emp"] = $Cod_Emp;
+		 	Gestionar_citas::Create($Cod_usu,$Telefono,$Fecha,$Hora,$Formato,$Servicio,$empleado,$Cod_Emp); 
+			$mensaje="Su cita fue reservada con éxito";
+			$tipomensaje = "success";
 		}
+		
+		}
+		
 		header("Location: ../View/perfilEm.php?m=".$mensaje."&tm=".$tipomensaje);
 	}catch(Exception $e){
 		$mensaje="ha ocurrido un error, el error fue:".$e->getMessage()."en el archivo:".$e->getFile()."en la linea:".$e->getLine();

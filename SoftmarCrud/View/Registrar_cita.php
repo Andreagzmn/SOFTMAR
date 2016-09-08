@@ -17,21 +17,8 @@
   $Cod_Emp = $_REQUEST["ei"];
  
 ?>
-<!DOCTYPE html>
-<html>
-<head>
 
-  <title></title>
-  <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
-  <!--Import Google Icon Font-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-      <link rel="stylesheet" type="text/css" href="estilos.css">
-      <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster"/>
+ 
 
 <link rel="stylesheet" href="iconos/css/font-awesome.min.css">
 <link rel="stylesheet" href="calendario\calendario.css">

@@ -76,6 +76,9 @@
           var ei = "<?php echo $ei ?>";
           $("#secciones").load("Registrar_cita.php", {ei:ei}); 
        });
+
+                $(".button-collapse").sideNav();
+         $(".dropdown-button").dropdown();
      });    
 </script>
 

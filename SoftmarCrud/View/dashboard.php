@@ -1,5 +1,5 @@
 <?php
-  session_start();
+  session_start();  
 
   if(!isset($_SESSION["Cod_usu"])){
     $msn = base64_encode("Debe iniciar sesion primero!");
@@ -93,9 +93,14 @@
    <script type="text/javascript">
       $(document).ready(function(){  
 
-         $(".button-collapse").sideNav();
-         $(".dropdown-button").dropdown();
 
+        function boton() {
+          $(".button-collapse").sideNav();
+         $(".dropdown-button").dropdown();
+        }        
+
+
+    }
       });
     </script>
     <?php include_once("../View/pie_pagina.php"); ?>

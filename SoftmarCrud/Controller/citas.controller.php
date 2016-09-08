@@ -21,9 +21,10 @@ include_once("../Model/Citas.class.php");
 	$Cod_Emp=$_POST["Cod_Emp"];
 	 
 
-	try{
+	try{		
 		$cita = Gestionar_citas::Mi_Cita($Cod_usu, $Fecha);
 		if ($cita[0] == "") {
+			$_SESSION["Cod_Emp"] = $Cod_Emp;
 			if ($Cod_usu == $cita["Cod_usu"] && $Fecha == $cita["Fecha"]) {
 			$mensaje="lo siento este usuario ya guardo una cita";
 			$tipomensaje = "error";

@@ -5,8 +5,6 @@
   require_once("../Model/servicio.class.php");
   require_once("../Model/Empleados.class.php");
   require_once("../Model/empresa.class.php");
-
-
    if(!isset($_SESSION["Cod_usu"])){
     $msn = base64_encode("Debe iniciar sesion primero!");
     $tipo_msn = base64_encode("advertencia");
@@ -42,6 +40,7 @@
 <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 
 <script src="sweetalert-master/sweetalert.min.js"></script>
+
 <link rel="stylesheet" type="text/css" href="sweetalert-master/sweetalert.css">
 <?php
 
@@ -55,7 +54,7 @@
 <script>
   $(document).ready(function()
   {
-
+    
 
           
     $('select').material_select();
@@ -104,9 +103,18 @@
 
     $("#empleado").change(function(){
         validaCita($("#horafinal").val());
+
     });
+
+  
+
   })
+
+  
+
+  
 </script>
+
 </head>
 <body>
 

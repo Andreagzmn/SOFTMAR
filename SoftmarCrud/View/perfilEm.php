@@ -38,7 +38,28 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="estilos.css">    
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster"/>
+<?php
 
+       if(isset($_GET["m"]) and isset($_GET["tm"])){
+         if($_GET["m"] != ""){
+           echo "<script>
+                   $(document).ready(function(){
+                      sweetAlert({
+                           title: 'Mensaje de SOFTMAR',   
+                           text: '".$_GET["m"]."',   
+                           type: '".$_GET["tm"]."',   
+                           showCancelButton: false,
+                           confirmButtonColor: '#4db6ac',   
+                           confirmButtonText: 'Aceptar',   
+                          cancelButtonText: 'No, cancel plx!',   
+                           closeOnConfirm: false,   
+                           closeOnCancel: false
+                       });
+                   });
+                </script>";
+           }
+         }
+?>
   <script>
   
     $(document).ready(function(){
@@ -50,25 +71,6 @@
           Indicators: false          
        });
 
-       <?php
-
-          if(isset($_GET["m"])){
-            if($_GET["m"] != ""){
-              echo "sweetAlert({
-                           title: 'Mensaje de SOFTMAR',   
-                           text: '".$_GET["m"]."',   
-                           type: '".$_GET["tm"]."',   
-                           showCancelButton: false,
-                           confirmButtonColor: '#4db6ac',   
-                           confirmButtonText: 'Aceptar',   
-                          cancelButtonText: 'No, cancel plx!',   
-                           closeOnConfirm: false,   
-                           closeOnCancel: false
-                       });";
-            }
-          }
-
-      ?>
 
        $("#btn_citas").click(function(){
           var ei = "<?php echo $ei ?>";

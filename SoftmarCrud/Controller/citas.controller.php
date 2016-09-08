@@ -35,7 +35,7 @@ include_once("../Model/Citas.class.php");
 			$tipomensaje = "success";
 	
 		}
-		
+			header("Location: ../View/perfilEm.php?m=".$mensaje."&tm=".$tipomensaje);
 		}else{
 			$mensaje="lo siento este usuario ya guardo una cita";
 			$tipomensaje = "error";

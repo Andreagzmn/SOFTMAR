@@ -35,6 +35,7 @@ include_once("../Model/Citas.class.php");
 			$tipomensaje = "success";
 	
 		}
+		
 		}else{
 			$mensaje="lo siento este usuario ya guardo una cita";
 			$tipomensaje = "error";

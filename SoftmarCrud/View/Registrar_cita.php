@@ -118,23 +118,24 @@
 </head>
 <body>
 
-<center><div class="container" style="width: 80%;">
+<center><div class="container" style="width: 50%;">
         <h3 style="text-align:center; margin-bottom: 5px; ">Softmar</h3>        
           <form  action="../Controller/citas.controller.php" method="POST" class="col s12 formulario1">
                 <section class="col s12" >
                 <p style="text-align: center;"><b>Llena el formulario para separar tu cita.<b></p>    
                 <div class="row">  
                   <input id="Cod_Emp" type="hidden" value="<?php echo $_GET["ei"]?>" name="Cod_Emp">
-                  <div class="input-field col s12 m6">
+                  <div class="input-field col s12 m12">
                       <input id="last_name" type="number" class="validate" required name="Telefono">
                       <label for="last_name">Telefono</label>
                   </div>
-                
-                <div class="input-field col s12 m6">
+                <div class="input-field col s12 m12">
                  <input type="text" name="Fecha" placeholder="clic en el calendario" required id="fecha_cita" readonly>
                 </div>
+
+                
                   <input type="hidden" name="horafinal" id="horafinal">
-                  <div class="input-field col s12 m6">
+                  <div class="input-field col s12 m12">
                       <select name="Hora" id="hora">
                         <option value="">Seleccione la hora de su cita</option>
                         <option value="12">12</option>
@@ -150,15 +151,17 @@
                         <option value="10">10</option>
                         <option value="11">11</option>
                       </select>
-                  </div>                    
-                  <div class="input-field col s12 m6">
+                  </div> 
+
+                  <div class="input-field col s12 m12">
                        <select name="Formato" id="formato">
                         <option value="" disabled selected>Seleccione el horario:</option>
                         <option value="am">am</option>
                         <option value="pm">pm</option>
                         </select>
                   </div>
-                    <div class="input-field col s12 m6">
+
+                    <div class="input-field col s12 m12">
                         <select  name="Cod_serv">
                           <option value="" disabled selected>Seleccione un servicio</option>
                           <?php    
@@ -170,7 +173,7 @@
                           ?>
                         </select>                        
                       </div>
-                    <div class="input-field col s12 m6">
+                                           <div class="input-field col s12 m12">
                       <select  name="Cod_empl" id="empleado">
                         <option value="" disabled selected>Seleccione un empleado</option>
                         <?php 

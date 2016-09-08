@@ -28,13 +28,19 @@ include_once("../Model/Citas.class.php");
 			if ($Cod_usu == $cita["Cod_usu"] && $Fecha == $cita["Fecha"]) {
 			$mensaje="lo siento este usuario ya guardo una cita";
 			$tipomensaje = "error";
+	
 		}else{
 		 	$_SESSION["Cod_Emp"] = $Cod_Emp;
 		 	Gestionar_citas::Create($Cod_usu,$Telefono,$Fecha,$Hora,$Formato,$Servicio,$empleado,$Cod_Emp); 
 			$mensaje="Su cita fue reservada con éxito";
 			$tipomensaje = "success";
+	
 		}
-		
+			header("Location: ../View/perfilEm.php?m=".$mensaje."&tm=".$tipomensaje);
+		}else{
+			$mensaje="lo siento este usuario ya guardo una cita";
+			$tipomensaje = "error";
+			
 		}
 		
 		header("Location: ../View/perfilEm.php?m=".$mensaje."&tm=".$tipomensaje);

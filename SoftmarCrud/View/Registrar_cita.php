@@ -54,7 +54,10 @@
 <script>
   $(document).ready(function()
   {
+<<<<<<< HEAD
     
+=======
+>>>>>>> origin/master
 
           
     $('select').material_select();

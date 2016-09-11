@@ -104,11 +104,7 @@
         validaCita($("#horafinal").val());
 
     });
-
-
-  
-
-  })
+})
 
   
 

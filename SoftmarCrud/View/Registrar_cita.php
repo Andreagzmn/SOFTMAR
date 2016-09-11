@@ -100,6 +100,12 @@
 
     });
 
+    $("#fecha_cita").change(function(){
+        validaCita($("#horafinal").val());
+
+    });
+
+
   
 
   })
@@ -167,7 +173,7 @@
                           ?>
                         </select>                        
                       </div>
-                                           <div class="input-field col s12 m12">
+                       <div class="input-field col s12 m12">
                       <select  name="Cod_empl" id="empleado">
                         <option value="" disabled selected>Seleccione un empleado</option>
                         <?php 

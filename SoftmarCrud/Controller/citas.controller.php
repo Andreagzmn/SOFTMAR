@@ -21,16 +21,15 @@ include_once("../Model/Citas.class.php");
 	$Cod_Emp=$_POST["Cod_Emp"];
 	 
 
-	try{		
+	try{
+		$_SESSION["Cod_Emp"] = $Cod_Emp;
 		$cita = Gestionar_citas::Mi_Cita($Cod_usu, $Fecha);
 		if ($cita[0] == "") {
-			$_SESSION["Cod_Emp"] = $Cod_Emp;
 			if ($Cod_usu == $cita["Cod_usu"] && $Fecha == $cita["Fecha"]) {
 			$mensaje="lo siento este usuario ya guardo una cita";
-			$tipomensaje = "error";
-	
+			$tipomensaje = "error";    		
 		}else{
-		 	$_SESSION["Cod_Emp"] = $Cod_Emp;
+		 	
 		 	Gestionar_citas::Create($Cod_usu,$Telefono,$Fecha,$Hora,$Formato,$Servicio,$empleado,$Cod_Emp); 
 			$mensaje="Su cita fue reservada con éxito";
 			$tipomensaje = "success";

@@ -19,7 +19,15 @@
 ?>
 
  
+ <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css"  media="screen,projection"/>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+      <link rel="stylesheet" type="text/css" href="estilos.css">
+      <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster"/>
 <link rel="stylesheet" href="iconos/css/font-awesome.min.css">
 <link rel="stylesheet" href="calendario\calendario.css">
 
@@ -40,8 +48,7 @@
       ?>
 <script>
   $(document).ready(function()
-  {
-
+  {  
 
           
     $('select').material_select();
@@ -125,18 +132,18 @@
                   <div class="input-field col s12 m12">
                       <select name="Hora" id="hora">
                         <option value="">Seleccione la hora de su cita</option>
-                        <option value="12">12</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
+                        <option value="12:00:00">12:00:00</option>
+                        <option value="1:00:00">1:00:00</option>
+                        <option value="2:00:00">2:00:00</option>
+                        <option value="3:00:00">3:00:00</option>
+                        <option value="4:00:00">4:00:00</option>
+                        <option value="5:00:00">5:00:00</option>
+                        <option value="6:00:00">6:00:00</option>
+                        <option value="7:00:00">7:00:00</option>
+                        <option value="8:00:00">8:00:00</option>
+                        <option value="9:00:00">9:00:00</option>
+                        <option value="10:00:00">10:00:00</option>
+                        <option value="11:00:00">11:00:00</option>
                       </select>
                   </div> 
 

@@ -95,14 +95,14 @@
       foreach ($citas as $row) {
 
         echo "<tr>
-                <td>".$row["Cod_cita"]."</td>
-                <td>".$row["Cod_usu"]."</td>
+                <td>".$row["Cod_cita"]."</td>_
+                <td>".$row["NombreUsu"]."</td>
                 <td>".$row["Telefono"]."</td>
                 <td>".$row["Fecha"]."</td>
                 <td>".$row["Hora"]."</td>
                 <td>".$row["Servicio"]."</td>
                 <td>".$row["empleado"]."</td>
-                <td>".$row["Cod_Emp"]."</td>
+                <td>".$row["Nombre"]."</td>
                 <td>
                   <a href='../Controller/citas.controller.php?rodri=".base64_encode($row["Cod_cita"])."&c=de'><i class='fa fa-trash'></i></a 
                 </td>

@@ -79,8 +79,8 @@ class Gestionar_citas{
     $conexion=Softmar_BD::Connect();
     $conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-    // $consulta="SELECT citas.*,empresa.* FROM citas INNER JOIN empresa on citas.Cod_Emp=empresa.Cod_Emp WHERE Cod_usu=?";
-    $consulta="SELECT * FROM citas  WHERE Cod_usu=?";
+    $consulta="SELECT citas.*,empresa.*,usuario.* FROM citas INNER JOIN empresa on citas.Cod_Emp=empresa.Cod_Emp INNER JOIN usuario on citas.Cod_usu=usuario.Cod_usu WHERE usuario.Cod_usu=?";
+    // $consulta="SELECT * FROM citas  WHERE Cod_usu=?";
     $query=$conexion->prepare($consulta);
     $query->execute(array($Cod_usu));
 
@@ -90,6 +90,7 @@ class Gestionar_citas{
 
 	return $resultado;	
   }
+
 
    function CitasEmp($Cod_Emp)
    {

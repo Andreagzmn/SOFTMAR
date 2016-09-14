@@ -91,6 +91,24 @@ class Gestionar_citas{
 	return $resultado;	
   }
 
+   function CitasEmp($Cod_Emp)
+   {
+        //para el modificar por cada usuario usuario
+        $conexion=Softmar_BD::Connect();
+        $conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+        // $consulta="SELECT citas.*,empresa.* FROM citas INNER JOIN empresa on citas.Cod_Emp=empresa.Cod_Emp WHERE Cod_usu=?";
+        $consulta="SELECT * FROM citas  WHERE Cod_Emp=?";
+        $query=$conexion->prepare($consulta);
+        $query->execute(array($Cod_Emp));
+
+	    $resultado=$query->fetchAll(PDO::FETCH_BOTH);
+
+	    Softmar_BD::Disconnect();
+
+	    return $resultado;	
+    }
+
 
 	function ReadAll(){//para el administrador y el barbero
 		$conexion=Softmar_BD::Connect();

@@ -72,7 +72,7 @@
     </nav>   
   <body> 
     <section class="datagrid">
-    <center><h3>Gestionar Mi Cita</h3></center>  
+    <center><h3>Gestionar Cita Empleado</h3></center>  
     <center><table id="datatable" class="display highlight" >
       <thead>
         <tr>
@@ -91,7 +91,6 @@
       <tbody>
 
       <?php
-      $citas = Gestionar_citas::Mi_Citas($_REQUEST["rodri"]);
 
       foreach ($citas as $row) {
 
@@ -106,7 +105,6 @@
                 <td>".$row["empleado"]."</td>
                 <td>".$row["Cod_Emp"]."</td>
                 <td>
-                  <a href='../Controller/citas.controller.php?rodri=".base64_encode($row["Cod_cita"])."&c=de'><i class='fa fa-trash'></i></a 
                 </td>
               </tr>";
       }

@@ -120,6 +120,22 @@ include_once("../Model/Citas.class.php");
 	}		
 
 	break;
+
+	case 'dl':
+
+	try{
+		Gestionar_citas::Delete(base64_decode($_REQUEST["do"]));
+		$mensaje="la cita se elimino correctamente";
+		$tipomensaje="success";
+		header("Location: ../View/Gestionar_Cita_empl.php?m=".$mensaje."&tm=".$tipomensaje);CitasEmp($_REQUEST["do"]);
+	}catch(Exception $e){
+		$mensaje="ha ocurrido un error, el error fue:".$e->getMessage()."en el archivo:".$e->getFile()."en la linea:".$e->getLine();
+		
+		header("Location: ../View/Gestionar_Cita_empl.php?m=".$mensaje."&tm=".$tipomensaje);
+		$tipomensaje="error";
+	}		
+
+	break;
     // citas validacion con ajax
 	case 'valida_citas':
 	  	$Fecha = $_POST["fecha_cita"]; 

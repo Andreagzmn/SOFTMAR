@@ -34,18 +34,20 @@
          if($_GET["m"] != ""){
            echo "<script>
                    $(document).ready(function(){
-                      sweetAlert({
-                           title: 'Mensaje de SOFTMAR',   
-                           text: '".$_GET["m"]."',   
-                           type: '".$_GET["tm"]."',   
-                           showCancelButton: false,
-                           confirmButtonColor: '#4db6ac',   
-                           confirmButtonText: 'Aceptar',   
-                          cancelButtonText: 'No, cancel plx!',   
-                           closeOnConfirm: false,   
-                           closeOnCancel: false
-                       });
-                   });
+                      swal({  
+                      title: 'Are you sure?',  
+                      text: '".$_GET["m"]."',   
+                      type: '".$_GET["tm"]."',    
+                      showCancelButton: true,  
+                      confirmButtonColor: '#DD6B55',
+                      confirmButtonText: 'Yes, delete it!', 
+                      closeOnConfirm: false }, 
+                      function(){  
+                       swal('Deleted!',
+                        'Your imaginary file has been deleted.', 
+                        'success');
+                         });                  
+                          });
                 </script>";
            }
          }

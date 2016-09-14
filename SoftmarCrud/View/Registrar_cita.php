@@ -68,12 +68,11 @@
           var hora        = hora;
           var fecha_cita  = $("#fecha_cita").val();
           var empleado    = $("#empleado").val();
-          var formato     = $("#formato").val();
           
           var c      = "valida_citas";
 
           // alert(hora);
-          $.post("../Controller/citas.controller.php", {hora: hora, c: c, empleado: empleado, fecha_cita: fecha_cita, formato:formato}, function(result)
+          $.post("../Controller/citas.controller.php", {hora: hora, c: c, empleado: empleado, fecha_cita: fecha_cita}, function(result)
           {
                     
                 if(result.ue == true)

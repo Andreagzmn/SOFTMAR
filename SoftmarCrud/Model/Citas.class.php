@@ -3,13 +3,13 @@
 class Gestionar_citas{
 
 	// Reservar las citas
-	function Create($Cod_usu,$Telefono,$Fecha,$Hora,$formato,$Servicio,$empleado,$Cod_Emp){
+	function Create($Cod_usu,$Telefono,$Fecha,$Hora,$Servicio,$empleado,$Cod_Emp){
 		$conexion=Softmar_BD::Connect();
 		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-		$consulta="INSERT INTO citas (Cod_usu,Telefono,Fecha,Hora,Formato,Servicio,empleado,Cod_Emp) VALUES (?,?,?,?,?,?,?,?)";		
+		$consulta="INSERT INTO citas (Cod_usu,Telefono,Fecha,Hora,Servicio,empleado,Cod_Emp) VALUES (?,?,?,?,?,?,?,?)";		
 		$query=$conexion->prepare($consulta);
-		$query->execute(array($Cod_usu,$Telefono,$Fecha,$Hora,$formato,$Servicio,$empleado,$Cod_Emp));
+		$query->execute(array($Cod_usu,$Telefono,$Fecha,$Hora,$Servicio,$empleado,$Cod_Emp));
 
 		Softmar_BD::Disconnect();			
 	}
@@ -125,7 +125,7 @@ class Gestionar_citas{
 		return $resultado;		
 	}
 
-	function ValidoCita($Fecha, $Hora, $empleado, $formato){
+	function ValidoCita($Fecha, $Hora, $empleado){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = Softmar_BD::Connect();
@@ -134,10 +134,10 @@ class Gestionar_citas{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "SELECT * FROM citas WHERE Fecha =? AND Hora = ? AND empleado =? AND Formato=?";
+		$consulta = "SELECT * FROM citas WHERE Fecha =? AND Hora = ? AND empleado =? ";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($Fecha, $Hora, $empleado, $formato ));
+		$query->execute(array($Fecha, $Hora, $empleado ));
 
 		//Devolvemos el resultado en un arreglo
 		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso

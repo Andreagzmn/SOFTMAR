@@ -212,6 +212,22 @@ class Gestion_Empresa{
 
 		Softmar_BD::Disconnect();
 	}
+	function ValidaEmpresa($Cod_Emp){
+		      $conexion=Softmar_BD::Connect();
+		      $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		      $consulta = "SELECT * FROM empresa WHERE Cod_Emp = ?";
+
+		      $query = $conexion->prepare($consulta);
+
+		      $query->execute(array($Cod_Emp));
+
+		      $resultado = $query->fetch(PDO::FETCH_BOTH);
+		      Softmar_BD::Disconnect();
+
+		      return $resultado;
+    	}
+	
 	
 }
 

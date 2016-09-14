@@ -7,7 +7,7 @@ class Gestionar_citas{
 		$conexion=Softmar_BD::Connect();
 		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-		$consulta="INSERT INTO citas (Cod_usu,Telefono,Fecha,Hora,Servicio,empleado,Cod_Emp) VALUES (?,?,?,?,?,?,?,?)";		
+		$consulta="INSERT INTO citas (Cod_usu,Telefono,Fecha,Hora,Servicio,empleado,Cod_Emp) VALUES (?,?,?,?,?,?,?)";		
 		$query=$conexion->prepare($consulta);
 		$query->execute(array($Cod_usu,$Telefono,$Fecha,$Hora,$Servicio,$empleado,$Cod_Emp));
 

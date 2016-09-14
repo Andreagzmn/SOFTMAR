@@ -81,7 +81,6 @@
           <th>Telefono</th>
           <th>Fecha</th>
           <th>Hora</th>
-          <th>Formato</th>
           <th>Servicio</th>
           <th>empleado</th>
           <th>Cod_Emp</th>
@@ -101,7 +100,6 @@
                 <td>".$row["Telefono"]."</td>
                 <td>".$row["Fecha"]."</td>
                 <td>".$row["Hora"]."</td>
-                <td>".$row["Formato"]."</td>
                 <td>".$row["Servicio"]."</td>
                 <td>".$row["empleado"]."</td>
                 <td>".$row["Cod_Emp"]."</td>

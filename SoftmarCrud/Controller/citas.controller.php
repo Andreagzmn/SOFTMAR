@@ -14,8 +14,7 @@ include_once("../Model/Citas.class.php");
 	$Cod_usu=$_POST["Cod_usu"];
 	$Telefono=$_POST["Telefono"];
 	$Fecha=$_POST["Fecha"];
-	$Hora=$_POST["Hora"];
-	$Formato=$_POST["Formato"];
+	$Hora=$_POST["Hora"];	
 	$Servicio=$_POST["Cod_serv"];
 	$empleado=$_POST["Cod_empl"];
 	$Cod_Emp=$_POST["Cod_Emp"];
@@ -30,7 +29,7 @@ include_once("../Model/Citas.class.php");
 			$tipomensaje = "error";    		
 		}else{
 		 	
-		 	Gestionar_citas::Create($Cod_usu,$Telefono,$Fecha,$Hora,$Formato,$Servicio,$empleado,$Cod_Emp); 
+		 	Gestionar_citas::Create($Cod_usu,$Telefono,$Fecha,$Hora,$Servicio,$empleado,$Cod_Emp); 
 			$mensaje="Su cita fue reservada con éxito";
 			$tipomensaje = "success";
 	
@@ -95,7 +94,7 @@ include_once("../Model/Citas.class.php");
 		Gestionar_citas::Delete(base64_decode($_REQUEST["ci"]));
 		$mensaje="la cita se elimino correctamente";
 		$tipomensaje="success";
-		header("Location: ../View/Gestionar_citas.php?m=".$mensaje."&tm=".$tipomensaje);Mi_Citas($_REQUEST["rodri"]);
+		header("Location: ../View/Gestionar_citas.php?m=".$mensaje."&tm=".$tipomensaje);
 	}catch(Exception $e){
 		$mensaje="ha ocurrido un error, el error fue:".$e->getMessage()."en el archivo:".$e->getFile()."en la linea:".$e->getLine();
 		
@@ -111,11 +110,11 @@ include_once("../Model/Citas.class.php");
 		Gestionar_citas::Delete(base64_decode($_REQUEST["rodri"]));
 		$mensaje="la cita se elimino correctamente";
 		$tipomensaje="success";
-		header("Location: ../View/Gestionar_micita.php?m=".$mensaje."&tm=".$tipomensaje);
+		header("Location: ../View/Gestionar_micita.php?rodri=".($_SESSION["Cod_usu"])."&m=".$mensaje."&tm=".$tipomensaje);Mi_Citas($_REQUEST["rodri"]);
 	}catch(Exception $e){
 		$mensaje="ha ocurrido un error, el error fue:".$e->getMessage()."en el archivo:".$e->getFile()."en la linea:".$e->getLine();
 		
-		header("Location: ../View/Gestionar_micita.php?m=".$mensaje."&tm=".$tipomensaje);
+		header("Location: ../View/Gestionar_micita.php?rodri=".($_SESSION["Cod_usu"])."&m=".$mensaje."&tm=".$tipomensaje);
 		$tipomensaje="error";
 	}		
 
@@ -127,11 +126,11 @@ include_once("../Model/Citas.class.php");
 		Gestionar_citas::Delete(base64_decode($_REQUEST["do"]));
 		$mensaje="la cita se elimino correctamente";
 		$tipomensaje="success";
-		header("Location: ../View/Gestionar_Cita_empl.php?m=".$mensaje."&tm=".$tipomensaje);CitasEmp($_REQUEST["do"]);
+		header("Location: ../View/Gestionar_Cita_empl.php?do=".($_SESSION["Cod_Emp"])."&m=".$mensaje."&tm=".$tipomensaje);CitasEmp($_REQUEST["do"]);
 	}catch(Exception $e){
 		$mensaje="ha ocurrido un error, el error fue:".$e->getMessage()."en el archivo:".$e->getFile()."en la linea:".$e->getLine();
 		
-		header("Location: ../View/Gestionar_Cita_empl.php?m=".$mensaje."&tm=".$tipomensaje);
+		header("Location: ../View/Gestionar_Cita_empl.php?do=".($_SESSION["Cod_Emp"])."&m=".$mensaje."&tm=".$tipomensaje);
 		$tipomensaje="error";
 	}		
 

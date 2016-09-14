@@ -40,7 +40,6 @@
            }
          }
 ?>
-
   </head>
   <body>
     <nav id="menufixed" class="black">

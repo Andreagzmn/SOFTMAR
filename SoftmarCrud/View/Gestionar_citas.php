@@ -63,7 +63,7 @@
     });
     </script>
   </head>
-   <nav class="black">
+   <nav id="menufixed" class="black">
       <div class="nav-wrapper " style="margin-left: 5px; margin-right: 5px;">
         <h2 href="#!" class="brand-logo" style="text-align:center; margin-top: 10px; "><!-- <img src="img/SOFTMAR.png" style="width: 500%; margin-top: -15px; position: relative;"> -->Softmar</h2>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -71,6 +71,7 @@
      </div>
     </nav>   
   <body> 
+    <section class="datagrid">
     <center><h3>Gestion Citas empresas</h3></center>  
     <center><table id="datatable" class="display highlight" >
       <thead>
@@ -105,7 +106,6 @@
                 <td>".$row["empleado"]."</td>
                 <td>".$row["Cod_Emp"]."</td>
                 <td>
-                  <a href='../View/#ci=".base64_encode($row["Cod_cita"])."'><i class='fa fa-pencil'></i></a>
                   <a href='../Controller/citas.controller.php?ci=".base64_encode($row["Cod_cita"])."&c=d'><i class='fa fa-trash'></i></a>
                 </td>
               </tr>";
@@ -114,6 +114,7 @@
       ?>
       </tbody>
     </table></center>
+    </section> 
     <?php include_once("../View/pie_pagina.php"); ?>
   </body>
 </html>

@@ -92,7 +92,6 @@ class Gestionar_citas{
   }
 
 
-
 	function ReadAll(){//para el administrador y el barbero
 		$conexion=Softmar_BD::Connect();
 		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);

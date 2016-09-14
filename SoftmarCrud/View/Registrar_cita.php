@@ -11,6 +11,7 @@
 
     header("Location: ../View/Index.php?m=".$msn."&tm=".$tipo_msn);
   }   
+  date_default_timezone_set("America/Bogota" ) ;
 
 
 
@@ -87,7 +88,7 @@
           },"json");
     }
 
-    $("#hora").change(function(){
+    $("#hora").keyup(function(){
         //se asigna el valor de #hora a la variable #horafinal.
         $("#horafinal").val($("#hora").val());
 
@@ -104,6 +105,15 @@
         validaCita($("#horafinal").val());
 
     });
+
+     $("#hora").change(function(){
+        var horaactual = "<?php echo date("H:i");?>";
+        var horadesde  = $("#hora").val();
+        if(horadesde <= horaactual){
+          swal("debe elegir una hora superior a la hora actual.");
+           $("#hora").val(horaactual);
+        }
+      })
 })
 
   
@@ -127,36 +137,24 @@
                   </div>
                 <div class="input-field col s12 m12">
                  <input type="text" name="Fecha" placeholder="clic en el calendario" required id="fecha_cita" readonly>
-                </div>
+                </div> 
+                <div class="input-field col s12 m12">              
+                  <?php
+                          
+                          $horario=Gestion_Empresa::ValidaEmpresa($Cod_Emp);
+                          //Capturamos la hora de atencion en la barberia
+                           $fin=$horario["Hor_hasta"];
+                            $inicio=$horario["Hor_desde"];
 
-                
-                  <input type="hidden" name="horafinal" id="horafinal">
-                  <div class="input-field col s12 m12">
-                      <select name="Hora" id="hora">
-                        <option value="">Seleccione la hora de su cita</option>
-                        <option value="12:00:00">12:00:00</option>
-                        <option value="1:00:00">1:00:00</option>
-                        <option value="2:00:00">2:00:00</option>
-                        <option value="3:00:00">3:00:00</option>
-                        <option value="4:00:00">4:00:00</option>
-                        <option value="5:00:00">5:00:00</option>
-                        <option value="6:00:00">6:00:00</option>
-                        <option value="7:00:00">7:00:00</option>
-                        <option value="8:00:00">8:00:00</option>
-                        <option value="9:00:00">9:00:00</option>
-                        <option value="10:00:00">10:00:00</option>
-                        <option value="11:00:00">11:00:00</option>
-                      </select>
+                            $Hor_desde=$inicio[0].$inicio[1].$inicio[2].$inicio[3].$inicio[4]."hs";
+                            $Hor_hasta=$fin[0].$fin[1].$fin[2].$fin[3].$fin[4]."hs";
+                    ?>
+                  
+                      <input type="time" max="<?php echo $fin ?>" min="<?php echo $inicio ?>" name="Hora" id="hora" value="<?php $time=time();echo date("H:i",$time)?>"  ></input>
+                   <span type="hidden" id="horafinal"></span>
                   </div> 
 
-                  <div class="input-field col s12 m12">
-                       <select name="Formato" id="formato">
-                        <option value="" disabled selected>Seleccione el horario:</option>
-                        <option value="am">am</option>
-                        <option value="pm">pm</option>
-                        </select>
-                  </div>
-
+          
                     <div class="input-field col s12 m12">
                         <select  name="Cod_serv">
                           <option value="" disabled selected>Seleccione un servicio</option>

@@ -64,6 +64,7 @@ if($_SESSION["cod_rol"]==103){
       <li><a href="perfilEm.php">Ver tu empresa</a></li>
       <li><a href="Registrar_producto.php">Agrega productos</a></li>
       <li><a href="Registrar_oferta.php">Agrega ofertas</a></li>
+      <li><a href="Gestionar_Cita_empl.php?do=<?php echo ($_SESSION["Cod_Emp"])?> ">Consultar mis citas</a></li>
       <li><a class="dropdown-button" href="#!" data-activates="dropdown2"><?php echo($_SESSION["Nombre"])." ".($_SESSION["Apellido"]) ?><i class="material-icons right">arrow_drop_down</i></a></li>
     </ul>
     <ul id="dropdown2" class="dropdown-content">

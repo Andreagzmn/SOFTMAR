@@ -91,6 +91,7 @@
       <tbody>
 
       <?php
+      $citas = Gestionar_citas::CitasEmp($_REQUEST["do"]);
 
       foreach ($citas as $row) {
 
@@ -105,6 +106,7 @@
                 <td>".$row["empleado"]."</td>
                 <td>".$row["Cod_Emp"]."</td>
                 <td>
+                  <a href='../Controller/citas.controller.php?do=".base64_encode($row["Cod_cita"])."&c=dl'><i class='fa fa-trash'></i></a>
                 </td>
               </tr>";
       }

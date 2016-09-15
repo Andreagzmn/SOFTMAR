@@ -42,10 +42,15 @@
                       confirmButtonColor: '#DD6B55',
                       confirmButtonText: 'Yes, delete it!', 
                       closeOnConfirm: false }, 
-                      function(){  
-                       swal('Deleted!',
+                      function(isConfirm){
+                      if (isConfirm){
+                        swal('Deleted!',
                         'Your imaginary file has been deleted.', 
                         'success');
+                          }else{
+
+                          }  
+                       
                          });                  
                           });
                 </script>";
@@ -106,7 +111,7 @@
                 <td>".$row["empleado"]."</td>
                 <td>".$row["Nombre"]."</td>
                 <td>
-                  <a href='../Controller/citas.controller.php?rodri=".base64_encode($row["Cod_cita"])."&c=de'><i class='fa fa-trash'></i></a 
+                  <a href='../Controller/citas.controller.php?rodri=".base64_encode($row["Cod_cita"])."&c=de'><i class='fa fa-trash'></i></a>
                 </td>
               </tr>";
       }

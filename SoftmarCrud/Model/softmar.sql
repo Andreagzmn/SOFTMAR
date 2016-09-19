@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-09-2016 a las 18:17:16
--- Versión del servidor: 10.1.13-MariaDB
--- Versión de PHP: 5.6.23
+-- Tiempo de generación: 19-09-2016 a las 15:04:54
+-- Versión del servidor: 10.1.9-MariaDB
+-- Versión de PHP: 5.5.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -36,13 +36,6 @@ CREATE TABLE `buscar_estilo` (
   `Descripcion` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `buscar_estilo`
---
-
-INSERT INTO `buscar_estilo` (`Cod_buscar`, `Cod_usu`, `Nombre`, `Descripcion`) VALUES
-(1, 4, 'vffd', 'fdsfd');
-
 -- --------------------------------------------------------
 
 --
@@ -52,13 +45,14 @@ INSERT INTO `buscar_estilo` (`Cod_buscar`, `Cod_usu`, `Nombre`, `Descripcion`) V
 DROP TABLE IF EXISTS `citas`;
 CREATE TABLE `citas` (
   `Cod_cita` int(11) NOT NULL,
+  `Cod_Emp` int(11) NOT NULL,
   `Cod_usu` int(11) NOT NULL,
   `Telefono` varchar(100) NOT NULL,
-  `Hora` varchar(100) NOT NULL,
-  `Fecha` varchar(100) NOT NULL,
-  `Servicio` varchar(100) NOT NULL,
-  `empleado` varchar(100) NOT NULL,
-  `Cod_Emp` int(11) NOT NULL
+  `Hora` date NOT NULL,
+  `Fecha` date NOT NULL,
+  `Estado` varchar(100) NOT NULL,
+  `Cod_empl` int(11) NOT NULL,
+  `Cod_serv` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -81,9 +75,7 @@ CREATE TABLE `duenos` (
 INSERT INTO `duenos` (`Cod_due`, `Cod_Emp`, `Cod_usu`) VALUES
 (1, 2, 1),
 (2, 3, 2),
-(3, 4, 3),
-(4, 4, 3),
-(6, 3, 4);
+(3, 3, 2);
 
 -- --------------------------------------------------------
 
@@ -110,10 +102,7 @@ CREATE TABLE `empleado` (
 --
 
 INSERT INTO `empleado` (`Cod_empl`, `Cod_Emp`, `Nombre`, `Apellido`, `Telefono`, `Direccion`, `Edad`, `Correo`, `Cargo`, `Cedula`) VALUES
-(1, 2, 'Andrea ', 'Guzman', 3747703, 'cll 40 n 57-08', 18, 'andrea@hotmail.com', 'peluquero', 1036677760),
-(2, 2, 'Cristian', 'Villada', 3747703, 'cll 10', 20, 'criss@hotmail.com', 'Barbero', 2147483647),
-(6, 2, 'fggf', 'fdsdf', 432232, 'calle 65', 19, 'el@mif.com', 'em´pleado', 133121),
-(12, 3, 'joa', 'lossa', 3424545, 'csllo 490', 32, 'wem@elr.com', 'barbero', 123331);
+(1, 2, 'Andrea ', 'Guzman', 3747703, 'cll 40 n 57-08', 18, 'andrea@hotmail.com', 'peluquero', 1036677760);
 
 -- --------------------------------------------------------
 
@@ -125,30 +114,30 @@ DROP TABLE IF EXISTS `empresa`;
 CREATE TABLE `empresa` (
   `Cod_Emp` int(11) NOT NULL,
   `Cod_TipEmp` int(11) NOT NULL,
-  `Nombre` varchar(100) CHARACTER SET latin1 NOT NULL,
-  `Telefono` varchar(100) CHARACTER SET latin1 NOT NULL,
-  `Direccion` varchar(100) CHARACTER SET latin1 NOT NULL,
-  `Ciudad` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `Nombre` varchar(100) NOT NULL,
+  `Telefono` varchar(100) NOT NULL,
+  `Direccion` varchar(100) NOT NULL,
+  `Ciudad` varchar(100) NOT NULL,
   `NIT` int(11) NOT NULL,
-  `Correo` varchar(100) CHARACTER SET latin1 NOT NULL,
-  `Geo_x` longtext CHARACTER SET latin1 NOT NULL,
-  `Geo_y` longtext CHARACTER SET latin1 NOT NULL,
+  `Correo` varchar(100) NOT NULL,
+  `Geo_x` longtext NOT NULL,
+  `Geo_y` longtext NOT NULL,
   `Informacion` blob NOT NULL,
-  `Dias_aten` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `Dias_aten` varchar(100) NOT NULL,
   `Hor_desde` time NOT NULL,
   `Hor_hasta` time NOT NULL,
-  `Galeria` longtext CHARACTER SET latin1 NOT NULL,
-  `Logo` longtext CHARACTER SET latin1 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+  `Galeria` longtext NOT NULL,
+  `Logo` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `empresa`
 --
 
 INSERT INTO `empresa` (`Cod_Emp`, `Cod_TipEmp`, `Nombre`, `Telefono`, `Direccion`, `Ciudad`, `NIT`, `Correo`, `Geo_x`, `Geo_y`, `Informacion`, `Dias_aten`, `Hor_desde`, `Hor_hasta`, `Galeria`, `Logo`) VALUES
-(2, 4, 'Quince', '3747703', 'cll 40 n 57 - 08', '', 123654, 'quince15@hotmail.com', '6.173515986490716', '-75.61811059713364', 0x414d4d, 'L,M,Mi,J,V,S', '08:30:00', '08:30:00', 'cache_30150532.jpg, IMG_2314.jpg, kinzecuchilleros-barberia-madrid.jpg', 'logo1.png'),
-(3, 3, 'Cambios positivos', '3654789', 'Crra 80', '', 856974, 'cambios@hotmail.com', '6.263727514446294', '-75.59635519981384', 0xda6e69636f73206520696e696775616c61626c657320, 'Lunes,Martes,Miercoles,Jueves,Viernes,Sabado', '09:30:00', '08:30:00', '252624--salon-de-belleza-y-peluqueria-jessica-vargas-banner.jpg, bg-5.jpg, tintes.jpg', '18076571-Sal-n-de-pelo-corte-de-pelo-dise-o-o-s-mbolo-peluquer-a-Foto-de-archivo.jpg'),
-(4, 6, 'fdfsds', '3442423', 'calle 40', 'medellin', 3253, 'dsa@mdiie.com', 'dassdf', 'gsddsa', '', 'lunes', '01:00:00', '02:08:00', 'asdlkdsldsdsf', 'ñdasññdas');
+(2, 4, 'quince', '3747703', 'cll 40 n 57 - 08', '', 123654, 'quince15@hotmail.com', '6.173515986490716', '-75.61811059713364', 0x4e75657374726120626172626572ed612c206573207265636f6e6f6369646120706f722074656e657220756e206772616e20736572766963696f, 'Lunes,Martes,Miercoles,Jueves,Viernes', '08:30:00', '08:30:00', 'cache_30150532.jpg, IMG_2314.jpg, kinzecuchilleros-barberia-madrid.jpg', 'logo1.png'),
+(3, 3, 'ajj', '454552152', '45515', '', 646526, 'sa@kjsfws', '6.241862909947854', '-75.57388365268707', 0x617366647366, 'Lunes,Miercoles,Viernes', '05:02:00', '17:02:00', 'cute-wallpapers-hd-9.jpg, cute-wallpapers-hd-11.jpg, kartandtinki1_photo-wallpapers_02.jpg', 'logo.png'),
+(4, 3, 'ajj', '454552152', '45515', '', 646526, 'sa@kjsfws', '6.241862909947854', '-75.57388365268707', 0x617366647366, 'Lunes,Miercoles,Viernes', '05:02:00', '17:02:00', 'cute-wallpapers-hd-9.jpg, cute-wallpapers-hd-11.jpg, kartandtinki1_photo-wallpapers_02.jpg', 'logo.png');
 
 -- --------------------------------------------------------
 
@@ -163,16 +152,10 @@ CREATE TABLE `oferta_emp` (
   `Nombre` varchar(100) NOT NULL,
   `Descripcion` varchar(100) NOT NULL,
   `Estado` varchar(100) NOT NULL,
+  `Foto` longtext NOT NULL,
   `Categoria` varchar(100) NOT NULL,
   `Oferta` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `oferta_emp`
---
-
-INSERT INTO `oferta_emp` (`Cod_ofer`, `Cod_Emp`, `Nombre`, `Descripcion`, `Estado`, `Categoria`, `Oferta`) VALUES
-(1, 2, 'dfsf', 'dfsdasfdsfa', 'assa', 'dsafdasf', '213');
 
 -- --------------------------------------------------------
 
@@ -185,13 +168,6 @@ CREATE TABLE `permiso` (
   `codigo_permiso` int(11) NOT NULL,
   `nombre_permiso` char(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `permiso`
---
-
-INSERT INTO `permiso` (`codigo_permiso`, `nombre_permiso`) VALUES
-(1, 'Administrador');
 
 -- --------------------------------------------------------
 
@@ -222,13 +198,6 @@ CREATE TABLE `productos_emp` (
   `Cant` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `productos_emp`
---
-
-INSERT INTO `productos_emp` (`Cod_prod`, `Cod_Emp`, `Nombre`, `Descripcion`, `Valor`, `Cant`) VALUES
-(1, 2, 'sdsd', 'xbnsdn', 33, 2);
-
 -- --------------------------------------------------------
 
 --
@@ -241,13 +210,6 @@ CREATE TABLE `puntuacion` (
   `Cod_usu` int(11) NOT NULL,
   `puntuacion` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `puntuacion`
---
-
-INSERT INTO `puntuacion` (`Cod_punt`, `Cod_usu`, `puntuacion`) VALUES
-(1, 1, 5);
 
 -- --------------------------------------------------------
 
@@ -268,9 +230,7 @@ CREATE TABLE `rol` (
 INSERT INTO `rol` (`cod_rol`, `cod_nombre`) VALUES
 (101, 'Cliente'),
 (102, 'Usuario'),
-(103, 'Administrados'),
-(104, 'prueba'),
-(105, 'pruba2');
+(103, 'Administrados');
 
 -- --------------------------------------------------------
 
@@ -292,8 +252,7 @@ CREATE TABLE `servicio_emp` (
 --
 
 INSERT INTO `servicio_emp` (`Cod_serv`, `Cod_Emp`, `Nombre`, `Duracion`, `Precio`) VALUES
-(1, 2, 'corte', '30 min', 5000),
-(8, 3, 'cepillado', '1 hora', 50);
+(1, 2, 'corte', '30 min', 5000);
 
 -- --------------------------------------------------------
 
@@ -306,17 +265,6 @@ CREATE TABLE `servicio_emple` (
   `Cod_serv` int(11) NOT NULL,
   `Cod_empl` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `servicio_emple`
---
-
-INSERT INTO `servicio_emple` (`Cod_serv`, `Cod_empl`) VALUES
-(1, 2),
-(1, 2),
-(1, 1),
-(1, 1),
-(1, 1);
 
 -- --------------------------------------------------------
 
@@ -338,8 +286,7 @@ INSERT INTO `tipo_emp` (`Cod_TipEmp`, `Nombre`) VALUES
 (3, 'Peluqueria'),
 (4, 'Barberia'),
 (5, 'Spa'),
-(6, 'Peluqueria Infantil'),
-(7, 'spa 2');
+(6, 'Peluqueria Infantil');
 
 -- --------------------------------------------------------
 
@@ -357,13 +304,6 @@ CREATE TABLE `tips_emp` (
   `Video` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `tips_emp`
---
-
-INSERT INTO `tips_emp` (`Cod_tips`, `Cod_Emp`, `Nombre`, `Descripcion`, `Foto`, `Video`) VALUES
-(1, 2, 'recomendacion', 'dssafd sdfklsadl', 'aaa', 'aaa');
-
 -- --------------------------------------------------------
 
 --
@@ -374,7 +314,7 @@ DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `Cod_usu` int(11) NOT NULL,
   `cod_rol` int(11) NOT NULL,
-  `Nombre` varchar(100) NOT NULL,
+  `NombreUsu` varchar(100) NOT NULL,
   `Apellido` varchar(100) NOT NULL,
   `Direccion` varchar(100) NOT NULL,
   `Edad` int(11) NOT NULL,
@@ -388,17 +328,13 @@ CREATE TABLE `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`Cod_usu`, `cod_rol`, `Nombre`, `Apellido`, `Direccion`, `Edad`, `Clave`, `Correo`, `Foto`, `Cedula`) VALUES
+INSERT INTO `usuario` (`Cod_usu`, `cod_rol`, `NombreUsu`, `Apellido`, `Direccion`, `Edad`, `Clave`, `Correo`, `Foto`, `Cedula`) VALUES
 (1, 101, 'Andrea', 'Guzman', 'cll 40 n 57', 18, '123', 'andre@hotmail.com', '', '32101475'),
 (2, 101, 'Valentina', 'Chica', 'Cll 35 n 74', 18, 'soyvalen', 'valen@chica.com', '', '10147584'),
 (3, 102, 'Sledy Andrea', 'Orozco', 'Cll 20 n 10', 18, 'soy andrea', 'sledy@orozco.com', '', '45712360'),
 (4, 103, 'Rodrigo', 'Mena', 'Cll 11 n 88', 21, 'soyrodri', 'Rodri@mena.com', '', '7894561'),
 (5, 101, 'Andrea', 'Arias', 'call ', 18, 'asdfgh', 'andrea@guzman.com', '', '32101475'),
-(6, 102, 'Rosmary', 'Arias', 'Santamaria', 15, '1234', 'labrava@hotmail.com', '', '32101475'),
-(7, 102, 'Andrea', 'guzman', 'cll 45 n 15', 18, 'adsad', 'asdsd@sdfd.com', '', '103667756'),
-(8, 102, 'Guiille', 'Zapata', 'calle falsa', 17, '22222', 'sroldan98@misena.edu.co', '', '98090468707'),
-(9, 102, 'Sergio', 'MFGa', 'calel from', 29, '123', 'srg@hotmail.com', '', '141111'),
-(10, 102, 'Jairo', 'Uribe', 'calle falsa 123', 26, '123', 'jairo@hotmail.com', '', '1234212414');
+(6, 102, 'Rosmary', 'Arias', 'Santamaria', 15, '1234', 'labrava@hotmail.com', '', '32101475');
 
 --
 -- Índices para tablas volcadas
@@ -416,7 +352,10 @@ ALTER TABLE `buscar_estilo`
 --
 ALTER TABLE `citas`
   ADD PRIMARY KEY (`Cod_cita`),
-  ADD KEY `Cod_usu` (`Cod_usu`);
+  ADD KEY `Cod_Emp` (`Cod_Emp`),
+  ADD KEY `Cod_usu` (`Cod_usu`),
+  ADD KEY `Cod_empl` (`Cod_empl`),
+  ADD KEY `Cod_serv` (`Cod_serv`);
 
 --
 -- Indices de la tabla `duenos`
@@ -522,22 +461,22 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `buscar_estilo`
 --
 ALTER TABLE `buscar_estilo`
-  MODIFY `Cod_buscar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Cod_buscar` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `citas`
 --
 ALTER TABLE `citas`
-  MODIFY `Cod_cita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `Cod_cita` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `duenos`
 --
 ALTER TABLE `duenos`
-  MODIFY `Cod_due` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Cod_due` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `empleado`
 --
 ALTER TABLE `empleado`
-  MODIFY `Cod_empl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `Cod_empl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `empresa`
 --
@@ -557,27 +496,27 @@ ALTER TABLE `productos_emp`
 -- AUTO_INCREMENT de la tabla `puntuacion`
 --
 ALTER TABLE `puntuacion`
-  MODIFY `Cod_punt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Cod_punt` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `servicio_emp`
 --
 ALTER TABLE `servicio_emp`
-  MODIFY `Cod_serv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `Cod_serv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `tipo_emp`
 --
 ALTER TABLE `tipo_emp`
-  MODIFY `Cod_TipEmp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `Cod_TipEmp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `tips_emp`
 --
 ALTER TABLE `tips_emp`
-  MODIFY `Cod_tips` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Cod_tips` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `Cod_usu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `Cod_usu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Restricciones para tablas volcadas
 --
@@ -592,7 +531,9 @@ ALTER TABLE `buscar_estilo`
 -- Filtros para la tabla `citas`
 --
 ALTER TABLE `citas`
-  ADD CONSTRAINT `citas_ibfk_2` FOREIGN KEY (`Cod_usu`) REFERENCES `usuario` (`Cod_usu`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `citas_ibfk_1` FOREIGN KEY (`Cod_Emp`) REFERENCES `empresa` (`Cod_Emp`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `citas_ibfk_2` FOREIGN KEY (`Cod_usu`) REFERENCES `usuario` (`Cod_usu`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `citas_ibfk_3` FOREIGN KEY (`Cod_empl`) REFERENCES `empleado` (`Cod_empl`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `duenos`

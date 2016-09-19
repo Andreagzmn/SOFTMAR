@@ -64,10 +64,10 @@
                  },
               function(isConfirm){   
                 if (isConfirm) {     
-                    swal("Deleted!", "Your imaginary file has been deleted.", "success"); 
+                    swal("Eliminado", "Se  ah eliminado", "success"); 
                     document.location.href = "../Controller/producto.controller.php?pr="+codigo+"&accion="+accion; 
                 }else{    
-                    swal("Cancelled", "Your imaginary file is safe :)", "error");   
+                    swal("Cancelado", "se cancelo", "error");   
                   } 
       });
           

@@ -27,28 +27,56 @@
     <link type="text/css" rel="stylesheet" href="estilos.css">    
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster"/>
 
-<?php
+ <script>
+      $(document).ready(function(){
+      <?php
+             if(isset($_GET["m"]) and isset($_GET["tm"])){
+               if($_GET["m"] != ""){
+                 echo "
+                            sweetAlert({
+                                 title: 'Mensaje de SOFTMAR',   
+                                 text: '".$_GET["m"]."',   
+                                 type: '".$_GET["tm"]."',   
+                                 showCancelButton: false,
+                                 confirmButtonColor: '#4db6ac',   
+                                 confirmButtonText: 'Aceptar',   
+                                 cancelButtonText: 'No, cancel plx!',   
+                                 closeOnConfirm: false,   
+                                 closeOnCancel: false
+                             });";
+                 }
+               }
+      ?>
 
-       if(isset($_GET["m"]) and isset($_GET["tm"])){
-         if($_GET["m"] != ""){
-           echo "<script>
-                   $(document).ready(function(){
-                      sweetAlert({
-                           title: 'Mensaje de SOFTMAR',   
-                           text: '".$_GET["m"]."',   
-                           type: '".$_GET["tm"]."',   
-                           showCancelButton: false,
-                           confirmButtonColor: '#4db6ac',   
-                           confirmButtonText: 'Aceptar',   
-                          cancelButtonText: 'No, cancel plx!',   
-                           closeOnConfirm: false,   
-                           closeOnCancel: false
-                       });
-                   });
-                </script>";
-           }
-         }
-?>
+      $("a#btntrash").click(function(){
+
+          var codigo = $("#codemp").val();
+          var accion = "d";
+         sweetAlert({
+                 title: 'Mensaje de SOFTMAR',   
+                 text: 'Esta seguro que desea eliminar el producto?',   
+                 type: 'warning',   
+                 showCancelButton: true,
+                 confirmButtonColor: '#4db6ac',   
+                 confirmButtonText: 'Aceptar',   
+                 cancelButtonText: 'No, cancel!',   
+                 closeOnConfirm: false,   
+                 closeOnCancel: false,
+                 },
+              function(isConfirm){   
+                if (isConfirm) {     
+                    swal("Eliminado!", "se ha eliminado", "success"); 
+                    document.location.href = "../Controller/servicio_emp.controller.php?sr="+codigo+"&accion="+accion; 
+                }else{    
+                    swal("Cancelado", "se cancelo","error");   
+                  } 
+      });
+          
+  
+});
+      
+      });
+   </script>
 
    <link rel="stylesheet" type="text/css" href="Jquery/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="Jquery/jquery.dataTables.js"></script>
@@ -100,19 +128,15 @@
                 <td>".$row["Precio"]."</td>
                 <td>
                   <a href='../View/Actualizar_servicio.php?sr=".base64_encode($row["Cod_serv"])."'><i class='fa fa-pencil'></i></a>
-                  <a href='../Controller/servicio_emp.controller.php?sr=".base64_encode($row["Cod_serv"])."&accion=d'><i class='fa fa-trash'></i></a>
+                  <input type='hidden' id='codemp' value='".base64_encode($row["Cod_Emp"])."'>
+                  <a href='#' id='btntrash' >
+                  <i class='fa fa-trash'></i></a>
 
                 </td>
               </tr>";
       }
       ?>
-      <input id="alerta" type="button" value="Confirmacion" onClick="swal({   title: 'Deseas borrar?',  
-         text: 'Si Borra el registro no lo podra recuperar!', 
-         type: 'warning',   showCancelButton: true,   confirmButtonColor: '#DD6B55',   confirmButtonText: 'Yes, delete it!',
-            closeOnConfirm: false }, 
-            function(isConfirm){   
-            swal('Mensaje de Softmar!', 'se elimino correctamente.', 'success'); });">
-
+      
       </tbody>
     </table>
     </section>

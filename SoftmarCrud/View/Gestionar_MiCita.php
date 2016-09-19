@@ -68,7 +68,7 @@
                     swal("Eliminado!", "se ha eliminado", "success"); 
                     document.location.href = "../Controller/citas.controller.php?rodri="+codigo+"&c="+accion; 
                 }else{    
-                    swal("Cancelado", "error");   
+                    swal("Cancelado", "se cancelo","error");   
                   } 
       });
           

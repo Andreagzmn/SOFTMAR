@@ -33,7 +33,7 @@
        if(isset($_GET["m"]) and isset($_GET["tm"])){
          if($_GET["m"] != ""){
            echo "<script>
-                   $(document).ready(function(){
+                   $(document).ready(function('#hola'){
                       swal({  
                       title: 'Are you sure?',  
                       text: '".$_GET["m"]."',   
@@ -44,11 +44,12 @@
                       closeOnConfirm: false }, 
                       function(isConfirm){
                       if (isConfirm){
+                             document.write(' <a href='../Controller/citas.controller.php?rodri=".base64_encode($row["Cod_cita"])."&c=de'><i class='fa fa-trash'></i></a>')
                         swal('Deleted!',
                         'Your imaginary file has been deleted.', 
                         'success');
                           }else{
-
+                              document.write('no funciono')
                           }  
                        
                          });                  
@@ -102,7 +103,7 @@
       foreach ($citas as $row) {
 
         echo "<tr>
-                <td>".$row["Cod_cita"]."</td>_
+                <td>".$row["Cod_cita"]."</td>
                 <td>".$row["NombreUsu"]."</td>
                 <td>".$row["Telefono"]."</td>
                 <td>".$row["Fecha"]."</td>
@@ -111,7 +112,7 @@
                 <td>".$row["empleado"]."</td>
                 <td>".$row["Nombre"]."</td>
                 <td>
-                  <a href='../Controller/citas.controller.php?rodri=".base64_encode($row["Cod_cita"])."&c=de'><i class='fa fa-trash'></i></a>
+                  <a href='../Controller/citas.controller.php?rodri=".base64_encode($row["Cod_cita"])."' id='hola' onclick='MyFunction();return false;' ><i class='fa fa-trash'></i></a>
                 </td>
               </tr>";
       }

@@ -122,7 +122,7 @@
                 <textarea id="demo" class="materialize-textarea" name="Informacion" required></textarea>
                 <label for="textarea1" >Describe tu empresa</label>
               </div>
-              <div class="col s12 m12 ">
+              <div class="col s12 m12">
                 <p class="center">Dias de atencion</p>
                 <div class="col s6 m6">
                   <p>
@@ -177,10 +177,10 @@
               <p class="center">Horario</p>
                <label>desde</label>
                   <input type="time" id="demo" name="Hor_desde" required>
-                </div>
-                <label>Hasta</label>
+                  <label>Hasta</label>
                   <input type="time" id="demo" name="Hor_hasta" required>                 
             </div>
+                
               <input type="hidden" value="" name="Geo_x" id="ltn"> 
               <input type="hidden" value="" name="Geo_y" id="lng">
               <div class="file-field input-field col s12 m6">
@@ -202,24 +202,23 @@
                       </div>
                   </div>
             </div>
-               
+              
           </div>
+           
            <button type="submit" name="accion" value="c" id="boton" class="btn waves-effect" style="margin-top: 30px;">Registrar</button>
            <a href="Gestion_Empresa_admin.php" id="boton" class="btn waves-effect  blue-grey darken-2">Cancelar</a> 
                 <?php echo @$_REQUEST["msn"]; ?>
 
-        </form>
-          
+          </form>
         <!-- <h5 style="color: #80cbc4; margin-top: -5%">Ubica tu empresa</h5> -->
         <div class="contamap col s12 m6">
             <div style="padding: 0; " >
               <div id="map" class="contamap" style="background: black;"></div>
             </div>
-        </div>
-      </div>
+
+    </div>
     </div></center>
     </section>
-    <?php include_once("../View/pie_pagina.php"); ?>
     <script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
     <script>
